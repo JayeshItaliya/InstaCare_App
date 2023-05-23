@@ -65,7 +65,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           )
                         ],
                       ),
-
                       Container(
                         height: toHeight/7,
                         width: toWidth/4.1,
