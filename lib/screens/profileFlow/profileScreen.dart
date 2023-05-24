@@ -4,8 +4,12 @@ import 'package:get/get.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
+import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonContainer.dart';
+import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/commonDropDown.dart';
+import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/screens/profileFlow/profileController.dart';
 
@@ -18,10 +22,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final profileController = Get.put(ProfileController());
+  final cx = Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
-    double toHeight = MediaQuery.of(context).size.height;
-    double toWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
@@ -41,8 +44,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         children: [
           Container(
-            width: toWidth,
-            height: toHeight / 3,
+            width: cx.width,
+            height: cx.height / 3,
             decoration: const BoxDecoration(
                 color: AppColors.blue,
                 borderRadius: BorderRadius.only(
@@ -59,19 +62,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           text: "Emp. ID",
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
-                          color: AppColors.darkGreen,
+                          color: AppColors.buttonColor,
                         ),
                         InterText(
                           text: "511",
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.darkGreen,
+                          color: AppColors.buttonColor,
                         )
                       ],
                     ),
                     Container(
-                      height: toHeight / 7,
-                      width: toWidth / 4.1,
+                      height: cx.height / 7,
+                      width: cx.width / 4.1,
                       decoration: const BoxDecoration(
                           color: AppColors.yallow,
                           borderRadius: BorderRadius.only(
@@ -96,20 +99,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           text: "Status",
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
-                          color: AppColors.darkGreen,
+                          color: AppColors.buttonColor,
                         ),
                         InterText(
                           text: "Available",
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.darkGreen,
+                          color: AppColors.buttonColor,
                         )
                       ],
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: toHeight / 21,
+                  height: cx.height / 21,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           text: "Instacare Staff",
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.darkGreen,
+                          color: AppColors.buttonColor,
                         )
                       ],
                     )
@@ -136,11 +139,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           SizedBox(
-            height: toHeight / 30,
+            height: cx.height / 30,
           ),
           CommonContainer(
-            width: toWidth,
-            height: toHeight / 2.5,
+            width: cx.width,
+            height: cx.height / 2.5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -162,17 +165,83 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         onTap: () {
                           CommonBottonSheet(
-                             childView: Column(
-                               children: [
-                                  Text("hdhfdhfhd"),
-                                  Text("hdhfdhfhd"),
-                                  Text("hdhfdhfhd"),
-                                  Text("hdhfdhfhd"),
-                                  Text("hdhfdhfhd"),
-                                  Text("hdhfdhfhd"),
-                               ],
-                             )
-                          );
+                              childView: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              children: [
+                                InterText(
+                                  text: "Account Information",
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 30,
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "Joel Newman",
+                                    label: "",
+                                    filledColor: AppColors.backGroundColor,
+                                    textEditingController: profileController
+                                        .fullNameController.value),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: AppWidget().getTextField(
+                                          hintText: "Joel",
+                                          label: "",
+                                          filledColor:
+                                              AppColors.backGroundColor,
+                                          textEditingController:
+                                              profileController
+                                                  .firstNameController.value),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Expanded(
+                                        child: AppWidget().getTextField(
+                                            hintText: "Newman",
+                                            label: "",
+                                            filledColor:
+                                                AppColors.backGroundColor,
+                                            textEditingController:
+                                                profileController
+                                                    .lastNameController.value)),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "joelnewman@gmail.com",
+                                    label: "",
+                                    filledColor: AppColors.backGroundColor,
+                                    textEditingController: profileController
+                                        .emailController.value),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "8888888888",
+                                    label: "",
+                                    filledColor: AppColors.backGroundColor,
+                                    textEditingController: profileController
+                                        .mobileNumberController.value),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                CommonButton(
+                                  text: "Save & Close",
+                                  onTap: () {
+                                    print('hiiii');
+                                  },
+                                )
+                              ],
+                            ),
+                          ));
                         },
                       )
                     ],
@@ -287,8 +356,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: toWidth,
-            height: toHeight / 2.5,
+            width: cx.width,
+            height: cx.height / 2.5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -308,7 +377,76 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 30,
                           width: 30,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          CommonBottonSheet(
+                              childView: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "Address",
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 30,
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Obx(
+                                  () => commonDropDown(
+                                      context, profileController.list),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: AppWidget().getTextField(
+                                          hintText: "Joel",
+                                          label: "",
+                                          filledColor:
+                                              AppColors.backGroundColor,
+                                          textEditingController:
+                                              profileController
+                                                  .cityNameController.value),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Expanded(
+                                        child: AppWidget().getTextField(
+                                            hintText: "Newman",
+                                            label: "",
+                                            filledColor:
+                                                AppColors.backGroundColor,
+                                            textEditingController:
+                                                profileController
+                                                    .stateController.value)),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "joelnewman@gmail.com",
+                                    label: "",
+                                    filledColor: AppColors.backGroundColor,
+                                    textEditingController:
+                                        profileController.zipController.value),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                CommonButton(
+                                  text: "Save & Close",
+                                  onTap: () {
+                                    print('hiiii');
+                                  },
+                                )
+                              ],
+                            ),
+                          ));
+                        },
                       )
                     ],
                   ),
@@ -429,8 +567,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: toWidth,
-            height: toHeight / 3.5,
+            width: cx.width,
+            height: cx.height / 3.5,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -440,6 +578,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Address",
+                        text: "General",
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.blue,
@@ -450,7 +589,45 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 30,
                           width: 30,
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          CommonBottonSheet(
+                              childView: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "General",
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 30,
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Obx(
+                                  () => commonDropDown(
+                                      context, profileController.timeZone),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Obx(
+                                  () => commonDropDown(
+                                      context, profileController.timeLanguage),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                CommonButton(
+                                  text: "Save & Close",
+                                  onTap: () {
+                                    print('hiiii');
+                                  },
+                                )
+                              ],
+                            ),
+                          ));
+                        },
                       )
                     ],
                   ),
@@ -500,8 +677,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: toWidth,
-            height: toHeight / 7,
+            width: cx.width,
+            height: cx.height / 7,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -538,8 +715,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: toWidth,
-            height: toHeight / 3.8,
+            width: cx.width,
+            height: cx.height / 3.8,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -578,7 +755,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   inactiveText: "",
                                   width: 50.0,
                                   height: 30.0,
-                                  activeColor: AppColors.darkGreen,
+                                  activeColor: AppColors.buttonColor,
                                   inactiveColor:
                                       Color.fromRGBO(217, 217, 217, 1),
                                   toggleSize: 20.0,

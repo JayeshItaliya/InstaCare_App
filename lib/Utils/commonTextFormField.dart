@@ -49,6 +49,7 @@ class AppWidget {
     TextStyle? inputTextStyle,
     TextStyle? labelStyle,
     String? label,
+      String? label,
     bool? autofocus,
     String? obscringStyle,
     BuildContext? context,
@@ -133,6 +134,7 @@ class AppWidget {
 
         decoration: InputDecoration(
 
+        decoration: InputDecoration(
           border: border,
           alignLabelWithHint: false,
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -145,6 +147,7 @@ class AppWidget {
             textAlign: labelTextAlign ?? TextAlign.start,
           ),
           fillColor: filledColor ?? AppColors.backGroundColor,
+          fillColor: AppColors.backGroundColor,
           contentPadding: contentPadding ??
               const EdgeInsets.fromLTRB(20.0, 18.0, 0.0, 18.0),
           focusedBorder: activeUnderLineInputBorder ??
@@ -167,6 +170,9 @@ class AppWidget {
               fontSize: 16,
               color:Color.fromRGBO(2, 5, 10, 0.5),
               fontWeight: FontWeight.w400
+            fontSize: 16,
+            color:Color.fromRGBO(2, 5, 10, 0.5),
+            fontWeight: FontWeight.w400
           ),
           prefixIcon: isMobileNumber
               ? Container(

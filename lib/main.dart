@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:instacare/screens/authFlow/splashScreen.dart';
 
+import 'package:instacare/screens/profileFlow/profileScreen.dart';
 
 void main() {
   runApp(const MyApp());

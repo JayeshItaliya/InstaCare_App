@@ -6,6 +6,8 @@ packages:
     description:
       name: args
       url: "https://pub.dartlang.org"
+      sha256: c372bb384f273f0c2a8aaaa226dad84dc27c8519a691b888725dec59518ad53a
+      url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
   async:
@@ -43,6 +45,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+    version: "1.17.1"
   connectivity_plus:
     dependency: "direct main"
     description:
@@ -50,11 +53,17 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.6"
+      sha256: "8599ae9edca5ff96163fca3e36f8e481ea917d1e71cdad912c084b5579913f34"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.1"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
       name: connectivity_plus_platform_interface
       url: "https://pub.dartlang.org"
+      sha256: cf1d1c28f4416f8c654d7dc3cd638ec586076255d407cef3ddbdaf178272a71a
+      url: "https://pub.dev"
     source: hosted
     version: "1.2.4"
   crypto:
@@ -76,6 +85,8 @@ packages:
     description:
       name: dbus
       url: "https://pub.dartlang.org"
+      sha256: "6f07cba3f7b3448d42d015bfd3d53fe12e5b36da2423f23838efc1d5fb31a263"
+      url: "https://pub.dev"
     source: hosted
     version: "0.7.8"
   fake_async:
@@ -147,6 +158,8 @@ packages:
     description:
       name: get_storage
       url: "https://pub.dartlang.org"
+      sha256: "39db1fffe779d0c22b3a744376e86febe4ade43bf65e06eab5af707dc84185a2"
+      url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
   google_fonts:
@@ -205,11 +218,14 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+    version: "1.9.1"
   nm:
     dependency: transitive
     description:
       name: nm
       url: "https://pub.dartlang.org"
+      sha256: "2c9aae4127bdc8993206464fcc063611e0e36e72018696cd9631023a31b24254"
+      url: "https://pub.dev"
     source: hosted
     version: "0.5.0"
   path:
@@ -268,6 +284,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+      sha256: cb3798bef7fc021ac45b308f4b51208a152792445cce0448c9a4ba5879dd8750
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.0"
   platform:
     dependency: transitive
     description:
@@ -371,6 +391,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.0"
+
+      sha256: "5bc72e1e45e941d825fd7468b9b4cc3b9327942649aeb6fc5cdbf135f0a86e84"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.3.0"
 sdks:
   dart: ">=2.18.0 <3.0.0"
   flutter: ">=3.3.0"

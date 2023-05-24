@@ -4,6 +4,13 @@
     {
       "name": "args",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.4.1",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/args-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "async",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/async-2.11.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -34,6 +41,31 @@
     {
       "name": "collection",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.16.0",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/collection-1.17.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "connectivity_plus",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/connectivity_plus-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "connectivity_plus_platform_interface",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-1.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/crypto-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "cupertino_icons",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -64,6 +96,8 @@
     {
       "name": "dbus",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/dbus-0.7.8",
+      "name": "dbus",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/dbus-0.7.8",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -122,6 +156,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/imac/Downloads/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "get",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.5",
       "packageUri": "lib/",
@@ -130,6 +170,7 @@
     {
       "name": "get_storage",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/get_storage-2.1.1",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/get_storage-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -188,6 +229,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nm",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/nm-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.2",
       "packageUri": "lib/",
@@ -233,7 +280,10 @@
       "name": "petitparser",
       "rootUri": "file:///Users/SMIINFOTECH/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-5.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.18",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/petitparser-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "platform",
@@ -326,6 +376,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/xml-6.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "instacare",
       "rootUri": "../",
       "packageUri": "lib/",
@@ -333,6 +389,7 @@
     }
   ],
   "generated": "2023-05-24T11:52:25.294554Z",
+  "generated": "2023-05-24T10:43:13.128439Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }

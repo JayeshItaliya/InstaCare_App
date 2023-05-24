@@ -13,4 +13,5 @@ class AppAssets {
 
   /// profileFlow Assets
   static const profileEdit = '$profile/profileEdit.png';
+  static const dropDown = '$profile/dropDown.png';
 }

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MontserratTextCommon extends StatefulWidget {
+class MontserratText extends StatefulWidget {
   String? text;
   double? fontSize;
   Color? color;
@@ -12,7 +12,7 @@ class MontserratTextCommon extends StatefulWidget {
   double? height;
   List<Shadow>? shadow;
   int? maxLines;
-  MontserratTextCommon(
+  MontserratText(
       {Key? key,
         required this.text,
         this.fontSize,
@@ -27,10 +27,10 @@ class MontserratTextCommon extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<MontserratTextCommon> createState() => _InterTextState();
+  State<MontserratText> createState() => _InterTextState();
 }
 
-class _InterTextState extends State<MontserratTextCommon> {
+class _InterTextState extends State<MontserratText> {
   @override
   Widget build(BuildContext context) {
     return Text(

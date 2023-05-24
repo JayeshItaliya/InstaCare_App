@@ -42,6 +42,8 @@ dependencies:
   connectivity_plus:
   get_storage: ^2.1.1
   gap:
+  connectivity_plus: ^4.0.1
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
