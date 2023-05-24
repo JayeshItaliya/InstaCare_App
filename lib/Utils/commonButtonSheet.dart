@@ -10,24 +10,26 @@ CommonBottonSheet({required Widget childView}){
          topRight: Radius.circular(30),
        ),
      ),
-     backgroundColor: Colors.white,
+     backgroundColor: AppColors.backGroundColor,
      isDismissible: true,
      isScrollControlled: true,
      enableDrag: true,
-     StatefulBuilder(builder: (BuildContext
-     context,
-         StateSetter
-         setState /*You can rename this!*/) {
+     StatefulBuilder(builder: (BuildContext context, StateSetter setState ) {
        return ListView(
          shrinkWrap: true,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 100,
-                  height: 3,
-                  color: AppColors.yallow,
+                InkWell(
+                  child: Container(
+                    width: 100,
+                    height: 5,
+                    color: AppColors.yallow,
+                  ),
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
                 )
               ],
             ),

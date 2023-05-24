@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instacare/screens/profileScreen/profileScreen.dart';
-import 'package:instacare/screens/splashScreen/splashScreen.dart';
+import 'package:instacare/screens/profileFlow/profileScreen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -4,4 +4,5 @@ class AppAssets {
 
   /// LoginFlow Assets
   static const profileEdit = '$profile/profileEdit.png';
+  static const dropDown = '$profile/dropDown.png';
 }

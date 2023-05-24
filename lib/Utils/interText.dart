@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InterTextCommon extends StatefulWidget {
+class InterText extends StatefulWidget {
   String? text;
   double? fontSize;
   Color? color;
@@ -11,7 +11,7 @@ class InterTextCommon extends StatefulWidget {
   double? height;
   List<Shadow>? shadow;
   int? maxLines;
-  InterTextCommon(
+  InterText(
       {Key? key,
         required this.text,
         this.fontSize,
@@ -26,10 +26,10 @@ class InterTextCommon extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<InterTextCommon> createState() => _InterTextState();
+  State<InterText> createState() => _InterTextState();
 }
 
-class _InterTextState extends State<InterTextCommon> {
+class _InterTextState extends State<InterText> {
   @override
   Widget build(BuildContext context) {
     return Text(
