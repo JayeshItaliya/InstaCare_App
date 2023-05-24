@@ -21,6 +21,16 @@ CommonBottonSheet({required Widget childView}){
        return ListView(
          shrinkWrap: true,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 3,
+                  color: AppColors.yallow,
+                )
+              ],
+            ),
             childView
           ],
        );

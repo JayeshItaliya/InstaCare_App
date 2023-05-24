@@ -164,7 +164,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           CommonBottonSheet(
                              childView: Column(
                                children: [
-                                 
+                                  Text("hdhfdhfhd"),
+                                  Text("hdhfdhfhd"),
+                                  Text("hdhfdhfhd"),
+                                  Text("hdhfdhfhd"),
+                                  Text("hdhfdhfhd"),
+                                  Text("hdhfdhfhd"),
                                ],
                              )
                           );
