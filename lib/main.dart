@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:instacare/screens/profileScreen/profileScreen.dart';
 import 'package:instacare/screens/splashScreen/splashScreen.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'InstaCare App',
       theme: ThemeData(
