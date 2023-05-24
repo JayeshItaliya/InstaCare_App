@@ -22,11 +22,19 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
+<<<<<<< Updated upstream
 		xpf8DlUFTs/s4E18cAs4tOoPL8o=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
 		8XFjiPQfu0C1TRi/CpYVTN6n038=
+=======
+		rAjYBCveOlzoi92gBxqjqNIDNAE=
+		</data>
+		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
+		<data>
+		tPkTfUYjQH8m0Qkk62hCmdpa8tc=
+>>>>>>> Stashed changes
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -80,14 +88,22 @@
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< Updated upstream
 			FHCJisMI2uk+Xt837b9xQL9SavSmIprXlmLX99pSBJ4=
+=======
+			E+xlZzV56/uT9a6RIK32aPTFGrZSQEJDfT1U/alsgMU=
+>>>>>>> Stashed changes
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< Updated upstream
 			fNQF7wvI3qHG1JFDfiu4dIrHx1VttNWQj5xN3JZYiv8=
+=======
+			QTSxGIQgcXvlEz62qtXzuczrdwIVu0AJkVMVlFn9C8g=
+>>>>>>> Stashed changes
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
