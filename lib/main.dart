@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instacare/screens/profileScreen/profileScreen.dart';
-import 'package:instacare/screens/splashScreen/splashScreen.dart';
+import 'package:instacare/screens/authFlow/splashScreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:ProfileScreen(),
+      // home:ProfileScreen(),
+      home:const SplashScreen(),
     );
   }
 }

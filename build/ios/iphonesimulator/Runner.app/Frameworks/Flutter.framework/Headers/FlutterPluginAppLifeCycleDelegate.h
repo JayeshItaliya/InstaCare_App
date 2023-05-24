@@ -13,20 +13,23 @@ NS_ASSUME_NONNULL_BEGIN
  * Propagates `UIAppDelegate` callbacks to registered plugins.
  */
 FLUTTER_DARWIN_EXPORT
-@interface FlutterPluginAppLifeCycleDelegate : NSObject <UNUserNotificationCenterDelegate>
+@interface FlutterPluginAppLifeCycleDelegate : NSObject
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+                                               <UNUserNotificationCenterDelegate>
+#endif
 
 /**
- * Registers `delegate` to receive life cycle callbacks via this FlutterPluginAppLifeCycleDelegate
+ * Registers `delegate` to receive life cycle callbacks via this FlutterPluginAppLifecycleDelegate
  * as long as it is alive.
  *
- * `delegate` will only be referenced weakly.
+ * `delegate` will only referenced weakly.
  */
 - (void)addDelegate:(NSObject<FlutterApplicationLifeCycleDelegate>*)delegate;
 
 /**
  * Calls all plugins registered for `UIApplicationDelegate` callbacks.
  *
- * @return `NO` if any plugin vetos application launch.
+ * @return `NO` if any plugin vetoes application launch.
  */
 - (BOOL)application:(UIApplication*)application
     didFinishLaunchingWithOptions:(NSDictionary*)launchOptions;
@@ -34,7 +37,7 @@ FLUTTER_DARWIN_EXPORT
 /**
  * Calls all plugins registered for `UIApplicationDelegate` callbacks.
  *
- * @return `NO` if any plugin vetos application launch.
+ * @return `NO` if any plugin vetoes application launch.
  */
 - (BOOL)application:(UIApplication*)application
     willFinishLaunchingWithOptions:(NSDictionary*)launchOptions;

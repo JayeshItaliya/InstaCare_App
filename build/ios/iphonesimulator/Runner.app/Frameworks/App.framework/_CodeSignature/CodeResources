@@ -14,7 +14,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		CqLc5yOjY/6pbgS2ZDWGTjLlwF8=
+		pMzUZoN7m7oglppdUM2E6Mk+r6M=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,27 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		RrOhOV2SaYwkxQnSjOvWX7GnxJU=
+		e4fTB7IqvATVgzjuabg1tje9tIY=
+		</data>
+		<key>flutter_assets/assets/authFlow/lock.png</key>
+		<data>
+		AZaNTLhPKqMmI7QUU+okN0tRCfk=
+		</data>
+		<key>flutter_assets/assets/authFlow/login.png</key>
+		<data>
+		Uy4CCHu+yrXsvXh4vE0Or4pm6AU=
+		</data>
+		<key>flutter_assets/assets/authFlow/splash.png</key>
+		<data>
+		KJTwb6iY27FU2YbqSs91rSROxRE=
+		</data>
+		<key>flutter_assets/assets/authFlow/user.png</key>
+		<data>
+		qcl+d+7P+eVDmgZ6MfUHqBzBrkg=
+		</data>
+		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
+		<data>
+		8Laaq0eP2ZhqDgd7fXcV4YIf0Gs=
 		</data>
 		<key>flutter_assets/assets/profileImage/profileEdit.png</key>
 		<data>
@@ -30,15 +50,15 @@
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
-		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
+		mcmNrC70e/OT89y/p5EgxkVsLrs=
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		aEO3OIwFOwt1yz7KtrTJXjmkfqQ=
+		jtyHs+6eMVt00swwjGovNjvYFno=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		oCCSZcsZVWpQOLBWhQpZG6z//8M=
+		vb8Lg8fzDjJHRs3jHXud696SPTU=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -46,11 +66,11 @@
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		KL+7f3IYR/Y9WDlxxUeDmgGoluc=
+		/2rWw+cLhL00QkE6DdHlPpmzTgk=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		y/MAO/0PYqR74233KqeWcWQ79qA=
+		1nKxBmP6cKJocBfr1M7WcVTuBUE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -66,7 +86,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5IcrH5bd5njBvXSl6Q51rp84N2ANaWt8qScEdJHiQxI=
+			TvBdt2io1n7jTnf1nCtUgKZlfxP/fzukgoauY/SgDA0=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -80,7 +100,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OQW6iD5jJojGXKw6XXejAqlW/7AzXB6UWicJrUNTwoU=
+			tU0Ndz4gxb6vE3N7zu2+b5SGMLqO3wlXQXKduILG6cw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/authFlow/lock.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ljiAAxWEDwh/08A2nKR+d1cz5YgW8T7Y69IlVAPEKa4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/authFlow/login.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yXaUsim3JUfD36KXZ7M4BDAgfarCGevcSxRQ3p7L3SQ=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/authFlow/splash.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dQZn+jg+eOm4enNe3uU4UnJaP54B3CAQrwY9RhaMMBY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/authFlow/user.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G7FJ66JaR9SBCOpXA2MjXysOfwEiAKNQSsT3ISjX7QQ=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ArgSoElWdrUwMprKPi4EVzoCwcrCzDjUbRahI4bpke8=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/profileImage/profileEdit.png</key>
@@ -94,21 +149,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2YZbZxoJ1oPROoYwidiCXg9ho3aWzl19RIvIAjqmJFM=
+			BugRRJlkJdABYrpi+ZDcvZjsh+EPQ4Uf2ST65b83vlc=
 			</data>
 		</dict>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RR1+t26QDpUN7kkrcKaDCvK4BxmiDfcb148jd7kRUtI=
+			zfsu+Dum4LmJ5AFKFoims+wu7bSB6XZQxvatgr9qU+8=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ReZ8MalP1cydsyzai1NYbN0Mq+zJFJRV2/k7csfK6qk=
+			H85dkPR37rSC6qxcZeTW8afCAfsbNv/ycXfaNtEF/E0=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -122,14 +177,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v6u8YtYjslOLIIb1rrgcOW817fxVEiBaprKuV+f6FpY=
+			RMogl44pfx1ykhoI72aG/XROG/Y8TOHtuN6Mp79Mg2U=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			epGn1u5do2IM20nJOwqiZAEBiY3G8Q5MmgtQmm9K1Hc=
+			ifsROT9mhiBCDg9Fz43bRMeD+UDipbpQkmeVuQ1jRD4=
 			</data>
 		</dict>
 	</dict>
