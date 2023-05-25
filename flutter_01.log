@@ -1,0 +1,94 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter assemble --no-version-check --output=/Users/imac/Desktop/GitHub/InstaCare_App/build/ios/Debug-iphonesimulator/ -dTargetPlatform=ios -dTargetFile=/Users/imac/Desktop/GitHub/InstaCare_App/lib/main.dart -dBuildMode=debug -dIosArchs=x86_64 -dSdkRoot=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator16.4.sdk -dSplitDebugInfo= -dTreeShakeIcons=false -dTrackWidgetCreation=true -dDartObfuscation=false -dAction=build --ExtraGenSnapshotOptions= --DartDefines=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC85OTJjZGI2Y2Q0MDlhMzBlYmY5MWEzMzg0MTU3NWExYzdmZDFiYjFkLw== --ExtraFrontEndOptions= -dCodesignIdentity=- debug_ios_bundle_flutter_assets
+
+## exception
+
+FormatException: FormatException: Unexpected character (at character 1)
+<<<<<<< Updated upstream
+^
+
+
+```
+#0      _ChunkedJsonParser.fail (dart:convert-patch/convert_patch.dart:1383:5)
+#1      _ChunkedJsonParser.parseNumber (dart:convert-patch/convert_patch.dart:1250:9)
+#2      _ChunkedJsonParser.parse (dart:convert-patch/convert_patch.dart:915:22)
+#3      _parseJson (dart:convert-patch/convert_patch.dart:35:10)
+#4      JsonDecoder.convert (dart:convert/json.dart:610:36)
+#5      JsonCodec.decode (dart:convert/json.dart:216:41)
+#6      FlutterBuildSystem.trackSharedBuildDirectory (package:flutter_tools/src/build_system/build_system.dart:745:44)
+#7      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:638:5)
+<asynchronous suspension>
+#8      AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:315:32)
+<asynchronous suspension>
+#9      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1294:27)
+<asynchronous suspension>
+#10     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#11     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#12     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:296:9)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:244:5)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:91:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, 3.11.0-1.0.pre.1, on macOS 13.2 22D49 darwin-x64, locale en-IN)
+    • Flutter version 3.11.0-1.0.pre.1 on channel beta at /Users/imac/Downloads/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 74e4b092e5 (2 weeks ago), 2023-05-10 07:08:22 -0700
+    • Engine revision 992cdb6cd4
+    • Dart version 3.1.0 (build 3.1.0-63.1.beta)
+    • DevTools version 2.23.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.2)
+    • Android SDK at /Users/imac/Library/Android/sdk
+    • Platform android-33, build-tools 33.0.2
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b802.4-9586694)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 14.3)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 14E222b
+    • CocoaPods version 1.12.0
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2022.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b802.4-9586694)
+
+[✓] VS Code (version 1.78.2)
+    • VS Code at /Volumes/TOSHIBA/Hiren iMac/Hiren imac/Mac Softwere/Visual Studio Code.app/Contents
+    • Flutter extension version 3.62.0
+
+[✓] Connected device (3 available)
+    • iPhone 14 Pro Max (mobile) • BC8890B2-41B1-4B20-BF11-B872D5ADF0BD • ios            • com.apple.CoreSimulator.SimRuntime.iOS-16-4 (simulator)
+    • macOS (desktop)            • macos                                • darwin-x64     • macOS 13.2 22D49 darwin-x64
+    • Chrome (web)               • chrome                               • web-javascript • Google Chrome 113.0.5672.126
+
+[✓] Network resources
+    • All expected network resources are available.
+
+• No issues found!
+```

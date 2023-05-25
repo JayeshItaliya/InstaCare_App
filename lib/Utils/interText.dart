@@ -11,6 +11,7 @@ class InterText extends StatefulWidget {
   double? height;
   List<Shadow>? shadow;
   int? maxLines;
+  TextOverflow? textOverflow;
   InterText(
       {Key? key,
         required this.text,
@@ -21,7 +22,8 @@ class InterText extends StatefulWidget {
         this.textAlign,
         this.height,
         this.shadow,
-        this.maxLines
+        this.maxLines,
+        this.textOverflow,
       })
       : super(key: key);
 
@@ -36,7 +38,7 @@ class _InterTextState extends State<InterText> {
       widget.text ?? "",
       textAlign: widget.textAlign,
       maxLines:widget.maxLines ?? 1,
-      overflow: TextOverflow.ellipsis,
+      overflow: widget.textOverflow,
       style: GoogleFonts.inter(
         height: widget.height,
         shadows: widget.shadow ?? [],

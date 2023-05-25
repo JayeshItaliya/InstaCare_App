@@ -10,15 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		glpEWE3s9NVldKUfy38hXx1hzd4=
+		XB548YmXhBHXZmeB2dRDqsxRkF4=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-<<<<<<< Updated upstream
-		pMzUZoN7m7oglppdUM2E6Mk+r6M=
-=======
-		CqLc5yOjY/6pbgS2ZDWGTjLlwF8=
->>>>>>> Stashed changes
+		jc++E/sQqhUylqf0BmF4SrJY16k=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -26,8 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-<<<<<<< Updated upstream
-		e4fTB7IqvATVgzjuabg1tje9tIY=
+		MmBVJ5McaXKynz388CPVgb/ATBI=
 		</data>
 		<key>flutter_assets/assets/authFlow/lock.png</key>
 		<data>
@@ -45,32 +40,33 @@
 		<data>
 		qcl+d+7P+eVDmgZ6MfUHqBzBrkg=
 		</data>
-		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
+		<key>flutter_assets/assets/profileFlow/dropDown.png</key>
 		<data>
-		8Laaq0eP2ZhqDgd7fXcV4YIf0Gs=
-=======
-		KXcDjcyfdhnOw8TSSGfZyysKuXE=
->>>>>>> Stashed changes
+		3nJEaZro5ZCPNP9K04UircU1luw=
 		</data>
-		<key>flutter_assets/assets/profileImage/profileEdit.png</key>
+		<key>flutter_assets/assets/profileFlow/openCamera.png</key>
+		<data>
+		6J1frTG7EmeAloz7Q8wVWZ5VvxM=
+		</data>
+		<key>flutter_assets/assets/profileFlow/openGallery.png</key>
+		<data>
+		W5RDKHy0M15wg+1xd+4NbNIa1IE=
+		</data>
+		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
 		<data>
 		8Laaq0eP2ZhqDgd7fXcV4YIf0Gs=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
-		mcmNrC70e/OT89y/p5EgxkVsLrs=
+		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		jtyHs+6eMVt00swwjGovNjvYFno=
+		aEO3OIwFOwt1yz7KtrTJXjmkfqQ=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-<<<<<<< Updated upstream
-		vb8Lg8fzDjJHRs3jHXud696SPTU=
-=======
-		3bd/H6gkh570UNZhhzl1tgB3x5c=
->>>>>>> Stashed changes
+		SDOApqZtsQp7qzAmCLsAQWFqQy4=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -78,11 +74,11 @@
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		/2rWw+cLhL00QkE6DdHlPpmzTgk=
+		KL+7f3IYR/Y9WDlxxUeDmgGoluc=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		1nKxBmP6cKJocBfr1M7WcVTuBUE=
+		y/MAO/0PYqR74233KqeWcWQ79qA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -91,18 +87,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q4jiAHsq+tMJY0OHQR7OIkiqVQ32ptQaOSB1TI/eAJI=
+			PsYLfM52Z/qbxoTFiLTOcied7WI3+thn1dLqQuqmIeE=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			TvBdt2io1n7jTnf1nCtUgKZlfxP/fzukgoauY/SgDA0=
-=======
-			5IcrH5bd5njBvXSl6Q51rp84N2ANaWt8qScEdJHiQxI=
->>>>>>> Stashed changes
+			jvbhRJGlT2DgWHqdDfQIW1AZouc9ctciAi27BMveVMY=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -116,8 +108,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			tU0Ndz4gxb6vE3N7zu2+b5SGMLqO3wlXQXKduILG6cw=
+			rdagagHVUr5vYZ0sSJ42WTVcjYaQ8YFAlsWRKC7vSeE=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/authFlow/lock.png</key>
@@ -148,17 +139,28 @@
 			G7FJ66JaR9SBCOpXA2MjXysOfwEiAKNQSsT3ISjX7QQ=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
+		<key>flutter_assets/assets/profileFlow/dropDown.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ArgSoElWdrUwMprKPi4EVzoCwcrCzDjUbRahI4bpke8=
-=======
-			Ok+wiX5ZDI2Reg4DlP1hMHETLuncs7xiz6Vpx8VIE34=
->>>>>>> Stashed changes
+			HqaAL44CrBMbQzdaSiTVuQ++MN7iTewFA8feJ+hC57E=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/profileImage/profileEdit.png</key>
+		<key>flutter_assets/assets/profileFlow/openCamera.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SPLA1gn/R7A+kqkwfh9P4ZV59VV7L6oJsWUF5UE6Nec=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/profileFlow/openGallery.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LPLy8cz6h2i1dN3eMFxY6XYlkSgxsnnDMh/kj1n/8is=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/profileFlow/profileEdit.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -169,25 +171,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BugRRJlkJdABYrpi+ZDcvZjsh+EPQ4Uf2ST65b83vlc=
+			2YZbZxoJ1oPROoYwidiCXg9ho3aWzl19RIvIAjqmJFM=
 			</data>
 		</dict>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zfsu+Dum4LmJ5AFKFoims+wu7bSB6XZQxvatgr9qU+8=
+			RR1+t26QDpUN7kkrcKaDCvK4BxmiDfcb148jd7kRUtI=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			H85dkPR37rSC6qxcZeTW8afCAfsbNv/ycXfaNtEF/E0=
-=======
-			W0er4ZErBhsc5zYQg70Mh6SxD6E7l+25AjT+9rHwrkc=
->>>>>>> Stashed changes
+			ssFFcPrhPMjzo3jwpZVB7yJTUdShutY7/Egpdg8IYF8=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -201,14 +199,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RMogl44pfx1ykhoI72aG/XROG/Y8TOHtuN6Mp79Mg2U=
+			v6u8YtYjslOLIIb1rrgcOW817fxVEiBaprKuV+f6FpY=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ifsROT9mhiBCDg9Fz43bRMeD+UDipbpQkmeVuQ1jRD4=
+			epGn1u5do2IM20nJOwqiZAEBiY3G8Q5MmgtQmm9K1Hc=
 			</data>
 		</dict>
 	</dict>

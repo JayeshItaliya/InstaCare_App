@@ -41,15 +41,22 @@ var zipController=TextEditingController(text: "60077").obs;
 
 
 /// general TextController
+  var timeZoneController="Select".obs;
   List<String> timeZone=[
-    "Central Time (US/Can) (GMT-6...",
-    "India (US/Can) (GMT-6...",
-    "Canada (US/Can) (GMT-6...",
+    "Central Time",
+    "India Time",
+    "Canada Time",
   ];
 
+
+  var languageController="Select".obs;
   List<String> timeLanguage=[
     "English",
     "Hindi",
     "Canada",
   ];
+
+/// resetPassword Controller
+var currentPassword=TextEditingController().obs;
+var newPassword=TextEditingController().obs;
 }

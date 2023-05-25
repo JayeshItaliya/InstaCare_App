@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/authFlow/forgotPasswordScreen.dart';
 
 import '../../Utils/appAssets.dart';
 import '../../Utils/commonButton.dart';
@@ -38,12 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
 
           bottomSheet: Container(
-            height: cx.height*0.35,
+            // height: cx.height*0.35,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topLeft:Radius.circular(30) ,
-                topRight: Radius.circular(30) ,
+                topLeft:Radius.circular(30.r) ,
+                topRight: Radius.circular(30.r) ,
               )
             ),
             child: ListView(
@@ -91,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Gap(30),
                 InkWell(
                   onTap: (){
-
+                    toPushNavigator(context:context,PageName: ForgotPasswordScreen());
                   },
                   child: InterText(
                       text: 'Forgot Password?',

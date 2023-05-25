@@ -23,7 +23,6 @@ class _CommonButtonState extends State<CommonButton> {
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width,
         height: 60,
-        height: MediaQuery.of(context).size.height/10,
         decoration: BoxDecoration(
           color: AppColors.buttonColor,
           borderRadius: BorderRadius.circular(30)

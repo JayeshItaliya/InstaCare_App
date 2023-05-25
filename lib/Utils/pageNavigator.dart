@@ -7,5 +7,12 @@ toPushNavigator({context, PageName}){
 
 /// Get offAll
 offNavigator({context, PageName}){
-  Navigator.removeRoute(context, MaterialPageRoute(builder: (context) => PageName));
+  Navigator.pushAndRemoveUntil(
+    context, MaterialPageRoute(builder: (context) => PageName), (Route<dynamic> route) => false,
+  );
+}
+
+/// onBack
+onBack(context){
+  Navigator.of(context).pop();
 }

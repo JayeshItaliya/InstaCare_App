@@ -26,6 +26,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
       centerTitle: true,
       elevation: 8,
       leading:widget.icon??Icon(Icons.arrow_back,color: Colors.black,),
+      leadingWidth: 30,
       title: MontserratText(
         text: widget.title,
         fontWeight: FontWeight.bold,

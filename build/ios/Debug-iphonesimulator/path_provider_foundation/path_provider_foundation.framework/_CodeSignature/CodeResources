@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/path_provider_foundation-Swift.h</key>
 		<data>
-		xH4S4aZ6zV592IdU3Pv75CJlCvY=
+		C/Btt0psk5ffr7Bc3ETwqoUlPzY=
 		</data>
 		<key>Headers/path_provider_foundation-umbrella.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jDy6yRYhwMcdzPMZKhWoL5Pssvc=
+		DD8BmgNTdwthE1JxPwobCwYUQeQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -22,19 +22,11 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-<<<<<<< Updated upstream
-		xpf8DlUFTs/s4E18cAs4tOoPL8o=
+		7ezeA4lpKNId4Xk4CZCLvEUm3P8=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		8XFjiPQfu0C1TRi/CpYVTN6n038=
-=======
-		rAjYBCveOlzoi92gBxqjqNIDNAE=
-		</data>
-		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
-		<data>
-		tPkTfUYjQH8m0Qkk62hCmdpa8tc=
->>>>>>> Stashed changes
+		221OnVyuHOdJ+YRuHECU0u78BXk=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -42,11 +34,11 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		nGKeKzYnZW+f4fe3a2xhawwMA+g=
+		hUYd/h5zHkN6Ayyk7yUitVCPqsw=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mwxuQfiNc0xS40GiLtc8e053pfQ=
+		KZPaBmDCDu+pUypV7B2KK3SiV8U=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -54,11 +46,11 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		jnhO4WcDbOVQjTb7EbWnmcYTZ3s=
+		bwrpt4mm/NRFoAn+Lup0F8Mcr1I=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RE88jJL+c8pvjavx2I4AvHEO2DY=
+		vFhToF1V+pflF5tiw4l9jt2g9+I=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -67,7 +59,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lUzTscdK3tT0zNDweYqT9zdDt1byn97HxBTamyzden4=
+			V9jV4KtiauDQIjHDfe5RvLAyGji6dicdDwWwF4LT6Bg=
 			</data>
 		</dict>
 		<key>Headers/path_provider_foundation-umbrella.h</key>
@@ -88,22 +80,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			FHCJisMI2uk+Xt837b9xQL9SavSmIprXlmLX99pSBJ4=
-=======
-			E+xlZzV56/uT9a6RIK32aPTFGrZSQEJDfT1U/alsgMU=
->>>>>>> Stashed changes
+			8Zx3ayfnflqPvU5+6hT5KwReMgqNp90YTrbJJze3qug=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-<<<<<<< Updated upstream
-			fNQF7wvI3qHG1JFDfiu4dIrHx1VttNWQj5xN3JZYiv8=
-=======
-			QTSxGIQgcXvlEz62qtXzuczrdwIVu0AJkVMVlFn9C8g=
->>>>>>> Stashed changes
+			dYJ5wN5QhMQTk3psadrmptTgjQ7yt5OPbkqN9JOWVgc=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -117,14 +101,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gURHbWdazSIvM3MJJpl45o2ubDNWmZ0/r5RbjJWEX/Q=
+			b9OTF0VDha906qIZk4/zEkiryDgqTz1DeAvnFzsWFbU=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			APxoPD92aKIBRn+mMK+WvzmjcrhYZ/SXPb3ScmiTY0Y=
+			FY1fKP91zsdGQZ7H8R8LzII2oNJ8KTvibyd5RfwqON8=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -138,14 +122,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uvhYx6hfTdvPgxD41ipPDzQ5jk58aFXHABjKbT+QBWY=
+			Bj30ySwvQUywG7WyCdkIrKNKBmWelwzOr5DbINOhWb0=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IycxrGU/t/OzP8ckAd6ijcaJTCilw9r5QLZL/1R8N48=
+			b69ZN2P3X2PYe8yEolZ7Lbr4E+PuaAJjuSqeLt+8WIQ=
 			</data>
 		</dict>
 	</dict>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/appAssets.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 
 import 'loginScreen.dart';
 
@@ -14,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     navigateToScreen();
   }
@@ -38,11 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   navigateToScreen() async {
     await Future.delayed(Duration(seconds: 2), (){
-      // Get.offAll(DemoPush());
-      Get.offAll(
-          LoginScreen(),
-          transition: Transition.fadeIn
-      );
+      offNavigator(context: context,PageName: LoginScreen());
     });
   }
 }

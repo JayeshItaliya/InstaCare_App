@@ -14,4 +14,8 @@ class AppAssets {
   /// profileFlow Assets
   static const profileEdit = '$profile/profileEdit.png';
   static const dropDown = '$profile/dropDown.png';
+  static const camera = '$profile/openCamera.png';
+  static const gallery = '$profile/openGallery.png';
+  static const bell = '$profile/notifa.png';
+  static const menu = '$profile/menu.png';
 }
