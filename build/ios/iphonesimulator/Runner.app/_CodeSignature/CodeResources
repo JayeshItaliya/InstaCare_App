@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		qFFitJ8l06lqfHv5CJGKCyAQwI0=
+		ku+bJyK5sGAr05HKKKk/nDTbiug=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		XsNjFKQn8l8s+z19bIOUhp19mfI=
+		7nDRF4zCpi2QjAwRh0GCcCN/3D4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		SE5xNUfpr687ePAsJfNOfCr50U8=
+		PU5SZZxMf5H1UaCkLmuH78ITUPg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		XB548YmXhBHXZmeB2dRDqsxRkF4=
+		8h3PPSMXdRUZqYYcG3OjuZp8ewg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		jc++E/sQqhUylqf0BmF4SrJY16k=
+		GSf6Rttwt4cqyldMN3U8jA7YsxQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		MmBVJ5McaXKynz388CPVgb/ATBI=
+		ZEJPqywtidJW6LuGzn+XGZyxQDE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/authFlow/lock.png</key>
 		<data>
@@ -88,9 +88,93 @@
 		<data>
 		qcl+d+7P+eVDmgZ6MfUHqBzBrkg=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/add.png</key>
+		<data>
+		uuZkQndvCSL4U2vDD5EGWS38tbY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/callOffer.png</key>
+		<data>
+		1aPhZOZO3/gQ+NbbkiiodNuROPg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/completed.png</key>
+		<data>
+		R58u7RXBZcZJZlFBiKUfl9MhpGg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/confirmShift.png</key>
+		<data>
+		zmQly60zvvbmNdaYlB10LaGXM0A=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/createNew.png</key>
+		<data>
+		aWD9bqbOSKW+JPEnG92ZFGXstis=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/late.png</key>
+		<data>
+		ijmdDzAK4YnxaYSOx3322TwXNro=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/openShifts.png</key>
+		<data>
+		Ygz2BC8AAv4NMxqtHO87PkCSPlo=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Facilities.svg</key>
+		<data>
+		xjbK0jyQmd21mHKELIJOnKcJSQQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Schedules.svg</key>
+		<data>
+		g6DYRG9N40l7H1jLznh8z1HHBzA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Timecard.svg</key>
+		<data>
+		rUtDprXq0mqa/wcZxCX0cnCmbVs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Who%E2%80%99s%20ON.svg</key>
+		<data>
+		JtvJ7qoIa6kN4Y8oivCojC230zk=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/app.png</key>
+		<data>
+		qzasAmakjGgBj4RGKHMupBJvIvE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/appLogo.svg</key>
+		<data>
+		fSQEbgwW0GzJX4JsFLtu9rpkoJ8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/dashboard.svg</key>
+		<data>
+		SemcqmiCsKWBIjRGm2bGfktOZWs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/logout.svg</key>
+		<data>
+		TqPzC8lSePc4kZNYtlGcAqzcor0=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/massages.svg</key>
+		<data>
+		sBvBms7AIamJTy7QzMmlyJk4AEs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/people.svg</key>
+		<data>
+		ZYTUweXfDdLzVlID8e2oJoCZ0Io=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/support.svg</key>
+		<data>
+		V1Xds9QI74MgTEdACgCKlKlPp4Q=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/totalBilling.svg</key>
+		<data>
+		hnGCmbOX/9rxewRIPUGMtjgnYpg=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/dropDown.png</key>
 		<data>
 		3nJEaZro5ZCPNP9K04UircU1luw=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/menu.png</key>
+		<data>
+		OxKDjsYmkolvNmPB1y05bOs9Q9g=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/notifa.png</key>
+		<data>
+		iWnpRf15NGbFMScOaIL+rSc36B8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/openCamera.png</key>
 		<data>
@@ -114,7 +198,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		SDOApqZtsQp7qzAmCLsAQWFqQy4=
+		oJ70v77AKP6/KLjikeEpWcmtSCQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -296,7 +380,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jJI4yTMO05Nv9u+Y2n+BWCSDEb0ymask3brlYJ+rQks=
+			XKix9wsuSnKygq5+Qkbw2poLtjSAQBYzW/mDNbNIahQ=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -345,7 +429,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			65ozFZFJTSdtKZQW7X9Z0G/VZT5Pvf4tZdLCAwgW7s0=
+			8LQn/kNgawY169Lw/DjYut8D4KJnczUMi/Tw5ez7jyk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -359,21 +443,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VQf63/KrPg82Ax3+glt8iQF1KE1XxWQIIGKB4m3dHjw=
+			q0FWZbfNe3xEsH76O895BuoJdQBDjJIY3rWosOXDXe8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PsYLfM52Z/qbxoTFiLTOcied7WI3+thn1dLqQuqmIeE=
+			l50nn8cm5SgxBnvxEGHTxQXGVgrPNbH7RNxyHsxlvK8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jvbhRJGlT2DgWHqdDfQIW1AZouc9ctciAi27BMveVMY=
+			3egL36rnFL6VXUME9uDLFqb0V+HXcM9oSCIlpAkJWQo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -387,7 +471,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rdagagHVUr5vYZ0sSJ42WTVcjYaQ8YFAlsWRKC7vSeE=
+			KtJJoDf/S/k0nA0FBdVC61nrXZbiOWKSqhQzKHGLKGc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/authFlow/lock.png</key>
@@ -418,11 +502,158 @@
 			G7FJ66JaR9SBCOpXA2MjXysOfwEiAKNQSsT3ISjX7QQ=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/add.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FFJqGYQVaR8jZc14R2SpQD9a6cQyME/+7KWezW2t4ZI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/callOffer.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WOaCJ4hxNbVz1QLp2PCLqml3JIwbXyNs1vom/YvDeQA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/completed.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1vWMLaodWpxrJNFQ4NzKOIniYS58kvBMM6d6rzoft2Q=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/confirmShift.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			thWtpc2rs210T9Fy8gzlP7SgUKZnEiDYZXQ1H6h99BU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/createNew.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ErbTngztIL5lxrUJzsRPvrUG/aS8OTQiOUXp7dgnfkY=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/late.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GUHNhAdPu4EqbxXGXO7lXAhwb+fR6JiZbYdTIau53d4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/openShifts.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jybMz2YH2mYGrYDd9D3386y4el1oLy3tXwicC9RtAwY=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Facilities.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			C98PKKNllXq7RorzVLZlNZ4Zhh04WZz6dKDADSSBjxA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Schedules.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T9w+kVrEM8c6Z1W+Y+p5CxV3qoB2oRRYoz+VTkHpusk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Timecard.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wt8pbY/6B3Y30zSwBBluqV74CbPc0bpv/M42eNDLshU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/Who%E2%80%99s%20ON.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7h1v7XEJ06AaE4AjDv9EPL6K/UjSGSq9+lE2F+Vx1Bg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/app.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gXkAUdtBDWQ2qtj0fRMFs+XPdtmzNqgFUySzC5WlbNw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/appLogo.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wlrQLrzamALvh4x5IbmlEw+H8MTxeOwvOodQz0sQDJg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/dashboard.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2ZvqyKu7DN7uIYRjq8QNuTfFwvB4RUYmD5S4GMA7IzQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/logout.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O4sju+Cpc+jjeGNDQco9HGbgwHhSEd1i1D5ofPSFtWQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/massages.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yi+WXZWVSY4wVQPdXTjFQ43TR4VANHM68efkCtLYOLc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/people.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LhI9zwu1Plm9tBof60Pc5dDdbpfnfXafirJTJZT5Dck=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/support.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+uxFpF7dFKvymEn7IbMmFb9qLXF57uIuWfF2JR2PTSQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/drowerFlow/totalBilling.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PD0NcVm5gOl0iqDxHpjRqnCfVPwi+bsAwXZD3xxlDDU=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/dropDown.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			HqaAL44CrBMbQzdaSiTVuQ++MN7iTewFA8feJ+hC57E=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/menu.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			quUK5WwZRIr3iGCYa559xWMSPsnsktqBdWh4V3Hb+oM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/notifa.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yyCaqG6YblcPguSVmj7B6ar5ljKY9tvwVik2hEfPV+Q=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/openCamera.png</key>
@@ -464,7 +695,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ssFFcPrhPMjzo3jwpZVB7yJTUdShutY7/Egpdg8IYF8=
+			YjMgr0cfOAXV7vJaSSLqDTj53FTzO9meeUIqdFh/CzM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

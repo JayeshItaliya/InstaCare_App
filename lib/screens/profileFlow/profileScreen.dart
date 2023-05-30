@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -13,8 +12,10 @@ import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonDropDown.dart';
+import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/profileFlow/profileController.dart';
 
@@ -29,16 +30,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final profileController = Get.put(ProfileController());
   final cx = Get.put(CommonController());
   File? setProfileImage;
+  final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: globalKey,
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
-        title: "Profile",
-        icon: Image.asset(
-          AppAssets.menu,
-          width: 20,
-          height: 20,
+        title:MontserratText(
+          text: "Profile",
+          fontWeight: FontWeight.bold,
+        ),
+        icon: InkWell(
+          child: Builder(
+            builder: (context) {
+              return Image.asset(
+                AppAssets.menu,
+                width: 20,
+                height: 20,
+              );
+            }
+          ),
+          onTap: (){
+            globalKey.currentState!.openDrawer();
+          },
         ),
         trailingIcon: [
           Padding(
@@ -102,12 +117,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 top: 9, right: 6, left: 6),
                             child: setProfileImage == null
                                 ? Container(
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         image: DecorationImage(
                                             image: NetworkImage(
                                                 "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                            fit: BoxFit.cover)),
+                                            fit: BoxFit.cover
+                                        )
+                                    ),
                                   )
                                 : Container(
                                     decoration: BoxDecoration(
@@ -191,7 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                               20),
                                                                           color: Colors
                                                                               .green,
-                                                                          image: DecorationImage(
+                                                                          image: const DecorationImage(
                                                                               image: NetworkImage("https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
                                                                               fit: BoxFit.cover)),
                                                                     )
@@ -597,12 +614,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                    Obx(
-                                      () => commonDropDown(
+                                   commonDropDown(
                                           context,
                                           profileController.list,
                                           profileController.countryController),
-                                    ),
+
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -813,21 +829,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Obx(
-                                      () => commonDropDown(
+                                      commonDropDown(
                                           context,
                                           profileController.timeZone,
                                           profileController.timeZoneController),
-                                    ),
+
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Obx(
-                                      () => commonDropDown(
+                                      commonDropDown(
                                           context,
                                           profileController.timeLanguage,
                                           profileController.languageController),
-                                    ),
+
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -1029,6 +1043,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           )
         ],
+      ),
+      drawer: Drawer(
+        width:  300,
+        child: CommonDrawer(),
       ),
     );
   }

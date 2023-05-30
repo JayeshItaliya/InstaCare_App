@@ -2,6 +2,8 @@ class AppAssets {
   /// asset directory path
   static const profile = 'assets/profileFlow';
   static const authFlow = 'assets/authFlow';
+  static const drowerFlow = 'assets/drowerFlow';
+  static const dashBoardFlow = 'assets/dashBoardFlow';
 
   /// authFlow Assets
   static const splashPage = '$authFlow/splash.png';
@@ -18,4 +20,28 @@ class AppAssets {
   static const gallery = '$profile/openGallery.png';
   static const bell = '$profile/notifa.png';
   static const menu = '$profile/menu.png';
+
+  /// DroweerFlow Assets
+  static const dashBoard = '$drowerFlow/dashboard.svg';
+  static const schedules = '$drowerFlow/Schedules.svg';
+  static const whosON = '$drowerFlow/Who’s ON.svg';
+  static const people = '$drowerFlow/people.svg';
+  static const massages = '$drowerFlow/massages.svg';
+  static const facilities = '$drowerFlow/Facilities.svg';
+  static const timecard = '$drowerFlow/Timecard.svg';
+  static const totalBilling = '$drowerFlow/totalBilling.svg';
+  static const support = '$drowerFlow/support.svg';
+  static const logout = '$drowerFlow/logout.svg';
+  static const appLogo = '$drowerFlow/appLogo.svg';
+  static const app = '$drowerFlow/app.png';
+
+
+  ///dashBoardFlow
+  static const  dallyShift= '$dashBoardFlow/openShifts.png';
+  static const  confirmShift= '$dashBoardFlow/confirmShift.png';
+  static const  completed= '$dashBoardFlow/completed.png';
+  static const  callOffer= '$dashBoardFlow/callOffer.png';
+  static const  createNew= '$dashBoardFlow/createNew.png';
+  static const  late= '$dashBoardFlow/late.png';
+  static const  add= '$dashBoardFlow/add.png';
 }

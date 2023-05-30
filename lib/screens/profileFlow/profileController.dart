@@ -28,7 +28,7 @@ var mobileNumberController=TextEditingController(text: "8888888888").obs;
 
 /// Address TextController
 var countryController="Select".obs;
-List<String> list=[
+List<String> list= [
   "United States",
   "UK States",
   "Canada",

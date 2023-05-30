@@ -4,7 +4,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 
 class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final String? title;
+  final Widget? title;
   final Widget? icon;
 
   final List<Widget>? trailingIcon;
@@ -19,18 +19,19 @@ class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CommonAppBarState extends State<CommonAppBar> {
+  final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.white,
       centerTitle: true,
       elevation: 8,
-      leading:widget.icon??Icon(Icons.arrow_back,color: Colors.black,),
-      leadingWidth: 30,
-      title: MontserratText(
-        text: widget.title,
-        fontWeight: FontWeight.bold,
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 5),
+        child: widget.icon??Icon(Icons.arrow_back,color: Colors.black,),
       ),
+      leadingWidth: 30,
+      title: widget.title,
       actions: widget.trailingIcon,
     );
   }
