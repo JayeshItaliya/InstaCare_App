@@ -8,7 +8,12 @@ class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Widget? icon;
 
   final List<Widget>? trailingIcon;
-    CommonAppBar({Key? key,this.title,this.trailingIcon,this.icon,}) : super(key: key);
+  CommonAppBar({
+    Key? key,
+    this.title,
+    this.trailingIcon,
+    this.icon,
+  }) : super(key: key);
 
   @override
   State<CommonAppBar> createState() => _CommonAppBarState();
@@ -28,7 +33,15 @@ class _CommonAppBarState extends State<CommonAppBar> {
       elevation: 8,
       leading: Padding(
         padding: const EdgeInsets.only(left: 5),
-        child: widget.icon??Icon(Icons.arrow_back,color: Colors.black,),
+        child: widget.icon ??
+            InkWell(
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                }),
       ),
       leadingWidth: 30,
       title: widget.title,

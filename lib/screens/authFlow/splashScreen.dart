@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 
-import 'loginScreen.dart';
+import 'view/loginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

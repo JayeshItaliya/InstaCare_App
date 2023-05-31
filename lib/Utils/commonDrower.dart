@@ -7,8 +7,8 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonDrawerModel.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
-import 'package:instacare/screens/dashBoardFlow/dashBoardScreen.dart';
-import 'package:instacare/screens/dashBoardFlow/schedulesScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/view/dashBoardScreen.dart';
+
 
 class CommonDrawer extends StatefulWidget {
   const CommonDrawer({Key? key}) : super(key: key);
@@ -227,7 +227,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         print("dashBoard");
                       }
                       else if(index==1){
-                        toPushNavigator(context: context,PageName:const SchedulesScreen());
+
                       }
                     },
                   );

@@ -44,4 +44,10 @@ class AppAssets {
   static const  createNew= '$dashBoardFlow/createNew.png';
   static const  late= '$dashBoardFlow/late.png';
   static const  add= '$dashBoardFlow/add.png';
+  static const  filtetr= '$dashBoardFlow/filter.png';
+  static const  flag= '$dashBoardFlow/flag.png';
+  static const  delete= '$dashBoardFlow/delete.png';
+  static const  sun= '$dashBoardFlow/sun.png';
+  static const  night= '$dashBoardFlow/night.png';
+  static const  userImage= '$dashBoardFlow/userImage.png';
 }
