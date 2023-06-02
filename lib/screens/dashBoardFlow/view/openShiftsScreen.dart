@@ -7,11 +7,12 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonController.dart';
-import 'package:instacare/Utils/commonDropDown.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/controller/openShiftsScreenController.dart';
+
+import 'schedulefilterScreen.dart';
 
 class OpenShiftsScreen extends StatefulWidget {
   String? title, headerText;
@@ -125,7 +126,9 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                       ),
                       InkWell(
                         child: Image.asset(AppAssets.filtetr),
-                        onTap: () {},
+                        onTap: () {
+                          toPushNavigator(context: context,PageName: ScheduleFilterScreen());
+                        },
                       )
                     ],
                   )),

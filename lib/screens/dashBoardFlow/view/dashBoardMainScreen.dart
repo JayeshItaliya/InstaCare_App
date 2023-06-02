@@ -14,6 +14,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/openShiftsScreen.dart';
 
 
@@ -344,26 +345,31 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   ),
                   Gap(5.w),
                   Expanded(
-                    child:  Container(
-                      padding: EdgeInsets.only(top: 18,left: 15,bottom: 12),
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(AppAssets.createNew)
-                          )
+                    child:  InkWell(
+                      child: Container(
+                        padding: EdgeInsets.only(top: 18,left: 15,bottom: 12),
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(AppAssets.createNew)
+                            )
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(AppAssets.add,width: 50.w,height: 50.h),
+                            Gap(10.h),
+                            InterText(
+                              text: "Create New Shift",
+                              color: AppColors.white,
+                              fontSize: 19.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(AppAssets.add,width: 50.w,height: 50.h),
-                          Gap(10.h),
-                          InterText(
-                            text: "Create New Shift",
-                            color: AppColors.white,
-                            fontSize: 19.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ],
-                      ),
+                      onTap: (){
+                        toPushNavigator(context: context,PageName: AddShiftScreen());
+                      },
                     ),
                   )
                 ],
