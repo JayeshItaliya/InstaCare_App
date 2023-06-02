@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		KwEW0Sl01stTgy9Xsf9WSBMcx7A=
+		8Qt+w9cCA/n8v0kKwg1aBq7m/7w=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		KAkqBDELPygzXoSqGDvIdxL6ct0=
+		HryCFcRwM7Va1977PPntHI+TZ7o=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -76,9 +76,25 @@
 		<data>
 		ijmdDzAK4YnxaYSOx3322TwXNro=
 		</data>
+		<key>flutter_assets/assets/dashBoardFlow/night.png</key>
+		<data>
+		J+ZdwN/XUB1rIgIe7zNB2ENafPw=
+		</data>
 		<key>flutter_assets/assets/dashBoardFlow/openShifts.png</key>
 		<data>
 		Ygz2BC8AAv4NMxqtHO87PkCSPlo=
+		</data>
+		<key>flutter_assets/assets/dashBoardFlow/sun.png</key>
+		<data>
+		qIc7flJ8pYVaW1MCOjItq0sdhs8=
+		</data>
+		<key>flutter_assets/assets/dashBoardFlow/userImage.png</key>
+		<data>
+		s156/nf+YdGY8kJg+qHNySoIJ1s=
+		</data>
+		<key>flutter_assets/assets/dashBoardFlow/watch.png</key>
+		<data>
+		+HkQuUD9sl1BwOjcysi18ybblTg=
 		</data>
 		<key>flutter_assets/assets/drowerFlow/Facilities.svg</key>
 		<data>
@@ -162,7 +178,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		dkQa3UU2n1uo8rht05XT+8obsVU=
+		W5s86I4dR9sVwTJ3h1dIEN9Ycvw=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -183,14 +199,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y4lOg29TnigBhPVnVjo8lGWfVSi1PGbWfiIOJJa3BSE=
+			4Rvc3Jm+tDNfhrf5ND3WIW1z8iSukOxJH/jygQcxgcw=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4Hi1Mlc7azhhXrYC3EKE8pNkTxtnvlxBtz6EgSOfu/8=
+			kKwHfkfySOAaikiAOl/dgmuy3toDWg+6kllH1pfuQB4=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -298,11 +314,39 @@
 			GUHNhAdPu4EqbxXGXO7lXAhwb+fR6JiZbYdTIau53d4=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/night.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			n6AFD87U10BxvxrLs5VH1+IoaWvhkaO1RyQPIelW/4Q=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/dashBoardFlow/openShifts.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			jybMz2YH2mYGrYDd9D3386y4el1oLy3tXwicC9RtAwY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/sun.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			I7x9yXAMVZyYaUaxiDs/Hl+h2K6ldje8gkn6kgJ/N58=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/userImage.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			akGWyjNePO1VMHzzsqeCcar2WrIS6ixLQDhJtHQjf18=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/watch.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oPQGlKXMZ0TjDiMhqB9KnUbkT2Tws9TacE22gFzDWvY=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/drowerFlow/Facilities.svg</key>
@@ -449,7 +493,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r3TXcYsdOpBG5hgFikUDL4Y+ivntg2ibkG9LSzqka5I=
+			0v819+d0Bt9pD9xFwoUsRCkj0zDfqGWNtdZ79XIjSK8=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
