@@ -51,4 +51,6 @@ class AppAssets {
   static const  night= '$dashBoardFlow/night.png';
   static const  userImage= '$dashBoardFlow/userImage.png';
   static const  watch= '$dashBoardFlow/watch.png';
+  static const  uploadeExcel= '$dashBoardFlow/uplodeExcel.png';
+  static const  calendarCheck= '$dashBoardFlow/calendarcheck.png';
 }

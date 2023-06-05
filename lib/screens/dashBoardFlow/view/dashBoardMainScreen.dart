@@ -16,6 +16,7 @@ import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/openShiftsScreen.dart';
+import 'package:instacare/screens/newsFlow/view/newsScreen.dart';
 
 
 
@@ -447,11 +448,16 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 fontWeight: FontWeight.w700,
                 color: AppColors.black,
               ),
-              InterText(
-                text: "View All",
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.blue,
+              InkWell(
+                child: InterText(
+                  text: "View All",
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.blue,
+                ),
+                onTap: (){
+                  toPushNavigator(context: context,PageName:NewsScreen());
+                },
               ),
             ],
           ),

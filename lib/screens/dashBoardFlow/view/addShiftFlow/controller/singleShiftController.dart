@@ -2,12 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SingleShiftController extends GetxController{
+  final rateController=TextEditingController(text: "\$45").obs;
   final GlobalKey<PopupMenuButtonState> popUpFacilityKey = GlobalKey();
  final GlobalKey<PopupMenuButtonState> popUpRoleKey = GlobalKey();
  final GlobalKey<PopupMenuButtonState> popUpNumberKey = GlobalKey();
+
+  final GlobalKey<PopupMenuButtonState> startTime = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> startTimeZone = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> endTime = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> endTimeZone = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> incentiveBy = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> floorNumberKey = GlobalKey();
+  final GlobalKey<PopupMenuButtonState> supervisorKey = GlobalKey();
+
+
 var selectFacilityValue="Select Facility".obs;
 var selectRoleValue="Select Role".obs;
-var selectNumberValue="Select Number".obs;
+var selectNumberValue="Select Number1".obs;
+var incentiveByValue="Select".obs;
 
 var setTime="01:00".obs;
 var setTimeZone="".obs;
@@ -16,6 +28,8 @@ var selectFacility=[
   "Demo",
   "Test",
 ].obs;
+
+
 var selectRole=[
   "Demo",
   "Test",
@@ -47,5 +61,10 @@ var selectNumber=[
   var timeZone=[
     "AM",
     "PM",
+  ].obs;
+
+  var incentiveByList=[
+    "Instacare",
+    "Instacare1",
   ].obs;
 }

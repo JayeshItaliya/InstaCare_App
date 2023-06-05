@@ -9,5 +9,6 @@ class AppColors {
   static const Color black = Color.fromRGBO(0, 0, 0, 1);
   static const Color hintTextGrey = Color.fromRGBO(2, 5, 10, 0.5);
   static const Color greenDark = Color.fromRGBO(126, 209, 230, 0.2);
+  static const Color deepGreen = Color.fromRGBO(126, 230, 155, 1);
 
 }
