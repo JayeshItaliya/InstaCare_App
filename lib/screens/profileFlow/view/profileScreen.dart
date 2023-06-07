@@ -11,7 +11,7 @@ import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/commonController.dart';
-import 'package:instacare/Utils/commonDropDown.dart';
+import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
@@ -40,21 +40,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
       key: globalKey,
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
-        title:MontserratText(
+        title: MontserratText(
           text: "Profile",
           fontWeight: FontWeight.bold,
         ),
         icon: InkWell(
-          child: Builder(
-            builder: (context) {
-              return Image.asset(
-                AppAssets.menu,
-                width: 20,
-                height: 20,
-              );
-            }
-          ),
-          onTap: (){
+          child: Builder(builder: (context) {
+            return Image.asset(
+              AppAssets.menu,
+              width: 20,
+              height: 20,
+            );
+          }),
+          onTap: () {
             globalKey.currentState!.openDrawer();
           },
         ),
@@ -125,9 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         image: DecorationImage(
                                             image: NetworkImage(
                                                 "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                            fit: BoxFit.cover
-                                        )
-                                    ),
+                                            fit: BoxFit.cover)),
                                   )
                                 : Container(
                                     decoration: BoxDecoration(
@@ -617,13 +613,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     SizedBox(
                                       height: 15,
                                     ),
-                                   commonDropDown(
-                                          context,
-                                          profileController.list,
-                                          profileController.countryController,
-                                     popUpKey1,
-                                   ),
-
+                                    CommonDropDown(
+                                        context: context,
+                                        mycontrollerValue:
+                                            profileController.countryController,
+                                        list: profileController.list,
+                                        color: AppColors.backGroundColor),
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -834,23 +829,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     SizedBox(
                                       height: 10,
                                     ),
-                                      commonDropDown(
-                                          context,
-                                          profileController.timeZone,
-                                          profileController.timeZoneController,
-                                        popUpKey3,
-                                      ),
-
+                                    CommonDropDown(
+                                        context: context,
+                                        list: profileController.timeZone,
+                                        mycontrollerValue: profileController
+                                            .timeZoneController,
+                                        color: AppColors.backGroundColor),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                      commonDropDown(
-                                          context,
-                                          profileController.timeLanguage,
-                                          profileController.languageController,
-                                        popUpKey2
-                                      ),
-
+                                    CommonDropDown(
+                                        context: context,
+                                        list: profileController.timeLanguage,
+                                        mycontrollerValue: profileController
+                                            .languageController,
+                                        color: AppColors.backGroundColor),
                                     SizedBox(
                                       height: 10,
                                     ),
@@ -1054,7 +1047,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       drawer: Drawer(
-        width:  300,
+        width: 300,
         child: CommonDrawer(),
       ),
     );

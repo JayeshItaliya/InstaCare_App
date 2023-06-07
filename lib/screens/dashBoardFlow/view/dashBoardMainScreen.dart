@@ -14,9 +14,13 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
-import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
+import 'package:instacare/screens/dashBoardFlow/addShiftFlow/addShiftScreenMain.dart';
+import 'package:instacare/screens/dashBoardFlow/availableEmployeesFlow/view/availableEmployeesScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/createReminderFlow/view/createReminderScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/newsFlow/view/newsScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/reminderFlow/view/reminderScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/openShiftsScreen.dart';
-import 'package:instacare/screens/newsFlow/view/newsScreen.dart';
+
 
 
 
@@ -82,7 +86,15 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                    fontWeight: FontWeight.w700,
                  ),
                  onTap: (){
-                   rangeDatePicker();
+                  DateConverter.RangeDatePicker(
+                    context: context,
+                    dateRang: false,
+                    monthType: true,
+                  ).then((value){
+                    setState(() {
+                      selectedDate=value;
+                    });
+                  });
                  },
                ),
              ],
@@ -474,18 +486,28 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ),
               Row(
                 children: [
-                  InterText(
-                     text: "Create Remider",
-                     fontWeight: FontWeight.w400,
-                    fontSize: 17.sp,
-                    color: AppColors.blue,
+                  GestureDetector(
+                    child: InterText(
+                       text: "Create Remider",
+                       fontWeight: FontWeight.w400,
+                      fontSize: 17.sp,
+                      color: AppColors.blue,
+                    ),
+                    onTap: (){
+                      toPushNavigator(context: context , PageName: const CreateReminderScreen());
+                    },
                   ),
                   Gap(30.w),
-                  InterText(
-                    text: "View All",
-                    fontWeight: FontWeight.w400,
-                    fontSize: 17.sp,
-                    color: AppColors.blue,
+                  GestureDetector(
+                    child:InterText(
+                      text: "View All",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17.sp,
+                      color: AppColors.blue,
+                    ),
+                    onTap: (){
+                      toPushNavigator(context: context,PageName: ReminderScreen());
+                    },
                   ),
                 ],
               )
@@ -546,11 +568,16 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 fontSize: 18.sp,
                 color: AppColors.black,
               ),
-              InterText(
-                text: "View All",
-                fontWeight: FontWeight.w400,
-                fontSize: 16.sp,
-                color: AppColors.blue,
+              GestureDetector(
+                child: InterText(
+                  text: "View All",
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.sp,
+                  color: AppColors.blue,
+                ),
+                onTap: (){
+                  toPushNavigator(context: context,PageName: AvailableEmployeesScreen());
+                },
               ),
             ],
           ),
@@ -675,47 +702,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
     );
   }
-  List<DateTime?> rangeDatePickerValueWithDefaultValue = [];
-  String? selectedDate;
 
-  rangeDatePicker() async {
-    var results = (await showCalendarDatePicker2Dialog(
-      context: context,
-      dialogBackgroundColor: AppColors.backGroundColor,
-      barrierDismissible: false,
-      config: CalendarDatePicker2WithActionButtonsConfig(
-        calendarType: CalendarDatePicker2Type.multi,
-        weekdayLabels:weekList,
-         centerAlignModePicker: true,
-        dayBorderRadius:BorderRadius.circular(20),
-        selectedDayTextStyle: TextStyle(color: AppColors.white),
-        selectedDayHighlightColor: AppColors.blue,
-        currentDate: DateTime.now(),
-        dayTextStyle: GoogleFonts.inter(
-          fontWeight: FontWeight.w400,
-          fontSize: 16,
-          color: const Color.fromRGBO(2, 5, 10, 1)
-        ),
-        lastDate: DateTime.now(),
-      ),
-      dialogSize: const Size(325, 400),
-      //initialValue: rangeDatePickerValueWithDefaultValue,
-      borderRadius: BorderRadius.circular(15),
-    ));
-    setState(() {
-      selectedDate=DateConverter.formatDate(DateTime.parse(results![0].toString()));
-      print("currentDate==>>${DateConverter.formatDate(DateTime.parse(results[0].toString()))}");
-    });
-  }
-  List<String> weekList=[
-    "SUN",
-    "MON",
-    "TUE",
-    "WED",
-    "THU",
-    "FRI",
-    "SAT",
-  ];
+  String? selectedDate;
 
   List<Remander> item=[
     Remander(

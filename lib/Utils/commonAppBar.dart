@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
@@ -45,7 +46,12 @@ class _CommonAppBarState extends State<CommonAppBar> {
       ),
       leadingWidth: 30,
       title: widget.title,
-      actions: widget.trailingIcon,
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: Image.asset(AppAssets.bell,height: 20,width: 30,),
+        ),
+      ],
     );
   }
 }

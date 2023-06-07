@@ -44,7 +44,6 @@ class CommonController extends GetxController{
     });
   }
 
-
   @override
   void dispose() {
     // TODO: implement dispose

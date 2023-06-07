@@ -5,7 +5,10 @@ import 'package:instacare/Utils/interText.dart';
 class CommonButton extends StatefulWidget {
   String text;
   Function onTap;
-    CommonButton({Key? key,required this.text,required this.onTap}) : super(key: key);
+  double? height;
+  double? width;
+  Color? color;
+    CommonButton({Key? key,required this.text,required this.onTap,this.height,this.width,this.color}) : super(key: key);
 
   @override
   State<CommonButton> createState() => _CommonButtonState();
@@ -14,16 +17,16 @@ class CommonButton extends StatefulWidget {
 class _CommonButtonState extends State<CommonButton> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: (){
         widget.onTap();
       },
       child: Container(
         alignment: Alignment.center,
-        width: MediaQuery.of(context).size.width,
-        height: 60,
+        width:widget.width??MediaQuery.of(context).size.width,
+        height:widget.height??60,
         decoration: BoxDecoration(
-          color: AppColors.buttonColor,
+          color:widget.color??AppColors.buttonColor,
           borderRadius: BorderRadius.circular(30)
         ),
         child: InterText(

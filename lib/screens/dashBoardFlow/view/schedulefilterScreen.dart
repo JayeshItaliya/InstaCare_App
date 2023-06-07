@@ -5,7 +5,7 @@ import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonController.dart';
-import 'package:instacare/Utils/commonDropDown.dart';
+import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 
@@ -54,14 +54,26 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
       body: ListView(
         padding: padding,
         children: [
-          commonDropDown(context, scheduleFilterController.facilities,
-              scheduleFilterController.facilitiesValue, popUpKey1),
+          CommonDropDown(
+            context: context,
+              list: scheduleFilterController.facilities,
+              mycontrollerValue: scheduleFilterController.facilitiesValue,
+              color: AppColors.backGroundColor
+          ),
           Gap(15),
-          commonDropDown(context, scheduleFilterController.employeeName,
-              scheduleFilterController.employeeNameValue, popUpKey2),
+          CommonDropDown(
+            context: context,
+              list: scheduleFilterController.employeeName,
+              mycontrollerValue: scheduleFilterController.employeeNameValue,
+              color: AppColors.backGroundColor
+          ),
           Gap(15),
-          commonDropDown(context, scheduleFilterController.role,
-              scheduleFilterController.roleValue, popUpKey3),
+          CommonDropDown(
+            context: context,
+              list: scheduleFilterController.role,
+              mycontrollerValue: scheduleFilterController.roleValue,
+              color: AppColors.backGroundColor
+          ),
           Gap(20),
           InterText(
             text: "Shift Time",

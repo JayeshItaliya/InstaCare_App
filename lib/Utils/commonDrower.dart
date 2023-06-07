@@ -8,7 +8,7 @@ import 'package:instacare/Utils/commonDrawerModel.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
-
+import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
 
 class CommonDrawer extends StatefulWidget {
   const CommonDrawer({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(left: 20.w, top: 40.h, right: 10.w),
+        padding: EdgeInsets.only(left: 20.w, top: 25.h, right: 10.w),
         decoration: const BoxDecoration(
           color: AppColors.blue,
           // borderRadius: BorderRadius.only(
@@ -37,24 +37,42 @@ class _CommonDrawerState extends State<CommonDrawer> {
         ),
         child: SingleChildScrollView(
           child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, 
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                          GestureDetector(
+                              child: Icon(Icons.clear,color: AppColors.white,),
+                            onTap: (){
+                                Navigator.of(context).pop();
+                            },
+                          )
+                      ],
+                    ),
             Row(
               children: [
-                Container(
-                  alignment: Alignment.bottomRight,
-                  width: 100.w,
-                  height: 100.h,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: const DecorationImage(
-                          image: NetworkImage(
-                              "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                          fit: BoxFit.fitHeight),
-                      border: Border.all(width: 5, color: AppColors.yallow)),
-                  child: Image.asset(
-                    AppAssets.profileEdit,
-                    height: 30.h,
-                    width: 30.w,
+                GestureDetector(
+                  onTap: (){
+                    toPushNavigator(context: context,PageName: const ProfileScreen());
+                  },
+                  child: Container(
+                    alignment: Alignment.bottomRight,
+                    width: 100.w,
+                    height: 100.h,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
+                            fit: BoxFit.fitHeight),
+                        border: Border.all(width: 5, color: AppColors.yallow)),
+                    child: Image.asset(
+                      AppAssets.profileEdit,
+                      height: 30.h,
+                      width: 30.w,
+                    ),
                   ),
                 ),
                 Gap(25.w),
@@ -223,12 +241,11 @@ class _CommonDrawerState extends State<CommonDrawer> {
                     ),
                     onTap: () {
                       if (index == 0) {
-                        toPushNavigator(context: context,PageName:const DashBoardScreen());
+                        toPushNavigator(
+                            context: context,
+                            PageName: const DashBoardScreen());
                         print("dashBoard");
-                      }
-                      else if(index==1){
-
-                      }
+                      } else if (index == 1) {}
                     },
                   );
                 })

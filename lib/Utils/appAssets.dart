@@ -53,4 +53,6 @@ class AppAssets {
   static const  watch= '$dashBoardFlow/watch.png';
   static const  uploadeExcel= '$dashBoardFlow/uplodeExcel.png';
   static const  calendarCheck= '$dashBoardFlow/calendarcheck.png';
+  static const  clock= '$dashBoardFlow/clock.png';
+  static const  mail= '$dashBoardFlow/mail.png';
 }
