@@ -34,6 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final GlobalKey<PopupMenuButtonState> popUpKey1 = GlobalKey();
   final GlobalKey<PopupMenuButtonState> popUpKey2 = GlobalKey();
   final GlobalKey<PopupMenuButtonState> popUpKey3 = GlobalKey();
+  File? imageFile;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -238,13 +239,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                         .gallery),
                                                                 onTap:
                                                                     () async {
-                                                                  getFromGallery()
+                                                                      getFromGallery()
                                                                       .then(
                                                                           (value) {
                                                                     setState(
                                                                         () {
-                                                                      setProfileImage =
-                                                                          value;
+                                                                      setProfileImage = value;
+                                                                      print(setProfileImage);
                                                                     });
                                                                   });
                                                                 },
@@ -258,7 +259,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                         .camera),
                                                                 onTap:
                                                                     () async {
-                                                                  getFromCamera()
+                                                                      getFromCamera()
                                                                       .then(
                                                                           (value) {
                                                                     setState(
@@ -1052,8 +1053,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
-
-  File? imageFile;
   Future<File?> getFromGallery() async {
     PickedFile? pickedFile = await ImagePicker().getImage(
       source: ImageSource.gallery,
@@ -1064,7 +1063,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       setState(() {
         print("test ");
         imageFile = File(pickedFile.path);
-        //Navigator.of(context).pop();
       });
     }
     return imageFile;
@@ -1080,7 +1078,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (pickedFile != null) {
       setState(() {
         imageFile = File(pickedFile.path);
-        //Navigator.of(context).pop();
       });
     }
     return imageFile;

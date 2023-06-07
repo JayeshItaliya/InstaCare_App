@@ -26,7 +26,8 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             ],
           ),
           items:list
-              .map((item) => DropdownMenuItem<String>(
+              .map((item) =>
+              DropdownMenuItem<String>(
             value: item,
             child: Text(
               item,
@@ -49,7 +50,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             padding: const EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color:color??AppColors.white,
+              color:color??AppColors.backGroundColor,
             ),
             elevation: 0,
           ),
@@ -64,7 +65,6 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
               color: AppColors.white,
             ),
             elevation: 0,
-
             scrollbarTheme: ScrollbarThemeData(
               radius: const Radius.circular(40),
               thickness: MaterialStateProperty.all<double>(6),
@@ -75,6 +75,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             height: 40,
             padding: EdgeInsets.only(left: 14, right: 14),
           ),
+
         ),
       )
   );

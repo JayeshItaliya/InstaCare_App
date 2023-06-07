@@ -16,7 +16,7 @@ class AppWidget {
 
   Widget getTextField({
     String? fieldTitleText,
-    required String hintText,
+     String? hintText,
     bool isPassword = false,
     TextEditingController? textEditingController,
     OutlineInputBorder? outlineInputBorder,
@@ -143,7 +143,7 @@ class AppWidget {
             fontSize: labelFontSize ?? 15,
             textAlign: labelTextAlign ?? TextAlign.start,
           ),
-          fillColor: AppColors.backGroundColor,
+          fillColor:filledColor?? AppColors.backGroundColor,
           contentPadding: contentPadding ??
               const EdgeInsets.fromLTRB(20.0, 18.0, 0.0, 18.0),
           focusedBorder: activeUnderLineInputBorder ??

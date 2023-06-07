@@ -18,6 +18,7 @@ import 'package:instacare/screens/dashBoardFlow/addShiftFlow/addShiftScreenMain.
 import 'package:instacare/screens/dashBoardFlow/availableEmployeesFlow/view/availableEmployeesScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/createReminderFlow/view/createReminderScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/newsFlow/view/newsScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/peopleFlow/peopleScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/reminderFlow/view/reminderScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/openShiftsScreen.dart';
 
@@ -587,110 +588,115 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             physics: NeverScrollableScrollPhysics(),
             itemCount: 5,
             itemBuilder: (context,index){
-              return Container(
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                width: cx.width,
-                height: cx.height/8,
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: AppColors.buttonColor,
-                          width: 3,
+              return GestureDetector(
+                child: Container(
+                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.all(10),
+                  width: cx.width,
+                  height: cx.height/8,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: AppColors.buttonColor,
+                            width: 3,
+                          ),
+                            image: const DecorationImage(
+                                image: NetworkImage(
+                                    "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
+                                fit: BoxFit.cover
+                            )
                         ),
-                          image: const DecorationImage(
-                              image: NetworkImage(
-                                  "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                              fit: BoxFit.cover
-                          )
+                        height: 50,
+                        width: 50,
                       ),
-                      height: 50,
-                      width: 50,
-                    ),
-                    Gap(5),
-                    Expanded(
-                      flex: 1,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              InterText(
-                                text: "Jasnah Kholin",
-                                color: AppColors.black,
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              Row(
-                                children: [
-                                  InterText(
-                                    text: "Available",
-                                    color: AppColors.hintTextGrey,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                  Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color.fromRGBO(126, 230, 155, 1)
+                      Gap(5),
+                      Expanded(
+                        flex: 1,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InterText(
+                                  text: "Jasnah Kholin",
+                                  color: AppColors.black,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                Row(
+                                  children: [
+                                    InterText(
+                                      text: "Available",
+                                      color: AppColors.hintTextGrey,
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w400,
                                     ),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          Gap(8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              InterText(
-                                text: "CNA",
-                                color: AppColors.black,
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              InterText(
-                                text: "Jasnah@outlook.com",
-                                color: AppColors.hintTextGrey,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    alignment: Alignment.center,
-                                    width: 62,
-                                    height: 26,
-                                    decoration:   BoxDecoration(
-                                        color: AppColors.yallow,
-                                      borderRadius: BorderRadius.circular(10),
+                                    Container(
+                                      width: 10,
+                                      height: 10,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color.fromRGBO(126, 230, 155, 1)
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                            Gap(8),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InterText(
+                                  text: "CNA",
+                                  color: AppColors.black,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                InterText(
+                                  text: "Jasnah@outlook.com",
+                                  color: AppColors.hintTextGrey,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.center,
+                                      width: 62,
+                                      height: 26,
+                                      decoration:   BoxDecoration(
+                                          color: AppColors.yallow,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: InterText(
+                                        text: "0 pts",
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                        color: AppColors.blue,
+                                      ),
                                     ),
-                                    child: InterText(
-                                      text: "0 pts",
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 13,
-                                      color: AppColors.blue,
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
+                onTap: (){
+                  toPushNavigator(context: context,PageName: PeopleScreen());
+                },
               );
             }
           )

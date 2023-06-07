@@ -41,7 +41,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                 child: Container(
                   alignment: Alignment.center,
                   height: 50,
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
                     color: AppColors.white,
                     borderRadius: BorderRadius.circular(20)
@@ -59,7 +59,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                   ),
                 ),
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               GestureDetector(
                 child: Image.asset(
                   AppAssets.filtetr,
@@ -72,7 +72,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           ListView.builder(
@@ -98,7 +98,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                               color: AppColors.buttonColor,
                               width: 3,
                             ),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               image: NetworkImage("https://icon2.cleanpng.com/20180404/ofw/kisspng-physician-nursing-health-care-hospital-the-doctor-5ac54ae57953b0.863345251522879205497.jpg"),
                               fit: BoxFit.fitHeight
                             )
@@ -122,13 +122,13 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                                 Row(
                                   children: [
                                     Image.asset(AppAssets.mail,width: 20,height: 16),
-                                    SizedBox(width: 10,),
+                                    const SizedBox(width: 10,),
                                     Container(
                                       alignment: Alignment.center,
                                       height: 35,
                                       width: 50,
                                       decoration: BoxDecoration(
-                                        color: Color.fromRGBO(255, 175, 50, 0.2),
+                                        color: const Color.fromRGBO(255, 175, 50, 0.2),
                                         borderRadius: BorderRadius.circular(30),
                                         border: Border.all(
                                           width: 2,
@@ -161,15 +161,15 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                                     Container(
                                       width: 10,
                                       height: 10,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: AppColors.deepGreen,
                                          shape: BoxShape.circle
                                       ),
                                     ),
-                                    SizedBox(width: 8,),
+                                    const SizedBox(width: 8,),
                                     InterText(
                                       text: "Available",
-                                      color: Color.fromRGBO(2, 5, 10, 0.5),
+                                      color: const Color.fromRGBO(2, 5, 10, 0.5),
                                       fontWeight: FontWeight.w400,
                                       fontSize: 14,
                                     )

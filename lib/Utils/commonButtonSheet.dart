@@ -13,7 +13,7 @@ CommonBottonSheet({required Widget childView,required BuildContext context}){
         top: Radius.circular(25.0),
       ),
     ),
-    backgroundColor: AppColors.backGroundColor,
+    backgroundColor: AppColors.white,
     builder: (BuildContext context) {
       return StatefulBuilder(
         builder: (BuildContext context, setState) {
