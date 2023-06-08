@@ -6,7 +6,7 @@ class CommonContainer extends StatefulWidget {
   double? height;
   double? width;
   Widget? child;
-  CommonContainer({Key? key,this.width,this.height,this.child}) : super(key: key);
+  CommonContainer({Key? key, this.child}) : super(key: key);
 
   @override
   State<CommonContainer> createState() => _CommonContainerState();

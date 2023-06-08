@@ -83,8 +83,6 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
               return Padding(
                 padding: const EdgeInsets.only(top: 11),
                 child: CommonContainer(
-                  height: cx.height/5.6,
-                  width:cx.width,
                   child:Row(
                     children: [
                       Expanded(

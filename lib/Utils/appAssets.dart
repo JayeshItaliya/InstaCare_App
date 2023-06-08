@@ -55,4 +55,5 @@ class AppAssets {
   static const  calendarCheck= '$dashBoardFlow/calendarcheck.png';
   static const  clock= '$dashBoardFlow/clock.png';
   static const  mail= '$dashBoardFlow/mail.png';
+  static const  addDoc= '$dashBoardFlow/addDocment.png';
 }

@@ -360,10 +360,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: cx.height / 30,
           ),
           CommonContainer(
-            width: cx.width,
-            height: cx.height / 2.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 Expanded(
                   child: Row(
@@ -468,6 +468,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -487,6 +488,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Row(
                     children: [
@@ -532,6 +534,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -551,6 +554,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -577,10 +581,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: cx.width,
-            height: cx.height / 2.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 Expanded(
                   child: Row(
@@ -677,6 +680,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -696,6 +700,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Row(
                     children: [
@@ -741,6 +746,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Row(
                     children: [
@@ -793,10 +799,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: cx.width,
-            height: cx.height / 3.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 Expanded(
                   child: Row(
@@ -862,6 +867,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -881,6 +887,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -908,10 +915,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           InkWell(
             child: CommonContainer(
-              width: cx.width,
-              height: cx.height / 7,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   Expanded(
                     child: Row(
@@ -926,6 +932,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 10,),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -986,10 +993,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 10,
           ),
           CommonContainer(
-            width: cx.width,
-            height: cx.height / 3.8,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 Expanded(
                   flex: 0,

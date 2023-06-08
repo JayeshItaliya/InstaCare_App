@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		OJZNeKF2zq5Gdj/oVHPMFClQ/3o=
+		8dIulX+pQxIUWJeHd7lE+pqLC6k=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		+MxJ5qgi4n+q1PewV2zEbGjC9MU=
+		6RKINIenI2Dqo/g+W8dIJj+J31E=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		JhK1y3/XmFEvD6eLvX8717tAr8I=
+		m5WyuJ2MwqVETox38WFDkCeGSyY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		9c2qieA2k2nE0GE6jMf9LUVml1k=
+		+YPHUgXgdoClHGQsUsP5OkWem8Y=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -91,6 +91,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/add.png</key>
 		<data>
 		uuZkQndvCSL4U2vDD5EGWS38tbY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/addDocment.png</key>
+		<data>
+		GioISx+UYZ3YQrqzn3Xuu4hgv9c=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/calendarcheck.png</key>
 		<data>
@@ -242,7 +246,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Kl0nM7jDDlWIIbxD6wyuyF96YYw=
+		XCRGvX97mYQVfjk4W3EplRbzoAo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -756,7 +760,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MlLzu6BoDwb3ipenF3chD/MsFgHHX8T76X+kRDu/m2c=
+			kUxEsGGKm8YeaA2WFQSZObfWVax3KasY5pRZqIYVEUo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -770,21 +774,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l4LtxPCDMQZNbInJeJFuKWUHT9xNQhiGSoIN5W6mk2k=
+			rQrwL29/IOQmE0hzmmRpIQKo/PQRigylDAE612XqPDo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			D82Bh+KOc8imrPLpC12msgkwHY9khFsq426eYThkc4Y=
+			WqejkU9L3LEjKONoRv7WJslS4IMzpsuh2lx81oHcub0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kRqXsUkZ51sb951mNszUnO0h6k3l278zDcE5InWeX+U=
+			vbtcnjYYBzIZFAM0yu++TcIy/UXEoVU10/hC8n5T/Zg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -834,6 +838,13 @@
 			<key>hash2</key>
 			<data>
 			FFJqGYQVaR8jZc14R2SpQD9a6cQyME/+7KWezW2t4ZI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/addDocment.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UhMxRPLFIThMqHAyDH1vBVTU8hBXCwpDp5zfkdTpF9k=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/dashBoardFlow/calendarcheck.png</key>
@@ -1099,7 +1110,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			blxRJSyL5MEBbrCw2nPXiE7p+IX12682BXPQijkhhWA=
+			MUYaRxmvbpcth+LwaxYfh/sJLm9gPKcynjD+CfEf+Qg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
