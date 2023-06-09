@@ -128,10 +128,22 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_advanced_calendar",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/flutter_advanced_calendar-1.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_cool_card_swiper",
       "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/flutter_cool_card_swiper-0.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.16"
+    },
+    {
+      "name": "flutter_event_calendar",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/flutter_event_calendar-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
@@ -362,6 +374,18 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "scoped_model",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/scoped_model-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shamsi_date",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/shamsi_date-0.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/imac/Downloads/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -458,7 +482,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-06-07T06:21:39.687732Z",
+  "generated": "2023-06-09T05:29:30.802277Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-63.1.beta"
 }

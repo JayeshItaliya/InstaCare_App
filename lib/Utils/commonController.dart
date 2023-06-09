@@ -10,8 +10,7 @@ class CommonController extends GetxController{
   final storage = GetStorage();
   StreamSubscription? subscription;
   var isoffline = false.obs;
-
-
+  double drawerSize=300;
   dynamic read(String key){
     return storage.read('$key');
 

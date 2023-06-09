@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
-import 'package:instacare/Utils/interText.dart';
-import 'package:instacare/Utils/montserratText.dart';
+
 
 class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Widget? title;
@@ -36,7 +35,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
         padding: const EdgeInsets.only(left: 5),
         child: widget.icon ??
             InkWell(
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_back,
                   color: Colors.black,
                 ),

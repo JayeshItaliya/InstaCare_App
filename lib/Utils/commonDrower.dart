@@ -9,6 +9,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
+import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
 
 class CommonDrawer extends StatefulWidget {
   const CommonDrawer({Key? key}) : super(key: key);
@@ -145,17 +146,17 @@ class _CommonDrawerState extends State<CommonDrawer> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: str.toString().contains("Available")
-                                    ? Color.fromRGBO(126, 230, 155, 1)
+                                    ? const Color.fromRGBO(126, 230, 155, 1)
                                     : str.toString().contains("Away")
                                         ? AppColors.yallow
                                         : str.toString().contains("Busy")
-                                            ? Color.fromRGBO(243, 48, 71, 1)
+                                            ? const Color.fromRGBO(243, 48, 71, 1)
                                             : str.toString().contains("DND")
-                                                ? Color.fromRGBO(243, 48, 71, 1)
+                                                ? const Color.fromRGBO(243, 48, 71, 1)
                                                 : str
                                                         .toString()
                                                         .contains("Offline")
-                                                    ? Color.fromRGBO(
+                                                    ? const Color.fromRGBO(
                                                         196, 196, 196, 1)
                                                     : null,
                               ),
@@ -241,11 +242,11 @@ class _CommonDrawerState extends State<CommonDrawer> {
                     ),
                     onTap: () {
                       if (index == 0) {
-                        toPushNavigator(
-                            context: context,
-                            PageName: const DashBoardScreen());
+                        toPushNavigator(context: context, PageName: const DashBoardScreen());
                         print("dashBoard");
-                      } else if (index == 1) {}
+                      } else if (index == 1) {
+                        toPushNavigator(context: context,PageName: const ScheduleScreen());
+                      }
                     },
                   );
                 })

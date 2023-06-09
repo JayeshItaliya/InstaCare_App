@@ -1802,7 +1802,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       InterText(
@@ -1811,7 +1811,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                         fontSize: 18,
                         color: AppColors.black,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       InterText(
@@ -1820,7 +1820,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       InterText(
