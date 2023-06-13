@@ -15,6 +15,9 @@ class DateConverter {
   static String dateMonthYear(DateTime dateTime) {
     return DateFormat('dd/MM/yyyy').format(dateTime);
   }
+  static String monthNameDay(DateTime dateTime) {
+    return DateFormat('MMMM d, yyyy').format(dateTime);
+  }
 
   static DateTime convertStringTimeToDate(String time) {
     return DateFormat('HH:mm').parse(time);
@@ -31,7 +34,7 @@ class DateConverter {
     return selectedTime;
   }
   List<DateTime?> rangeDatePickerValueWithDefaultValue = [];
-  static  Future<String?> RangeDatePicker({required BuildContext context,required bool monthType,required bool dateRang}) async {
+  static  Future<String?> RangeDatePicker({required BuildContext context,required bool monthType,required bool dateRang,bool? dateType}) async {
     String? currentDate;
     String? currentDateMonth;
     String? startDate;
@@ -70,9 +73,8 @@ class DateConverter {
       print("dateValue1");
      return currentDateMonth=DateConverter.formatDate(DateTime.parse(results![0].toString()));
     }
-    else if(monthType==true){
+    else if(dateType==true){
       print("dateValue2");
-
       return currentDate = DateConverter.dateMonthYear(DateTime.parse(results![0].toString()));
     }
     else if(dateRang==true){

@@ -64,6 +64,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
                           context: context,
                           dateRang: false,
                           monthType: false,
+                          dateType: true
                         ).then((value){
                             createReminderController.selectedDate.value=value.toString();
                         });

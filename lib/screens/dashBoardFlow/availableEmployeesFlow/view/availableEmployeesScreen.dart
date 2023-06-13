@@ -6,6 +6,7 @@ import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -20,17 +21,37 @@ class AvailableEmployeesScreen extends StatefulWidget {
 
 class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
   final cx=Get.put(CommonController());
+  final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: globalKey,
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
         title:  MontserratText(
-          text: "Apply Filter",
+          text: "Available Employees",
           color: AppColors.blue,
-          fontSize: 24,
+          fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
+        icon: InkWell(
+          child: Builder(
+              builder: (context) {
+                return Image.asset(
+                  AppAssets.menu,
+                  width: 20,
+                  height: 20,
+                );
+              }
+          ),
+          onTap: (){
+            globalKey.currentState!.openDrawer();
+          },
+        ),
+      ),
+      drawer:   Drawer(
+        width:  300,
+        child: CommonDrawer(),
       ),
       body: ListView(
         padding: padding,
@@ -119,7 +140,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                                 ),
                                 Row(
                                   children: [
-                                    Image.asset(AppAssets.mail,width: 20,height: 16),
+                                    Image.asset(AppAssets.mail,),
                                     const SizedBox(width: 10,),
                                     Container(
                                       alignment: Alignment.center,

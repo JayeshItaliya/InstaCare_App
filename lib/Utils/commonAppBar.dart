@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 
 
 class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -48,7 +50,12 @@ class _CommonAppBarState extends State<CommonAppBar> {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Image.asset(AppAssets.bell,height: 20,width: 30,),
+          child: GestureDetector(
+              child: Image.asset(AppAssets.bell,height: 20,width: 30,),
+            onTap: (){
+                toPushNavigator(context: context, PageName: NotificationScreen());
+            },
+          ),
         ),
       ],
     );

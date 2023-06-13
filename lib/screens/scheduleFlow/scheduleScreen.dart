@@ -32,28 +32,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       key:globalKey ,
-       appBar:CommonAppBar(
-         title:  MontserratText(
-           text: "Schedule",
-           fontSize: 24,
-           fontWeight: FontWeight.w600,
-           color: AppColors.blue,
-         ),
-         icon: InkWell(
-           child: Builder(
-               builder: (context) {
-                 return Image.asset(
-                   AppAssets.menu,
-                   width: 20,
-                   height: 20,
-                 );
-               }
-           ),
-           onTap: (){
-           globalKey.currentState?.openDrawer();
-           },
-         ),
-       ),
       body: Stack(
         children: [
           ListView(
@@ -302,10 +280,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             ),
           ],
         ),
-      ),
-      drawer: Drawer(
-        width:  cx.drawerSize,
-        child: const CommonDrawer(),
       ),
     );
   }

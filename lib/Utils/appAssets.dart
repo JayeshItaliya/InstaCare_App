@@ -56,4 +56,7 @@ class AppAssets {
   static const  clock= '$dashBoardFlow/clock.png';
   static const  mail= '$dashBoardFlow/mail.png';
   static const  addDoc= '$dashBoardFlow/addDocment.png';
+  static const  messages= '$dashBoardFlow/messages.png';
+  static const  star= '$dashBoardFlow/star.png';
+  static const  docImage= '$dashBoardFlow/docImage.png';
 }

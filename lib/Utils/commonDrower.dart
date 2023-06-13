@@ -11,8 +11,11 @@ import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
 import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
 
+
+
 class CommonDrawer extends StatefulWidget {
-  const CommonDrawer({Key? key}) : super(key: key);
+  Function? onItemClick;
+  CommonDrawer({this.onItemClick,Key? key}) : super(key: key);
 
   @override
   State<CommonDrawer> createState() => _CommonDrawerState();
@@ -38,25 +41,27 @@ class _CommonDrawerState extends State<CommonDrawer> {
         ),
         child: SingleChildScrollView(
           child:
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, 
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                          GestureDetector(
-                              child: Icon(Icons.clear,color: AppColors.white,),
-                            onTap: (){
-                                Navigator.of(context).pop();
-                            },
-                          )
-                      ],
-                    ),
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  child: Icon(
+                    Icons.clear,
+                    color: AppColors.white,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            ),
             Row(
               children: [
                 GestureDetector(
-                  onTap: (){
-                    toPushNavigator(context: context,PageName: const ProfileScreen());
+                  onTap: () {
+                    toPushNavigator(
+                        context: context, PageName: const ProfileScreen());
                   },
                   child: Container(
                     alignment: Alignment.bottomRight,
@@ -150,9 +155,11 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                     : str.toString().contains("Away")
                                         ? AppColors.yallow
                                         : str.toString().contains("Busy")
-                                            ? const Color.fromRGBO(243, 48, 71, 1)
+                                            ? const Color.fromRGBO(
+                                                243, 48, 71, 1)
                                             : str.toString().contains("DND")
-                                                ? const Color.fromRGBO(243, 48, 71, 1)
+                                                ? const Color.fromRGBO(
+                                                    243, 48, 71, 1)
                                                 : str
                                                         .toString()
                                                         .contains("Offline")
@@ -241,11 +248,9 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       color: AppColors.white,
                     ),
                     onTap: () {
-                      if (index == 0) {
-                        toPushNavigator(context: context, PageName: const DashBoardScreen());
-                        print("dashBoard");
-                      } else if (index == 1) {
-                        toPushNavigator(context: context,PageName: const ScheduleScreen());
+                      if (widget.onItemClick!=null) {
+                        widget.onItemClick!(index);
+                        Navigator.of(context).pop();
                       }
                     },
                   );
@@ -256,4 +261,5 @@ class _CommonDrawerState extends State<CommonDrawer> {
 
   List<String> statusValue = ["Available", "Away", "Busy", "DND", "Offline"];
   String status = "";
+
 }

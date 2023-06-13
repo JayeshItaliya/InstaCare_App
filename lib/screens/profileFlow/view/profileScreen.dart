@@ -44,6 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: MontserratText(
           text: "Profile",
           fontWeight: FontWeight.bold,
+          color: AppColors.blue,
         ),
         icon: InkWell(
           child: Builder(builder: (context) {
@@ -239,13 +240,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                         .gallery),
                                                                 onTap:
                                                                     () async {
-                                                                      getFromGallery()
+                                                                  getFromGallery()
                                                                       .then(
                                                                           (value) {
                                                                     setState(
                                                                         () {
-                                                                      setProfileImage = value;
-                                                                      print(setProfileImage);
+                                                                      setProfileImage =
+                                                                          value;
+                                                                      print(
+                                                                          setProfileImage);
                                                                     });
                                                                   });
                                                                 },
@@ -259,7 +262,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                                         .camera),
                                                                 onTap:
                                                                     () async {
-                                                                      getFromCamera()
+                                                                  getFromCamera()
                                                                       .then(
                                                                           (value) {
                                                                     setState(
@@ -360,7 +363,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: cx.height / 30,
           ),
           CommonContainer(
-
             child: ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -468,7 +470,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -488,7 +492,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Row(
                     children: [
@@ -534,7 +540,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -554,7 +562,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -680,7 +690,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -700,7 +712,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Row(
                     children: [
@@ -746,7 +760,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Row(
                     children: [
@@ -867,7 +883,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -887,7 +905,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -932,7 +952,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1059,6 +1081,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
   Future<File?> getFromGallery() async {
     PickedFile? pickedFile = await ImagePicker().getImage(
       source: ImageSource.gallery,

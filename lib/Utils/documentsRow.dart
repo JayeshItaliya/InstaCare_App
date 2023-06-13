@@ -20,11 +20,13 @@ class _DocumentsRowState extends State<DocumentsRow> {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        InterText(
-          text: widget.documentText,
-          color: AppColors.black,
-          fontWeight: FontWeight.w400,
-          fontSize: 14,
+        Expanded(
+          child: InterText(
+            text: widget.documentText,
+            color: AppColors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 14,
+          ),
         ),
         GestureDetector(
           onTap: (){
