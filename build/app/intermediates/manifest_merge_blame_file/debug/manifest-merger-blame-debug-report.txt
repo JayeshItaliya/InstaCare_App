@@ -13,54 +13,54 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:4:5-66
-15-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:4:22-64
+15-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:4:5-66
+15-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:4:22-64
 16    <uses-permission android:name="android.permission.CAMERA" />
-16-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:2:5-65
-16-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:2:22-62
+16-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:2:5-65
+16-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:2:22-62
 17    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-17-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:3:5-76
-17-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:3:22-74
+17-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:3:5-76
+17-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:3:22-74
 18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-18-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:5:5-80
-18-->/Users/imac/Desktop/GitHub/InstaCare_App/android/app/src/main/AndroidManifest.xml:5:22-78
+18-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:5:5-80
+18-->/Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:5:22-78
 19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-19-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
-19-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-77
+19-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-80
+19-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-77
 20
 21    <queries>
-21-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+21-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
 22        <intent>
-22-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+22-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
 23            <action android:name="android.intent.action.GET_CONTENT" />
-23-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
-23-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+23-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+23-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
 24
 25            <data android:mimeType="*/*" />
-25-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
-25-->[:file_picker] /Users/imac/Desktop/GitHub/InstaCare_App/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+25-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+25-->[:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
 26        </intent>
 27    </queries>
 28
 29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-29-->[:connectivity_plus] /Users/imac/Desktop/GitHub/InstaCare_App/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
-29-->[:connectivity_plus] /Users/imac/Desktop/GitHub/InstaCare_App/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+29-->[:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
+29-->[:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
 30
 31    <permission
-31-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+31-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
 32        android:name="com.example.instacare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-32-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+32-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
 33        android:protectionLevel="signature" />
-33-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+33-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
 34
 35    <uses-permission android:name="com.example.instacare.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-35-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
-35-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+35-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+35-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
 36
 37    <application
 38        android:name="android.app.Application"
 39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.9.0] /Users/imac/.gradle/caches/transforms-3/c2aff38445ebad8ddeaa989ecf50f56e/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+39-->[androidx.core:core:1.10.1] /Users/imac/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
 40        android:debuggable="true"
 41        android:icon="@mipmap/ic_launcher"
 42        android:label="instacare" >
@@ -98,21 +98,21 @@
 74            android:value="2" />
 75
 76        <provider
-76-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+76-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 77            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-77-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
+77-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-82
 78            android:authorities="com.example.instacare.flutter.image_provider"
-78-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
+78-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-74
 79            android:exported="false"
-79-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+79-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 80            android:grantUriPermissions="true" >
-80-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+80-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 81            <meta-data
-81-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
+81-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:75
 82                android:name="android.support.FILE_PROVIDER_PATHS"
-82-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+82-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
 83                android:resource="@xml/flutter_image_picker_file_paths" />
-83-->[:image_picker_android] /Users/imac/Desktop/GitHub/InstaCare_App/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
+83-->[:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
 84        </provider>
 85
 86        <uses-library

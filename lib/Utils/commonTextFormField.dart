@@ -130,10 +130,6 @@ class AppWidget {
             ),
         inputFormatters: inputFormatter,
         autofocus: true,
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         decoration: InputDecoration(
           border: border,
           alignLabelWithHint: false,
@@ -146,11 +142,8 @@ class AppWidget {
             fontSize: labelFontSize ?? 15,
             textAlign: labelTextAlign ?? TextAlign.start,
           ),
-<<<<<<< Updated upstream
+
           fillColor:filledColor?? AppColors.backGroundColor,
-=======
-          fillColor: AppColors.backGroundColor,
->>>>>>> Stashed changes
           contentPadding: contentPadding ??
               const EdgeInsets.fromLTRB(20.0, 18.0, 0.0, 18.0),
           focusedBorder: activeUnderLineInputBorder ??

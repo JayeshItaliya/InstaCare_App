@@ -23,13 +23,8 @@ class _CommonButtonState extends State<CommonButton> {
       },
       child: Container(
         alignment: Alignment.center,
-<<<<<<< Updated upstream
         width:widget.width??MediaQuery.of(context).size.width,
         height:widget.height??60,
-=======
-        width: MediaQuery.of(context).size.width,
-        height: 60,
->>>>>>> Stashed changes
         decoration: BoxDecoration(
           color:widget.color??AppColors.buttonColor,
           borderRadius: BorderRadius.circular(30)
