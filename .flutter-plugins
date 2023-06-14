@@ -10,4 +10,8 @@ path_provider=/Users/imac/.pub-cache/hosted/pub.dev/path_provider-2.0.15/
 path_provider_android=/Users/imac/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/
 path_provider_foundation=/Users/imac/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.3/
 path_provider_linux=/Users/imac/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.11/
+
 path_provider_windows=/Users/imac/.pub-cache/hosted/pub.dev/path_provider_windows-2.0.7/
+
+path_provider_windows=/Users/imac/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.6/
+

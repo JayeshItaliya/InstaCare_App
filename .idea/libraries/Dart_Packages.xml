@@ -20,6 +20,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -27,6 +28,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/calendar_date_picker2-0.5.2/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -47,7 +50,11 @@
         <entry key="collection">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.17.2/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.17.1/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -62,6 +69,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-1.2.4/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -69,6 +77,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/cross_file-0.3.3+4/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -89,6 +99,7 @@
         <entry key="dbus">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/dbus-0.7.4/lib" />
             </list>
           </value>
@@ -111,6 +122,9 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/equatable-2.0.5/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -124,7 +138,11 @@
         <entry key="ffi">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/ffi-1.2.1/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/ffi-2.0.2/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -132,6 +150,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/file-6.1.4/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -139,6 +158,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/file_picker-4.6.1/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -174,6 +195,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -195,6 +217,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-2.0.6/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -244,6 +268,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/google_fonts-4.0.4/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -251,6 +276,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/group_radio_button-1.3.0/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -265,6 +292,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -307,6 +335,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/intl-0.18.1/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -327,14 +357,22 @@
         <entry key="matcher">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/matcher-0.12.16/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/matcher-0.12.15/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
         <entry key="material_color_utilities">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.5.0/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.3.0/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -356,6 +394,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.8.3/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -363,6 +402,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_parsing-1.0.1/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -404,7 +445,11 @@
         <entry key="path_provider_windows">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.0.7/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.6/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -433,6 +478,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/process-4.2.4/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -447,6 +493,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shamsi_date-0.15.0/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -495,7 +543,11 @@
         <entry key="test_api">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.6.0/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.5.2/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -503,6 +555,7 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib" />
+<<<<<<< Updated upstream
             </list>
           </value>
         </entry>
@@ -524,6 +577,8 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.6/lib" />
+=======
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -537,7 +592,11 @@
         <entry key="win32">
           <value>
             <list>
+<<<<<<< Updated upstream
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/win32-2.6.1/lib" />
+=======
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/win32-4.1.4/lib" />
+>>>>>>> Stashed changes
             </list>
           </value>
         </entry>
@@ -561,6 +620,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/args-2.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/async-2.11.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib" />
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/calendar_date_picker2-0.5.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/characters-1.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/clock-1.1.1/lib" />
@@ -585,11 +645,26 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.15/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_screenutil-5.8.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-2.0.6/lib" />
+=======
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/characters-1.3.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/clock-1.1.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/collection-1.17.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus-4.0.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-1.2.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/fake_async-1.3.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/ffi-2.0.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/file-6.1.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1/lib" />
+>>>>>>> Stashed changes
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_switch-0.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/gap-3.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/get-4.6.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/get_storage-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/google_fonts-4.0.4/lib" />
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/group_radio_button-1.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-0.13.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib" />
@@ -607,23 +682,42 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/nm-0.5.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.8.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_parsing-1.0.1/lib" />
+=======
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http-0.13.6/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/js-0.6.7/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/lints-2.1.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/matcher-0.12.15/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/material_color_utilities-0.3.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/meta-1.9.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/nm-0.5.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path-1.8.3/lib" />
+>>>>>>> Stashed changes
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider-2.0.15/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.11/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.0.6/lib" />
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.0.7/lib" />
+=======
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.6/lib" />
+>>>>>>> Stashed changes
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/petitparser-5.4.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/platform-3.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/process-4.2.4/lib" />
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/scoped_model-2.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/shamsi_date-0.15.0/lib" />
+=======
+>>>>>>> Stashed changes
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stack_trace-1.11.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/stream_channel-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/term_glyph-1.2.1/lib" />
+<<<<<<< Updated upstream
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.6.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics-1.1.6/lib" />
@@ -631,6 +725,12 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/win32-2.6.1/lib" />
+=======
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/test_api-0.5.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/win32-4.1.4/lib" />
+>>>>>>> Stashed changes
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/xdg_directories-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/xml-6.3.0/lib" />
       <root url="file://$USER_HOME$/Downloads/flutter/bin/cache/pkg/sky_engine/lib" />
