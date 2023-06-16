@@ -34,6 +34,7 @@ class AppAssets {
   static const logout = '$drowerFlow/logout.svg';
   static const appLogo = '$drowerFlow/appLogo.svg';
   static const app = '$drowerFlow/app.png';
+  static const supports = '$drowerFlow/supports.svg';
 
 
   ///dashBoardFlow

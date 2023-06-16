@@ -12,4 +12,9 @@ class AppColors {
   static const Color deepGreen = Color.fromRGBO(126, 230, 155, 1);
   static const Color allGray = Color.fromRGBO(196, 196, 196, 1);
   static const Color redColor = Color.fromRGBO(243, 48, 71, 1);
+  static const Color light_blue = Color(0xff7ED1E6);
+  static const Color light_gray = Color.fromRGBO(217, 217, 217, 0.2);
+  static const Color light_yallow = Color.fromRGBO(255, 175, 50, 0.2);
+  static const Color light_purple = Color.fromRGBO(180, 103, 192, 0.1);
+  static const Color dark_purple = Color.fromRGBO(180, 103, 192, 1);
 }

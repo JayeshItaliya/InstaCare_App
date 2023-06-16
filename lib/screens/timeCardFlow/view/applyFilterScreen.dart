@@ -7,8 +7,6 @@ import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:get/get.dart';
-import 'package:instacare/screens/dashBoardFlow/peopleFlow/Controller/peopleController.dart';
-import 'package:instacare/screens/peopleFlow/controller/controller.dart';
 import 'package:instacare/screens/timeCardFlow/controller/controller/applayController.dart';
 
 class ApplyFilterTimeCardScreen extends StatefulWidget {

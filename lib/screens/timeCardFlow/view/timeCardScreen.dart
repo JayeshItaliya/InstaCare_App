@@ -120,7 +120,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                 Column(
                                   children: [
                                     InterText(
-                                      text: "11",
+                                      text:index==1?"12":"11",
                                       fontSize: 40,
                                       color: AppColors.blue,
                                       fontWeight: FontWeight.bold,
@@ -205,7 +205,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                index==1?Row(
                                   children: [
                                     Image.asset(AppAssets.loader),
-                                    SizedBox(
+                                    const SizedBox(
                                        width: 10,
                                     ),
                                     InterText(
@@ -328,7 +328,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                ],
                              ),
                              onTap: (){
-                               toPushNavigator(context: context,PageName: TimeCardDetailScreen());
+                               toPushNavigator(context: context,PageName: TimeCardDetailScreen(index: index,));
                              },
                            )
                           ],

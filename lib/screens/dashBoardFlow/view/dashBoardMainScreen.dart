@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/facilitiesFlow/view/Facilities.dart';
+import 'package:instacare/screens/marketPlaceFlow/view/MarketPlaceScreen.dart';
+import 'package:instacare/screens/messagesFlow/view/MessagesScreen.dart';
 import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 import 'package:instacare/screens/peopleFlow/view/peopleScreen.dart';
 import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
 import 'package:instacare/screens/timeCardFlow/view/timeCardScreen.dart';
-import 'package:instacare/screens/whoIsOnScreen/view/Who_Is_On_Screen.dart';
-import 'Dashboard.dart';
+import 'package:instacare/screens/totalbillingFlow/view/TotalBillingScreen.dart';
+import 'package:instacare/screens/whoIsOnFlow/view/Who_Is_On_Screen.dart';
+import 'DashboardScreen.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({Key? key}) : super(key: key);
@@ -23,26 +28,37 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   List<Widget> screens = [
     Dashboard(),
     ScheduleScreen(),
-    Who_Is_On_Screen(),
+    Text("data"),
+    MarketPlaceScreen(),
+    WhoIsOnScreen(),
     PeopleScreen(),
-    Text("Facilities"),
-    Text("Messing"),
-    TimeCardScreen()
+    FacilitiesScreen(),
+    Text("Payroll"),
+    MessagesScreen(),
+    TimeCardScreen(),
+    TotalBillingScreen(),
+    Text("Support"),
   ];
   List<dynamic> title = [
     AppAssets.app,
     "Schedule",
+    "My Availability",
+    "Marketplace",
     "Who's ON",
     "People",
     "Facilities",
-    "Messing",
+    "Payroll",
+    "Messaging",
     "TimeCards",
+    "Total Billing",
+    "Support",
   ];
   int selected_index=0;
   final globalKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       key: globalKey,
@@ -58,8 +74,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               builder: (context) {
                 return Image.asset(
                   AppAssets.menu,
-                  width: 20,
-                  height: 20,
+                  width: 40,
+                  height: 40,
                 );
               }
           ),
@@ -85,7 +101,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
       body: screens[selected_index],
       drawer: Drawer(
-        width:  300,
+        width:  Reponsive_.crosslength*0.38,
         backgroundColor: Colors.transparent,
         child: CommonDrawer(onItemClick: (index){
           setState(() {

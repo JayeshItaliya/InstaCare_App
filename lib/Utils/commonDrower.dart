@@ -206,51 +206,61 @@ class _CommonDrawerState extends State<CommonDrawer> {
                 itemCount: DrawerItem.drawerItem.length,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  if (index == DrawerItem.drawerItem.length - 1) {
-                    return Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width / 1.6,
-                              height: 1.5,
-                              color: AppColors.greenDark,
-                            )
-                          ],
-                        ),
-                        Gap(10.h),
-                        ListTile(
-                          leading: SvgPicture.asset(AppAssets.logout),
-                          title: InterText(
-                            text: "Logout",
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp,
-                            color: AppColors.white,
-                          ),
-                          onTap: () {
-                            print("tap casllll");
-                          },
-                        ),
-                        Gap(20.h),
-                      ],
-                    );
-                  }
+                  print(DrawerItem.drawerItem.length);
                   DrawerItem data = DrawerItem.drawerItem[index];
-                  return ListTile(
-                    leading: SvgPicture.asset(data.image),
-                    title: InterText(
-                      text: data.name,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16.sp,
-                      color: AppColors.white,
-                    ),
-                    onTap: () {
-                      if (widget.onItemClick != null) {
-                        widget.onItemClick!(index);
-                        Navigator.of(context).pop();
-                      }
-                    },
+
+                  return Column(
+                    children: [
+                      ListTile(
+                        leading: SvgPicture.asset(data.image),
+                        title: InterText(
+                          text: data.name,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16.sp,
+                          color: AppColors.white,
+                        ),
+                        onTap: () {
+                          if (widget.onItemClick != null) {
+                            widget.onItemClick!(index);
+                            Navigator.of(context).pop();
+                          }
+                        },
+                      ),
+                      index == DrawerItem.drawerItem.length - 1
+                          ? Column(
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      width: MediaQuery.of(context).size.width /
+                                          1.6,
+                                      height: 1.5,
+                                      color: AppColors.greenDark,
+                                    )
+                                  ],
+                                ),
+                                Gap(10.h),
+                                ListTile(
+                                  leading: SvgPicture.asset(AppAssets.logout),
+                                  title: InterText(
+                                    text: "Logout",
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16.sp,
+                                    color: AppColors.white,
+                                  ),
+                                  onTap: () {
+                                    print("tap casllll");
+                                  },
+                                ),
+                                Gap(20.h),
+                              ],
+                            )
+                          : Container()
+                    ],
                   );
                 })
           ]),

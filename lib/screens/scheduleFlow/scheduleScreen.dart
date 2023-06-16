@@ -11,7 +11,7 @@ import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
-import 'package:instacare/screens/dashBoardFlow/addShiftFlow/addShiftScreenMain.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/schedulefilterScreen.dart';
 import 'package:instacare/screens/scheduleFlow/controller/scheduleController.dart';
 
