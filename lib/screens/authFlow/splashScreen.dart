@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 
@@ -18,6 +17,12 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     navigateToScreen();
   }
+  // getToken(){
+  //   FirebaseMessaging.instance.getToken().then((value) {
+  //     String? token = value;
+  //     print("deviceToken====>$token");
+  //   });
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,3 +47,5 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 }
+
+

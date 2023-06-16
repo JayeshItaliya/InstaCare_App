@@ -11,11 +11,9 @@ import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
 import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
 
-
-
 class CommonDrawer extends StatefulWidget {
   Function? onItemClick;
-  CommonDrawer({this.onItemClick,Key? key}) : super(key: key);
+  CommonDrawer({this.onItemClick, Key? key}) : super(key: key);
 
   @override
   State<CommonDrawer> createState() => _CommonDrawerState();
@@ -34,10 +32,10 @@ class _CommonDrawerState extends State<CommonDrawer> {
         padding: EdgeInsets.only(left: 20.w, top: 25.h, right: 10.w),
         decoration: const BoxDecoration(
           color: AppColors.blue,
-          // borderRadius: BorderRadius.only(
-          //   topRight: Radius.circular(20),
-          //   bottomRight: Radius.circular(20),
-          // ),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
         ),
         child: SingleChildScrollView(
           child:
@@ -46,7 +44,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
-                  child: Icon(
+                  child: const Icon(
                     Icons.clear,
                     color: AppColors.white,
                   ),
@@ -248,7 +246,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       color: AppColors.white,
                     ),
                     onTap: () {
-                      if (widget.onItemClick!=null) {
+                      if (widget.onItemClick != null) {
                         widget.onItemClick!(index);
                         Navigator.of(context).pop();
                       }
@@ -261,5 +259,4 @@ class _CommonDrawerState extends State<CommonDrawer> {
 
   List<String> statusValue = ["Available", "Away", "Busy", "DND", "Offline"];
   String status = "";
-
 }

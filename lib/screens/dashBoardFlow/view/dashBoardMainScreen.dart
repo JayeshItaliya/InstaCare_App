@@ -3,10 +3,8 @@ import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonDrower.dart';
-import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
-import 'package:instacare/screens/dashBoardFlow/peopleFlow/peopleScreenDetial.dart';
 import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 import 'package:instacare/screens/peopleFlow/view/peopleScreen.dart';
 import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
@@ -88,6 +86,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       body: screens[selected_index],
       drawer: Drawer(
         width:  300,
+        backgroundColor: Colors.transparent,
         child: CommonDrawer(onItemClick: (index){
           setState(() {
             selected_index=index;

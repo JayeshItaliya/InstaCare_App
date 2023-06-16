@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		9iKeJzPoxP7tkffyVEGYwd2rY68=
+		BjBshk2WlrPfi2uD+dra/MYYRac=
 		</data>
 		<key>flutter_assets/AssetManifest.smcbin</key>
 		<data>
-		WKmEmSZDeCAN2EMzw8QyL1XIoFA=
+		Shmdwl8mZU7kGV7Gku9HApMinGE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		OHIUZAbyM2zX3lHIpjhSc9w0fcg=
+		Ilc1dfCHqNUp4i27FukFNIBwvc0=
 		</data>
 		<key>flutter_assets/assets/authFlow/lock.png</key>
 		<data>
@@ -60,6 +60,14 @@
 		<data>
 		tAB5JTvrviCrTuN1gn6idfi3J9U=
 		</data>
+		<key>flutter_assets/assets/dashBoardFlow/clockin.png</key>
+		<data>
+		oTnhKp2zRk2PKsF/IB9rNKqbLsc=
+		</data>
+		<key>flutter_assets/assets/dashBoardFlow/clockout.png</key>
+		<data>
+		l8XcwgMKOr40IWJ1UeZXwqAOG0k=
+		</data>
 		<key>flutter_assets/assets/dashBoardFlow/completed.png</key>
 		<data>
 		R58u7RXBZcZJZlFBiKUfl9MhpGg=
@@ -80,6 +88,10 @@
 		<data>
 		EfEK5HvhEHF42fayjVj98cKjU0s=
 		</data>
+		<key>flutter_assets/assets/dashBoardFlow/downlodTimeCard.png</key>
+		<data>
+		HYQ6ON2lmU1oqEzamdLxwr5S+s0=
+		</data>
 		<key>flutter_assets/assets/dashBoardFlow/filter.png</key>
 		<data>
 		8msCCRlVxyu+3sChEhEyDAcbS80=
@@ -91,6 +103,10 @@
 		<key>flutter_assets/assets/dashBoardFlow/late.png</key>
 		<data>
 		ijmdDzAK4YnxaYSOx3322TwXNro=
+		</data>
+		<key>flutter_assets/assets/dashBoardFlow/loader.png</key>
+		<data>
+		lZZqIFW7peOwGcmM6nuSAtCampc=
 		</data>
 		<key>flutter_assets/assets/dashBoardFlow/mail.png</key>
 		<data>
@@ -210,7 +226,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		oPriNKAdUL9uUtOK/Kl+o/vdhnM=
+		9b0zRB8vIZiRcr89/tHGvCWxVSM=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -231,14 +247,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UBuGaXWc5l4L3KZRNkhZRJZil5f8pIQDozCs71OxRBA=
+			WKleektaYiF4dlPLCh6gPGlch1vkBR1LKmJ8NWqI0xc=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.smcbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FIF+P+RzBIgKdPeIK8usPMVkUMKTWxHby0CwErIM8h8=
+			LyjejNqIyiH55821kYnoltBmBCGOBDM15pAcYxUEydU=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -252,7 +268,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HK5aLdExZPR2zXX2LY84gkBmeXQ0g1v8NdgE2fU/nxw=
+			Y/OJmZMy5ZSrYVbHsK1FEc9C6de5oht34/F0lUtkAeY=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/authFlow/lock.png</key>
@@ -318,6 +334,20 @@
 			0dRhGoCS43uDTGUx7mUFjk7jQdhYxH2WpIQlTr5Q4n0=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/clockin.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tICHmrtPohzFtZjbWPfeF/x2uwtFa55v6bbtHFWmu+Y=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/clockout.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			I+oDjlD0a1QPmTMamBwTwkgAf+YK2iPZfID9zKQdndM=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/dashBoardFlow/completed.png</key>
 		<dict>
 			<key>hash2</key>
@@ -353,6 +383,13 @@
 			8RNEngYBDHneLLAL6pL84l3uLiKLqpCDs7s4V+ZjiaI=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/downlodTimeCard.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LSsSEG6uiibl+ZeouPpVO6+aUvc/KzF0zSr2uXJacqM=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/dashBoardFlow/filter.png</key>
 		<dict>
 			<key>hash2</key>
@@ -372,6 +409,13 @@
 			<key>hash2</key>
 			<data>
 			GUHNhAdPu4EqbxXGXO7lXAhwb+fR6JiZbYdTIau53d4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/dashBoardFlow/loader.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			diYpuuKPCBkIPFojUV0+zKU1aPnUXuk2ILRzrmlnxGE=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/dashBoardFlow/mail.png</key>
@@ -581,7 +625,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UbVDSV1jR3BG/SfTjxohYouUc/KqGD4h0PAXOTAIYKY=
+			Zp2kt/z7ftzkkNL0eiY3m0F18Y8T6Tc4aEwSAT9pI04=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

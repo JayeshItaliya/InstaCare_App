@@ -32,7 +32,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
     return AppBar(
       backgroundColor: AppColors.white,
       centerTitle: true,
-      elevation: 8,
+      elevation: 1,
       leading: Padding(
         padding: const EdgeInsets.only(left: 5),
         child: widget.icon ??

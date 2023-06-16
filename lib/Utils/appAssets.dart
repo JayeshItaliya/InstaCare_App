@@ -59,4 +59,9 @@ class AppAssets {
   static const  messages= '$dashBoardFlow/messages.png';
   static const  star= '$dashBoardFlow/star.png';
   static const  docImage= '$dashBoardFlow/docImage.png';
+  static const  clockIn= '$dashBoardFlow/clockin.png';
+  static const  clockOut= '$dashBoardFlow/clockout.png';
+  static const  downodTimeCard= '$dashBoardFlow/downlodTimeCard.png';
+  static const  loader= '$dashBoardFlow/loader.png';
+  static const  loader1= '$dashBoardFlow/loader1.png';
 }

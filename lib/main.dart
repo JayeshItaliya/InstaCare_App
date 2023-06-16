@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:instacare/screens/authFlow/splashScreen.dart';
 
-void main() {
+void main(){
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
