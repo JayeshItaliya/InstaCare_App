@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,6 +8,7 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonDrawerModel.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/authFlow/view/loginScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
 import 'package:instacare/screens/scheduleFlow/view/scheduleScreen.dart';
@@ -253,7 +255,31 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                     color: AppColors.white,
                                   ),
                                   onTap: () {
-                                    print("tap casllll");
+                                    showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false, // user must tap button!
+                                      builder: (BuildContext context) {
+                                        return CupertinoAlertDialog(
+                                          title:  Image.asset(AppAssets.app),
+                                          content:   const Text("Do You Want Sure LogOut ?"),
+                                          actions: [
+                                            CupertinoDialogAction(
+                                              isDefaultAction: true,
+                                              onPressed: (){
+                                                toPushNavigator(context: context,PageName: LoginScreen());
+                                              },
+                                              child: Text("Yes"),
+                                            ),
+                                            CupertinoDialogAction(
+                                              child: Text("No"),
+                                              onPressed: (){
+                                                onBack(context);
+                                              },
+                                            )
+                                          ],
+                                        );
+                                      },
+                                    );
                                   },
                                 ),
                                 Gap(20.h),

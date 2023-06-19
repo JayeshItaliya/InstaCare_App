@@ -202,20 +202,20 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                               index==1?Row(
-                                  children: [
-                                    Image.asset(AppAssets.loader),
-                                    const SizedBox(
-                                       width: 10,
-                                    ),
-                                    InterText(
-                                      text: "Process",
-                                      color: const Color.fromRGBO(2, 5, 10, 0.5),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    )
-                                  ],
-                                ):Container()
+                               // index==1?Row(
+                               //    children: [
+                               //      Image.asset(AppAssets.loader),
+                               //      const SizedBox(
+                               //         width: 10,
+                               //      ),
+                               //      InterText(
+                               //        text: "Process",
+                               //        color: const Color.fromRGBO(2, 5, 10, 0.5),
+                               //        fontSize: 14,
+                               //        fontWeight: FontWeight.normal,
+                               //      )
+                               //    ],
+                               //  ):Container()
                               ],
                             ),
                           ),

@@ -65,4 +65,5 @@ class AppAssets {
   static const  downodTimeCard= '$dashBoardFlow/downlodTimeCard.png';
   static const  loader= '$dashBoardFlow/loader.png';
   static const  loader1= '$dashBoardFlow/loader1.png';
+  static const  calenderEmployee= '$dashBoardFlow/calenderEmployee.png';
 }

@@ -68,7 +68,7 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                     child: InterText(
                       text: 'Scheduled',
                       color:selectedIndex==0?AppColors.blue: Color(0xff02050A),
-                      fontSize: Reponsive_.crosslength*0.02,
+                      fontSize: Reponsive_.crosslength*0.018,
                       fontWeight: FontWeight.w600,
                     ),
                   ),Container(
@@ -81,7 +81,7 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                     child: InterText(
                       text: 'Clocked In',
                       color: selectedIndex==1?AppColors.blue: Color(0xff02050A),
-                      fontSize: Reponsive_.crosslength*0.02,
+                      fontSize: Reponsive_.crosslength*0.018,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -133,9 +133,9 @@ class _PageState extends State<Page>{
           return Container(
             padding: EdgeInsets.symmetric(
                 horizontal: Reponsive_.crosslength * 0.01,
-                vertical: Reponsive_.crosslength * 0.02),
+                vertical: Reponsive_.crosslength * 0.013),
             margin: EdgeInsets.only(
-                top: Reponsive_.crosslength * 0.02,
+                top: Reponsive_.crosslength * 0.01,
                 left: Reponsive_.crosslength * 0.02,
                 right: Reponsive_.crosslength * 0.02),
             decoration: BoxDecoration(
@@ -155,7 +155,7 @@ class _PageState extends State<Page>{
                           fit: BoxFit.cover)),
                 ),
                 SizedBox(
-                  width: Reponsive_.crosslength * 0.008,
+                  width: Reponsive_.crosslength * 0.01,
                 ),
                 Expanded(
                   child: Column(
@@ -175,13 +175,13 @@ class _PageState extends State<Page>{
                           InterText(
                             text: 'CNA',
                             color: Color(0xff02050A),
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.w400,
                           ),
                           InterText(
                             text: '    Starting in 10 min',
                             color: Color(0xff16478E),
-                            fontSize: 15,
+                            fontSize: 13,
                             fontWeight: FontWeight.w400,
                           ),
                         ],

@@ -29,7 +29,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-                top: Reponsive_.crosslength * 0.02,
+                top: Reponsive_.crosslength * 0.01,
                 left: Reponsive_.crosslength * 0.02,
                 right: Reponsive_.crosslength * 0.02
             ),
@@ -72,7 +72,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
             ),
           ),
           SizedBox(
-            height: Reponsive_.crosslength*0.010,
+            height: Reponsive_.crosslength*0.001,
           ),
            ListView.builder(
             itemCount: 5,
@@ -82,9 +82,9 @@ class _PeopleScreenState extends State<PeopleScreen> {
               return Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: Reponsive_.crosslength * 0.01,
-                    vertical: Reponsive_.crosslength * 0.02),
+                    vertical: Reponsive_.crosslength * 0.015),
                 margin: EdgeInsets.only(
-                    top: Reponsive_.crosslength * 0.02,
+                    top: Reponsive_.crosslength * 0.01,
                     left: Reponsive_.crosslength * 0.02,
                     right: Reponsive_.crosslength * 0.02
                 ),
@@ -129,13 +129,13 @@ class _PeopleScreenState extends State<PeopleScreen> {
                               InterText(
                                 text: 'CNA',
                                 color: Color(0xff02050A),
-                                fontSize: 15,
+                                fontSize: 13,
                                 fontWeight: FontWeight.w400,
                               ),
                               InterText(
                                 text: '    Starting in 10 min',
                                 color: Color(0xff16478E),
-                                fontSize: 15,
+                                fontSize: 13,
                                 fontWeight: FontWeight.w400,
                               ),
                             ],

@@ -48,9 +48,10 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backGroundColor,
       body: ListView(
         shrinkWrap: true,
-        padding: padding,
+         padding: EdgeInsets.symmetric(horizontal: 10),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -82,12 +83,12 @@ class _DashboardState extends State<Dashboard> {
           Gap(10.h),
           Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.only(left: 15.w,right: 15.w),
+            padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 13.w,),
             width:cx.width,
-            height: cx.height/13,
+
             decoration: BoxDecoration(
                 color: AppColors.blue,
-                borderRadius: BorderRadius.circular(40.r)
+                borderRadius: BorderRadius.circular(20.r)
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -107,7 +108,6 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
-          Gap(10.h),
           Column(
             children: [
               Row(
@@ -200,6 +200,7 @@ class _DashboardState extends State<Dashboard> {
                   )
                 ],
               ),
+
               Row(
                 children: [
                   Expanded(
@@ -500,14 +501,13 @@ class _DashboardState extends State<Dashboard> {
               itemCount: item.length,
               itemBuilder: (context,index){
                 return Container(
-                  padding: EdgeInsets.only(left: 16,top: 15,right: 16,bottom: 8),
-                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(left: 16,top: 15,right: 16,bottom: 15),
+                  margin: EdgeInsets.only(top: 5),
                   width: cx.width,
-                  height: cx.height/6,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
                       border: Border.all(
-                          width: 2,
+                          width: 1,
                           color: AppColors.yallow
                       )
                   ),
@@ -538,7 +538,7 @@ class _DashboardState extends State<Dashboard> {
                 );
               }
           ),
-          Gap(10.h),
+          Gap(30.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -569,10 +569,9 @@ class _DashboardState extends State<Dashboard> {
               itemBuilder: (context,index){
                 return GestureDetector(
                   child: Container(
-                    margin: EdgeInsets.only(top: 10),
+                    margin: EdgeInsets.only(top: 5),
                     padding: EdgeInsets.all(10),
                     width: cx.width,
-                    height: cx.height/8,
                     decoration: BoxDecoration(
                       color: AppColors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -595,7 +594,7 @@ class _DashboardState extends State<Dashboard> {
                           height: 50,
                           width: 50,
                         ),
-                        Gap(5),
+                        Gap(10),
                         Expanded(
                           flex: 1,
                           child: Column(
@@ -613,7 +612,7 @@ class _DashboardState extends State<Dashboard> {
                                   Row(
                                     children: [
                                       InterText(
-                                        text: "Available",
+                                        text: "Available ",
                                         color: AppColors.hintTextGrey,
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w400,
@@ -637,12 +636,12 @@ class _DashboardState extends State<Dashboard> {
                                   InterText(
                                     text: "CNA",
                                     color: AppColors.black,
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w400,
                                   ),
                                   InterText(
                                     text: "Jasnah@outlook.com",
-                                    color: AppColors.hintTextGrey,
+                                    color: AppColors.blue,
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -650,11 +649,10 @@ class _DashboardState extends State<Dashboard> {
                                     children: [
                                       Container(
                                         alignment: Alignment.center,
-                                        width: 62,
-                                        height: 26,
+                                        padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
                                         decoration:   BoxDecoration(
                                           color: AppColors.yallow,
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius: BorderRadius.circular(20),
                                         ),
                                         child: InterText(
                                           text: "0 pts",
@@ -678,7 +676,8 @@ class _DashboardState extends State<Dashboard> {
                   },
                 );
               }
-          )
+          ),
+          SizedBox(height: 30,),
         ],
       ),
     );

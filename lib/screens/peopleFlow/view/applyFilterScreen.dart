@@ -21,7 +21,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      //backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -50,28 +50,45 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
           CommonDropDown(
               context: context,
               list: peopleController.role,
-              mycontrollerValue: peopleController.roleValue
+              mycontrollerValue: peopleController.roleValue,
+            color: AppColors.backGroundColor
           ),
-
+          SizedBox(
+            height: 10,
+          ),
           CommonDropDown(
               context: context,
               list: peopleController.status,
-              mycontrollerValue: peopleController.statusValue
+              mycontrollerValue: peopleController.statusValue,
+              color: AppColors.backGroundColor,
+
+          ),
+          SizedBox(
+            height: 10,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.rating,
-              mycontrollerValue: peopleController.ratingValue
+              mycontrollerValue: peopleController.ratingValue,
+              color: AppColors.backGroundColor
+          ),
+          SizedBox(
+            height: 10,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.points,
-              mycontrollerValue: peopleController.pointsValue
+              mycontrollerValue: peopleController.pointsValue,
+              color: AppColors.backGroundColor
+          ),
+          SizedBox(
+            height: 10,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.lastActive,
               mycontrollerValue: peopleController.activeValue,
+              color: AppColors.backGroundColor
           ),
         ],
       ),

@@ -84,7 +84,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                     return Container(
                       margin: EdgeInsets.only(bottom: 10),
                       width: cx.width,
-                      height: cx.height / 8,
+                      height: cx.height / 12,
                       decoration: BoxDecoration(
                           color: AppColors.white,
                           borderRadius: BorderRadius.circular(20)),
@@ -93,7 +93,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           Container(
                             alignment: Alignment.centerRight,
                             padding: EdgeInsets.only(left: 32),
-                            height: cx.height,
                             width: cx.width / 10,
                             decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
@@ -116,7 +115,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                             child: Padding(
                               padding: const EdgeInsets.only(top: 10, bottom: 20),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     mainAxisAlignment:

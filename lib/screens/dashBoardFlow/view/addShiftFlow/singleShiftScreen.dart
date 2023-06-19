@@ -671,12 +671,9 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   width: cx.width / 30,
                 ),
                 Expanded(
-                  flex: 0,
+                  flex: 1,
                   child: Container(
-                    width: 80,
-                    height: 50,
-                    //margin: EdgeInsets.only(left: 12),
-                    //padding: EdgeInsets.only(left: 12),
+                    padding: EdgeInsets.only(left: 12),
                     decoration: BoxDecoration(
                         color: AppColors.white,
                         borderRadius: BorderRadius.circular(30)),

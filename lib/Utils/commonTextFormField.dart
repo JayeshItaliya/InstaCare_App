@@ -129,7 +129,7 @@ class AppWidget {
               color: inputFontColor ?? AppColors.black,
             ),
         inputFormatters: inputFormatter,
-        autofocus: true,
+        autofocus: false,
         decoration: InputDecoration(
           border: border,
           alignLabelWithHint: false,

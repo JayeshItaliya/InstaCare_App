@@ -6,8 +6,10 @@ import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/employeeFlow/employeeDashBoardFlow/view/employeeDashboardScreen.dart';
+import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/MarketPlaceScreen.dart';
+import 'package:instacare/screens/employeeFlow/myAvailabilityFlow/screens/MyAvailability.dart';
 import 'package:instacare/screens/facilitiesFlow/view/Facilities.dart';
-import 'package:instacare/screens/marketPlaceFlow/view/MarketPlaceScreen.dart';
 import 'package:instacare/screens/messagesFlow/view/MessagesScreen.dart';
 import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 import 'package:instacare/screens/peopleFlow/view/peopleScreen.dart';
@@ -28,8 +30,9 @@ class DashBoardScreen extends StatefulWidget {
 class _DashBoardScreenState extends State<DashBoardScreen> {
   List<Widget> screens = [
     Dashboard(),
+    //EmployeeDashBoardScreen(),
     ScheduleScreen(),
-    Text("data"),
+    MyAvailability(),
     MarketPlaceScreen(),
     WhoIsOnScreen(),
     PeopleScreen(),
@@ -64,7 +67,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       backgroundColor: AppColors.backGroundColor,
       key: globalKey,
       appBar: CommonAppBar(
-        title:selected_index==0?Image.asset(title[0]): MontserratText(
+        title:selected_index==0?Image.asset(title[0],height: 27,):
+        MontserratText(
             text: title[selected_index],
           fontSize: 24,
           fontWeight: FontWeight.w600,
@@ -75,8 +79,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               builder: (context) {
                 return Image.asset(
                   AppAssets.menu,
-                  width: 40,
-                  height: 40,
                 );
               }
           ),

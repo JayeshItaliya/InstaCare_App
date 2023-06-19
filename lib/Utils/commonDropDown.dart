@@ -46,7 +46,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
           },
           buttonStyleData: ButtonStyleData(
             width: cx.width,
-            height: cx.height/10,
+            height: cx.height/15,
             padding:padding??EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),

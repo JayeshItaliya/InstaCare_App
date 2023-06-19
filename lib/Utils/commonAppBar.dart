@@ -47,13 +47,13 @@ class _CommonAppBarState extends State<CommonAppBar> {
                   Navigator.of(context).pop();
                 }),
       ),
-      leadingWidth: Reponsive_.crosslength/19,
+      leadingWidth: Reponsive_.crosslength/30,
       title: widget.title,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
           child: GestureDetector(
-              child: Image.asset(AppAssets.bell,height: 20,width: 30,),
+              child: Image.asset(AppAssets.bell,height: 22,width: 22,),
             onTap: (){
                 toPushNavigator(context: context, PageName: NotificationScreen());
             },

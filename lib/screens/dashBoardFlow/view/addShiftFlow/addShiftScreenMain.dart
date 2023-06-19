@@ -42,7 +42,7 @@ class _AddShiftScreenState extends State<AddShiftScreen> with TickerProviderStat
         backgroundColor: AppColors.backGroundColor,
         appBar: AppBar(
           backgroundColor: AppColors.white,
-          elevation: 1,
+          elevation: 0,
           centerTitle: true,
           leading: InkWell(
               child: const Icon(Icons.arrow_back,color: AppColors.black),

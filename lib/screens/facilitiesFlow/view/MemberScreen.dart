@@ -66,9 +66,9 @@ class _MemberScreenState extends State<MemberScreen> {
                 return Container(
                   padding: EdgeInsets.symmetric(
                       horizontal: Reponsive_.crosslength * 0.01,
-                      vertical: Reponsive_.crosslength * 0.02),
+                      vertical: Reponsive_.crosslength * 0.01),
                   margin: EdgeInsets.only(
-                      top: Reponsive_.crosslength * 0.02,
+                      top: Reponsive_.crosslength * 0.01,
                       left: Reponsive_.crosslength * 0.02,
                       right: Reponsive_.crosslength * 0.02),
                   decoration: BoxDecoration(
@@ -109,13 +109,13 @@ class _MemberScreenState extends State<MemberScreen> {
                                 InterText(
                                   text: 'LPN',
                                   color: Color(0xff02050A),
-                                  fontSize: Reponsive_.crosslength*0.017,
+                                  fontSize: Reponsive_.crosslength*0.015,
                                   fontWeight: FontWeight.w400,
                                 ),
                                 InterText(
                                   text: '    Worker',
                                   color: Color(0xff16478E),
-                                  fontSize: Reponsive_.crosslength*0.017,
+                                  fontSize: Reponsive_.crosslength*0.015,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ],

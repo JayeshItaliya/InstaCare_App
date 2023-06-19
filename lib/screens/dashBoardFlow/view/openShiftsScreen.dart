@@ -58,7 +58,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
       appBar: CommonAppBar(
         title: MontserratText(
           text: widget.title,
-          fontSize: 24,
+          fontSize: 22,
           fontWeight: FontWeight.w600,
           color: AppColors.blue,
         ),
@@ -143,7 +143,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 return Container(
                   margin: EdgeInsets.only(bottom: 10),
                   width: cx.width,
-                  height: cx.height / 8,
+                  height: cx.height / 12,
                   decoration: BoxDecoration(
                       color: widget.bodyColor == true
                           ? Color.fromRGBO(220, 246, 233, 1)
@@ -153,9 +153,9 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                     children: [
                       Container(
                         alignment: Alignment.centerRight,
-                        padding: EdgeInsets.only(left: 32),
+                        padding: EdgeInsets.only(left: 20),
                         height: cx.height,
-                        width: cx.width / 10,
+                        width: cx.width / 20,
                         decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20),
@@ -176,10 +176,12 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                       ),
                       Gap(20.w),
                       Expanded(
+                        flex: 2,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10, bottom: 20),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Row(
                                 mainAxisAlignment:
@@ -204,26 +206,27 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                       : Container(),
                                 ],
                               ),
+                              SizedBox(width: 4,),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Container(
-                                    child: InterText(
-                                      text: listItem[index].center,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: AppColors.black,
-                                    ),
+                                  InterText(
+                                    text: listItem[index].center,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColors.black,
                                   ),
                                   Row(
                                     children: [
                                       widget.userIcon == true
                                           ? Image.asset(AppAssets.userImage)
                                           : Container(),
+                                      SizedBox(width: 4,),
                                       widget.watchIcon == true
                                           ? Image.asset(AppAssets.watch)
                                           : Container(),
+                                      SizedBox(width: 4,),
                                       widget.assignedIcon == true
                                           ? Container(
                                               height: 16,
@@ -236,6 +239,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                               ),
                                             )
                                           : Container(),
+
                                       widget.openIcon == true
                                           ? Container(
                                               height: 16,
@@ -251,6 +255,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                               ),
                                             )
                                           : Container(),
+                                      SizedBox(width: 4,),
                                     ],
                                   )
                                 ],
