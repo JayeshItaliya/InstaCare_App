@@ -431,29 +431,29 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
           Gap(20.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InterText(
-                text: "News",
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.black,
-              ),
-              InkWell(
-                child: InterText(
-                  text: "View All",
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.blue,
-                ),
-                onTap: (){
-                  toPushNavigator(context: context,PageName:NewsScreen());
-                },
-              ),
-            ],
-          ),
-          Gap(100),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     InterText(
+          //       text: "News",
+          //       fontSize: 18.sp,
+          //       fontWeight: FontWeight.w700,
+          //       color: AppColors.black,
+          //     ),
+          //     InkWell(
+          //       child: InterText(
+          //         text: "View All",
+          //         fontSize: 18.sp,
+          //         fontWeight: FontWeight.w700,
+          //         color: AppColors.blue,
+          //       ),
+          //       onTap: (){
+          //         toPushNavigator(context: context,PageName:NewsScreen());
+          //       },
+          //     ),
+          //   ],
+          // ),
+          // Gap(100),
           Gap(10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -7,7 +7,7 @@ import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
 
 
-Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color}) {
+Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color,EdgeInsetsGeometry? padding}) {
   final cx=Get.put(CommonController());
   return Obx(() =>
       DropdownButtonHideUnderline(
@@ -47,7 +47,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
           buttonStyleData: ButtonStyleData(
             width: cx.width,
             height: cx.height/10,
-            padding: const EdgeInsets.only(left: 14, right: 14),
+            padding:padding??EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color:color??AppColors.backGroundColor,

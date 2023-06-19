@@ -11,6 +11,7 @@ import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/shiftDetials.dart';
 
 
+
 class BulkUploadScreen extends StatefulWidget {
   const BulkUploadScreen({Key? key}) : super(key: key);
 
@@ -181,5 +182,4 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       print("No Data");
     }
   }
-
 }

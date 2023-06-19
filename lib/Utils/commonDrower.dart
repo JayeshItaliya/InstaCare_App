@@ -9,7 +9,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
-import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
+import 'package:instacare/screens/scheduleFlow/view/scheduleScreen.dart';
 
 class CommonDrawer extends StatefulWidget {
   Function? onItemClick;

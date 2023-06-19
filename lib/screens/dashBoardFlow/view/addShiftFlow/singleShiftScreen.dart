@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:group_radio_button/group_radio_button.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -12,6 +13,8 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/controller/singleShiftController.dart';
+
+import '../../../../Utils/CommonDropDown.dart';
 
 
 class SingleShiftScreen extends StatefulWidget {
@@ -28,6 +31,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
   DateTime currentDateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return ListView(
       padding: padding,
       shrinkWrap: true,
@@ -42,65 +46,11 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-              () => InkWell(
-                onTap: () {
-                  singleShiftController.popUpFacilityKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: singleShiftController.selectFacilityValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: singleShiftController.popUpFacilityKey,
-                        itemBuilder: (context) {
-                          return singleShiftController.selectFacility
-                              .map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          singleShiftController.selectFacilityValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonDropDown(
+                context: context,
+                list: singleShiftController.selectFacility,
+                mycontrollerValue: singleShiftController.selectFacilityValue,
+                padding: EdgeInsets.zero
             ),
           ],
         ),
@@ -114,64 +64,11 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-              () => InkWell(
-                onTap: () {
-                  singleShiftController.popUpRoleKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: singleShiftController.selectRoleValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: singleShiftController.popUpRoleKey,
-                        itemBuilder: (context) {
-                          return singleShiftController.selectRole.map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          singleShiftController.selectRoleValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonDropDown(
+                context: context,
+                list: singleShiftController.selectRole,
+                mycontrollerValue: singleShiftController.selectRoleValue,
+                padding: EdgeInsets.zero
             ),
           ],
         ),
@@ -185,64 +82,11 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-              () => InkWell(
-                onTap: () {
-                  singleShiftController.popUpNumberKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: singleShiftController.selectNumberValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: singleShiftController.popUpNumberKey,
-                        itemBuilder: (context) {
-                          return singleShiftController.selectNumber.map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          singleShiftController.selectNumberValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonDropDown(
+                context: context,
+                list: singleShiftController.selectNumber,
+                mycontrollerValue: singleShiftController.selectNumberValue,
+                padding: EdgeInsets.zero
             ),
           ],
         ),
@@ -310,7 +154,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                       Expanded(
                         flex: 0,
                         child: Transform.scale(
-                          scale: 1.5,
+                          scale: 1.3,
                           child: Checkbox(
                             shape: CircleBorder(),
                             value: timeData[index].checkValue,
@@ -327,7 +171,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         child: InterText(
                           text: timeData[index].timeShift,
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 17,
                           color: AppColors.black,
                         ),
                       ),
@@ -642,7 +486,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         width: cx.width / 2,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -665,7 +509,6 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
             ),
             const Gap(10),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InterText(
                   text: "Incentives",
@@ -673,6 +516,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/9,),
                 InterText(
                   text: "Incentive By",
                   fontWeight: FontWeight.w600,
@@ -691,10 +535,10 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: cx.width / 2,
+                        width: Reponsive_.crosslength/4.5,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -722,15 +566,12 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                               borderRadius: BorderRadius.circular(30)),
                           child: Row(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: InterText(
-                                  text: singleShiftController
-                                      .incentiveByValue.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
+                              InterText(
+                                text: singleShiftController
+                                    .incentiveByValue.value,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.black,
                               ),
                               PopupMenuButton<String>(
                                 key: singleShiftController.incentiveBy,
@@ -781,7 +622,6 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InterText(
                   text: "Incentive Type",
@@ -789,6 +629,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/15,),
                 InterText(
                   text: "Incentive Amount",
                   fontWeight: FontWeight.w600,
@@ -807,7 +648,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         width: cx.width / 2,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -830,12 +671,12 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   width: cx.width / 30,
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 0,
                   child: Container(
                     width: 80,
                     height: 50,
-                    margin: EdgeInsets.only(left: 12),
-                    padding: EdgeInsets.only(left: 12),
+                    //margin: EdgeInsets.only(left: 12),
+                    //padding: EdgeInsets.only(left: 12),
                     decoration: BoxDecoration(
                         color: AppColors.white,
                         borderRadius: BorderRadius.circular(30)),
@@ -857,7 +698,6 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InterText(
                   text: "Floor Number",
@@ -865,6 +705,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/12,),
                 InterText(
                   text: "Supervisor",
                   fontWeight: FontWeight.w600,

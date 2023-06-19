@@ -11,7 +11,8 @@ import 'package:instacare/screens/marketPlaceFlow/view/MarketPlaceScreen.dart';
 import 'package:instacare/screens/messagesFlow/view/MessagesScreen.dart';
 import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 import 'package:instacare/screens/peopleFlow/view/peopleScreen.dart';
-import 'package:instacare/screens/scheduleFlow/scheduleScreen.dart';
+import 'package:instacare/screens/scheduleFlow/view/scheduleScreen.dart';
+import 'package:instacare/screens/supportFlow/view/supportScreen.dart';
 import 'package:instacare/screens/timeCardFlow/view/timeCardScreen.dart';
 import 'package:instacare/screens/totalbillingFlow/view/TotalBillingScreen.dart';
 import 'package:instacare/screens/whoIsOnFlow/view/Who_Is_On_Screen.dart';
@@ -37,7 +38,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     MessagesScreen(),
     TimeCardScreen(),
     TotalBillingScreen(),
-    Text("Support"),
+    SupportScreen(),
   ];
   List<dynamic> title = [
     AppAssets.app,

@@ -5,10 +5,12 @@ import 'package:gap/gap.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:group_radio_button/group_radio_button.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/commonDropDown.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/helper/date_conveter.dart';
@@ -29,6 +31,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
   DateTime currentDateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
+     Reponsive_.init(context);
     return ListView(
       padding: padding,
       children: [
@@ -42,66 +45,12 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-                  () => InkWell(
-                onTap: () {
-                  recurringShiftController.popUpFacilityKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: recurringShiftController.selectFacilityValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: recurringShiftController.popUpFacilityKey,
-                        itemBuilder: (context) {
-                          return recurringShiftController.selectFacility
-                              .map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          recurringShiftController.selectFacilityValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            CommonDropDown(
+                context: context,
+                list: recurringShiftController.selectFacility,
+                mycontrollerValue: recurringShiftController.selectFacilityValue,
+                padding: EdgeInsets.zero
+            )
           ],
         ),
         Gap(10),
@@ -114,64 +63,11 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-                  () => InkWell(
-                onTap: () {
-                  recurringShiftController.popUpRoleKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: recurringShiftController.selectRoleValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: recurringShiftController.popUpRoleKey,
-                        itemBuilder: (context) {
-                          return recurringShiftController.selectRole.map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          recurringShiftController.selectRoleValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonDropDown(
+                context: context,
+                list: recurringShiftController.selectRole,
+                mycontrollerValue: recurringShiftController.selectRoleValue,
+                padding: EdgeInsets.zero
             ),
           ],
         ),
@@ -185,64 +81,11 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
-            Gap(10),
-            Obx(
-                  () => InkWell(
-                onTap: () {
-                  recurringShiftController.popUpNumberKey.currentState!
-                      .showButtonMenu();
-                },
-                child: Container(
-                  width: cx.width,
-                  height: cx.height / 12,
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: recurringShiftController.selectNumberValue.value,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-                      PopupMenuButton<String>(
-                        key: recurringShiftController.popUpNumberKey,
-                        itemBuilder: (context) {
-                          return recurringShiftController.selectNumber.map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                            BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.backGroundColor,
-                        onSelected: (v) {
-                          recurringShiftController.selectNumberValue.value = v;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            CommonDropDown(
+                context: context,
+                list: recurringShiftController.selectNumber,
+                mycontrollerValue: recurringShiftController.selectNumberValue,
+              padding: EdgeInsets.zero
             ),
           ],
         ),
@@ -276,7 +119,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Transform.scale(
-                      scale: 1.5,
+                      scale: 1.3,
                       child: Checkbox(
                         shape: CircleBorder(),
                         value: weekDay.dayValue,
@@ -310,7 +153,6 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         ),
 
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InterText(
               text: "Date",
@@ -318,6 +160,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               fontSize: 16,
               color: AppColors.black,
             ),
+            SizedBox(width: Reponsive_.crosslength/6,),
             InterText(
               text: "Duration",
               fontWeight: FontWeight.w600,
@@ -460,7 +303,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                       Expanded(
                         flex: 0,
                         child: Transform.scale(
-                          scale: 1.5,
+                          scale: 1.2,
                           child: Checkbox(
                             shape: CircleBorder(),
                             value: timeData[index].checkValue,
@@ -477,7 +320,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         child: InterText(
                           text: timeData[index].timeShift,
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 15,
                           color: AppColors.black,
                         ),
                       ),
@@ -487,17 +330,12 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
             const Gap(10),
             Row(
               children: [
-                Expanded(
-                  flex: 4,
-                  child: InterText(
-                    text: "Start Time",
-                  ),
+                InterText(
+                  text: "Start Time",
                 ),
-                Expanded(
-                  flex: 2,
-                  child: InterText(
-                    text: "End Time",
-                  ),
+                SizedBox(width: Reponsive_.crosslength/11,),
+                InterText(
+                  text: "End Time",
                 )
               ],
             ),
@@ -792,7 +630,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         width: cx.width / 2,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -815,7 +653,6 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
             ),
             const Gap(10),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InterText(
                   text: "Incentives",
@@ -823,6 +660,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/10,),
                 InterText(
                   text: "Incentive By",
                   fontWeight: FontWeight.w600,
@@ -841,10 +679,10 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: cx.width / 2,
+                        width: cx.width / 2.5,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -931,7 +769,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
               children: [
                 InterText(
                   text: "Incentive Type",
@@ -939,6 +777,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/16,),
                 InterText(
                   text: "Incentive Amount",
                   fontWeight: FontWeight.w600,
@@ -960,7 +799,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         width: cx.width / 2,
                         height: 50,
                         child: Transform.scale(
-                          scale: 1.2,
+                          scale: 1,
                           child: RadioGroup<String>.builder(
                             direction: Axis.horizontal,
                             groupValue: _verticalGroupValue,
@@ -987,8 +826,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Container(
                     width: 80,
                     height: 50,
-                    margin: EdgeInsets.only(left: 12),
-                    padding: EdgeInsets.only(left: 12),
+
                     decoration: BoxDecoration(
                         color: AppColors.white,
                         borderRadius: BorderRadius.circular(30)),
@@ -1010,7 +848,6 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               height: 10,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InterText(
                   text: "Floor Number",
@@ -1018,6 +855,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   fontSize: 16,
                   color: AppColors.black,
                 ),
+                SizedBox(width: Reponsive_.crosslength/12,),
                 InterText(
                   text: "Supervisor",
                   fontWeight: FontWeight.w600,
