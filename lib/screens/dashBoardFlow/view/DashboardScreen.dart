@@ -83,9 +83,9 @@ class _DashboardState extends State<Dashboard> {
           Gap(10.h),
           Container(
             alignment: Alignment.center,
+            margin: EdgeInsets.symmetric(vertical: 8),
             padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 13.w,),
             width:cx.width,
-
             decoration: BoxDecoration(
                 color: AppColors.blue,
                 borderRadius: BorderRadius.circular(20.r)
@@ -633,19 +633,27 @@ class _DashboardState extends State<Dashboard> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  InterText(
-                                    text: "CNA",
-                                    color: AppColors.black,
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                  InterText(
-                                    text: "Jasnah@outlook.com",
-                                    color: AppColors.blue,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w400,
+                                  Row(
+                                    children: [
+                                      InterText(
+                                        text: "CNA",
+                                        color: AppColors.black,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 20),
+                                        child: InterText(
+                                          text: "Jasnah@outlook.com",
+                                          color: AppColors.blue,
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   Row(
+
                                     children: [
                                       Container(
                                         alignment: Alignment.center,

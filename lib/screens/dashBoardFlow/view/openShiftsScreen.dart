@@ -140,131 +140,151 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
               shrinkWrap: true,
               itemCount: listItem.length,
               itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  width: cx.width,
-                  height: cx.height / 12,
-                  decoration: BoxDecoration(
-                      color: widget.bodyColor == true
-                          ? Color.fromRGBO(220, 246, 233, 1)
-                          : AppColors.white,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Row(
-                    children: [
-                      Container(
-                        alignment: Alignment.centerRight,
-                        padding: EdgeInsets.only(left: 20),
-                        height: cx.height,
-                        width: cx.width / 20,
-                        decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                bottomLeft: Radius.circular(20)),
-                            color: AppColors.greenDark),
-                        child: widget.enableCheckBox == true
-                            ? Checkbox(
-                                shape: const CircleBorder(),
-                                value: listItem[index].checkValue,
-                                activeColor: AppColors.buttonColor,
-                                onChanged: (bool? newValue) {
-                                  setState(() {
-                                    listItem[index].checkValue = newValue!;
-                                  });
-                                },
-                              )
-                            : null,
-                      ),
-                      Gap(20.w),
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  InterText(
-                                    text: listItem[index].position,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                    color: AppColors.black,
-                                  ),
-                                  widget.showTime == true
-                                      ? Padding(
-                                          padding: EdgeInsets.only(right: 10),
-                                          child: InterText(
-                                            text: "7:00AM - 3:00PM",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 12,
-                                            color: AppColors.hintTextGrey,
-                                          ),
-                                        )
-                                      : Container(),
-                                ],
+                return GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      listItem[index].checkValue=listItem[index].checkValue;
+                      print(listItem[index].checkValue);
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    width: cx.width,
+                    height: cx.height/9,
+                    decoration: BoxDecoration(
+                        color: widget.bodyColor == true
+                            ? Color.fromRGBO(220, 246, 233, 1)
+                            : AppColors.white,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Row(
+                      children: [
+                        Stack(
+                          children: [
+                            Container(
+                              alignment: Alignment.centerRight,
+                              padding: EdgeInsets.only(left: 20),
+                              height: cx.height,
+                              width: cx.width /20,
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20)),
+                                  color: AppColors.greenDark),
+                            ),
+                            Center(
+                              child: Container(
+                                margin: const EdgeInsets.only(left: 8),
+                                width: 20,
+                                height: 20,
+                                child: widget.enableCheckBox == true
+                                    ?
+                                Checkbox(
+                                    value: listItem[index].checkValue,
+                                    shape: const CircleBorder(),
+                                    activeColor: AppColors.buttonColor,
+                                    onChanged: (val){
+                                      setState(() {
+                                        listItem[index].checkValue=val!;
+                                      });
+                                    }
+                                )
+                                    : null,
                               ),
-                              SizedBox(width: 4,),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  InterText(
-                                    text: listItem[index].center,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: AppColors.black,
-                                  ),
-                                  Row(
-                                    children: [
-                                      widget.userIcon == true
-                                          ? Image.asset(AppAssets.userImage)
-                                          : Container(),
-                                      SizedBox(width: 4,),
-                                      widget.watchIcon == true
-                                          ? Image.asset(AppAssets.watch)
-                                          : Container(),
-                                      SizedBox(width: 4,),
-                                      widget.assignedIcon == true
-                                          ? Container(
-                                              height: 16,
-                                              width: 15,
-                                              margin: const EdgeInsets.only(
-                                                  right: 10),
-                                              decoration: const BoxDecoration(
-                                                color: Color.fromRGBO(
-                                                    126, 230, 155, 1),
-                                              ),
-                                            )
-                                          : Container(),
-
-                                      widget.openIcon == true
-                                          ? Container(
-                                              height: 16,
-                                              width: 15,
-                                              margin: const EdgeInsets.only(
-                                                  right: 10),
-                                              decoration: BoxDecoration(
-                                                border: Border.all(
-                                                  width: 3,
-                                                  color: const Color.fromRGBO(
-                                                      243, 48, 71, 1),
-                                                ),
-                                              ),
-                                            )
-                                          : Container(),
-                                      SizedBox(width: 4,),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      )
-                    ],
+                        Gap(20.w),
+                        Expanded(
+                          flex: 2,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10, bottom: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InterText(
+                                      text: listItem[index].position,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                      color: AppColors.black,
+                                    ),
+                                    widget.showTime == true
+                                        ? Padding(
+                                            padding: EdgeInsets.only(right: 10),
+                                            child: InterText(
+                                              text: "7:00AM - 3:00PM",
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 12,
+                                              color: AppColors.hintTextGrey,
+                                            ),
+                                          )
+                                        : Container(),
+                                  ],
+                                ),
+                                SizedBox(width: 4,),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InterText(
+                                      text: listItem[index].center,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: AppColors.black,
+                                    ),
+                                    Row(
+                                      children: [
+                                        widget.userIcon == true
+                                            ? Image.asset(AppAssets.userImage)
+                                            : Container(),
+                                        SizedBox(width: 4,),
+                                        widget.watchIcon == true
+                                            ? Image.asset(AppAssets.watch)
+                                            : Container(),
+                                        SizedBox(width: 4,),
+                                        widget.assignedIcon == true
+                                            ? Container(
+                                                height: 16,
+                                                width: 15,
+                                                margin: const EdgeInsets.only(
+                                                    right: 10),
+                                                decoration: const BoxDecoration(
+                                                  color: Color.fromRGBO(
+                                                      126, 230, 155, 1),
+                                                ),
+                                              )
+                                            : Container(),
+
+                                        widget.openIcon == true
+                                            ? Container(
+                                                height: 16,
+                                                width: 15,
+                                                margin: const EdgeInsets.only(
+                                                    right: 10),
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                    width: 3,
+                                                    color: const Color.fromRGBO(
+                                                        243, 48, 71, 1),
+                                                  ),
+                                                ),
+                                              )
+                                            : Container(),
+                                        SizedBox(width: 4,),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 );
               }),
