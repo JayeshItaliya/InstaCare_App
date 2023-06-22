@@ -67,6 +67,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
                           dateType: true
                         ).then((value){
                             createReminderController.selectedDate.value=value.toString();
+                            print(createReminderController.selectedDate.value);
                         });
                       },
                       icon: const Icon(Icons.calendar_today_outlined,color: AppColors.buttonColor,)

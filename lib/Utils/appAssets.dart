@@ -66,4 +66,6 @@ class AppAssets {
   static const  loader= '$dashBoardFlow/loader.png';
   static const  loader1= '$dashBoardFlow/loader1.png';
   static const  calenderEmployee= '$dashBoardFlow/calenderEmployee.png';
+  static const  settings= '$dashBoardFlow/settings.png';
+  static const  payroll= '$dashBoardFlow/payroll.png';
 }

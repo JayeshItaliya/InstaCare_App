@@ -42,7 +42,7 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                     height:Reponsive_.crosslength/10,
                     width: Reponsive_.crosslength/10,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: NetworkImage("https://is1-2.housingcdn.com/4f2250e8/73b4c8375352d2558cc55aeb0bb7f937/v0/fs/devi_shanmuga_flats-surappattu-chennai-devi_flat_promoters.jpeg"),
                         fit: BoxFit.cover
                       ),
@@ -140,7 +140,65 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                 ),
               ),
             ],
-          )
+          ),
+          SizedBox(
+            height: Reponsive_.crosslength/35,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  width: Reponsive_.crosslength/10,
+                  height: Reponsive_.crosslength/8,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(AppAssets.settings),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      InterText(
+                        text: "My Availability",
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(width: 10,),
+              Expanded(
+                child: Container(
+                  width: Reponsive_.crosslength/10,
+                  height: Reponsive_.crosslength/8,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(AppAssets.payroll),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      InterText(
+                        text: "My Account",
+                        color: AppColors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );

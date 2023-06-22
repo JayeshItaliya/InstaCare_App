@@ -51,28 +51,44 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
           CommonDropDown(
               context: context,
               list: peopleController.role,
-              mycontrollerValue: peopleController.roleValue
+              mycontrollerValue: peopleController.roleValue,
+              color: AppColors.white,
           ),
-
+          const SizedBox(
+            height: 8,
+          ),
           CommonDropDown(
               context: context,
               list: peopleController.status,
-              mycontrollerValue: peopleController.statusValue
+              mycontrollerValue: peopleController.statusValue,
+            color: AppColors.white,
+          ),
+          const SizedBox(
+            height: 8,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.rating,
-              mycontrollerValue: peopleController.ratingValue
+              mycontrollerValue: peopleController.ratingValue,
+            color: AppColors.white,
+          ),
+          const SizedBox(
+            height: 8,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.points,
-              mycontrollerValue: peopleController.pointsValue
+              mycontrollerValue: peopleController.pointsValue,
+            color: AppColors.white,
+          ),
+          const SizedBox(
+            height: 8,
           ),
           CommonDropDown(
               context: context,
               list: peopleController.lastActive,
               mycontrollerValue: peopleController.activeValue,
+            color: AppColors.white,
           ),
         ],
       ),

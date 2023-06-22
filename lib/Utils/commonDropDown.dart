@@ -31,7 +31,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             value: item,
             child: Text(
               item,
-              style:   TextStyle(
+              style:   const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: AppColors.black,
@@ -43,6 +43,7 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
           //value:createReminderController.selectedValue.value,
           onChanged: (value) {
             mycontrollerValue.value = value as String;
+            print("dropDownValue==${mycontrollerValue.value.toString()}");
           },
           buttonStyleData: ButtonStyleData(
             width: cx.width,

@@ -22,7 +22,7 @@ var selectNumberValue="Select Number1".obs;
 var incentiveByValue="Select".obs;
 
 var setTime="01:00".obs;
-var setTimeZone="".obs;
+var setTimeZone="AM".obs;
 
 var selectFacility=[
   "Demo",

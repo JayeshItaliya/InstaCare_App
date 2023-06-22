@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
+import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
+import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -62,12 +64,12 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
                 decoration: BoxDecoration(
                     // color: AppColors.buttonColor,
                     borderRadius: BorderRadius.circular(50)),
+                height: Reponsive_.crosslength * 0.055,
                 child: CommonDropDown(
                     context: context,
                     list: c.amount_range_arr,
                     mycontrollerValue: c.selected_amount_range,
-                    color: AppColors.backGroundColor),
-                height: Reponsive_.crosslength * 0.055),
+                    color: AppColors.white)),
             SizedBox(
               height: Reponsive_.crosslength * 0.025,
             ),
@@ -127,120 +129,132 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
               maxLines: 2,
             ),
             GridView.builder(
-              itemCount: 3,
+              itemCount: selectTimeShift.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: Reponsive_.crosslength*0.01,
-                mainAxisExtent: Reponsive_.crosslength*0.065
+                mainAxisExtent: Reponsive_.crosslength*0.085
               ),
               itemBuilder: (context, index) {
+                TimeShift timeShift=selectTimeShift[index];
                 return Wrap(
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: Reponsive_.crosslength * 0.01,
-                        horizontal: Reponsive_.crosslength * 0.01,
+                    GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: Reponsive_.crosslength * 0.02,
+                          horizontal: Reponsive_.crosslength * 0.01,
+                        ),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                                Reponsive_.crosslength * 0.04),
+                            color:timeShift.tapValue==true?AppColors.buttonColor:AppColors.white,
+                          border:timeShift.tapValue==true?null:Border.all(width: 1.2, color: AppColors.buttonColor)
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              timeShift.icon.toString(),
+                              height: Reponsive_.crosslength * 0.025,
+                              width: Reponsive_.crosslength * 0.025,
+                              color:timeShift.tapValue==true? Colors.white:AppColors.buttonColor,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: '  ${timeShift.shift}',
+                                  color:timeShift.tapValue==true? Colors.white:AppColors.buttonColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Reponsive_.crosslength * 0.013,
+                                ),
+                                SizedBox(
+                                  height: Reponsive_.crosslength * 0.005,
+                                ),
+                                InterText(
+                                  text: '  ${timeShift.time}',
+                                  color:timeShift.tapValue==true? Colors.white:AppColors.buttonColor,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Reponsive_.crosslength * 0.013,
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              Reponsive_.crosslength * 0.02),
-                          color: AppColors.buttonColor),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/x/sun.png',
-                            height: Reponsive_.crosslength * 0.025,
-                            width: Reponsive_.crosslength * 0.025,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InterText(
-                                text: '  Morning Shifts',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: Reponsive_.crosslength * 0.013,
-                              ),
-                              SizedBox(
-                                height: Reponsive_.crosslength * 0.005,
-                              ),
-                              InterText(
-                                text: '  7:00AM - 3:00PM',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                                fontSize: Reponsive_.crosslength * 0.013,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
+                      onTap: (){
+                        setState(() {
+                          timeShift.tapValue=!timeShift.tapValue;
+                          print("timeShift==>${timeShift.shift}");
+                        });
+                      },
                     ),
                   ],
                 );
               },
             ),
-            Expanded(child: SizedBox()),
-            SizedBox(
-              height: Reponsive_.crosslength * 0.02,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onBack(context);
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.015),
-                      decoration: BoxDecoration(
-                          color: AppColors.buttonColor,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: InterText(
-                        text: "APPLY",
-                        color: Colors.white,
-                        fontSize: Reponsive_.crosslength * 0.02,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: Reponsive_.crosslength * 0.01,
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onBack(context);
-                    },
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.015),
-                      decoration: BoxDecoration(
-                          color: AppColors.allGray,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: InterText(
-                        text: "RESET",
-                        color: Colors.white,
-                        fontSize: Reponsive_.crosslength * 0.02,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: Reponsive_.crosslength * 0.02,
-            ),
           ],
         ),
       ),
+      bottomSheet: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+
+          children: [
+            Expanded(
+              child: CommonButton(
+                text: "APPLY",
+                onTap: (){
+                  onBack(context);
+                },
+              ),
+            ),
+            SizedBox(width: 8,),
+            Expanded(
+              child: CommonButton(
+                text: "RESET",
+                onTap: (){
+
+                },
+                color: AppColors.allGray,
+              ),
+
+            ),
+          ],
+        ),
+      )
     );
   }
+  List<TimeShift> selectTimeShift=[
+    TimeShift(
+      icon: AppAssets.sun,
+      time: "7:00AM - 3:00PM",
+      shift: "Morning Shifts",
+      tapValue: false,
+    ),
+    TimeShift(
+      icon: AppAssets.sun,
+      time: "3:00PM - 11:00PM",
+      shift: "Afternoon Shifts",
+      tapValue: false,
+    ),
+    TimeShift(
+      icon: AppAssets.night,
+      time: "11:00PM - 7:00AM",
+      shift: "Night Shifts",
+      tapValue: false,
+    )
+  ];
+}
+
+class TimeShift{
+  String? icon;
+  String? time;
+  String? shift;
+  bool tapValue;
+
+  TimeShift({this.time,this.tapValue=false,this.icon,this.shift});
 }

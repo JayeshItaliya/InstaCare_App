@@ -8,7 +8,9 @@ import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
+import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/helper/date_conveter.dart';
@@ -46,11 +48,12 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
+            SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
                 context: context,
                 list: singleShiftController.selectFacility,
                 mycontrollerValue: singleShiftController.selectFacilityValue,
-                padding: EdgeInsets.zero
+                color: AppColors.white
             ),
           ],
         ),
@@ -64,11 +67,12 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
+            SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
                 context: context,
                 list: singleShiftController.selectRole,
                 mycontrollerValue: singleShiftController.selectRoleValue,
-                padding: EdgeInsets.zero
+                color: AppColors.white
             ),
           ],
         ),
@@ -82,11 +86,12 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
+            SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
                 context: context,
                 list: singleShiftController.selectNumber,
                 mycontrollerValue: singleShiftController.selectNumberValue,
-                padding: EdgeInsets.zero
+              color: AppColors.white
             ),
           ],
         ),
@@ -182,271 +187,156 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
             Row(
               children: [
                 Expanded(
-                  flex: 4,
-                  child: InterText(
-                    text: "Start Time",
-                  ),
-                ),
-                Expanded(
                   flex: 2,
                   child: InterText(
+                    text: "Start Time",
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.black,
+                  ),
+                ),
+                Expanded(
+                  child: InterText(
                     text: "End Time",
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.black,
                   ),
                 )
               ],
             ),
             const Gap(10),
             SizedBox(
-              width: cx.width,
-              height: 50,
-              child: Obx(() => ListView(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
+              width: Reponsive_.w,
+              height: 40,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Row(
                     children: [
-                      InkWell(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              PopupMenuButton<String>(
-                                key: singleShiftController.startTime,
-                                itemBuilder: (context) {
-                                  return singleShiftController.timeData
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                padding: EdgeInsets.zero,
-                                icon: Image.asset(AppAssets.dropDown,
-                                    width: 2, height: 2),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.setTime.value = v;
-                                },
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(right: 30),
-                                child: InterText(
-                                  text: singleShiftController.setTime.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                      SizedBox(
+                        width: 100,
+                        height: 40,
+                        child: CommonDropDown(
+                            context: context,
+                            list: singleShiftController.timeData,
+                            mycontrollerValue: singleShiftController.setTime,
+                            color: AppColors.white
                         ),
-                        onTap: () {
-                          singleShiftController.startTime.currentState!
-                              .showButtonMenu();
-                        },
                       ),
-                      Gap(10),
-                      InkWell(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: InterText(
-                                  text: singleShiftController.setTimeZone.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                key: singleShiftController.startTimeZone,
-                                itemBuilder: (context) {
-                                  return singleShiftController.timeZone
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                padding: EdgeInsets.zero,
-                                icon: Image.asset(
-                                  AppAssets.dropDown,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10.0.r))),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.setTimeZone.value = v;
-                                },
-                              ),
-                            ],
-                          ),
+                      SizedBox(width: 8,),
+                      SizedBox(
+                        width: 100,
+                        height: 40,
+                        child: CommonDropDown(
+                            context: context,
+                            list: singleShiftController.timeZone,
+                            mycontrollerValue: singleShiftController.setTimeZone,
+                            color: AppColors.white
                         ),
-                        onTap: () {
-                          singleShiftController.startTimeZone.currentState!
-                              .showButtonMenu();
-                        },
                       ),
-                      Gap(10),
-                      InkWell(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              PopupMenuButton<String>(
-                                key: singleShiftController.endTime,
-                                itemBuilder: (context) {
-                                  return singleShiftController.timeData
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                padding: EdgeInsets.zero,
-                                icon: Image.asset(AppAssets.dropDown,
-                                    width: 2, height: 2),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.setTime.value = v;
-                                },
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(right: 30),
-                                child: InterText(
-                                  text: singleShiftController.setTime.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                            ],
-                          ),
+                      SizedBox(width: 8,),
+                      SizedBox(
+                        width: 100,
+                        height: 40,
+                        child: CommonDropDown(
+                            context: context,
+                            list: singleShiftController.timeData,
+                            mycontrollerValue: singleShiftController.setTime,
+                            color: AppColors.white
                         ),
-                        onTap: () {
-                          singleShiftController.endTime.currentState!
-                              .showButtonMenu();
-                        },
                       ),
-                      Gap(10),
-                      InkWell(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: InterText(
-                                  text: singleShiftController.setTimeZone.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                key: singleShiftController.endTimeZone,
-                                itemBuilder: (context) {
-                                  return singleShiftController.timeZone
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                padding: EdgeInsets.zero,
-                                iconSize: 2,
-                                icon: Image.asset(AppAssets.dropDown),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10.0.r))),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.setTimeZone.value = v;
-                                },
-                              ),
-                            ],
-                          ),
+                      SizedBox(width: 8,),
+                      SizedBox(
+                        width: 100,
+                        height: 40,
+                        child: CommonDropDown(
+                            context: context,
+                            list: singleShiftController.timeZone,
+                            mycontrollerValue: singleShiftController.setTimeZone,
+                            color: AppColors.white
                         ),
-                        onTap: () {
-                          singleShiftController.endTimeZone.currentState!
-                              .showButtonMenu();
-                        },
                       ),
                     ],
-                  )),
+                  )
+                ],
+              ),
             ),
             const Gap(10),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InterText(
-                  text: "Rate (per hour)",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Rate (per hour)",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 40,
+                        child: AppWidget().getTextField(
+                          hintText: "\$45",
+                          filledColor: AppColors.white
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                InterText(
-                  text: "Cancellation Guarantee",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
+                Expanded(
+                  flex: 0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Cancellation Guarantee",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      SizedBox(height: 7,),
+                      Row(
+                        children: [
+                          Radio(
+                            value: BestTutorSite.javatpoint,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "Yes",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                          Radio(
+                            value: BestTutorSite.tutorialandexample,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "NO",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
@@ -455,53 +345,78 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               children: [
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    width: 80,
-                    height: 50,
-                    margin: EdgeInsets.only(left: 12),
-                    padding: EdgeInsets.only(left: 12),
-                    decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextFormField(
-                      controller: singleShiftController.rateController.value,
-                      style: GoogleFonts.inter(
-                          fontSize: 16,
-                          color: AppColors.black,
-                          fontWeight: FontWeight.w600),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Incentives",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
-                    ),
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Radio(
+                            value: BestTutorSite.javatpoint,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "Yes",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                          Radio(
+                            value: BestTutorSite.tutorialandexample,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "NO",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(
-                  width: cx.width / 30,
                 ),
                 Expanded(
                   flex: 0,
-                  child: Row(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        width: cx.width / 2,
-                        height: 50,
-                        child: Transform.scale(
-                          scale: 1,
-                          child: RadioGroup<String>.builder(
-                            direction: Axis.horizontal,
-                            groupValue: _verticalGroupValue,
-                            onChanged: (value) => setState(() {
-                              _verticalGroupValue = value ?? '';
-                            }),
-                            items: _status,
-                            itemBuilder: (item) => RadioButtonBuilder(
-                              item,
-                            ),
-                            fillColor: AppColors.buttonColor,
-                            horizontalAlignment: MainAxisAlignment.start,
-                          ),
-                        ),
+                      InterText(
+                        text: "Incentive By",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
+                      SizedBox(
+                        width: 150,
+                        height: 60,
+                        child: CommonDropDown(
+                            context: context,
+                            list: singleShiftController.incentiveByList,
+                            mycontrollerValue: singleShiftController.incentiveByValue,
+
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -510,332 +425,137 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
             const Gap(10),
             Row(
               children: [
-                InterText(
-                  text: "Incentives",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
-                ),
-                SizedBox(width: Reponsive_.crosslength/9,),
-                InterText(
-                  text: "Incentive By",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 0,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: Reponsive_.crosslength/4.5,
-                        height: 50,
-                        child: Transform.scale(
-                          scale: 1,
-                          child: RadioGroup<String>.builder(
-                            direction: Axis.horizontal,
-                            groupValue: _verticalGroupValue,
-                            onChanged: (value) => setState(() {
-                              _verticalGroupValue = value ?? '';
-                            }),
-                            items: _status,
-                            itemBuilder: (item) => RadioButtonBuilder(
-                              item,
-                            ),
-                            fillColor: AppColors.buttonColor,
-                            horizontalAlignment: MainAxisAlignment.start,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Obx(() => InkWell(
-                        child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              InterText(
-                                text: singleShiftController
-                                    .incentiveByValue.value,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.black,
-                              ),
-                              PopupMenuButton<String>(
-                                key: singleShiftController.incentiveBy,
-                                itemBuilder: (context) {
-                                  return singleShiftController.incentiveByList
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                padding: EdgeInsets.zero,
-                                iconSize: 2,
-                                icon: Image.asset(AppAssets.dropDown),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10.0.r))),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.incentiveByValue.value =
-                                      v;
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        onTap: () {
-                          singleShiftController.incentiveBy.currentState!
-                              .showButtonMenu();
-                        },
-                      )),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                InterText(
-                  text: "Incentive Type",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
-                ),
-                SizedBox(width: Reponsive_.crosslength/15,),
-                InterText(
-                  text: "Incentive Amount",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
-                )
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 0,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: cx.width / 2,
-                        height: 50,
-                        child: Transform.scale(
-                          scale: 1,
-                          child: RadioGroup<String>.builder(
-                            direction: Axis.horizontal,
-                            groupValue: _verticalGroupValue,
-                            onChanged: (value) => setState(() {
-                              _verticalGroupValue = value ?? '';
-                            }),
-                            items: _status,
-                            itemBuilder: (item) => RadioButtonBuilder(
-                              item,
-                            ),
-                            fillColor: AppColors.buttonColor,
-                            horizontalAlignment: MainAxisAlignment.start,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: cx.width / 30,
-                ),
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 12),
-                    decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: TextFormField(
-                      controller: singleShiftController.rateController.value,
-                      style: GoogleFonts.inter(
-                          fontSize: 16,
-                          color: AppColors.black,
-                          fontWeight: FontWeight.w600),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Incentive Type",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
-                    ),
+                      SizedBox(height: 10,),
+                      Row(
+                        children: [
+                          Radio(
+                            value: BestTutorSite.javatpoint,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "Yes",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                          Radio(
+                            value: BestTutorSite.tutorialandexample,
+                            groupValue: _site,
+                            activeColor: AppColors.buttonColor,
+                            onChanged: (BestTutorSite? value) {
+                              setState(() {
+                                _site = value!;
+                              });
+                            },
+                          ),
+                          InterText(
+                            text: "NO",
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.hintTextGrey,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                InterText(
-                  text: "Floor Number",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
-                ),
-                SizedBox(width: Reponsive_.crosslength/12,),
-                InterText(
-                  text: "Supervisor",
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: AppColors.black,
+                Expanded(
+                  flex: 0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment:  MainAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Incentive Amount",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      SizedBox(
+                        width: 150,
+                        height: 60,
+                        child: CommonDropDown(
+                          context: context,
+                          list: singleShiftController.incentiveByList,
+                          mycontrollerValue: singleShiftController.incentiveByValue,
+
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
+            const Gap(10),
             Row(
               children: [
                 Expanded(
-                  child: Obx(() => InkWell(
-                        child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: InterText(
-                                  text: singleShiftController
-                                      .incentiveByValue.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                key: singleShiftController.floorNumberKey,
-                                itemBuilder: (context) {
-                                  return singleShiftController.incentiveByList
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                icon: Image.asset(AppAssets.dropDown),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10.0.r))),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.incentiveByValue.value =
-                                      v;
-                                },
-                              ),
-                            ],
-                          ),
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Floor Number",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      SizedBox(
+                        width: 150,
+                        height: 60,
+                        child: CommonDropDown(
+                          context: context,
+                          list: singleShiftController.incentiveByList,
+                          mycontrollerValue: singleShiftController.incentiveByValue,
+
                         ),
-                        onTap: () {
-                          singleShiftController.floorNumberKey.currentState!
-                              .showButtonMenu();
-                        },
-                      )),
-                ),
-                SizedBox(
-                  width: 10,
+                      )
+                    ],
+                  ),
                 ),
                 Expanded(
-                  child: Obx(() => InkWell(
-                        child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: AppColors.white,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: InterText(
-                                  text: singleShiftController
-                                      .incentiveByValue.value,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black,
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                key: singleShiftController.supervisorKey,
-                                itemBuilder: (context) {
-                                  return singleShiftController.incentiveByList
-                                      .map((str) {
-                                    return PopupMenuItem(
-                                      value: str,
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: <Widget>[
-                                          InterText(
-                                            text: str.toString(),
-                                            color: AppColors.black,
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                icon: Image.asset(AppAssets.dropDown),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10.0.r))),
-                                color: AppColors.backGroundColor,
-                                onSelected: (v) {
-                                  singleShiftController.incentiveByValue.value =
-                                      v;
-                                },
-                              ),
-                            ],
-                          ),
+                  flex: 0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment:  MainAxisAlignment.start,
+                    children: [
+                      InterText(
+                        text: "Supervisor",
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                      SizedBox(
+                        width: 150,
+                        height: 60,
+                        child: CommonDropDown(
+                          context: context,
+                          list: singleShiftController.incentiveByList,
+                          mycontrollerValue: singleShiftController.incentiveByValue,
+
                         ),
-                        onTap: () {
-                          singleShiftController.supervisorKey.currentState!
-                              .showButtonMenu();
-                        },
-                      )),
-                ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
             SizedBox(
@@ -855,28 +575,10 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-              width: cx.width,
-              height: 100,
-              margin: EdgeInsets.only(left: 12),
-              padding: EdgeInsets.only(left: 12),
-              decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(15)),
-              child: TextFormField(
-                controller: singleShiftController.rateController.value,
-                maxLines: 10,
-                style: GoogleFonts.inter(
-                    fontSize: 16,
-                    color: AppColors.black,
-                    fontWeight: FontWeight.w600),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
-              ),
+            SizedBox(height: 5,),
+            AppWidget().getTextField(
+              filledColor: AppColors.white,
+              maxLine: 5
             ),
             SizedBox(
               height: 15,
@@ -884,46 +586,31 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
             Row(
               children: [
                 Expanded(
-                    child: Container(
-                  alignment: Alignment.center,
-                  height: 65,
-                  decoration: BoxDecoration(
-                      color: AppColors.buttonColor,
-                      borderRadius: BorderRadius.circular(30)),
-                  child: InterText(
-                    text: "Publish",
-                    fontWeight: FontWeight.w700,
-                    fontSize: 18,
-                    color: AppColors.white,
-                  ),
-                )),
-                SizedBox(
-                  width: 10,
+                    child: CommonButton(
+                        text: "Publish",
+                         onTap: (){},
+                      ),
+                    ),
+                const SizedBox(
+                  width: 8,
                 ),
                 Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 65,
-                    decoration: BoxDecoration(
-                        color: AppColors.buttonColor,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: InterText(
+                  child: CommonButton(
                       text: "Assign",
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
-                      color: AppColors.white,
+                      onTap: (){},
                     ),
                   ),
-                ),
               ],
             ),
-            const Gap(50),
+            SizedBox(
+              height: 15,
+            ),
           ],
         )
       ],
     );
   }
-
+  BestTutorSite _site = BestTutorSite.javatpoint;
   String? selectedDate;
   final _status = [
     "Yes",
@@ -996,3 +683,4 @@ class TimeShift {
 
   TimeShift({this.timeShift, this.checkValue});
 }
+enum BestTutorSite { javatpoint, w3schools, tutorialandexample }

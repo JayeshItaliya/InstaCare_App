@@ -46,16 +46,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           fontWeight: FontWeight.bold,
           color: AppColors.blue,
         ),
-        icon: InkWell(
-          child: Builder(builder: (context) {
-            return Image.asset(
-              AppAssets.menu,
-              width: 20,
-              height: 20,
-            );
-          }),
-          onTap: () {
-            globalKey.currentState!.openDrawer();
+        icon: IconButton(
+          icon: Icon(Icons.arrow_back,color: AppColors.black),
+          onPressed: (){
+            onBack(context);
           },
         ),
         trailingIcon: [
@@ -1038,35 +1032,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     shrinkWrap: true,
                     itemCount: profileController.switchValues.length,
                     itemBuilder: (context, index) {
-                      return Obx(() => Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InterText(
-                                  text: profileController.switchName[index],
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black,
-                                ),
-                                FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: 50.0,
-                                  height: 30.0,
-                                  activeColor: AppColors.buttonColor,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value: profileController
-                                      .switchValues[index].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(index, val);
-                                  },
-                                )
-                              ],
+                      return Obx(() =>
+                          GestureDetector(
+                            onTap: (){
+                              profileController.toggleSwitch(index, profileController.switchValues[index].value);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  InterText(
+                                    text: profileController.switchName[index],
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                  ),
+                                  FlutterSwitch(
+                                    activeText: "",
+                                    inactiveText: "",
+                                    width: 50.0,
+                                    height: 30.0,
+                                    activeColor: AppColors.buttonColor,
+                                    inactiveColor:
+                                        Color.fromRGBO(217, 217, 217, 1),
+                                    toggleSize: 20.0,
+                                    value: profileController
+                                        .switchValues[index].value,
+                                    borderRadius: 50.0,
+                                    showOnOff: true,
+                                    onToggle: (val) async {
+                                      profileController.toggleSwitch(index, !val);
+                                    },
+                                  )
+                                ],
+                              ),
                             ),
                           ));
                     })
@@ -1074,10 +1074,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           )
         ],
-      ),
-      drawer: Drawer(
-        width: 300,
-        child: CommonDrawer(),
       ),
     );
   }

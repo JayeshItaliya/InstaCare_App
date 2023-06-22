@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:instacare/Utils/Commonwidgets.dart';
 import 'package:instacare/Utils/Responsive.dart';
+import 'package:instacare/Utils/commonButtonSheet.dart';
+import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/screens/messagesFlow/view/StaffTypeSelectionScreen.dart';
 import '../../../Utils/appColor.dart';
 import '../../../Utils/interText.dart';
@@ -36,27 +38,15 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
         actions: [
           InkWell(
               onTap: () {
-                showModalBottomSheet(
-                  isScrollControlled: true,
-                  context: context,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(25.0),
-                    ),
-                  ),
-                  backgroundColor: AppColors.white,
-                  builder: (BuildContext context) {
-                    return StatefulBuilder(
-                      builder: (BuildContext context, setState) {
-                        setState(() {});
-                        return Padding(
-                            padding: EdgeInsets.only(
-                                bottom:
-                                    MediaQuery.of(context).viewInsets.bottom),
-                            child: const StaffTypeSelectionScreen());
-                      },
-                    );
-                  },
+                CommonBottonSheet(
+                    context: context,
+                  childView: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      StaffTypeSelectionScreen()
+                    ],
+                  )
                 );
               },
               child: Image.asset(
@@ -107,35 +97,9 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
               child: Row(
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Message',
-                        isDense: true,
-                        fillColor: Colors.blue,
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.01,
-                          horizontal: Reponsive_.crosslength * 0.015,
-                        ),
-                        hintStyle: GoogleFonts.inter(
-                            color: AppColors.hintTextGrey,
-                            fontWeight: FontWeight.w400,
-                            fontSize: Reponsive_.crosslength * 0.018),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide:
-                              BorderSide(color: AppColors.white, width: 0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide:
-                              BorderSide(color: AppColors.white, width: 0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide:
-                              BorderSide(color: AppColors.white, width: 0),
-                        ),
-                      ),
+                    child: AppWidget().getTextField(
+                      hintText: 'Message',
+                      filledColor: AppColors.white
                     ),
                   ),
                   Image.asset(

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/interText.dart';
@@ -78,7 +77,7 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
                         top: Reponsive_.crosslength * 0.01,
                         left: Reponsive_.crosslength * 0.02,
                         right: Reponsive_.crosslength * 0.02),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.white),
                     child: Row(
@@ -88,9 +87,9 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
                           width: Reponsive_.crosslength*0.07,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                    AppAssets.completed,
+                              image: const DecorationImage(
+                                  image: NetworkImage(
+                                    "https://www.hospitalmanagement.net/wp-content/uploads/sites/9/2019/10/Beacon-Hospital.jpg",
                                   ),
                                   fit: BoxFit.cover)),
                         ),
@@ -131,14 +130,7 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
                                   ),
                                   Row(
                                     children: [
-                                      Container(
-                                        height: 10,
-                                        width: 10,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: AppColors.deepGreen,
-                                        ),
-                                      ),
+                                      Image.asset(AppAssets.downodTimeCard,width: 14,height: 10),
                                       InterText(
                                         text: ' Download ',
                                         color: AppColors.blue,

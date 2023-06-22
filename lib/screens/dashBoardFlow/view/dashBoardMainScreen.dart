@@ -114,13 +114,5 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
     );
   }
-
-
-
-
 }
-class Remander{
-  String? time;
-  String? messages;
-  Remander({this.time,this.messages});
-}
+

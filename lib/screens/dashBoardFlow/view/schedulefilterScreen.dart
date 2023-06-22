@@ -37,7 +37,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
         title: MontserratText(
           text: "Schedule Filter",
           fontWeight: FontWeight.w700,
-          fontSize: 30,
+          fontSize: 25,
           color: AppColors.black,
         ),
         actions: [
@@ -104,14 +104,16 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                             color: selectedShiftMorning == false
                                 ? Color.fromRGBO(126, 209, 230, 1)
                                 : null),
+                        SizedBox(width: 5,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InterText(
                               text: "Morning Shifts",
                               color: selectedShiftMorning == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -119,7 +121,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                               text: "7:00AM - 3:00PM",
                               color: selectedShiftMorning == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -160,14 +162,16 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                             color: selectedShiftMorning == false
                                 ? Color.fromRGBO(126, 209, 230, 1)
                                 : null),
+                        SizedBox(width: 5,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InterText(
                               text: "Afternoon Shifts",
                               color: selectedShiftAfternoon == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -175,7 +179,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                               text: "3:00PM - 11:00PM",
                               color: selectedShiftAfternoon == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -199,7 +203,6 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                     });
                   },
                   child: Container(
-                    alignment: Alignment.center,
                     height: cx.height / 11,
                     decoration: BoxDecoration(
                         color: selectedShiftNight == true
@@ -212,18 +215,17 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(AppAssets.night,
-                            color: selectedShiftMorning == false
-                                ? Color.fromRGBO(126, 209, 230, 1)
-                                : null),
+                        Image.asset(AppAssets.night, color: selectedShiftMorning == false ? Color.fromRGBO(126, 209, 230, 1) : null),
+                        SizedBox(width: 5,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InterText(
                               text: "Night Shifts",
                               color: selectedShiftNight == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),
@@ -231,7 +233,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                               text: "11:00PM - 7:00AM",
                               color: selectedShiftNight == true
                                   ? AppColors.white
-                                  : AppColors.black,
+                                  : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
                               fontSize: 13,
                             ),

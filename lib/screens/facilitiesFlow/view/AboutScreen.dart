@@ -199,7 +199,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   ),
                   if (index != 2) ...{
                     MySeparator(
-                      color: AppColors.blue,
+                      color: AppColors.buttonColor,
                       height: 2,
                     )
                   }

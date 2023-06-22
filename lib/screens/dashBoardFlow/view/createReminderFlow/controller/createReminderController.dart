@@ -25,6 +25,6 @@ class CreateReminderController extends GetxController {
     'Item7',
     'Item8',
   ];
-  var selectedValue="".obs;
-  var selectedValue1="".obs;
+  var selectedValue="Select".obs;
+  var selectedValue1="Select".obs;
 }

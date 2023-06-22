@@ -1620,40 +1620,44 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                           shrinkWrap: true,
                           itemCount: peopleController.switchValues.length,
                           itemBuilder: (context, index) {
-                            return Obx(() => Padding(
-                                  padding: const EdgeInsets.all(5.0),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InterText(
-                                        text:
-                                            peopleController.switchName[index],
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.black,
-                                      ),
-                                      FlutterSwitch(
-                                        activeText: "",
-                                        inactiveText: "",
-                                        width: 50.0,
-                                        height: 30.0,
-                                        activeColor: AppColors.deepGreen,
-                                        inactiveColor:
-                                            Color.fromRGBO(217, 217, 217, 1),
-                                        toggleSize: 20.0,
-                                        value: peopleController
-                                            .switchValues[index].value,
-                                        borderRadius: 50.0,
-                                        showOnOff: true,
-                                        onToggle: (val) async {
-                                          peopleController.toggleSwitch(
-                                              index, val);
-                                        },
-                                      )
-                                    ],
+                            return Obx(() => GestureDetector(
+                              onTap: (){
+                                peopleController.toggleSwitch(index, peopleController.switchValues[index].value);
+                              },
+                              child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        InterText(
+                                          text:
+                                              peopleController.switchName[index],
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.black,
+                                        ),
+                                        FlutterSwitch(
+                                          activeText: "",
+                                          inactiveText: "",
+                                          width: 50.0,
+                                          height: 30.0,
+                                          activeColor: AppColors.deepGreen,
+                                          inactiveColor:
+                                              Color.fromRGBO(217, 217, 217, 1),
+                                          toggleSize: 20.0,
+                                          value: peopleController
+                                              .switchValues[index].value,
+                                          borderRadius: 50.0,
+                                          showOnOff: true,
+                                          onToggle: (val) async {
+                                            peopleController.toggleSwitch(index, val);
+                                          },
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ));
+                            ));
                           })
                     ],
                   ),
@@ -1833,31 +1837,36 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InterText(
-                            text: "Completed Drug Screening",
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          Obx(() => FlutterSwitch(
-                                activeText: "",
-                                inactiveText: "",
-                                width: 50.0,
-                                height: 30.0,
-                                activeColor: AppColors.deepGreen,
-                                inactiveColor: Color.fromRGBO(217, 217, 217, 1),
-                                toggleSize: 20.0,
-                                value: profileController.switchValues[0].value,
-                                borderRadius: 50.0,
-                                showOnOff: true,
-                                onToggle: (val) async {
-                                  profileController.toggleSwitch(0, val);
-                                },
-                              ))
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          profileController.toggleSwitch(0, profileController.switchValues[0].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Completed Drug Screening",
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            Obx(() => FlutterSwitch(
+                                  activeText: "",
+                                  inactiveText: "",
+                                  width: 50.0,
+                                  height: 30.0,
+                                  activeColor: AppColors.deepGreen,
+                                  inactiveColor: Color.fromRGBO(217, 217, 217, 1),
+                                  toggleSize: 20.0,
+                                  value: profileController.switchValues[0].value,
+                                  borderRadius: 50.0,
+                                  showOnOff: true,
+                                  onToggle: (val) async {
+                                    profileController.toggleSwitch(0, !val);
+                                  },
+                                ))
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -2163,31 +2172,36 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InterText(
-                            text: "Verify TB Test Results (Annual)",
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          Obx(() => FlutterSwitch(
-                                activeText: "",
-                                inactiveText: "",
-                                width: 50.0,
-                                height: 30.0,
-                                activeColor: AppColors.deepGreen,
-                                inactiveColor: Color.fromRGBO(217, 217, 217, 1),
-                                toggleSize: 20.0,
-                                value: profileController.switchValues[0].value,
-                                borderRadius: 50.0,
-                                showOnOff: true,
-                                onToggle: (val) async {
-                                  profileController.toggleSwitch(0, val);
-                                },
-                              ))
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          profileController.toggleSwitch(0, profileController.switchValues[0].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Verify TB Test Results (Annual)",
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            Obx(() => FlutterSwitch(
+                                  activeText: "",
+                                  inactiveText: "",
+                                  width: 50.0,
+                                  height: 30.0,
+                                  activeColor: AppColors.deepGreen,
+                                  inactiveColor: Color.fromRGBO(217, 217, 217, 1),
+                                  toggleSize: 20.0,
+                                  value: profileController.switchValues[0].value,
+                                  borderRadius: 50.0,
+                                  showOnOff: true,
+                                  onToggle: (val) async {
+                                    profileController.toggleSwitch(0, !val);
+                                  },
+                                ))
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
@@ -2246,122 +2260,137 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: InterText(
-                              text:
-                                  "Employee Influenza Vaccine Consent-Declination Form",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                              maxLines: 2,
-                              textOverflow: TextOverflow.ellipsis,
+                      GestureDetector(
+                        onTap: (){
+                          profileController.toggleSwitch(0,  profileController.switchValues[0].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                    "Employee Influenza Vaccine Consent-Declination Form",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 0,
-                            child: Obx(() => FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: 50.0,
-                                  height: 30.0,
-                                  activeColor: AppColors.deepGreen,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value:
-                                      profileController.switchValues[0].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(0, val);
-                                  },
-                                )),
-                          )
-                        ],
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                    activeText: "",
+                                    inactiveText: "",
+                                    width: 50.0,
+                                    height: 30.0,
+                                    activeColor: AppColors.deepGreen,
+                                    inactiveColor:
+                                        Color.fromRGBO(217, 217, 217, 1),
+                                    toggleSize: 20.0,
+                                    value:
+                                        profileController.switchValues[0].value,
+                                    borderRadius: 50.0,
+                                    showOnOff: true,
+                                    onToggle: (val) async {
+                                      profileController.toggleSwitch(0, !val);
+                                    },
+                                  )),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: InterText(
-                              text:
-                                  "Religious Exemption Form - Employee Influenza",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                              maxLines: 2,
-                              textOverflow: TextOverflow.ellipsis,
+                      GestureDetector(
+                        onTap: (){
+                          profileController.toggleSwitch(1,  profileController.switchValues[1].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                    "Religious Exemption Form - Employee Influenza",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 0,
-                            child: Obx(() => FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: 50.0,
-                                  height: 30.0,
-                                  activeColor: AppColors.deepGreen,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value:
-                                      profileController.switchValues[0].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(0, val);
-                                  },
-                                )),
-                          )
-                        ],
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                    activeText: "",
+                                    inactiveText: "",
+                                    width: 50.0,
+                                    height: 30.0,
+                                    activeColor: AppColors.deepGreen,
+                                    inactiveColor:
+                                        Color.fromRGBO(217, 217, 217, 1),
+                                    toggleSize: 20.0,
+                                    value:
+                                        profileController.switchValues[1].value,
+                                    borderRadius: 50.0,
+                                    showOnOff: true,
+                                    onToggle: (val) async {
+                                      profileController.toggleSwitch(1, !val);
+                                    },
+                                  )),
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: InterText(
-                              text:
-                                  "Medical Exemption Form - Employee Influenza",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                              maxLines: 2,
-                              textOverflow: TextOverflow.ellipsis,
+                      GestureDetector(
+                        onTap: (){
+                          profileController.toggleSwitch(2,  profileController.switchValues[2].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                    "Medical Exemption Form - Employee Influenza",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 0,
-                            child: Obx(() => FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: 50.0,
-                                  height: 30.0,
-                                  activeColor: AppColors.deepGreen,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value:
-                                      profileController.switchValues[0].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(0, val);
-                                  },
-                                )),
-                          )
-                        ],
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                    activeText: "",
+                                    inactiveText: "",
+                                    width: 50.0,
+                                    height: 30.0,
+                                    activeColor: AppColors.deepGreen,
+                                    inactiveColor:
+                                        Color.fromRGBO(217, 217, 217, 1),
+                                    toggleSize: 20.0,
+                                    value:
+                                        profileController.switchValues[2].value,
+                                    borderRadius: 50.0,
+                                    showOnOff: true,
+                                    onToggle: (val) async {
+                                      profileController.toggleSwitch(2, !val);
+                                    },
+                                  )),
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),

@@ -3,7 +3,6 @@ import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonButton.dart';
-import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonDropDown.dart';
 import 'package:instacare/Utils/interText.dart';
@@ -27,6 +26,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: AppColors.white,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -55,7 +55,9 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
           CommonDropDown(
               context: context,
               list: filterController.roleList,
-              mycontrollerValue: filterController.roleListValue),
+              mycontrollerValue: filterController.roleListValue,
+            color: AppColors.white
+          ),
           const SizedBox(
             height: 15,
           ),

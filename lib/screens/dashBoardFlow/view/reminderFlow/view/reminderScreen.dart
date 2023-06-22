@@ -41,8 +41,6 @@ class _ReminderScreenState extends State<ReminderScreen> {
             return Container(
               padding: EdgeInsets.only(left: 16, top: 15, right: 16, bottom: 8),
               margin: EdgeInsets.only(top: 10),
-              width: cx.width,
-              height: cx.height / 6,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
                   border: Border.all(width: 2, color: AppColors.yallow)),
@@ -70,6 +68,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     color: AppColors.black,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
+                    maxLines: 10,
                   )
                 ],
               ),
@@ -89,7 +88,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
     Remander(
         time: "Today 11:45AM",
         messages:
-            "Team meeting, brainstorming for the new application scheduling process."),
+            "Team meeting, brainstorming for the new application scheduling process. application scheduling process."),
     Remander(
         time: "19 March 2023   12:00PM",
         messages: "Have to post message to the group."),

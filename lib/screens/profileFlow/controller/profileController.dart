@@ -13,7 +13,7 @@ class ProfileController extends GetxController {
   ];
 
   void toggleSwitch(int index, bool value) {
-    switchValues[index].value = value;
+    switchValues[index].value = !value;
     if (kDebugMode) {
       print("switchValue==>$value");
     }

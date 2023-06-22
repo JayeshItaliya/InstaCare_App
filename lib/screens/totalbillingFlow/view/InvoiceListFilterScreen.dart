@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:instacare/Utils/Commonwidgets.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/helper/date_conveter.dart';
 import '../../../Utils/CommonDropDown.dart';
 import '../../../Utils/appColor.dart';
 import '../../../Utils/pageNavigator.dart';
@@ -42,15 +43,24 @@ class _InvoiceListFilterScreenState extends State<InvoiceListFilterScreen> {
               ],
             ),
             SizedBox(height: Reponsive_.crosslength*0.025,),
-            Commonwidgets.text_field(
-                TextInputType.text, 'Date', _date_controller,
+            Obx(() => Commonwidgets.text_field(
+                TextInputType.text,
+                c.selectDate.value,
+                _date_controller,
                 hint_color: AppColors.black,
                 suffix: const Icon(
                   Icons.arrow_back_ios_new,
                   color: AppColors.buttonColor,
                 ),
                 readOnly: true, ontap: () {
-            }),
+              DateConverter.RangeDatePicker(
+                  context: context,
+                  monthType: true,
+                  dateRang: false
+              ).then((value) {
+                c.selectDate.value=value.toString();
+              });
+            }),),
             SizedBox(height: Reponsive_.crosslength*0.01,),
             Container(
                 alignment: Alignment.center,

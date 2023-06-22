@@ -109,6 +109,7 @@ class _StaffTypeSelectionScreenState extends State<StaffTypeSelectionScreen> {
             Expanded(
               child: ListView.builder(
                 itemCount: c.insta_care_staff_arr.length,
+                shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Obx(() => InkWell(
                     onTap: () {

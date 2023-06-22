@@ -27,9 +27,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       padding: padding,
       children: [
         Container(
-          padding: EdgeInsets.all(10),
-          height: cx.height/3.5,
-          width: cx.width,
+          padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(30)
@@ -41,11 +39,11 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                 text: "Please upload the excel sheet",
                 fontSize: 16,
                 color: AppColors.black,
-                 fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w600,
               ),
               SizedBox(height: 10,),
               InkWell(
-                  child: Image.asset(AppAssets.uploadeExcel),
+                child: Image.asset(AppAssets.uploadeExcel),
                 onTap: (){
                   openFilePicker();
                 },
@@ -57,8 +55,8 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                   width: cx.width,
                   height: cx.height/12,
                   decoration:BoxDecoration(
-                    color: AppColors.buttonColor,
-                   borderRadius: BorderRadius.circular(30)
+                      color: AppColors.buttonColor,
+                      borderRadius: BorderRadius.circular(30)
                   ),
                   child: InterText(
                     text: 'Upload File',
@@ -69,89 +67,89 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                 ),
                 onTap: (){
                   CommonBottonSheet(
-                    context: context,
-                    childView: Column(
-                      children: [
-                        SizedBox(
-                          height: 15,
-                        ),
-                        InterText(
-                          text: "Shift Detail",
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.blue,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        InterText(
-                          text: "Confirmation",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 30,
-                          color: AppColors.deepGreen,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        InterText(
-                          text: "Great, would you like to post this shift?",
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                          color: AppColors.black,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8,right: 8),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                  child: InkWell(
+                      context: context,
+                      childView: Column(
+                        children: [
+                          SizedBox(
+                            height: 15,
+                          ),
+                          InterText(
+                            text: "Shift Detail",
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.blue,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          InterText(
+                            text: "Confirmation",
+                            fontWeight: FontWeight.w700,
+                            fontSize: 30,
+                            color: AppColors.deepGreen,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          InterText(
+                            text: "Great, would you like to post this shift?",
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: AppColors.black,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8,right: 8),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    child: InkWell(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        height: 60,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.buttonColor,
+                                            borderRadius: BorderRadius.circular(30)
+                                        ),
+                                        child: InterText(
+                                          text: "YES",
+                                          color: AppColors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                      onTap: (){
+                                        toPushNavigator(context: context,PageName: ShiftDeatils());
+                                      },
+                                    )
+                                ),
+                                SizedBox(width: 10,),
+                                Expanded(
                                     child: Container(
                                       alignment: Alignment.center,
                                       height: 60,
                                       decoration: BoxDecoration(
-                                        color: AppColors.buttonColor,
-                                        borderRadius: BorderRadius.circular(30)
+                                          color: AppColors.hintTextGrey,
+                                          borderRadius: BorderRadius.circular(30)
                                       ),
                                       child: InterText(
-                                        text: "YES",
+                                        text: "No",
                                         color: AppColors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700,
                                       ),
-                                    ),
-                                    onTap: (){
-                                      toPushNavigator(context: context,PageName: ShiftDeatils());
-                                    },
-                                  )
-                              ),
-                              SizedBox(width: 10,),
-                              Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.hintTextGrey,
-                                        borderRadius: BorderRadius.circular(30)
-                                    ),
-                                    child: InterText(
-                                      text: "No",
-                                      color: AppColors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  )
-                              ),
-                            ],
+                                    )
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    )
+                          SizedBox(
+                            height: 30,
+                          ),
+                        ],
+                      )
                   );
                 },
               )

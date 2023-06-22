@@ -6,6 +6,8 @@ import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
+import 'package:instacare/Utils/commonButton.dart';
+import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
@@ -143,8 +145,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 return GestureDetector(
                   onTap: (){
                     setState(() {
-                      listItem[index].checkValue=listItem[index].checkValue;
-                      print(listItem[index].checkValue);
+                      listItem[index].checkValue=!listItem[index].checkValue;
                     });
                   },
                   child: Container(
@@ -295,7 +296,68 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
         padding: const EdgeInsets.only(bottom: 30),
         child: FloatingActionButton(
           backgroundColor: Color.fromRGBO(243, 48, 71, 1),
-          onPressed: () {},
+          onPressed: () {
+            CommonBottonSheet(
+              context: context,
+                childView:ListView(
+                  shrinkWrap: true,
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    MontserratText(
+                      text: "Schedule",
+                      color: AppColors.blue,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    MontserratText(
+                      text: "Confirmation",
+                      color: AppColors.redColor,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      textAlign: TextAlign.center,
+                    ),
+                    InterText(
+                      text: "Do you really want to Delete shift(s)?",
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      color: AppColors.black,
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: CommonButton(
+                              text: "Yes",
+                              onTap: (){},
+                              color: AppColors.redColor,
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Expanded(
+                            child: CommonButton(
+                              text: "No, Go Back",
+                              onTap: (){},
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ) ,
+
+            );
+          },
           child: Image.asset(AppAssets.delete),
         ),
       ),
@@ -426,6 +488,6 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
 class OpenShift {
   String? position;
   String? center;
-  bool? checkValue;
-  OpenShift({this.position, this.center, this.checkValue});
+  bool checkValue;
+  OpenShift({this.position, this.center, this.checkValue=false});
 }

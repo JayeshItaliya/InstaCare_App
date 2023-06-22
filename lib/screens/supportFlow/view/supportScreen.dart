@@ -34,11 +34,14 @@ class _SupportScreenState extends State<SupportScreen> {
             color: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
+          SizedBox(
+            height: 10,
+          ),
           CommonDropDown(
               context: context,
               list: supportController.supportList,
               mycontrollerValue: supportController.supportValue,
-            padding: EdgeInsets.zero
+             color: AppColors.white
           ),
           SizedBox(
             height: 10,
@@ -48,6 +51,9 @@ class _SupportScreenState extends State<SupportScreen> {
             fontSize: 16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
+          ),
+          SizedBox(
+            height: 10,
           ),
           AppWidget().getTextField(
             hintText: "",

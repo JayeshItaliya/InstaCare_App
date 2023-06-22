@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         return const GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'InstaCare App',
-           home:const SplashScreen(),
+           home: SplashScreen(),
+          //home: Test(),
         );
       },
 

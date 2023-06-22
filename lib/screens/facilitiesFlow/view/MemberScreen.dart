@@ -81,10 +81,10 @@ class _MemberScreenState extends State<MemberScreen> {
                         width: Reponsive_.crosslength*0.06,
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            border: Border.all(color: AppColors.allGray,width: 3),
+                            border: Border.all(color: AppColors.buttonColor,width: 3),
                             image: DecorationImage(
-                                image: AssetImage(
-                                  AppAssets.completed,
+                                image: NetworkImage(
+                                  "https://i.pinimg.com/originals/90/e5/4c/90e54c7266401804899b6c0a233d0c83.png",
                                 ),
                                 fit: BoxFit.cover)),
                       ),

@@ -6,4 +6,5 @@ class InvoiceListFilterController extends GetxController{
 
   var amount_range_arr=['1000-2000','3000-4000','5000-6000','7000-8000','9000-10000',].obs;
 
+  var selectDate="Date".obs;
 }

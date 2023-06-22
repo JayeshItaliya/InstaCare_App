@@ -206,7 +206,7 @@ class _DashboardState extends State<Dashboard> {
                   Expanded(
                     child: InkWell(
                       child: Container(
-                        padding: EdgeInsets.only(top: 18,left: 15,bottom: 12),
+                        padding: const EdgeInsets.only(top: 18,left: 15,bottom: 12),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage(AppAssets.confirmShift)
