@@ -5,6 +5,8 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/employeeFlow/timeCardFlow/view/employeeTimeCard.dart';
 
 class EmployeeDashBoardScreen extends StatefulWidget {
   const EmployeeDashBoardScreen({super.key});
@@ -29,57 +31,68 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
               fontWeight: FontWeight.bold,
               textAlign: TextAlign.center
             ),
+          SizedBox(height: Reponsive_.crosslength/30,),
           ListView.builder(
             shrinkWrap: true,
-            itemCount: 2,
+            itemCount: 3,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context,index){
               return Padding(
-                padding:   EdgeInsets.only(top: Reponsive_.crosslength/35,),
-                child: ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: Container(
-                    height:Reponsive_.crosslength/10,
-                    width: Reponsive_.crosslength/10,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: NetworkImage("https://is1-2.housingcdn.com/4f2250e8/73b4c8375352d2558cc55aeb0bb7f937/v0/fs/devi_shanmuga_flats-surappattu-chennai-devi_flat_promoters.jpeg"),
-                        fit: BoxFit.cover
+                padding: const EdgeInsets.only(top: 8,bottom: 10),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex:1,
+                      child: Container(
+                        width: Reponsive_.w/12,
+                        height: Reponsive_.h/9,
+                        decoration: ShapeDecoration(
+                          image: const DecorationImage(
+                            image: NetworkImage("https://cdn.assistedlivingcenter.com/wp-content/uploads/2020/11/elevate-care-riverwoods-il.jpg"),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(10)
                     ),
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      InterText(
-                        text: "Elevate Care North Branch",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: AppColors.black,
+                    SizedBox(width: Reponsive_.crosslength/100,),
+                    Expanded(
+                      flex:3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Elevate Care North Branch",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: AppColors.black,
+                          ),
+                          SizedBox(height: Reponsive_.crosslength/200,),
+                          InterText(
+                            text: "Tuesday, 21 March 2023",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: AppColors.hintTextGrey,
+                          ),
+                          SizedBox(height: Reponsive_.crosslength/200,),
+                          Row(
+                            children: [
+                              const Icon(Icons.access_time_filled_rounded,color: AppColors.buttonColor,),
+                              SizedBox(width: Reponsive_.crosslength/200,),
+                              InterText(
+                                text: "Clock In at 7:00AM",
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: AppColors.buttonColor,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      SizedBox(height: Reponsive_.crosslength/200,),
-                      InterText(
-                        text: "Tuesday, 21 March 2023",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: AppColors.hintTextGrey,
-                      ),
-                      SizedBox(height: Reponsive_.crosslength/200,),
-                    ],
-                  ),
-                  subtitle: Row(
-                    children: [
-                      const Icon(Icons.access_time_filled_rounded,color: AppColors.buttonColor,),
-                      SizedBox(width: Reponsive_.crosslength/200,),
-                      InterText(
-                        text: "Clock In at 7:00AM",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: AppColors.buttonColor,
-                      ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               );
             }
@@ -118,24 +131,29 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
               ),
               SizedBox(width: 10,),
               Expanded(
-                child: Container(
-                  width: Reponsive_.crosslength/10,
-                  height: Reponsive_.crosslength/8,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(AppAssets.calenderEmployee),
-                      InterText(
-                        text: "My Account",
-                        color: AppColors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                      )
-                    ],
+                child: GestureDetector(
+                  onTap: (){
+                    toPushNavigator(PageName: EmployeeTimeCard(),context: context);
+                  },
+                  child: Container(
+                    width: Reponsive_.crosslength/10,
+                    height: Reponsive_.crosslength/8,
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(AppAssets.calenderEmployee),
+                        InterText(
+                          text: "My Account",
+                          color: AppColors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

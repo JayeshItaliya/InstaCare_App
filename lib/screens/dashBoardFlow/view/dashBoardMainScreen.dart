@@ -29,8 +29,8 @@ class DashBoardScreen extends StatefulWidget {
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
   List<Widget> screens = [
-    Dashboard(),
-    //EmployeeDashBoardScreen(),
+    //Dashboard(),
+    EmployeeDashBoardScreen(),
     ScheduleScreen(),
     MyAvailability(),
     MarketPlaceScreen(),
