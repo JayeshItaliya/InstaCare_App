@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -18,6 +19,7 @@ class _NewsScreenState extends State<NewsScreen> {
   final cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
@@ -53,14 +55,14 @@ class _NewsScreenState extends State<NewsScreen> {
               children: [
                 InterText(
                   text: newsModel.headerNews,
-                  fontSize: 16,
+                  fontSize: Reponsive_.px16,
                   fontWeight: FontWeight.w700,
                   color: AppColors.blue,
                 ),
                 SizedBox( height: 10),
                 InterText(
                   text: newsModel.newDisp,
-                  fontSize: 14,
+                  fontSize: Reponsive_.px14,
                   fontWeight: FontWeight.w400,
                   color: AppColors.hintTextGrey,
                   maxLines: 2,
@@ -71,13 +73,13 @@ class _NewsScreenState extends State<NewsScreen> {
                   children: [
                     InterText(
                       text: newsModel.newAutherName,
-                      fontSize: 14,
+                      fontSize: Reponsive_.px14,
                       fontWeight: FontWeight.w400,
                       color: AppColors.black,
                     ),
                     InterText(
                       text: newsModel.newsTime,
-                      fontSize: 14,
+                      fontSize: Reponsive_.px14,
                       fontWeight: FontWeight.w400,
                       color: AppColors.black,
                     ),

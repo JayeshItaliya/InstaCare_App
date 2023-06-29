@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -23,6 +24,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
   final filterController = Get.put(FilterController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
@@ -32,7 +34,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
           padding: const EdgeInsets.all(8.0),
           child: MontserratText(
             text: "Apply Filter",
-            fontSize: 30,
+            fontSize: Reponsive_.px30,
             fontWeight: FontWeight.w700,
             color: AppColors.black,
           ),
@@ -76,7 +78,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                   children: [
                     InterText(
                       text: filterController.rangeDateValue.value,
-                      fontSize: 16,
+                      fontSize: Reponsive_.px16,
                       fontWeight: FontWeight.w600,
                       color: AppColors.black,
                     ),
@@ -99,7 +101,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
           InterText(
             text: "Shift Time",
             fontWeight: FontWeight.w700,
-            fontSize: 18,
+            fontSize: Reponsive_.px18,
             color: AppColors.black,
           ),
           const SizedBox(
@@ -123,7 +125,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                     color: filterController.morningShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
-                    fontSize: 14,
+                    fontSize: Reponsive_.px14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -153,7 +155,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                     color: filterController.afterNoonShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
-                    fontSize: 14,
+                    fontSize: Reponsive_.px14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -183,7 +185,7 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                     color: filterController.nightShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
-                    fontSize: 14,
+                    fontSize: Reponsive_.px14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

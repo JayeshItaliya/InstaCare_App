@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -26,6 +27,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
@@ -56,7 +58,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
                     text:createReminderController.selectedDate.value,
                     color:createReminderController.selectedDate.isEmpty? AppColors.hintTextGrey:AppColors.black,
                     fontWeight:createReminderController.selectedDate.isEmpty? FontWeight.w400:FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                   ),
                   IconButton(
                       onPressed: (){
@@ -103,7 +105,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
                     text:createReminderController.currentTime.value,
                     color:createReminderController.currentTime.isEmpty? AppColors.hintTextGrey:AppColors.black,
                     fontWeight:createReminderController.currentTime.isEmpty? FontWeight.w400:FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                   ),
                   IconButton(
                       onPressed: (){
@@ -151,7 +153,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
             child: TextFormField(
               maxLines: 8,
               style: GoogleFonts.inter(
-                  fontSize: 16,
+                  fontSize: Reponsive_.px16,
                   color: AppColors.black,
                   fontWeight: FontWeight.w600),
               decoration: InputDecoration(

@@ -49,7 +49,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                           border: InputBorder.none,
                           hintText: "Search by name",
                           hintStyle: GoogleFonts.inter(
-                              fontSize: 14,
+                              fontSize: Reponsive_.px14,
                               color: AppColors.hintTextGrey,
                               fontWeight: FontWeight.w400
                           )
@@ -227,10 +227,6 @@ class _PeopleScreenState extends State<PeopleScreen> {
             },
           ),
         ],
-      ),
-      drawer: Drawer(
-        width: Reponsive_.crosslength*0.35,
-        child:  CommonDrawer(),
       ),
     );
   }

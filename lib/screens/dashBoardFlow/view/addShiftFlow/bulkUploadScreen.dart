@@ -1,5 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -23,6 +24,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
   final cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return ListView(
       padding: padding,
       children: [
@@ -37,7 +39,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
             children: [
               InterText(
                 text: "Please upload the excel sheet",
-                fontSize: 16,
+                fontSize: Reponsive_.px16,
                 color: AppColors.black,
                 fontWeight: FontWeight.w600,
               ),
@@ -62,7 +64,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                     text: 'Upload File',
                     color: AppColors.white,
                     fontWeight: FontWeight.w700,
-                    fontSize: 18,
+                    fontSize: Reponsive_.px18,
                   ),
                 ),
                 onTap: (){
@@ -75,7 +77,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                           ),
                           InterText(
                             text: "Shift Detail",
-                            fontSize: 12,
+                            fontSize: Reponsive_.px12,
                             fontWeight: FontWeight.w400,
                             color: AppColors.blue,
                           ),
@@ -85,7 +87,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                           InterText(
                             text: "Confirmation",
                             fontWeight: FontWeight.w700,
-                            fontSize: 30,
+                            fontSize: Reponsive_.px30,
                             color: AppColors.deepGreen,
                           ),
                           SizedBox(
@@ -94,7 +96,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                           InterText(
                             text: "Great, would you like to post this shift?",
                             fontWeight: FontWeight.w400,
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             color: AppColors.black,
                           ),
                           SizedBox(
@@ -116,7 +118,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                                         child: InterText(
                                           text: "YES",
                                           color: AppColors.white,
-                                          fontSize: 18,
+                                          fontSize: Reponsive_.px18,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
@@ -137,7 +139,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                                       child: InterText(
                                         text: "No",
                                         color: AppColors.white,
-                                        fontSize: 18,
+                                        fontSize: Reponsive_.px18,
                                         fontWeight: FontWeight.w700,
                                       ),
                                     )

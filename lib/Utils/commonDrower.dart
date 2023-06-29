@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonDrawerModel.dart';
@@ -30,6 +31,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
   final globalKey = GlobalKey<PopupMenuButtonState>();
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Container(
         padding: EdgeInsets.only(left: 20.w, top: 25.h, right: 10.w),
         decoration: const BoxDecoration(
@@ -104,7 +106,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                             text: 'Instacare Staff',
                             color: AppColors.buttonColor,
                             fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
+                            fontSize: Reponsive_.px16,
                           )
                         ],
                       ),
@@ -117,7 +119,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         text: 'Status: ',
                         color: AppColors.buttonColor,
                         fontWeight: FontWeight.w400,
-                        fontSize: 16.sp,
+                        fontSize: Reponsive_.px16,
                       ),
                       Gap(8.w),
                       Container(
@@ -145,7 +147,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         },
                         child: InterText(
                           text: status,
-                          fontSize: 16,
+                          fontSize: Reponsive_.px16,
                           color: AppColors.white,
                           fontWeight: FontWeight.w400,
                         ),
@@ -186,7 +188,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                   InterText(
                                     text: str.toString(),
                                     color: AppColors.white,
-                                    fontSize: 16.sp,
+                                    fontSize: Reponsive_.px16,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ],
@@ -232,7 +234,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                               title: InterText(
                                 text: data.name,
                                 fontWeight: FontWeight.w500,
-                                fontSize: 16.sp,
+                                fontSize: Reponsive_.px16,
                                 color: AppColors.white,
                               ),
                               onTap: () {
@@ -265,7 +267,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                         title: InterText(
                                           text: "Logout",
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 16.sp,
+                                          fontSize: Reponsive_.px16,
                                           color: AppColors.white,
                                         ),
                                         onTap: () {

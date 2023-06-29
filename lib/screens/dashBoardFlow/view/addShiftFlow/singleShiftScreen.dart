@@ -1,9 +1,7 @@
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:group_radio_button/group_radio_button.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
@@ -44,7 +42,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
           children: [
             InterText(
               text: "Facility",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -63,7 +61,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
           children: [
             InterText(
               text: "Role",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -82,7 +80,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
           children: [
             InterText(
               text: "Number of Positions (Open Shifts)",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -103,7 +101,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               text: "Date",
               color: AppColors.black,
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
             ),
             Gap(10),
             InkWell(
@@ -125,7 +123,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                       text: selectedDate == null
                           ? DateConverter.dateMonthYear(currentDateTime)
                           : selectedDate.toString(),
-                      fontSize: 16,
+                      fontSize: Reponsive_.px16,
                       fontWeight: FontWeight.w600,
                       color: AppColors.black,
                     ),
@@ -147,7 +145,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               text: "Shift Time",
               color: AppColors.black,
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
             ),
             ListView.builder(
                 itemCount: timeData.length,
@@ -167,17 +165,25 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                             onChanged: (bool? newValue) {
                               setState(() {
                                 timeData[index].checkValue = newValue!;
+                                print(timeData[index].checkValue);
                               });
                             },
                           ),
                         ),
                       ),
                       Expanded(
-                        child: InterText(
-                          text: timeData[index].timeShift,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,
-                          color: AppColors.black,
+                        child: GestureDetector(
+                          child: InterText(
+                            text: timeData[index].timeShift,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17,
+                            color: AppColors.black,
+                          ),
+                          onTap: (){
+                            setState(() {
+                              timeData[index].checkValue=!timeData[index].checkValue!;
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -190,7 +196,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   flex: 2,
                   child: InterText(
                     text: "Start Time",
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
@@ -198,7 +204,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                 Expanded(
                   child: InterText(
                     text: "End Time",
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
@@ -274,7 +280,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Rate (per hour)",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       SizedBox(
@@ -296,7 +302,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Cancellation Guarantee",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 7,),
                       Row(
@@ -313,7 +319,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -329,7 +335,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -352,7 +358,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Incentives",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       Row(
@@ -370,7 +376,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -386,7 +392,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -405,7 +411,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Incentive By",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -434,7 +440,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Incentive Type",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       Row(
@@ -452,7 +458,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -468,7 +474,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -487,7 +493,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Incentive Amount",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -516,7 +522,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Floor Number",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -541,7 +547,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                         text: "Supervisor",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -569,7 +575,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   InterText(
                     text: "Notes",
                     fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                   ),
                 ],
@@ -632,7 +638,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         currentDate: DateTime.now(),
         dayTextStyle: GoogleFonts.inter(
             fontWeight: FontWeight.w400,
-            fontSize: 16,
+            fontSize: Reponsive_.px16,
             color: const Color.fromRGBO(2, 5, 10, 1)),
         lastDate: DateTime.now(),
       ),

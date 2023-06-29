@@ -3,7 +3,7 @@ import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
-import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
+import '../screens/notifactionFlow/view/notificationScreen.dart';
 
 
 class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {

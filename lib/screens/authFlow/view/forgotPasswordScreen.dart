@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
 
@@ -21,6 +22,7 @@ class _LoginScreenState extends State<ForgotPasswordScreen> {
   CommonController cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Container(
       color: AppColors.backGroundColor,
       child: SafeArea(
@@ -60,13 +62,13 @@ class _LoginScreenState extends State<ForgotPasswordScreen> {
               children: [
                 InterText(
                   text: "Reset Password",
-                  fontSize: 30,
+                  fontSize: Reponsive_.px30,
                   fontWeight: FontWeight.w700,
                 ),
                 InterText(
                   text: "Enter your registered email address to get password reset link.",
                   maxLines: 2,
-                  fontSize: 16,
+                  fontSize: Reponsive_.px16,
                   fontWeight: FontWeight.w500,
                   color: AppColors.hintTextGrey,
                 ),

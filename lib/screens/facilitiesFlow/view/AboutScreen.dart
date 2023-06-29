@@ -11,7 +11,11 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/controller/filterController.dart';
+
+import '../../../Utils/commonButton.dart';
+import '../controller/AddressBottomSheetController.dart';
 
 
 class AboutScreen extends StatefulWidget {
@@ -68,15 +72,15 @@ class _AboutScreenState extends State<AboutScreen> {
                 text: 'Contact Info',
                 color: AppColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength * 0.02,
+                fontSize: Reponsive_.crosslength * 0.015,
               ),
               InkWell(
                 onTap: (){
                   edit_contact_info_bottomsheet();
                 },
                 child: Container(
-                  height: Reponsive_.crosslength * 0.035,
-                  width: Reponsive_.crosslength * 0.035,
+                  height: Reponsive_.crosslength * 0.032,
+                  width: Reponsive_.crosslength * 0.032,
                   decoration: BoxDecoration(
                     color: AppColors.yallow,
                     shape: BoxShape.circle,
@@ -90,7 +94,7 @@ class _AboutScreenState extends State<AboutScreen> {
             ],
           ),
           SizedBox(
-            height: Reponsive_.crosslength * 0.015,
+            height: Reponsive_.crosslength * 0.01,
           ),
           ListView.builder(
             shrinkWrap: true,
@@ -114,13 +118,14 @@ class _AboutScreenState extends State<AboutScreen> {
                               text: 'Contact Person',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: Reponsive_.crosslength * 0.016,
+                              fontSize: Reponsive_.crosslength * 0.012,
                             ),
                             InterText(
                               text: 'Stacy Douglas',
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
-                              fontSize: Reponsive_.crosslength * 0.02,
+                              fontSize: Reponsive_.crosslength * 0.015,
+                              height: Reponsive_.crosslength*0.0015,
                             ),
                           ],
                         ),
@@ -134,13 +139,14 @@ class _AboutScreenState extends State<AboutScreen> {
                               text: 'Position',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: Reponsive_.crosslength * 0.016,
+                              fontSize: Reponsive_.crosslength * 0.012,
                             ),
                             InterText(
                               text: 'Manager',
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
-                              fontSize: Reponsive_.crosslength * 0.02,
+                              fontSize: Reponsive_.crosslength * 0.015,
+                              height: Reponsive_.crosslength*0.0015,
                             ),
                           ],
                         ),
@@ -161,13 +167,14 @@ class _AboutScreenState extends State<AboutScreen> {
                               text: 'Phone',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: Reponsive_.crosslength * 0.016,
+                              fontSize: Reponsive_.crosslength * 0.012,
                             ),
                             InterText(
                               text: '8888888888',
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
-                              fontSize: Reponsive_.crosslength * 0.02,
+                              fontSize: Reponsive_.crosslength * 0.015,
+                              height: Reponsive_.crosslength*0.0015,
                             ),
                           ],
                         ),
@@ -181,13 +188,14 @@ class _AboutScreenState extends State<AboutScreen> {
                               text: 'Email',
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                              fontSize: Reponsive_.crosslength * 0.016,
+                              fontSize: Reponsive_.crosslength * 0.012,
                             ),
                             InterText(
                               text: 'stacy.d@gmail.com',
                               color: Colors.black,
                               fontWeight: FontWeight.w600,
-                              fontSize: Reponsive_.crosslength * 0.02,
+                              fontSize: Reponsive_.crosslength * 0.015,
+                              height: Reponsive_.crosslength*0.0015,
                             ),
                           ],
                         ),
@@ -224,15 +232,15 @@ class _AboutScreenState extends State<AboutScreen> {
                 text: 'Address',
                 color: AppColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength * 0.02,
+                fontSize: Reponsive_.crosslength * 0.015,
               ),
               InkWell(
                 onTap: () {
                   edit_address_bottomsheet();
                 },
                 child: Container(
-                  height: Reponsive_.crosslength * 0.035,
-                  width: Reponsive_.crosslength * 0.035,
+                  height: Reponsive_.crosslength * 0.032,
+                  width: Reponsive_.crosslength * 0.032,
                   decoration: BoxDecoration(
                     color: AppColors.yallow,
                     shape: BoxShape.circle,
@@ -246,19 +254,20 @@ class _AboutScreenState extends State<AboutScreen> {
             ],
           ),
           SizedBox(
-            height: Reponsive_.crosslength * 0.015,
+            height: Reponsive_.crosslength * 0.01,
           ),
           InterText(
             text: 'Address',
             color: Colors.black,
             fontWeight: FontWeight.w400,
-            fontSize: Reponsive_.crosslength * 0.016,
+            fontSize: Reponsive_.crosslength * 0.012,
           ),
           InterText(
             text: '5454 Fargo Ave',
             color: Colors.black,
             fontWeight: FontWeight.w600,
-            fontSize: Reponsive_.crosslength * 0.02,
+            fontSize: Reponsive_.crosslength * 0.015,
+            height: Reponsive_.crosslength*0.0015,
           ),
           SizedBox(
             height: Reponsive_.crosslength * 0.015,
@@ -274,13 +283,14 @@ class _AboutScreenState extends State<AboutScreen> {
                       text: 'City',
                       color: Colors.black,
                       fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.crosslength * 0.016,
+                      fontSize: Reponsive_.crosslength * 0.012,
                     ),
                     InterText(
                       text: 'Skokie',
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.crosslength * 0.02,
+                      fontSize: Reponsive_.crosslength * 0.015,
+                      height: Reponsive_.crosslength*0.0015,
                     ),
                   ],
                 ),
@@ -294,13 +304,14 @@ class _AboutScreenState extends State<AboutScreen> {
                       text: 'State',
                       color: Colors.black,
                       fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.crosslength * 0.016,
+                      fontSize: Reponsive_.crosslength * 0.012,
                     ),
                     InterText(
                       text: 'Illinois',
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.crosslength * 0.02,
+                      fontSize: Reponsive_.crosslength * 0.015,
+                      height: Reponsive_.crosslength*0.0015,
                     ),
                   ],
                 ),
@@ -321,13 +332,14 @@ class _AboutScreenState extends State<AboutScreen> {
                       text: 'Zip',
                       color: Colors.black,
                       fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.crosslength * 0.016,
+                      fontSize: Reponsive_.crosslength * 0.012,
                     ),
                     InterText(
                       text: '123456',
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.crosslength * 0.02,
+                      fontSize: Reponsive_.crosslength * 0.015,
+                      height: Reponsive_.crosslength*0.0015,
                     ),
                   ],
                 ),
@@ -341,13 +353,14 @@ class _AboutScreenState extends State<AboutScreen> {
                       text: 'Country',
                       color: Colors.black,
                       fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.crosslength * 0.016,
+                      fontSize: Reponsive_.crosslength * 0.012,
                     ),
                     InterText(
                       text: 'United States',
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.crosslength * 0.02,
+                      fontSize: Reponsive_.crosslength * 0.015,
+                      height: Reponsive_.crosslength*0.0015,
                     ),
                   ],
                 ),
@@ -372,7 +385,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 text: 'Facility Guide',
                 color: AppColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength * 0.02,
+                fontSize: Reponsive_.crosslength * 0.015,
               ),
               SizedBox(
                 height: Reponsive_.crosslength * 0.005,
@@ -381,13 +394,13 @@ class _AboutScreenState extends State<AboutScreen> {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
-                    fontSize: Reponsive_.crosslength * 0.02,
+                    fontSize: Reponsive_.crosslength * 0.015,
                   )),
             ],
           ),
           Container(
-            height: Reponsive_.crosslength * 0.035,
-            width: Reponsive_.crosslength * 0.035,
+            height: Reponsive_.crosslength * 0.032,
+            width: Reponsive_.crosslength * 0.032,
             decoration: BoxDecoration(
               color: AppColors.yallow,
               shape: BoxShape.circle,
@@ -414,15 +427,15 @@ class _AboutScreenState extends State<AboutScreen> {
                 text: 'About',
                 color: AppColors.blue,
                 fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength * 0.02,
+                fontSize: Reponsive_.crosslength * 0.015,
               ),
               InkWell(
                 onTap: () {
                   edit_about_bottom_sheet();
                 },
                 child: Container(
-                  height: Reponsive_.crosslength * 0.035,
-                  width: Reponsive_.crosslength * 0.035,
+                  height: Reponsive_.crosslength * 0.032,
+                  width: Reponsive_.crosslength * 0.032,
                   decoration: BoxDecoration(
                     color: AppColors.yallow,
                     shape: BoxShape.circle,
@@ -436,23 +449,23 @@ class _AboutScreenState extends State<AboutScreen> {
             ],
           ),
           SizedBox(
-            height: Reponsive_.crosslength * 0.015,
+            height: Reponsive_.crosslength * 0.01,
           ),
           InterText(
             text: 'Description',
             color: Colors.black,
             fontWeight: FontWeight.w400,
-            fontSize: Reponsive_.crosslength * 0.016,
+            fontSize: Reponsive_.crosslength * 0.012,
           ),
           SizedBox(
-            height: Reponsive_.crosslength * 0.01,
+            height: Reponsive_.crosslength * 0.005,
           ),
           Text(
               'Fusce eget mattis nulla. Nunc ligula sem, ornare sed feugiat sit amet, consectetur eget urna. Praesent non fermentum quam, sed tincidunt orci. Ut enim arcu, pellentesque eu quam in, sollicitudin ultrices tellus. Integer at efficitur arcu. Duis eleifend, leo sit amet dictum tincidunt, felis ipsum suscipit nisl, in laoreet nibh elit eu tortor. In pretium felis dolor.Integer sed quam ultrices, sagittis tellus a, venenatis ex. Pellentesque condimentum tristique ante, sed scelerisque sapien lobortis quis.',
               style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength * 0.02,
+                color: AppColors.black,
+                fontWeight: FontWeight.w600,height: Reponsive_.crosslength*0.0016,
+                fontSize: Reponsive_.crosslength * 0.015,
               )),
         ],
       ),
@@ -485,21 +498,21 @@ class _AboutScreenState extends State<AboutScreen> {
               ),
               Container(
                 width: double.infinity,
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 padding: EdgeInsets.symmetric(
-                    vertical: Reponsive_.crosslength * 0.02),
+                    vertical: Reponsive_.crosslength * 0.02,horizontal: Reponsive_.crosslength * 0.02),
                 decoration: BoxDecoration(
                     color: AppColors.backGroundColor,
                     borderRadius: BorderRadius.all(Radius.circular(50))),
                 child: InterText(
                   text: 'Beacon Health Center',
                   fontWeight: FontWeight.w400,
-                  fontSize: Reponsive_.crosslength * 0.02,
-                  color: Colors.black,
+                  fontSize: Reponsive_.crosslength * 0.018,
+                  color: AppColors.black,
                 ),
               ),
               SizedBox(
-                height: Reponsive_.crosslength * 0.02,
+                height: Reponsive_.crosslength * 0.01,
               ),
               Expanded(
                 child: Container(
@@ -519,49 +532,27 @@ class _AboutScreenState extends State<AboutScreen> {
                         hintStyle:
                             GoogleFonts.inter(fontWeight: FontWeight.w400),
                         contentPadding: EdgeInsets.symmetric(
-                            horizontal: Reponsive_.crosslength * 0.015)),
+                            horizontal: Reponsive_.crosslength * 0.015,vertical: Reponsive_.crosslength * 0.0015,)),
                   ),
                 ),
               ),
               SizedBox(
-                height: Reponsive_.crosslength * 0.02,
+                height: Reponsive_.crosslength * 0.06,
               ),
               Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.015),
-                      decoration: BoxDecoration(
-                          color: AppColors.buttonColor,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: InterText(
-                        text: "SAVE",
-                        color: Colors.white,
-                        fontSize: Reponsive_.crosslength * 0.02,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                    child: CommonButton(text: 'SAVE', onTap: (){
+                      onBack(context);
+                    }),
                   ),
                   SizedBox(
                     width: Reponsive_.crosslength * 0.01,
                   ),
                   Expanded(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.015),
-                      decoration: BoxDecoration(
-                          color: AppColors.allGray,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: InterText(
-                        text: "CANCEL",
-                        color: Colors.white,
-                        fontSize: Reponsive_.crosslength * 0.02,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                    child: CommonButton(text: 'CANCEL', onTap: (){
+                      onBack(context);
+                    },color: AppColors.allGray),
                   ),
                 ],
               ),
@@ -583,7 +574,7 @@ class _AboutScreenState extends State<AboutScreen> {
         TextEditingController(text: 'illinois');
     TextEditingController _zipController =
         TextEditingController(text: '123456');
-    final filterController = Get.put(FilterController());
+    final filterController = Get.put(AddressBottomSheetController());
     CommonBottonSheet(
         childView: Container(
           padding: EdgeInsets.only(
@@ -619,13 +610,8 @@ class _AboutScreenState extends State<AboutScreen> {
                       borderRadius: BorderRadius.circular(50)),
                   child: CommonDropDown(
                       context: context,
-                      list: [
-                        'abc',
-                        'abc',
-                        'abc',
-                        'abc',
-                      ],
-                      mycontrollerValue: filterController.roleListValue,
+                      list: filterController.countryList,
+                      mycontrollerValue: filterController.selectedCountry,
                       color: AppColors.backGroundColor),
                   height: Reponsive_.crosslength * 0.055),
               SizedBox(
@@ -723,141 +709,127 @@ class _ContactInfoBottomSheetLayoutState
   }
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: Reponsive_.crosslength*0.8,
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          bottomNavigationBar: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02),
-                child: InkWell(
-                  onTap: () {
-                    AboutScreen.ContactInfoModelList.add(ContactInfoModel(
-                        TextEditingController(),
-                        TextEditingController(),
-                        TextEditingController(),
-                        TextEditingController()));
-                    setState(() {});
+    return Container(
+        height: Reponsive_.crosslength*0.8,
+        padding: EdgeInsets.only(
+          left: Reponsive_.h * 0.02,
+          right: Reponsive_.h * 0.02,),
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(15))),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  child: Container(
+                    width: 100,
+                    height: 5,
+                    color: AppColors.yallow,
+                  ),
+                  onTap: (){
+                    Navigator.of(context).pop();
                   },
-                  child: InterText(
-                    text: '+ Add Contact',
-                    fontWeight: FontWeight.w400,
-                    fontSize: Reponsive_.crosslength * 0.02,
-                    color: AppColors.blue,
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all( Reponsive_.crosslength*0.02),
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(
-                    vertical: Reponsive_.crosslength * 0.015),
-                decoration: BoxDecoration(
-                    color: AppColors.buttonColor,
-                    borderRadius: BorderRadius.circular(50)),
-                child: InterText(
-                  text: "SAVE & CLOSE",
-                  color: Colors.white,
-                  fontSize: Reponsive_.crosslength * 0.02,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ],
-          ),
-          body: Container(
-              padding: EdgeInsets.only(
-                  left: Reponsive_.h * 0.02,
-                  right: Reponsive_.h * 0.02),
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                )
+              ],
+            ),
+            SizedBox(height: Reponsive_.h * 0.03,),
+            InterText(
+              text: ' Contact Info',
+              fontWeight: FontWeight.w700,
+              fontSize: Reponsive_.crosslength * 0.025,
+              color: Colors.black,
+            ),
+            SizedBox(
+              height: Reponsive_.crosslength * 0.02,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: AboutScreen.ContactInfoModelList.length,
+                itemBuilder: (context, index) {
+                  ContactInfoModel model =
+                  AboutScreen.ContactInfoModelList[index];
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InkWell(
-                        child: Container(
-                          width: 100,
-                          height: 5,
-                          color: AppColors.yallow,
+                      Commonwidgets.text_field(
+                          TextInputType.text, "Name", model._nameController),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.01,
+                      ),
+                      Commonwidgets.text_field(TextInputType.text, "Position",
+                          model._positionController),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.01,
+                      ),
+                      Commonwidgets.text_field(TextInputType.text, "Number",
+                          model._numberController),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.01,
+                      ),
+                      Commonwidgets.text_field(
+                          TextInputType.text, "Email", model._emailController),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.01,
+                      ),
+                      if (index != AboutScreen.ContactInfoModelList.length-1) ...{
+                        MySeparator(
+                          color: AppColors.blue,
+                          height: 2,
                         ),
-                        onTap: (){
-                          Navigator.of(context).pop();
-                        },
-                      )
-                    ],
-                  ),
-                  SizedBox(height: Reponsive_.h * 0.03,),
-                  InterText(
-                    text: ' Contact Info',
-                    fontWeight: FontWeight.w700,
-                    fontSize: Reponsive_.crosslength * 0.025,
-                    color: Colors.black,
-                  ),
-                  SizedBox(
-                    height: Reponsive_.crosslength * 0.02,
-                  ),
-                  Flexible(
-                    child: ListView.builder(
-                      itemCount: AboutScreen.ContactInfoModelList.length,
-                      itemBuilder: (context, index) {
-                        ContactInfoModel model =
-                            AboutScreen.ContactInfoModelList[index];
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Commonwidgets.text_field(
-                                TextInputType.text, "Name", model._nameController),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.01,
-                            ),
-                            Commonwidgets.text_field(TextInputType.text, "Position",
-                                model._positionController),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.01,
-                            ),
-                            Commonwidgets.text_field(TextInputType.text, "Number",
-                                model._numberController),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.01,
-                            ),
-                            Commonwidgets.text_field(
-                                TextInputType.text, "Email", model._emailController),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.01,
-                            ),
-                            if (index != AboutScreen.ContactInfoModelList.length-1) ...{
-                              MySeparator(
-                                color: AppColors.blue,
-                                height: 2,
-                              ),
-                              SizedBox(
-                                height: Reponsive_.crosslength * 0.01,
-                              ),
-                            },
-
-                          ],
-                        );
+                        SizedBox(
+                          height: Reponsive_.crosslength * 0.01,
+                        ),
                       },
-                    ),
-                  ),
-                  SizedBox(
-                    height: Reponsive_.crosslength * 0.02,
-                  ),
 
-                ],
-              )),
-        ),
-      ),
-    );
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: Reponsive_.crosslength * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02),
+              child: InkWell(
+                onTap: () {
+                  AboutScreen.ContactInfoModelList.add(ContactInfoModel(
+                      TextEditingController(),
+                      TextEditingController(),
+                      TextEditingController(),
+                      TextEditingController()));
+                  setState(() {});
+                },
+                child: InterText(
+                  text: '+ Add Contact',
+                  fontWeight: FontWeight.w400,
+                  fontSize: Reponsive_.crosslength * 0.02,
+                  color: AppColors.blue,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all( Reponsive_.crosslength*0.02),
+              width: double.infinity,
+              alignment: Alignment.center,
+              padding: EdgeInsets.symmetric(
+                  vertical: Reponsive_.crosslength * 0.015),
+              decoration: BoxDecoration(
+                  color: AppColors.buttonColor,
+                  borderRadius: BorderRadius.circular(50)),
+              child: InterText(
+                text: "SAVE & CLOSE",
+                color: Colors.white,
+                fontSize: Reponsive_.crosslength * 0.02,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ],
+        ));
   }
 }
 

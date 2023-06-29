@@ -1,16 +1,11 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/interText.dart';
 
-import '../../../Utils/interText.dart';
 
 
 class WhoIsOnScreen extends StatefulWidget {
@@ -45,7 +40,7 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(height: 10,),
+            SizedBox(height: Reponsive_.crosslength*0.01,),
             Container(
               color: Colors.white,
               child: TabBar(
@@ -54,6 +49,9 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                 onTap: (index){
                   setState(() {
                     selectedIndex=index;
+                    _controller.animateToPage(selectedIndex,
+                        duration: Duration(milliseconds: 100),
+                        curve: Curves.bounceIn);
                   });
                 },
                 tabs: [
@@ -62,25 +60,25 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                     height: Reponsive_.crosslength*0.055,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                      border: Border(bottom: BorderSide(color: selectedIndex==0?AppColors.blue:AppColors.white,width: 2))
+                      border: Border(bottom: BorderSide(color: selectedIndex==0?AppColors.blue:AppColors.white,width: 3))
                     ),
                     alignment: Alignment.center,
                     child: InterText(
                       text: 'Scheduled',
-                      color:selectedIndex==0?AppColors.blue: Color(0xff02050A),
+                      color:selectedIndex==0?AppColors.blue: AppColors.hintTextGrey,
                       fontSize: Reponsive_.crosslength*0.018,
                       fontWeight: FontWeight.w600,
                     ),
                   ),Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        border: Border(bottom: BorderSide(color: selectedIndex==1?AppColors.blue:AppColors.white,width: 2))
+                        border: Border(bottom: BorderSide(color: selectedIndex==1?AppColors.blue:AppColors.white,width: 3))
                     ),
                     height: Reponsive_.crosslength*0.055,
                     alignment: Alignment.center,
                     child: InterText(
                       text: 'Clocked In',
-                      color: selectedIndex==1?AppColors.blue: Color(0xff02050A),
+                      color: selectedIndex==1?AppColors.blue: AppColors.hintTextGrey,
                       fontSize: Reponsive_.crosslength*0.018,
                       fontWeight: FontWeight.w600,
                     ),
@@ -88,7 +86,7 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                 ],
               ),
             ),
-
+          SizedBox(height: Reponsive_.crosslength*0.007,),
             Flexible(
               child: PageView(
                 controller: _controller,
@@ -97,8 +95,8 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
                     selectedIndex=i;
                   });
                 },
-                children: const [
-                  Page(),
+                children: [
+                  Page(count: 5,),
                   Page(),
                 ],
               ),
@@ -113,7 +111,8 @@ class _WhoIsOnScreenState extends State<WhoIsOnScreen>  with SingleTickerProvide
 }
 
 class Page extends StatefulWidget {
-  const Page({super.key});
+  int count;
+  Page({this.count=10,super.key});
 
   @override
   State<Page> createState() => _PageState();
@@ -128,26 +127,27 @@ class _PageState extends State<Page>{
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       body: ListView.builder(
-        itemCount: 5,
+        itemCount: widget.count,
         itemBuilder: (context, index) {
           return Container(
             padding: EdgeInsets.symmetric(
                 horizontal: Reponsive_.crosslength * 0.01,
                 vertical: Reponsive_.crosslength * 0.013),
             margin: EdgeInsets.only(
-                top: Reponsive_.crosslength * 0.01,
-                left: Reponsive_.crosslength * 0.02,
-                right: Reponsive_.crosslength * 0.02),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                top: Reponsive_.crosslength * 0.005,
+                left: Reponsive_.crosslength * 0.015,
+                right: Reponsive_.crosslength * 0.015),
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
                 color: Colors.white),
             child: Row(
               children: [
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: Reponsive_.crosslength*0.055,
+                  width: Reponsive_.crosslength*0.055,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      border: Border.all(color: AppColors.image_border,width: 2),
                       image: DecorationImage(
                           image: AssetImage(
                             AppAssets.completed,
@@ -195,8 +195,8 @@ class _PageState extends State<Page>{
                       children: [
                         InterText(
                           text: 'Available ',
-                          color: Color(0xff02050A),
-                          fontSize: 15,
+                          color: AppColors.hintTextGrey,
+                          fontSize: Reponsive_.crosslength*0.015,
                           fontWeight: FontWeight.w400,
                         ),
                         Container(
@@ -225,6 +225,7 @@ class _PageState extends State<Page>{
                                       Reponsive_.crosslength * 0.02),
                                   color: AppColors.yallow),
                               child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   InterText(
                                     text: '5',
@@ -234,7 +235,7 @@ class _PageState extends State<Page>{
                                   ),
                                   Image.asset(
                                     AppAssets.star,
-                                    height: Reponsive_.crosslength * 0.015,
+                                    height: Reponsive_.crosslength * 0.013,
                                   )
                                 ],
                               ),

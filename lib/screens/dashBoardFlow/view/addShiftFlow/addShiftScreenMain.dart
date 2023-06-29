@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonController.dart';
@@ -36,6 +37,7 @@ class _AddShiftScreenState extends State<AddShiftScreen> with TickerProviderStat
   final cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -86,17 +88,17 @@ class _AddShiftScreenState extends State<AddShiftScreen> with TickerProviderStat
                   tabs: [
                     InterText(
                       text: "Single Shift",
-                      fontSize: 14,
+                      fontSize: Reponsive_.px14,
                       color:selectedIndex==0?AppColors.blue:AppColors.hintTextGrey,
                     ),
                     InterText(
                       text: "Recurring Shifts",
-                      fontSize: 14,
+                      fontSize: Reponsive_.px14,
                       color:selectedIndex==1?AppColors.blue:AppColors.hintTextGrey,
                     ),
                     InterText(
                       text: "Bulk Upload",
-                      fontSize: 14,
+                      fontSize: Reponsive_.px14,
                       color:selectedIndex==2?AppColors.blue:AppColors.hintTextGrey,
                     )
                   ],

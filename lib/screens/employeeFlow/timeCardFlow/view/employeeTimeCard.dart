@@ -5,7 +5,6 @@ import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
-import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
@@ -109,14 +108,14 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                 InterText(
                                   text: "Elevate Care North Branch",
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                                  fontSize: Reponsive_.px18,
                                   color: AppColors.black,
                                 ),
                                 SizedBox(height: Reponsive_.crosslength/200,),
                                 InterText(
                                   text: "Tuesday, 21 March 2023",
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 16,
+                                  fontSize: Reponsive_.px16,
                                   color: AppColors.hintTextGrey,
                                 ),
                                 SizedBox(height: Reponsive_.crosslength/200,),
@@ -127,7 +126,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                     InterText(
                                       text: "Clock In at 7:00AM",
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 16,
+                                      fontSize: Reponsive_.px16,
                                       color: AppColors.buttonColor,
                                     ),
                                   ],
@@ -154,19 +153,19 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                       text: "Clock-In",
                                       color: AppColors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 14,
+                                      fontSize: Reponsive_.px14,
                                     )
                                   ],
                                 ),
                                 InterText(
                                   text: "Saturday, 18 March",
-                                  fontSize: 14,
+                                  fontSize: Reponsive_.px14,
                                   fontWeight: FontWeight.normal,
                                   color: Color.fromRGBO(2, 5, 10, 1),
                                 ),
                                 InterText(
                                   text: "7:00 AM",
-                                  fontSize: 16,
+                                  fontSize: Reponsive_.px16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.blue,
                                 ),
@@ -186,19 +185,19 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                       text: "Clock-In",
                                       color: AppColors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 14,
+                                      fontSize: Reponsive_.px14,
                                     )
                                   ],
                                 ),
                                 InterText(
                                   text: "Saturday, 18 March",
-                                  fontSize: 14,
+                                  fontSize: Reponsive_.px14,
                                   fontWeight: FontWeight.normal,
                                   color: Color.fromRGBO(2, 5, 10, 1),
                                 ),
                                 InterText(
                                   text: "3:25 PM",
-                                  fontSize: 16,
+                                  fontSize: Reponsive_.px16,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.blue,
                                 ),
@@ -218,7 +217,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                       SizedBox(width: 8,),
                                       InterText(
                                         text: "Download Timecard",
-                                        fontSize: 14,
+                                        fontSize: Reponsive_.px14,
                                         fontWeight: FontWeight.bold,
                                         color: AppColors.blue,
                                       ),
@@ -227,7 +226,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                   GestureDetector(
                                     child: InterText(
                                       text: "Report an Issue",
-                                      fontSize: 14,
+                                      fontSize: Reponsive_.px14,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.blue,
                                     ),
@@ -242,7 +241,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                                 textAlign: TextAlign.center,
                                                 fontWeight: FontWeight.w700,
                                                 color: AppColors.black,
-                                                fontSize: 30,
+                                                fontSize: Reponsive_.px30,
                                               ),
                                               SizedBox(
                                                 height: 20,
@@ -254,7 +253,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                                     TextSpan(
                                                       text: 'Do you want to “',
                                                       style: GoogleFonts.inter(
-                                                        fontSize: 18,
+                                                        fontSize: Reponsive_.px18,
                                                         color: AppColors.allGray,
                                                         fontWeight: FontWeight.w500
                                                       ),
@@ -262,7 +261,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                                     TextSpan(
                                                       text: 'Report" ',
                                                       style: GoogleFonts.inter(
-                                                          fontSize: 18,
+                                                          fontSize: Reponsive_.px18,
                                                           color: AppColors.black,
                                                           fontWeight: FontWeight.w500
                                                       ),
@@ -270,7 +269,7 @@ class _EmployeeTimeCardState extends State<EmployeeTimeCard> {
                                                     TextSpan(
                                                       text: 'all the selected shifts timecards?',
                                                       style: GoogleFonts.inter(
-                                                          fontSize: 18,
+                                                          fontSize: Reponsive_.px18,
                                                           color: AppColors.allGray,
                                                           fontWeight: FontWeight.w500,
                                                       ),

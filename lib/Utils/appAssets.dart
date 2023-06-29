@@ -10,6 +10,7 @@ class AppAssets {
   static const login = '$authFlow/login.png';
   static const lock = '$authFlow/lock.png';
   static const user = '$authFlow/user.png';
+  static const appLogoOrg = '$authFlow/appLogo.png';
 
 
 
@@ -68,4 +69,15 @@ class AppAssets {
   static const  calenderEmployee= '$dashBoardFlow/calenderEmployee.png';
   static const  settings= '$dashBoardFlow/settings.png';
   static const  payroll= '$dashBoardFlow/payroll.png';
+  static const  employeeDownload= '$dashBoardFlow/empDownlod.png';
+  static const  clockInEmp= '$dashBoardFlow/clockInEmp.png';
+  static const  clocseShift= '$dashBoardFlow/clocseShift.png';
+  static const  empLogo= '$dashBoardFlow/empLogo.png';
+  static const  location= '$dashBoardFlow/location.png';
+  static const  senderEmp= '$dashBoardFlow/senderEmp.png';
+  static const  downlodEmp= '$dashBoardFlow/downlodEmp.png';
+  static const  popMenuIcon= '$dashBoardFlow/popMenuIcon.png';
+  static const  editIcon= '$dashBoardFlow/editIcon.png';
+  static const  deleteIcon= '$dashBoardFlow/delectIcon.png';
+  static const  closeIcon= '$dashBoardFlow/closeIcon.png';
 }

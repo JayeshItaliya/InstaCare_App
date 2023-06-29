@@ -9,6 +9,7 @@ import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import '../../../../Utils/appAssets.dart';
 import '../controllers/MyAvailabilityController.dart';
 import 'FacilitySelectionScreen.dart';
 
@@ -47,7 +48,7 @@ class _MyAvailabilityState extends State<MyAvailability> {
                 context: context,
                 list: c.week_option_list,
                 color: Colors.white,
-                mycontrollerValue: c.selected_week_option),
+                mycontrollerValue: c.selected_week_option,hint: 'Select Week'),
             SizedBox(
               height: Reponsive_.crosslength * 0.02,
             ),
@@ -76,7 +77,7 @@ class _MyAvailabilityState extends State<MyAvailability> {
             SizedBox(
               height: Reponsive_.crosslength * 0.01,
             ),
-            ListView.builder(
+            Obx(() => ListView.builder(
               itemCount: c.days_arr.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -88,7 +89,7 @@ class _MyAvailabilityState extends State<MyAvailability> {
                       Expanded(
                         flex: 2,
                         child: Obx(
-                          () => InkWell(
+                              () => InkWell(
                             onTap: () {
                               c.selectDay(index);
                             },
@@ -108,12 +109,12 @@ class _MyAvailabilityState extends State<MyAvailability> {
                                     width: Reponsive_.crosslength * 0.025,
                                     decoration: c.days_selection_arr[index]
                                         ? const BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/x/check.png')))
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/x/check.png')))
                                         : const BoxDecoration(
-                                            color: AppColors.backGroundColor,
-                                            shape: BoxShape.circle),
+                                        color: AppColors.backGroundColor,
+                                        shape: BoxShape.circle),
                                   ),
                                   InterText(
                                     text: '  ${c.days_arr[index]}',
@@ -135,81 +136,21 @@ class _MyAvailabilityState extends State<MyAvailability> {
                           child: Row(
                             children: [
                               Expanded(
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: Reponsive_.crosslength * 0.016,
-                                    horizontal: Reponsive_.crosslength * 0.015,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                          Reponsive_.crosslength * 0.01),
-                                      color: Colors.white),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InterText(
-                                        text: '07:00',
-                                        color: AppColors.hintTextGrey,
-                                        fontSize:
-                                            Reponsive_.crosslength * 0.018,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                      RotatedBox(
-                                        quarterTurns: 3,
-                                        child: Icon(
-                                          Icons.arrow_back_ios_new,
-                                          color: AppColors.buttonColor,
-                                          size: Reponsive_.crosslength * 0.02,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                child: dropDown(index,c.fromTimeList[index], true, c),
                               ),
                               SizedBox(
                                 width: Reponsive_.crosslength * 0.005,
                               ),
                               Expanded(
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: Reponsive_.crosslength * 0.016,
-                                    horizontal: Reponsive_.crosslength * 0.015,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                          Reponsive_.crosslength * 0.01),
-                                      color: Colors.white),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      InterText(
-                                        text: '07:00',
-                                        color: AppColors.hintTextGrey,
-                                        fontSize:
-                                            Reponsive_.crosslength * 0.018,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                      RotatedBox(
-                                        quarterTurns: 3,
-                                        child: Icon(
-                                          Icons.arrow_back_ios_new,
-                                          color: AppColors.buttonColor,
-                                          size: Reponsive_.crosslength * 0.02,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
+                                  child:
+                                  dropDown(index,c.toTimeList[index], false, c)),
                             ],
                           )),
                     ],
                   ),
                 );
               },
-            ),
+            )),
             SizedBox(
               height: Reponsive_.crosslength * 0.02,
             ),
@@ -225,28 +166,34 @@ class _MyAvailabilityState extends State<MyAvailability> {
             Container(
               decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
-              ),
+                  borderRadius:
+                      BorderRadius.circular(Reponsive_.crosslength * 0.02)),
               child: TextField(
                 readOnly: true,
-                onTap: (){
-                  toPushNavigator(context: context,PageName: FacilitySelectionScreen());
+                onTap: () {
+                  toPushNavigator(
+                      context: context, PageName: FacilitySelectionScreen());
                 },
                 decoration: InputDecoration(
                   suffixIcon: RotatedBox(
                       quarterTurns: 3,
-                      child: Icon(Icons.arrow_back_ios_new,color: AppColors.buttonColor,)),
-                  isDense: true,fillColor: Colors.blue,
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        color: AppColors.buttonColor,
+                      )),
+                  isDense: true,
+                  fillColor: Colors.blue,
                   border: InputBorder.none,
                   hintText: 'Select Facility',
-
-                  helperStyle: GoogleFonts.inter(color:AppColors.hintTextGrey,fontWeight: FontWeight.w400 ),
-                  contentPadding: EdgeInsets.only(top: Reponsive_.crosslength*0.015,left: Reponsive_.crosslength*0.015),
+                  helperStyle: GoogleFonts.inter(
+                      color: AppColors.hintTextGrey,
+                      fontWeight: FontWeight.w400),
+                  contentPadding: EdgeInsets.only(
+                      top: Reponsive_.crosslength * 0.015,
+                      left: Reponsive_.crosslength * 0.015),
                 ),
-
               ),
             ),
-
             SizedBox(
               height: Reponsive_.crosslength * 0.02,
             ),
@@ -256,18 +203,17 @@ class _MyAvailabilityState extends State<MyAvailability> {
                 Expanded(
                   child: CommonButton(
                     text: "SAVE",
-                    onTap: (){},
+                    onTap: () {},
                   ),
                 ),
                 SizedBox(
                   width: Reponsive_.crosslength * 0.01,
                 ),
-
                 Expanded(
                   child: CommonButton(
-                    text: "CANCEL",
-                    onTap: (){},
-                  ) ,
+                    text: "RESET",color: AppColors.allGray,
+                    onTap: () {},
+                  ),
                 ),
               ],
             ),
@@ -275,5 +221,45 @@ class _MyAvailabilityState extends State<MyAvailability> {
         ),
       ),
     );
+  }
+
+  Widget dropDown(int index,
+      String selected_value, bool isFrom, MyAvailabilityController c) {
+    return Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius:
+              BorderRadius.all(Radius.circular(Reponsive_.crosslength * 0.01)),
+        ),
+        padding: EdgeInsets.symmetric(
+          vertical: Reponsive_.crosslength * 0.001,
+          horizontal: Reponsive_.crosslength * 0.015,
+        ),
+        child: Obx(() => DropdownButtonHideUnderline(
+               child: DropdownButton(
+
+                 items: c.timeList.map((value) => DropdownMenuItem(
+                     value: value,
+                     child: InterText(
+                       text: value,
+                       color: AppColors.hintTextGrey,
+                       fontSize: Reponsive_.crosslength * 0.018,
+                       fontWeight: FontWeight.w400,
+                     )))
+                     .toList(),
+                 onChanged: (value) {
+                   if (isFrom) {
+                     c.fromTimeList[index] = value.toString();
+                   } else {
+                     c.toTimeList[index] = value.toString();
+                   }
+                   print("selected_value ${c.timeList.indexOf(value!)} $value ${c.fromTimeList}");
+                 },
+                 isExpanded: false,
+                 icon: Image.asset(AppAssets.dropDown),
+                 value: isFrom?c.fromTimeList[index]:c.toTimeList[index],
+               ))
+           ),
+        );
   }
 }

@@ -12,7 +12,10 @@ import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/cont
 import 'package:instacare/screens/employeeSelectionFlow/view/SendingScreen.dart';
 import '../../../Utils/CommonDropDown.dart';
 import '../../../Utils/appColor.dart';
+import '../../../Utils/commonButton.dart';
 import '../../../Utils/pageNavigator.dart';
+import '../../employeeSelectionFlow/view/FacilityEmployeeSelectionScreen.dart';
+import '../controller/SendMessageController.dart';
 
 
 class SendMessageScreen extends StatefulWidget {
@@ -23,7 +26,7 @@ class SendMessageScreen extends StatefulWidget {
 }
 
 class _SendMessageScreenState extends State<SendMessageScreen> {
-  final filterController = Get.put(FilterController());
+  final filterController = Get.put(SendMessageController());
   TextEditingController _subj_controller = TextEditingController();
   int index = -1;
 
@@ -39,6 +42,24 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
       child: ListView(
         shrinkWrap: true,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                child: Container(
+                  width: 100,
+                  height: 5,
+                  color: AppColors.yallow,
+                ),
+                onTap: (){
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ),
+          SizedBox(
+            height: Reponsive_.crosslength * 0.025,
+          ),
           InterText(
             text: 'Send Message',
             fontWeight: FontWeight.w700,
@@ -57,13 +78,8 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
               height: Reponsive_.crosslength * 0.055,
               child: CommonDropDown(
                   context: context,
-                  list: [
-                    'abc',
-                    'abc',
-                    'abc',
-                    'abc',
-                  ],
-                  mycontrollerValue: filterController.roleListValue,
+                  list: filterController.centerList,
+                  mycontrollerValue: filterController.selectedCenter,
                   color: AppColors.backGroundColor)),
           SizedBox(
             height: Reponsive_.crosslength * 0.01,
@@ -75,15 +91,16 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
                 color: AppColors.buttonColor,
               ),
               readOnly: true, ontap: () {
-            CommonBottonSheet(
+                toPushNavigator(context: context,PageName:FacilityEmployeeSelectionScreen() );
+            /*CommonBottonSheet(
                 childView: ListView(
                   shrinkWrap: true,
                   children: [
-                    SendingScreen()
+                    FacilityEmployeeSelectionScreen()
                   ],
                 ),
                 context: context
-            );
+            );*/
           }),
           SizedBox(
             height: Reponsive_.crosslength * 0.01,
@@ -91,7 +108,7 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
           Commonwidgets.text_field(
               TextInputType.text, 'Subject', _subj_controller),
           SizedBox(
-            height: Reponsive_.crosslength * 0.01,
+            height: Reponsive_.crosslength * 0.02,
           ),
           Padding(
             padding: EdgeInsets.only(right: Reponsive_.crosslength * 0.1),
@@ -117,7 +134,7 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
             ),
           ),
           SizedBox(
-            height: Reponsive_.crosslength * 0.01,
+            height: Reponsive_.crosslength * 0.02,
           ),
           Container(
               alignment: Alignment.center,
@@ -128,69 +145,32 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
               height: Reponsive_.crosslength * 0.055,
               child: CommonDropDown(
                   context: context,
-                  list: [
-                    'abc',
-                    'abc',
-                    'abc',
-                    'abc',
-                  ],
-                  mycontrollerValue: filterController.roleListValue,
-                  color: AppColors.backGroundColor)),
+                  list:filterController.quickMsgList,
+                  mycontrollerValue: filterController.selectedQuickMsg,
+                  color: AppColors.backGroundColor,hint: 'Select quick message')),
           SizedBox(
             height: Reponsive_.crosslength * 0.01,
           ),
           AppWidget().getTextField(
               hintText: "Message",
               filledColor: AppColors.backGroundColor,
-              maxLine: 10
+              maxLine: 5
           ),
           const Expanded(child: SizedBox()),
+          SizedBox(
+            height: Reponsive_.crosslength * 0.2,
+          ),
           Row(
             children: [
+
               Expanded(
-                child: InkWell(
-                  onTap: () {
-                    onBack(context);
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                        vertical: Reponsive_.crosslength * 0.015),
-                    decoration: BoxDecoration(
-                        color: AppColors.buttonColor,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: InterText(
-                      text: "Send",
-                      color: Colors.white,
-                      fontSize: Reponsive_.crosslength * 0.02,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
+                  child: CommonButton(text: 'SEND', onTap: (){onBack(context);},height: Reponsive_.crosslength*0.06)
               ),
               SizedBox(
                 width: Reponsive_.crosslength * 0.01,
               ),
               Expanded(
-                child: InkWell(
-                  onTap: () {
-                    onBack(context);
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(
-                        vertical: Reponsive_.crosslength * 0.015),
-                    decoration: BoxDecoration(
-                        color: AppColors.allGray,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: InterText(
-                      text: "Cancel",
-                      color: Colors.white,
-                      fontSize: Reponsive_.crosslength * 0.02,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
+                  child: CommonButton(text: 'CANCEL', onTap: (){onBack(context);},color: AppColors.allGray,height: Reponsive_.crosslength*0.06,)
               ),
             ],
           ),

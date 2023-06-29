@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'appColor.dart';
 
@@ -71,6 +72,7 @@ class AppWidget {
     bool passwordVisible = isPassword;
 
     return StatefulBuilder(builder: (context, newSetState) {
+      Reponsive_.init(context);
       return TextFormField(
         scrollController: scrollController,
         maxLength: maxLength,
@@ -163,7 +165,7 @@ class AppWidget {
               textFieldBorderStyle,
           hintText: hintText ?? "",
           hintStyle: GoogleFonts.inter(
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               color:Color.fromRGBO(2, 5, 10, 0.5),
               fontWeight: FontWeight.w400
           ),
@@ -177,7 +179,7 @@ class AppWidget {
                 Center(
                   child: InterText(
                       text: '+91',
-                      fontSize: 16,
+                      fontSize: Reponsive_.px16,
                       fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(width: 10),

@@ -57,7 +57,7 @@ class _FacilitySelectionScreenState extends State<FacilitySelectionScreen> {
             SizedBox(
               height: Reponsive_.crosslength * 0.01,
             ),
-            Commonwidgets.text_field(TextInputType.text,'Search Name',_search_name_controller,),
+            Commonwidgets.text_field(TextInputType.text,'Search Name',_search_name_controller,weight: FontWeight.w600),
 
             Expanded(
               child: ListView.builder(
@@ -80,7 +80,7 @@ class _FacilitySelectionScreenState extends State<FacilitySelectionScreen> {
                             c.facility_selection_arr[index]
                                 ? 'assets/x/check.png'
                                 : 'assets/x/uncheck.png',
-                            height: Reponsive_.crosslength * 0.025,
+                            height: Reponsive_.crosslength * 0.028,
                           ),
                           SizedBox(
                             width: Reponsive_.crosslength * 0.02,
@@ -96,7 +96,7 @@ class _FacilitySelectionScreenState extends State<FacilitySelectionScreen> {
                                       borderRadius: BorderRadius.all(Radius.circular(10)),
                                       image: DecorationImage(
                                           image: AssetImage(
-                                            AppAssets.completed,
+                                            'assets/x/fecility_img.png',
                                           ),
                                           fit: BoxFit.cover)),
                                 ),

@@ -82,7 +82,7 @@ class _CommonContainerState extends State<CommonContainer> {
           right: widget.marginright == 0
               ? Reponsive_.crosslength * 0.015
               : widget.marginright,
-          bottom: widget.margintop == 0 ? 0 : widget.margintop),
+          bottom: widget.marginbottom == 0 ? 0 : widget.marginbottom),
       decoration: BoxDecoration(
           color: widget.bgcolor,
           borderRadius: BorderRadius.circular(widget.borderRadius == 0

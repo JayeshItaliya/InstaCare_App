@@ -24,7 +24,7 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
-        backgroundColor: AppColors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leadingWidth: Reponsive_.crosslength*0.30,
         leading: Padding(
@@ -32,7 +32,7 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
           child: MontserratText(
             text: "Apply Filter",
             fontWeight: FontWeight.w700,
-            fontSize: 30,
+            fontSize: Reponsive_.px30,
             color: AppColors.blue,
           ),
         ),
@@ -45,74 +45,91 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
           )
         ],
       ),
-      body: ListView(
-        padding: padding,
+      body: Column(
         children: [
-          CommonDropDown(
-              context: context,
-              list: peopleController.role,
-              mycontrollerValue: peopleController.roleValue,
-              color: AppColors.white,
+          Expanded(
+            child: ListView(
+              padding: padding,
+              children: [
+                CommonDropDown(
+                    context: context,
+                    hint: 'Select Role',
+                    list: peopleController.role,
+                    mycontrollerValue: peopleController.roleValue,
+                    color: AppColors.white,
+                ),
+                SizedBox(
+                  height: Reponsive_.crosslength*0.01,
+                ),
+                CommonDropDown(
+                    context: context,
+                    hint: 'Select Status',
+                    list: peopleController.status,
+                    mycontrollerValue: peopleController.statusValue,
+                  color: AppColors.white,
+                ),
+                SizedBox(
+                  height: Reponsive_.crosslength*0.01,
+                ),
+                CommonDropDown(
+                    context: context,
+                    hint: 'Select Ratings',
+                    list: peopleController.rating,
+                    mycontrollerValue: peopleController.ratingValue,
+                  color: AppColors.white,
+                ),
+                SizedBox(
+                  height: Reponsive_.crosslength*0.01,
+                ),
+                CommonDropDown(
+                    context: context,
+                    hint: 'Select Points',
+                    list: peopleController.points,
+                    mycontrollerValue: peopleController.pointsValue,
+                  color: AppColors.white,
+                ),
+                SizedBox(
+                  height: Reponsive_.crosslength*0.01,
+                ),
+                CommonDropDown(
+                    context: context,
+                    hint: 'Select Last Active',
+                    list: peopleController.lastActive,
+                    mycontrollerValue: peopleController.activeValue,
+                  color: AppColors.white,
+                ),
+
+              ],
+            ),
           ),
-          const SizedBox(
-            height: 8,
-          ),
-          CommonDropDown(
-              context: context,
-              list: peopleController.status,
-              mycontrollerValue: peopleController.statusValue,
-            color: AppColors.white,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          CommonDropDown(
-              context: context,
-              list: peopleController.rating,
-              mycontrollerValue: peopleController.ratingValue,
-            color: AppColors.white,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          CommonDropDown(
-              context: context,
-              list: peopleController.points,
-              mycontrollerValue: peopleController.pointsValue,
-            color: AppColors.white,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          CommonDropDown(
-              context: context,
-              list: peopleController.lastActive,
-              mycontrollerValue: peopleController.activeValue,
-            color: AppColors.white,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02),
+            child: Row(
+              children: [
+                Expanded(
+                  child: CommonButton(
+                    text: "Apply",
+                    onTap: (){
+                      onBack(context);
+                    },
+                  ),
+                ),
+                SizedBox(width: Reponsive_.crosslength*0.01,),
+                Expanded(
+                  child: CommonButton(
+                    text: "Reset",
+                    color: AppColors.allGray,
+                    onTap: (){
+                      onBack(context);
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: CommonButton(
-               text: "Apply",
-                onTap: (){},
-              ),
-            ),
-            SizedBox(width: 8,),
-            Expanded(
-              child: CommonButton(
-                text: "Reset",
-                color: AppColors.allGray,
-                onTap: (){},
-              ),
-            )
-          ],
-        ),
-      ),
+
     );
   }
 }

@@ -5,7 +5,11 @@ import 'package:get/get.dart';
 class ProfileController extends GetxController {
 
   List<RxBool> switchValues = List.generate(3, (_) => false.obs);
-
+  var selectedSize="Select".obs;
+  List<String> uniformSizeArr=[
+    "XL",
+    "XXL",
+  ];
   List<String> switchName = [
     "Send Email Notifications",
     "Send Reminders",

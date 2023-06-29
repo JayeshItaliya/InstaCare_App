@@ -7,7 +7,7 @@ import 'appColor.dart';
 
 class Commonwidgets {
   static TextField text_field(
-      TextInputType type, String hint, TextEditingController controller,{Widget? suffix,Function? ontap,bool readOnly=false,Color hint_color=AppColors.hintTextGrey}) {
+      TextInputType type, String hint, TextEditingController controller,{Widget? suffix,Function? ontap,bool readOnly=false,Color hint_color=AppColors.hintTextGrey,FontWeight weight=FontWeight.w400}) {
     return TextField(
       controller: controller,
       onTap: (){
@@ -34,7 +34,7 @@ class Commonwidgets {
             child: suffix),
         hintStyle: GoogleFonts.inter(
             color: hint_color,
-            fontWeight: FontWeight.w400,
+            fontWeight: weight,
             fontSize: Reponsive_.crosslength * 0.018),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
@@ -46,7 +46,7 @@ class Commonwidgets {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: AppColors.buttonColor, width: 0),
+          borderSide: BorderSide(color: AppColors.backGroundColor, width: 0),
         ),
       ),
     );

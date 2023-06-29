@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instacare/Utils/appColor.dart';
 
 
-CommonBottonSheet({required Widget childView,required BuildContext context}){
+CommonBottonSheet({required Widget childView,required BuildContext context,bool? topIcon=true}){
   showModalBottomSheet(
     isScrollControlled: true,
     context: context,
@@ -20,8 +20,9 @@ CommonBottonSheet({required Widget childView,required BuildContext context}){
             padding:  EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
             child: ListView(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
-                Row(
+               topIcon==true?Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
@@ -35,7 +36,7 @@ CommonBottonSheet({required Widget childView,required BuildContext context}){
                       },
                     )
                   ],
-                ),
+                ):Container(),
                 childView
               ],
             ),

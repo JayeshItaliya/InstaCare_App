@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -55,6 +56,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
@@ -85,14 +87,14 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 text: widget.headerText,
                 color: AppColors.blue,
                 fontWeight: FontWeight.w700,
-                fontSize: 14,
+                fontSize: Reponsive_.px14,
               ),
               Gap(10.w),
               Obx(() => Row(
                     children: [
                       MontserratText(
                         text: openShiftController.openShiftValue.value,
-                        fontSize: 14,
+                        fontSize: Reponsive_.px14,
                         fontWeight: FontWeight.w400,
                         color: AppColors.hintTextGrey,
                       ),
@@ -210,7 +212,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                     InterText(
                                       text: listItem[index].position,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 18,
+                                      fontSize: Reponsive_.px18,
                                       color: AppColors.black,
                                     ),
                                     widget.showTime == true
@@ -219,7 +221,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                             child: InterText(
                                               text: "7:00AM - 3:00PM",
                                               fontWeight: FontWeight.w600,
-                                              fontSize: 12,
+                                              fontSize: Reponsive_.px12,
                                               color: AppColors.hintTextGrey,
                                             ),
                                           )
@@ -234,7 +236,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                                     InterText(
                                       text: listItem[index].center,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 14,
+                                      fontSize: Reponsive_.px14,
                                       color: AppColors.black,
                                     ),
                                     Row(
@@ -318,14 +320,14 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                     MontserratText(
                       text: "Confirmation",
                       color: AppColors.redColor,
-                      fontSize: 30,
+                      fontSize: Reponsive_.px30,
                       fontWeight: FontWeight.bold,
                       textAlign: TextAlign.center,
                     ),
                     InterText(
                       text: "Do you really want to Delete shift(s)?",
                       fontWeight: FontWeight.normal,
-                      fontSize: 16,
+                      fontSize: Reponsive_.px16,
                       color: AppColors.black,
                       textAlign: TextAlign.center,
                     ),
@@ -382,7 +384,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 ),
                 MontserratText(
                   text: "Open",
-                  fontSize: 12,
+                  fontSize: Reponsive_.px12,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black,
                 )
@@ -400,7 +402,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 ),
                 MontserratText(
                   text: "Assigned",
-                  fontSize: 12,
+                  fontSize: Reponsive_.px12,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black,
                 )
@@ -412,7 +414,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                 Gap(8),
                 MontserratText(
                   text: "Incentive",
-                  fontSize: 12,
+                  fontSize: Reponsive_.px12,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black,
                 )
@@ -424,7 +426,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                     color: Color.fromRGBO(126, 230, 155, 1)),
                 MontserratText(
                   text: "Assigned",
-                  fontSize: 12,
+                  fontSize: Reponsive_.px12,
                   fontWeight: FontWeight.w400,
                   color: AppColors.black,
                 )

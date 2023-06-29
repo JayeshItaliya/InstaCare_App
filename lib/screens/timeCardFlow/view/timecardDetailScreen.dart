@@ -32,13 +32,14 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
       appBar: CommonAppBar(
         title: MontserratText(
           text: "Timecard Detail",
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w600,
           color: AppColors.blue,
         ),
       ),
       body: ListView(
         padding: padding,
+        shrinkWrap: true,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,8 +47,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
               InterText(
                 text: "Status",
                 color: AppColors.blue,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                fontSize:Reponsive_.px12,
               ),
               widget.index == 1
                   ? Row(
@@ -69,14 +70,14 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                             InterText(
                               text: "Process",
                               color: AppColors.yallow,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w600,
                             ),
                             InterText(
                               text: "--",
                               color: AppColors.hintTextGrey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w600,
                             )
                           ],
                         )
@@ -103,14 +104,14 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                             InterText(
                               text: "Processed".toUpperCase(),
                               color: AppColors.deepGreen,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
                             ),
                             InterText(
                               text: "on 16-Feb-2023",
                               color: AppColors.hintTextGrey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
                             ),
                           ],
                         )
@@ -126,8 +127,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
             children: [
               InterText(
                 text: "Details",
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px18,
                 color: AppColors.blue,
               ),
               SizedBox(
@@ -141,8 +142,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Worker",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -150,8 +151,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "Granny Weatherwax",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       ),
                     ],
@@ -161,8 +162,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Worker’s Documents",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -173,8 +174,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                           Image.asset(AppAssets.downodTimeCard),
                           InterText(
                             text: "Download",
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
                             color: AppColors.blue,
                           ),
                         ],
@@ -193,8 +194,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Start Date",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -202,8 +203,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "Wed, Feb 01 2023",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                     ],
@@ -216,8 +217,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Start Time",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -225,8 +226,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "7:00AM",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
                     ],
@@ -243,8 +244,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "End Date",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -252,8 +253,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "Wed, Feb 01 2023",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       ),
                     ],
@@ -266,8 +267,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Start Time",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -275,8 +276,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "3:00AM",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
                     ],
@@ -293,8 +294,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     children: [
                       InterText(
                         text: "Duration",
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       SizedBox(
@@ -302,8 +303,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                       ),
                       InterText(
                         text: "8 Hours 00 Minutes",
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       ),
                     ],
@@ -330,8 +331,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                           children: [
                             InterText(
                               text: "Manager Notes",
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             SizedBox(
@@ -340,8 +341,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                             InterText(
                               text:
                                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus nibh in sem volutpat sagittis.",
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
                               color: AppColors.black,
                               maxLines: 10,
                             ),
@@ -362,241 +363,240 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                           text: "Download Timecard",
                           color: AppColors.blue,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: Reponsive_.px16,
                         )
                       ],
                     )
                   : Container(),
-              SizedBox(
-                height: Reponsive_.crosslength / 8,
-              ),
+                SizedBox(
+                  height: Reponsive_.crosslength/40,
+                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: CommonButton(
+                      text: widget.index == 1
+                          ? "Process".toUpperCase()
+                          : "un Process".toUpperCase(),
+                      onTap: () {
+                        if (widget.index == 1) {
+                          CommonBottonSheet(
+                              context: context,
+                              childView: ListView(
+                                shrinkWrap: true,
+                                children: [
+                                  SizedBox(
+                                    height: Reponsive_.crosslength / 25,
+                                  ),
+                                  InterText(
+                                    text: "Confirmation",
+                                    fontSize: Reponsive_.px30,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.black,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Padding(
+                                    padding:
+                                    EdgeInsets.only(top: 10, left: 10, right: 10),
+                                    child: InterText(
+                                      text:
+                                      "Do you want to “Processed” all the selected shifts timecards?",
+                                      maxLines: 2,
+                                      color: AppColors.black,
+                                      fontSize: Reponsive_.px18,
+                                      fontWeight: FontWeight.normal,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: Reponsive_.crosslength / 25,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: CommonButton(
+                                            text: "Yes, Process".toUpperCase(),
+                                            onTap: () {
+                                              onBack(context);
+                                            },
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Expanded(
+                                          child: CommonButton(
+                                            text: "Cancel".toUpperCase(),
+                                            onTap: () {
+                                              onBack(context);
+                                            },
+                                            color: AppColors.allGray,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ));
+                        } else {
+                          CommonBottonSheet(
+                              context: context,
+                              childView: ListView(
+                                shrinkWrap: true,
+                                children: [
+                                  SizedBox(
+                                    height: Reponsive_.crosslength / 25,
+                                  ),
+                                  InterText(
+                                    text: "Confirmation",
+                                    fontSize: Reponsive_.px30,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.black,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Padding(
+                                    padding:
+                                    EdgeInsets.only(top: 10, left: 10, right: 10),
+                                    child: InterText(
+                                      text:
+                                      "Do you want to “UnProcess” all the selected shifts timecards?",
+                                      maxLines: 2,
+                                      color: AppColors.black,
+                                      fontSize: Reponsive_.px18,
+                                      fontWeight: FontWeight.normal,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: Reponsive_.crosslength / 25,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: CommonButton(
+                                            text: "UnProcess".toUpperCase(),
+                                            onTap: () {
+                                              onBack(context);
+                                            },
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Expanded(
+                                          child: CommonButton(
+                                            text: "Cancel".toUpperCase(),
+                                            onTap: () {
+                                              onBack(context);
+                                            },
+                                            color: AppColors.allGray,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ));
+                        }
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: CommonButton(
+                      text: "Report".toUpperCase(),
+                      color: AppColors.allGray,
+                      onTap: () {
+                        CommonBottonSheet(
+                            context: context,
+                            childView: ListView(
+                              shrinkWrap: true,
+                              children: [
+                                SizedBox(
+                                  height: Reponsive_.crosslength / 25,
+                                ),
+                                InterText(
+                                  text: "Confirmation",
+                                  fontSize: Reponsive_.px30,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.black,
+                                  textAlign: TextAlign.center,
+                                ),
+                                Padding(
+                                  padding:
+                                  EdgeInsets.only(top: 10, left: 10, right: 10),
+                                  child: InterText(
+                                    text:
+                                    "Do you want to “Report” all the selected shifts timecards?",
+                                    maxLines: 2,
+                                    color: AppColors.black,
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.normal,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: CommonDropDown(
+                                      context: context,
+                                      list: timeDetailController.timeZone,
+                                      mycontrollerValue:
+                                      timeDetailController.timeZoneValue),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                AppWidget()
+                                    .getTextField(hintText: "Add Notes", maxLine: 5),
+                                SizedBox(
+                                  height: Reponsive_.crosslength / 25,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: CommonButton(
+                                          text: "UnProcess".toUpperCase(),
+                                          onTap: () {
+                                            onBack(context);
+                                          },
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 5,
+                                      ),
+                                      Expanded(
+                                        child: CommonButton(
+                                          text: "Cancel".toUpperCase(),
+                                          onTap: () {
+                                            onBack(context);
+                                          },
+                                          color: AppColors.allGray,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ));
+                      },
+                    ),
+                  ),
+                ],
+              )
             ],
           )
         ],
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: CommonButton(
-                text: widget.index == 1
-                    ? "Process".toUpperCase()
-                    : "un Process".toUpperCase(),
-                onTap: () {
-                  if (widget.index == 1) {
-                    CommonBottonSheet(
-                        context: context,
-                        childView: ListView(
-                          shrinkWrap: true,
-                          children: [
-                            SizedBox(
-                              height: Reponsive_.crosslength / 25,
-                            ),
-                            InterText(
-                              text: "Confirmation",
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.black,
-                              textAlign: TextAlign.center,
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: 10, left: 10, right: 10),
-                              child: InterText(
-                                text:
-                                    "Do you want to “Processed” all the selected shifts timecards?",
-                                maxLines: 2,
-                                color: AppColors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.normal,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            SizedBox(
-                              height: Reponsive_.crosslength / 25,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: CommonButton(
-                                      text: "Yes, Process".toUpperCase(),
-                                      onTap: () {
-                                        onBack(context);
-                                      },
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Expanded(
-                                    child: CommonButton(
-                                      text: "Cancel".toUpperCase(),
-                                      onTap: () {
-                                        onBack(context);
-                                      },
-                                      color: AppColors.allGray,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ));
-                  } else {
-                    CommonBottonSheet(
-                        context: context,
-                        childView: ListView(
-                          shrinkWrap: true,
-                          children: [
-                            SizedBox(
-                              height: Reponsive_.crosslength / 25,
-                            ),
-                            InterText(
-                              text: "Confirmation",
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.black,
-                              textAlign: TextAlign.center,
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: 10, left: 10, right: 10),
-                              child: InterText(
-                                text:
-                                    "Do you want to “UnProcess” all the selected shifts timecards?",
-                                maxLines: 2,
-                                color: AppColors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.normal,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            SizedBox(
-                              height: Reponsive_.crosslength / 25,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: CommonButton(
-                                      text: "UnProcess".toUpperCase(),
-                                      onTap: () {
-                                        onBack(context);
-                                      },
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Expanded(
-                                    child: CommonButton(
-                                      text: "Cancel".toUpperCase(),
-                                      onTap: () {
-                                        onBack(context);
-                                      },
-                                      color: AppColors.allGray,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ));
-                  }
-                },
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: CommonButton(
-                text: "Report".toUpperCase(),
-                color: AppColors.allGray,
-                onTap: () {
-                  CommonBottonSheet(
-                      context: context,
-                      childView: ListView(
-                        shrinkWrap: true,
-                        children: [
-                          SizedBox(
-                            height: Reponsive_.crosslength / 25,
-                          ),
-                          InterText(
-                            text: "Confirmation",
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.black,
-                            textAlign: TextAlign.center,
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(top: 10, left: 10, right: 10),
-                            child: InterText(
-                              text:
-                                  "Do you want to “Report” all the selected shifts timecards?",
-                              maxLines: 2,
-                              color: AppColors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.normal,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: CommonDropDown(
-                                context: context,
-                                list: timeDetailController.timeZone,
-                                mycontrollerValue:
-                                    timeDetailController.timeZoneValue),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          AppWidget()
-                              .getTextField(hintText: "Add Notes", maxLine: 5),
-                          SizedBox(
-                            height: Reponsive_.crosslength / 25,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: CommonButton(
-                                    text: "UnProcess".toUpperCase(),
-                                    onTap: () {
-                                      onBack(context);
-                                    },
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Expanded(
-                                  child: CommonButton(
-                                    text: "Cancel".toUpperCase(),
-                                    onTap: () {
-                                      onBack(context);
-                                    },
-                                    color: AppColors.allGray,
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ));
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+
     );
   }
 }

@@ -17,4 +17,7 @@ class AppColors {
   static const Color light_yallow = Color.fromRGBO(255, 175, 50, 0.2);
   static const Color light_purple = Color.fromRGBO(180, 103, 192, 0.1);
   static const Color dark_purple = Color.fromRGBO(180, 103, 192, 1);
+  static const Color dark_green = Color.fromRGBO(33, 208, 179, 1);
+  static const Color light_green = Color.fromRGBO(33, 208, 179, 0.2);
+  static const Color image_border = Color.fromRGBO(237, 237, 237, 1);
 }

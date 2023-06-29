@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
@@ -16,7 +17,7 @@ import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/view
 import 'package:instacare/screens/dashBoardFlow/view/createReminderFlow/view/createReminderScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/newsFlow/view/newsScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/openShiftsScreen.dart';
-import 'package:instacare/screens/dashBoardFlow/view/peopleDashBoardFlow/peopleScreenDetial.dart';
+import 'package:instacare/screens/dashBoardFlow/view/peopleDashBoardFlow/view/peopleScreenDetial.dart';
 import 'package:instacare/screens/dashBoardFlow/view/reminderFlow/view/reminderScreen.dart';
 import '../../../Utils/appAssets.dart';
 import '../../../Utils/appColor.dart';
@@ -348,7 +349,7 @@ class _DashboardState extends State<Dashboard> {
                             )
                         ),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Image.asset(AppAssets.add,width: 50.w,height: 50.h),
                             Gap(10.h),
@@ -519,7 +520,7 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           InterText(
                             text: item[index].time,
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.w700,
                             color: AppColors.blue,
                           ),
@@ -552,7 +553,7 @@ class _DashboardState extends State<Dashboard> {
                 child: InterText(
                   text: "View All",
                   fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
+                  fontSize: Reponsive_.px16,
                   color: AppColors.blue,
                 ),
                 onTap: (){
@@ -638,7 +639,7 @@ class _DashboardState extends State<Dashboard> {
                                       InterText(
                                         text: "CNA",
                                         color: AppColors.black,
-                                        fontSize: 16.sp,
+                                        fontSize: Reponsive_.px16,
                                         fontWeight: FontWeight.w400,
                                       ),
                                       Padding(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -24,6 +25,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
   final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       key: globalKey,
       backgroundColor: AppColors.backGroundColor,
@@ -60,7 +62,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                       border: InputBorder.none,
                       hintText: "Search by name",
                       hintStyle: GoogleFonts.inter(
-                        fontSize: 14,
+                        fontSize: Reponsive_.px14,
                         color: AppColors.hintTextGrey,
                         fontWeight: FontWeight.w400
                       )
@@ -119,7 +121,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                               InterText(
                                 text: "12 March 2023",
                                 fontWeight: FontWeight.w600,
-                                fontSize: 12,
+                                fontSize: Reponsive_.px12,
                                 color: AppColors.blue,
                               ),
                               Row(
@@ -140,7 +142,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                                     ),
                                     child: InterText(
                                       text: "CAN",
-                                      fontSize: 12,
+                                      fontSize: Reponsive_.px12,
                                       fontWeight: FontWeight.w700,
                                       color: AppColors.yallow,
                                     ),
@@ -174,13 +176,13 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                                     text: "Available",
                                     color: const Color.fromRGBO(2, 5, 10, 0.5),
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 14,
+                                    fontSize: Reponsive_.px14,
                                   )
                                 ],
                               ),
                               InterText(
                                 text: "Night-11:00PM-7:00AM",
-                                fontSize: 12,
+                                fontSize: Reponsive_.px12,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.blue,
                               )

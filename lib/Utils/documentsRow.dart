@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
 
@@ -17,6 +18,7 @@ class DocumentsRow extends StatefulWidget {
 class _DocumentsRowState extends State<DocumentsRow> {
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -25,7 +27,7 @@ class _DocumentsRowState extends State<DocumentsRow> {
             text: widget.documentText,
             color: AppColors.black,
             fontWeight: FontWeight.w400,
-            fontSize: 14,
+            fontSize: Reponsive_.px14,
           ),
         ),
         GestureDetector(
@@ -49,14 +51,14 @@ class _DocumentsRowState extends State<DocumentsRow> {
                   text: widget.documentButtonText,
                   color: AppColors.white,
                   fontWeight: FontWeight.w600,
-                  fontSize: 12,
+                  fontSize: Reponsive_.px12,
                 )
               ],
             ):InterText(
               text: widget.documentButtonText,
               color: AppColors.white,
               fontWeight: FontWeight.w600,
-              fontSize: 12,
+              fontSize: Reponsive_.px12,
             ),
           ),
         )

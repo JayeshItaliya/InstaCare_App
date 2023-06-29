@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -29,6 +30,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
   final GlobalKey<PopupMenuButtonState> popUpKey3 = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -79,7 +81,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
             text: "Shift Time",
             color: AppColors.black,
             fontWeight: FontWeight.w700,
-            fontSize: 18,
+            fontSize: Reponsive_.px18,
           ),
           Gap(15),
           Row(
@@ -272,7 +274,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                   child: InterText(
                     text: "Apply",
                     color: AppColors.white,
-                    fontSize: 18,
+                    fontSize: Reponsive_.px18,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -293,7 +295,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                   child: InterText(
                     text: "Reset",
                     color: AppColors.white,
-                    fontSize: 18,
+                    fontSize: Reponsive_.px18,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

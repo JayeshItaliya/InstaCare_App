@@ -43,15 +43,19 @@ dependencies:
   flutter_advanced_calendar: ^1.4.1
   flutter_event_calendar: ^1.0.0
   flutter_slidable: ^3.0.0
-
+  flutter_launcher_icons: ^0.13.1
+  easy_geofencing:
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/authFlow/appLogo.png"
+  adaptive_icon_background: "#ed1e79"
   flutter_lints: ^2.0.0
 
 

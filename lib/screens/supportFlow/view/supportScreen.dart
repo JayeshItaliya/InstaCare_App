@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonButton.dart';
@@ -23,6 +24,7 @@ class _SupportScreenState extends State<SupportScreen> {
   final supportController=Get.put(SupportController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       body:ListView(
@@ -30,7 +32,7 @@ class _SupportScreenState extends State<SupportScreen> {
         children: [
           InterText(
             text: "Select Reason",
-            fontSize: 16,
+            fontSize: Reponsive_.px16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
@@ -48,7 +50,7 @@ class _SupportScreenState extends State<SupportScreen> {
           ),
           InterText(
             text: "Note",
-            fontSize: 16,
+            fontSize: Reponsive_.px16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
@@ -86,12 +88,12 @@ class _SupportScreenState extends State<SupportScreen> {
                             text: "Confirmation".toUpperCase(),
                             fontWeight: FontWeight.bold,
                             color: AppColors.deepGreen,
-                            fontSize: 30,
+                            fontSize: Reponsive_.px30,
                           ),
                           SizedBox(height: 10,),
                           InterText(
                             text: "Great, would you like to post these shifts?",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.black,
                           ),

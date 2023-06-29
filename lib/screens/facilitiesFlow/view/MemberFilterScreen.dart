@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/interText.dart';
-import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/controller/filterController.dart';
 
 import '../../../Utils/CommonDropDown.dart';
 import '../../../Utils/appColor.dart';
 import '../../../Utils/pageNavigator.dart';
+import '../controller/MemberfilterController.dart';
 
 
 class MemberFilterScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class MemberFilterScreen extends StatefulWidget {
 }
 
 class _MemberFilterScreenState extends State<MemberFilterScreen> {
-  final filterController = Get.put(FilterController());
+  final filterController = Get.put(MemberFilterController());
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -52,13 +52,8 @@ class _MemberFilterScreenState extends State<MemberFilterScreen> {
                   height: Reponsive_.crosslength * 0.055,
                   child: CommonDropDown(
                       context: context,
-                      list: [
-                        'abc',
-                        'abc',
-                        'abc',
-                        'abc',
-                      ],
-                      mycontrollerValue: filterController.roleListValue,
+                      list: filterController.roleList,
+                      mycontrollerValue: filterController.selectedRole,
                       color: AppColors.backGroundColor)),
               const Expanded(child: SizedBox()),
               Row(

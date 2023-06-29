@@ -43,7 +43,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
           children: [
             InterText(
               text: "Facility",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -62,7 +62,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
           children: [
             InterText(
               text: "Role",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -81,7 +81,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
           children: [
             InterText(
               text: "Number of Positions",
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               fontWeight: FontWeight.w600,
               color: AppColors.black,
             ),
@@ -98,7 +98,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         SizedBox(height: 15,),
         InterText(
           text: "Select Recurring Days",
-          fontSize: 16,
+          fontSize: Reponsive_.px16,
           fontWeight: FontWeight.w600,
           color: AppColors.black,
         ),
@@ -141,11 +141,22 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         },
                       ),
                     ),
-                    InterText(
-                      text: weekDay.dayName,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18,
-                      color: AppColors.hintTextGrey,
+                    GestureDetector(
+                      child: InterText(
+                        text: weekDay.dayName,
+                        fontWeight: FontWeight.w400,
+                        fontSize: Reponsive_.px18,
+                        color: AppColors.hintTextGrey,
+                      ),
+                      onTap: (){
+                        setState(() {
+                          weekDay.dayValue = !weekDay.dayValue!;
+                          if(weekDay.dayValue==true){
+                            recurringShiftController.selectDayName.value=weekDay.dayName!;
+                            print(recurringShiftController.selectDayName.value);
+                          }
+                        });
+                      },
                     ),
                   ],
                 ),
@@ -163,14 +174,14 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
             InterText(
               text: "Date",
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               color: AppColors.black,
             ),
             SizedBox(width: Reponsive_.crosslength/6,),
             InterText(
               text: "Duration",
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               color: AppColors.black,
             )
           ],
@@ -206,7 +217,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: selectedDate == null
                             ? DateConverter.dateMonthYear(currentDateTime)
                             : selectedDate.toString(),
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       ),
@@ -246,7 +257,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         children: [
                           InterText(
                             text: recurringShiftController.durationValue.value,
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
                           ),
@@ -263,7 +274,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                                       InterText(
                                         text: str.toString(),
                                         color: AppColors.black,
-                                        fontSize: 16.sp,
+                                        fontSize: Reponsive_.px16,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ],
@@ -297,7 +308,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               text: "Shift Time",
               color: AppColors.black,
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
             ),
             ListView.builder(
                 itemCount: timeData.length,
@@ -340,7 +351,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   flex: 2,
                   child: InterText(
                     text: "Start Time",
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
@@ -348,7 +359,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                 Expanded(
                   child: InterText(
                     text: "End Time",
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
@@ -424,7 +435,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Rate (per hour)",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       SizedBox(
@@ -446,7 +457,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Cancellation Guarantee",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 7,),
                       Row(
@@ -463,7 +474,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -479,7 +490,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -502,7 +513,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Incentives",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       Row(
@@ -520,7 +531,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -536,7 +547,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -555,7 +566,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Incentive By",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -584,7 +595,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Incentive Type",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(height: 10,),
                       Row(
@@ -602,7 +613,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "Yes",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -618,7 +629,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                           ),
                           InterText(
                             text: "NO",
-                            fontSize: 16,
+                            fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
@@ -637,7 +648,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Incentive Amount",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -666,7 +677,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Floor Number",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -691,7 +702,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         text: "Supervisor",
                         color: AppColors.black,
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                       ),
                       SizedBox(
                         width: 150,
@@ -719,7 +730,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   InterText(
                     text: "Notes",
                     fontWeight: FontWeight.w600,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                   ),
                 ],

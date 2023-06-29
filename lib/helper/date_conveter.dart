@@ -2,6 +2,7 @@ import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:intl/intl.dart';
@@ -18,7 +19,9 @@ class DateConverter {
   static String monthNameDay(DateTime dateTime) {
     return DateFormat('MMMM d, yyyy').format(dateTime);
   }
-
+  static String holeDate(DateTime dateTime) {
+    return DateFormat("E,d,MMMM,yyyy").format(dateTime);
+  }
   static DateTime convertStringTimeToDate(String time) {
     return DateFormat('HH:mm').parse(time);
   }
@@ -61,7 +64,7 @@ class DateConverter {
         currentDate: DateTime.now(),
         dayTextStyle: GoogleFonts.inter(
             fontWeight: FontWeight.w400,
-            fontSize: 16,
+            fontSize: Reponsive_.px16,
             color: const Color.fromRGBO(2, 5, 10, 1)),
         lastDate: DateTime.now(),
       ),
@@ -83,5 +86,6 @@ class DateConverter {
       endDate = results[1].toString().substring(0, 10);
       return "$startDate to $endDate";
     }
+    return "Warning One Value Is True!";
   }
 }

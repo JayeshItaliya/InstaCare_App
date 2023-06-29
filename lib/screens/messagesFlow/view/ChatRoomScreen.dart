@@ -28,7 +28,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
         backgroundColor: AppColors.white,
         foregroundColor: Colors.black,
         centerTitle: true,
-        elevation: 8,
+        elevation: 0,
         title: MontserratText(
           text: "Granny Weatherwax",
           fontSize: Reponsive_.crosslength * 0.02,
@@ -315,6 +315,28 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
   PopupMenuItem<int> popupMenuItem(String label) {
     return PopupMenuItem(
         // row has two child icon and text.
+      onTap: (){
+         if(label=="Delete" || label=="Clear Chat" || label=="Block"){
+             CommonBottonSheet(
+                context: context,
+                childView: ListView(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: [
+                    MontserratText(
+                      text: "Chat Information",
+                      fontWeight: FontWeight.w400,
+                      fontSize: Reponsive_.crosslength*012,
+                      color: AppColors.blue,
+                    )
+                  ],
+                )
+            );
+         }
+         else{
+
+         }
+      },
         child: InterText(
       text: label,
       fontSize: Reponsive_.crosslength * 0.016,

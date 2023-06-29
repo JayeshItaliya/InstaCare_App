@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
 
@@ -23,8 +24,8 @@ class _CommonButtonState extends State<CommonButton> {
       },
       child: Container(
         alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.018,),
         width:widget.width??MediaQuery.of(context).size.width,
-        height:widget.height??60,
         decoration: BoxDecoration(
           color:widget.color??AppColors.buttonColor,
           borderRadius: BorderRadius.circular(30)
@@ -33,7 +34,7 @@ class _CommonButtonState extends State<CommonButton> {
           text: widget.text,
           color: AppColors.white,
           fontWeight: FontWeight.w700,
-          fontSize: 18,
+          fontSize: Reponsive_.px18,
         ),
       ),
     );

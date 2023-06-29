@@ -1,26 +1,27 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
 
 
-Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color,EdgeInsetsGeometry? padding}) {
+Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color,EdgeInsetsGeometry? padding,String hint='Select'}) {
   final cx=Get.put(CommonController());
   return Obx(() =>
       DropdownButtonHideUnderline(
         child: DropdownButton2(
-          isExpanded: true,
+          isExpanded: true,value: list.contains(mycontrollerValue.value)?mycontrollerValue.value:null,
           hint:   Row(
             children: [
               Expanded(
                 child: InterText(
-                    text: mycontrollerValue.value,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.black,
+                    text: hint,
+                  fontSize: Reponsive_.crosslength*0.018,
+                  color: AppColors.hintTextGrey,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
@@ -31,9 +32,9 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             value: item,
             child: Text(
               item,
-              style:   const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+              style:   TextStyle(
+                fontSize: Reponsive_.crosslength*0.018,
+                fontWeight: FontWeight.w400,
                 color: AppColors.black,
               ),
               overflow: TextOverflow.ellipsis,

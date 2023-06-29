@@ -54,17 +54,16 @@ class _MessagesScreenState extends State<MessagesScreen>{
             child: Slidable(
               key: const ValueKey(0),
               endActionPane:ActionPane (
-                motion: const ScrollMotion(),
+                motion: const ScrollMotion(),extentRatio: 0.2,
                 children:   [
                   Container(
-                    height: 160,
-                    width: 60,
-                    margin: const EdgeInsets.only(top: 10,left: 30,bottom: 10),
+                    height: Reponsive_.crosslength*0.05,
+                    width: Reponsive_.crosslength*0.05,
                     alignment: Alignment.center,
                     child:   SlidableAction(
                       onPressed: doNothing,
                       padding: EdgeInsets.zero,
-                      spacing: 2,
+                      
                       borderRadius: BorderRadius.all(Radius.circular(100)),
                       backgroundColor: AppColors.redColor,
                       foregroundColor: Colors.white,
@@ -75,12 +74,12 @@ class _MessagesScreenState extends State<MessagesScreen>{
               ),
               child: Container(
                 padding: EdgeInsets.symmetric(
-                    horizontal: Reponsive_.crosslength * 0.01,
-                    vertical: Reponsive_.crosslength * 0.01),
+                    horizontal: Reponsive_.crosslength * 0.015,
+                    vertical: Reponsive_.crosslength * 0.015),
                 margin: EdgeInsets.only(
-                    top: Reponsive_.crosslength * 0.02,
-                    left: Reponsive_.crosslength * 0.02,
-                    right: Reponsive_.crosslength * 0.02),
+                    top: Reponsive_.crosslength * 0.005,
+                    left: Reponsive_.crosslength * 0.015,
+                    right: Reponsive_.crosslength * 0.015),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                     color: Colors.white),
@@ -110,14 +109,14 @@ class _MessagesScreenState extends State<MessagesScreen>{
                             children: [
                               InterText(
                                 text: 'Jasnah Kholin',
-                                color: Color(0xff02050A),
+                                color: AppColors.black,
                                 fontSize: Reponsive_.crosslength*0.015,
                                 fontWeight: FontWeight.w600,
                               ),
                               InterText(
                                 text: '9:48AM',
                                 color: AppColors.blue,
-                                fontSize: Reponsive_.crosslength*0.015,
+                                fontSize: Reponsive_.crosslength*0.013,
                                 fontWeight: FontWeight.w600,
                               ),
                             ],
@@ -129,13 +128,15 @@ class _MessagesScreenState extends State<MessagesScreen>{
                             children: [
                               Expanded(
                                 child: InterText(
-                                  text: 'Donec lacinia erat ac est hendrerit, sit amet scelerisque lorem lacinia.',
+                                  text: 'Donec lacinia erat ac est hendrerit, sit am et scelerisque lorem lacinia.',
                                   maxLines: 2,
                                   color: AppColors.hintTextGrey,
-                                  fontSize: Reponsive_.crosslength*0.015,
+                                  fontSize: Reponsive_.crosslength*0.0135,
+                                  height: Reponsive_.crosslength*0.0015,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
+                              SizedBox(width: Reponsive_.crosslength*0.01,),
                               Container(
                                 height: Reponsive_.crosslength*0.02,
                                 width: Reponsive_.crosslength*0.02,
@@ -147,13 +148,13 @@ class _MessagesScreenState extends State<MessagesScreen>{
                                 child: InterText(
                                   text: '5',
                                   color: AppColors.white,
-                                  fontSize: Reponsive_.crosslength * 0.015,
+                                  fontSize: Reponsive_.crosslength * 0.013,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ],
                           ),
-                          Row(
+                          /*Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Container(
@@ -172,7 +173,7 @@ class _MessagesScreenState extends State<MessagesScreen>{
                                 ),
                               ),
                             ],
-                          ),
+                          ),*/
                         ],
                       ),
                     ),

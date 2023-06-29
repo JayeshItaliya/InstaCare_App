@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
@@ -23,6 +24,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
   final cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       appBar: CommonAppBar(
@@ -52,7 +54,7 @@ class _ReminderScreenState extends State<ReminderScreen> {
                     children: [
                       InterText(
                         text: item[index].time,
-                        fontSize: 16,
+                        fontSize: Reponsive_.px16,
                         fontWeight: FontWeight.w700,
                         color: AppColors.blue,
                       ),

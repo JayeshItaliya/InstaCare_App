@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
@@ -16,6 +17,7 @@ class ShiftDeatils extends StatefulWidget {
 class _ShiftDeatilsState extends State<ShiftDeatils> {
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Scaffold(
       body: ListView(
         padding: padding,
@@ -29,14 +31,14 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
               InterText(
                 text: "Awesome!",
                 fontWeight: FontWeight.w300,
-                fontSize: 30,
+                fontSize: Reponsive_.px30,
                 color: AppColors.blue,
               ),
               SizedBox(height: 10,),
               InterText(
                 text: "You successfully booked the shifts.\nYour shifts details are:",
                 fontWeight: FontWeight.w400,
-                fontSize: 16,
+                fontSize: Reponsive_.px16,
                 color: AppColors.black,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -63,7 +65,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
               InterText(
                 text: "Monday Feb 20, 2023",
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: Reponsive_.px18,
                 color: AppColors.blue,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -75,7 +77,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                   InterText(
                     text: "7:00 aM - 3:00 PM",
                     fontWeight: FontWeight.w700,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                     maxLines: 2,
                     textAlign: TextAlign.center,
@@ -87,7 +89,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
               InterText(
                 text: "Tuesday Feb 21, 2023",
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: Reponsive_.px18,
                 color: AppColors.blue,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -99,7 +101,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                   InterText(
                     text: "7:00 aM - 3:00 PM",
                     fontWeight: FontWeight.w700,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                     maxLines: 2,
                     textAlign: TextAlign.center,
@@ -112,7 +114,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
               InterText(
                 text: "Wednesday Feb 22, 2023",
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: Reponsive_.px18,
                 color: AppColors.blue,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -124,7 +126,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                   InterText(
                     text: "7:00 aM - 3:00 PM",
                     fontWeight: FontWeight.w700,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                     maxLines: 2,
                     textAlign: TextAlign.center,
@@ -136,7 +138,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
               InterText(
                 text: "Thursday Feb 23, 2023",
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: Reponsive_.px18,
                 color: AppColors.blue,
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -148,7 +150,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                   InterText(
                     text: "7:00 aM - 3:00 PM",
                     fontWeight: FontWeight.w700,
-                    fontSize: 16,
+                    fontSize: Reponsive_.px16,
                     color: AppColors.black,
                     maxLines: 2,
                     textAlign: TextAlign.center,
@@ -161,7 +163,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                 child: InterText(
                   text: "Go to Dashboard",
                   fontWeight: FontWeight.w400,
-                  fontSize: 16,
+                  fontSize: Reponsive_.px16,
                   color: AppColors.blue,
                   maxLines: 2,
                   textAlign: TextAlign.center,
