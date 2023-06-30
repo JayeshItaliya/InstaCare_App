@@ -15,6 +15,7 @@ import 'package:instacare/screens/timeCardFlow/controller/controller/timeCardCon
 import 'package:instacare/screens/timeCardFlow/view/applyFilterScreen.dart';
 import 'package:instacare/screens/timeCardFlow/view/timecardDetailScreen.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:instacare/screens/timeCardFlow/view/timecardEdit.dart';
 import 'package:intl/intl.dart';
 
 class TimeCardScreen extends StatefulWidget {
@@ -94,6 +95,15 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
     return formatter.format(dateTime.toLocal());
   }
 
+  setLocation() async {
+    await getCurrentPosition();
+    // print("POSITION => ${position!.toJson()}");
+    latitudeController =
+        TextEditingController(text: position!.latitude.toString());
+    longitudeController =
+        TextEditingController(text: position!.longitude.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -113,12 +123,12 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                       children: [
                         Expanded(
                           child: Obx(() => InterText(
-                                text:
-                                    '     ${timeCardController.rangData.value.replaceAll("to", "-")}',
-                                fontSize: Reponsive_.px14,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.hintTextGrey,
-                              )),
+                            text:
+                            '     ${timeCardController.rangData.value.replaceAll("to", "-")}',
+                            fontSize: Reponsive_.px14,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.hintTextGrey,
+                          )),
                         ),
                         GestureDetector(
                           child: IconButton(
@@ -166,14 +176,14 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
               children: [
                 Obx(() => timeCardController.rangData.value.length >= 5
                     ? InterText(
-                        text: DateConverter.monthNameDay(DateTime.parse(
-                            timeCardController.rangData.value
-                                .substring(0, 10)
-                                .replaceAll("/", "-"))),
-                        color: AppColors.hintTextGrey,
-                        fontSize: Reponsive_.px14,
-                        fontWeight: FontWeight.w600,
-                      )
+                  text: DateConverter.monthNameDay(DateTime.parse(
+                      timeCardController.rangData.value
+                          .substring(0, 10)
+                          .replaceAll("/", "-"))),
+                  color: AppColors.hintTextGrey,
+                  fontSize: Reponsive_.px14,
+                  fontWeight: FontWeight.w600,
+                )
                     : Container())
               ],
             ),
@@ -200,7 +210,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                       ),
                       clipBehavior: Clip.antiAlias,
                       margin:
-                          EdgeInsets.only(top: Reponsive_.crosslength * .01),
+                      EdgeInsets.only(top: Reponsive_.crosslength * .01),
                       child: Padding(
                         padding: EdgeInsets.all(Reponsive_.crosslength * .01),
                         child: Column(
@@ -213,7 +223,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                   padding: EdgeInsets.symmetric(
                                       vertical: Reponsive_.crosslength * .01,
                                       horizontal:
-                                          Reponsive_.crosslength * .015),
+                                      Reponsive_.crosslength * .015),
                                   decoration: BoxDecoration(
                                       color: Color.fromRGBO(22, 71, 142, 0.05),
                                       borderRadius: BorderRadius.circular(10)),
@@ -240,11 +250,11 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           InterText(
                                             text: "Jasnah Kholin",
@@ -256,8 +266,8 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                             alignment: Alignment.center,
                                             padding: EdgeInsets.symmetric(
                                                 vertical:
-                                                    Reponsive_.crosslength *
-                                                        .005,
+                                                Reponsive_.crosslength *
+                                                    .005,
                                                 horizontal: 10),
                                             decoration: BoxDecoration(
                                                 border: Border.all(
@@ -265,7 +275,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                                   color: AppColors.yallow,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(20),
+                                                BorderRadius.circular(20),
                                                 color: Color.fromRGBO(
                                                     255, 175, 50, 0.2)),
                                             child: InterText(
@@ -284,7 +294,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                         text: "Elevate Care",
                                         fontSize: Reponsive_.px16,
                                         color:
-                                            const Color.fromRGBO(2, 5, 10, 0.5),
+                                        const Color.fromRGBO(2, 5, 10, 0.5),
                                         fontWeight: FontWeight.bold,
                                       ),
                                       SizedBox(
@@ -292,11 +302,11 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                       ),
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.start,
+                                            MainAxisAlignment.start,
                                             children: [
                                               Icon(Icons.access_time,
                                                   color: AppColors.blue,
@@ -339,20 +349,20 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                     Container(
                                       padding: EdgeInsets.symmetric(
                                           vertical:
-                                              Reponsive_.crosslength * 0.015,
+                                          Reponsive_.crosslength * 0.015,
                                           horizontal:
-                                              Reponsive_.crosslength * 0.01),
+                                          Reponsive_.crosslength * 0.01),
                                       margin: EdgeInsets.only(
                                           top: Reponsive_.crosslength * 0.015),
                                       decoration: BoxDecoration(
                                           color: AppColors.backGroundColor,
                                           borderRadius:
-                                              BorderRadius.circular(10)),
+                                          BorderRadius.circular(10)),
                                       child: Column(
                                         children: [
                                           Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                             children: [
                                               Row(
                                                 children: [
@@ -372,7 +382,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                                 fontSize: Reponsive_.px14,
                                                 fontWeight: FontWeight.normal,
                                                 color:
-                                                    Color.fromRGBO(2, 5, 10, 1),
+                                                Color.fromRGBO(2, 5, 10, 1),
                                               ),
                                               InterText(
                                                 text: time1,
@@ -384,11 +394,11 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                           ),
                                           SizedBox(
                                             height:
-                                                Reponsive_.crosslength * 0.01,
+                                            Reponsive_.crosslength * 0.01,
                                           ),
                                           Row(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                             children: [
                                               Row(
                                                 children: [
@@ -408,7 +418,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                                 fontSize: Reponsive_.px14,
                                                 fontWeight: FontWeight.w400,
                                                 color:
-                                                    Color.fromRGBO(2, 5, 10, 1),
+                                                Color.fromRGBO(2, 5, 10, 1),
                                               ),
                                               InterText(
                                                 text: time2,
@@ -426,13 +436,18 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                     ),
                                     Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       children: [
-                                        InterText(
-                                          text: "  Edit",
-                                          fontSize: Reponsive_.px14,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.blue,
+                                        GestureDetector(
+                                          child: InterText(
+                                            text: "  Edit",
+                                            fontSize: Reponsive_.px14,
+                                            fontWeight: FontWeight.w600,
+                                            color: AppColors.blue,
+                                          ),
+                                          onTap: (){
+                                            toPushNavigator(context: context,PageName: TimecardEdit() );
+                                          },
                                         ),
                                         Row(
                                           children: [
@@ -472,69 +487,77 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                   );
                 })
           ],
-        ));
+        ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.yallow,
+        onPressed: () {
+          toPushNavigator(context: context,PageName: TimecardEdit(newTimeCard: true,));
+        },
+        child: const Icon(Icons.add, color: AppColors.white),
+      ),
+    );
   }
 
   Widget CardList() {
     return const Flexible(
         child: Card(
-      child: ExpansionTile(
-        title: Text(
-          "Periodo",
-          style: TextStyle(),
-          textAlign: TextAlign.center,
-        ),
-        children: <Widget>[
-          ListTile(
+          child: ExpansionTile(
             title: Text(
-              "Periodo 1",
+              "Periodo",
+              style: TextStyle(),
               textAlign: TextAlign.center,
             ),
+            children: <Widget>[
+              ListTile(
+                title: Text(
+                  "Periodo 1",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 2",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 3",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 4",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 5",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 6",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 7",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "Periodo 8",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
           ),
-          ListTile(
-            title: Text(
-              "Periodo 2",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 3",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 4",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 5",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 6",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 7",
-              textAlign: TextAlign.center,
-            ),
-          ),
-          ListTile(
-            title: Text(
-              "Periodo 8",
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }

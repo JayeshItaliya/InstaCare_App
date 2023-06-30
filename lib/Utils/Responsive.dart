@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 class Reponsive_{
   static double h=0,w=0,crosslength=0;
-  static double px10=0,px12=0,px14=0,px16=0,px18=0,px24=0,px30=0,px40=0;
+  static double px10=0,px12=0,px14=0,px16=0,px18=0,px24=0,px30=0,px40=0,px20=0;
 
   static void init(BuildContext context){
     h=MediaQuery.of(context).size.height;
@@ -18,5 +18,6 @@ class Reponsive_{
     px24=Reponsive_.crosslength*0.022;
     px30=Reponsive_.crosslength*0.03;
     px40=Reponsive_.crosslength*0.04;
+    px20=Reponsive_.crosslength*0.020;
   }
 }

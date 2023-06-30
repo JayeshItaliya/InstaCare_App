@@ -45,6 +45,7 @@ dependencies:
   flutter_slidable: ^3.0.0
   flutter_launcher_icons: ^0.13.1
   easy_geofencing:
+  flutter_rating_bar:
 
 
 

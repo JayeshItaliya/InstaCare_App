@@ -18,6 +18,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
+import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/shiftDeatilsScreen.dart';
 import 'MarketPlaceFilterScreen.dart';
 
 class MarketPlaceScreen extends StatefulWidget {
@@ -325,7 +326,9 @@ class _PageState extends State<Page>{
                             Expanded(
                               child:CommonButton(
                                   text: "Accept",
-                                  onTap: (){}
+                                  onTap: (){
+                                    toPushNavigator(context: context,PageName: ShiftsDeatilsScreen());
+                                  }
                               ),
                             ),
                             SizedBox(

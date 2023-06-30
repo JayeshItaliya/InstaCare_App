@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
@@ -72,8 +71,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         children: [
           Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: Reponsive_.crosslength * 0.015),
+            width: cx.width,
+            height: cx.height / 3,
             decoration: const BoxDecoration(
                 color: AppColors.blue,
                 borderRadius: BorderRadius.only(
@@ -88,13 +87,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         InterText(
                           text: "Emp. ID",
-                          fontSize: Reponsive_.px12,
+                          fontSize: 12,
                           fontWeight: FontWeight.normal,
                           color: AppColors.buttonColor,
                         ),
                         InterText(
                           text: "511",
-                          fontSize: Reponsive_.px18,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.buttonColor,
                         )
@@ -313,13 +312,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         InterText(
                           text: "Status",
-                          fontSize: Reponsive_.px12,
+                          fontSize: 12,
                           fontWeight: FontWeight.normal,
                           color: AppColors.buttonColor,
                         ),
                         InterText(
                           text: "Available",
-                          fontSize: Reponsive_.px18,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: AppColors.buttonColor,
                         )
@@ -343,7 +342,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         InterText(
                           text: "Instacare Staff",
-                          fontSize: Reponsive_.px12,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold,
                           color: AppColors.buttonColor,
                         )
@@ -368,7 +367,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Account Information",
-                        fontSize: Reponsive_.px16,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
@@ -388,7 +387,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     InterText(
                                       text: "Account Information",
                                       fontWeight: FontWeight.w700,
-                                      fontSize: Reponsive_.px30,
+                                      fontSize: 30,
                                     ),
                                     SizedBox(
                                       height: 15,
@@ -474,13 +473,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Screen Name",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "Joel Newman",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -500,13 +499,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "First Name",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "Joel",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -519,13 +518,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "Last Name",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "Newman ",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -544,13 +543,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Email",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "joelnewman@gmail.com ",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -566,13 +565,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Phone",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "8888888888",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -596,7 +595,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Address",
-                        fontSize: Reponsive_.px16,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
@@ -617,7 +616,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     InterText(
                                       text: "Address",
                                       fontWeight: FontWeight.w700,
-                                      fontSize: Reponsive_.px30,
+                                      fontSize: 30,
                                     ),
                                     SizedBox(
                                       height: 15,
@@ -694,13 +693,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Screen Name",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "Joel Newman",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -720,13 +719,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "Country",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "United States",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -739,13 +738,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "City",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "Skokie",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -768,13 +767,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "State",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "illinois",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -787,13 +786,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             InterText(
                               text: "Zip",
-                              fontSize: Reponsive_.px12,
+                              fontSize: 12,
                               fontWeight: FontWeight.w400,
                               color: AppColors.black,
                             ),
                             InterText(
                               text: "60077",
-                              fontSize: Reponsive_.px18,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
                             )
@@ -820,7 +819,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "General",
-                        fontSize: Reponsive_.px16,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
@@ -841,7 +840,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     InterText(
                                       text: "General",
                                       fontWeight: FontWeight.w700,
-                                      fontSize: Reponsive_.px30,
+                                      fontSize: 30,
                                     ),
                                     SizedBox(
                                       height: 10,
@@ -887,13 +886,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Time Zone",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "Central Time (US/Can) (GMT-6:00)",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -909,13 +908,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Language",
-                        fontSize: Reponsive_.px12,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: AppColors.black,
                       ),
                       InterText(
                         text: "English",
-                        fontSize: Reponsive_.px18,
+                        fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       )
@@ -940,7 +939,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         InterText(
                           text: "Security",
-                          fontSize: Reponsive_.px16,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppColors.blue,
                         ),
@@ -956,7 +955,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         InterText(
                           text: "Change Password",
-                          fontSize: Reponsive_.px12,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: AppColors.blue,
                         ),
@@ -1021,7 +1020,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       InterText(
                         text: "Notifications",
-                        fontSize: Reponsive_.px16,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.blue,
                       ),
@@ -1045,7 +1044,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 children: [
                                   InterText(
                                     text: profileController.switchName[index],
-                                    fontSize: Reponsive_.px14,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.black,
                                   ),

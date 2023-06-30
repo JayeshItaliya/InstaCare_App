@@ -247,6 +247,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_rating_bar">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_rating_bar-4.0.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_screenutil">
           <value>
             <list>
@@ -739,6 +746,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_event_calendar-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.15/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_rating_bar-4.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_screenutil-5.8.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_slidable-3.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_svg-2.0.7/lib" />

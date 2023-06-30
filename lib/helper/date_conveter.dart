@@ -88,4 +88,12 @@ class DateConverter {
     }
     return "Warning One Value Is True!";
   }
+
+  static Future<TimeOfDay?> timePicker(BuildContext context) async {
+    return await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay(hour: 7, minute: 15),
+      initialEntryMode: TimePickerEntryMode.input,
+    );
+  }
 }

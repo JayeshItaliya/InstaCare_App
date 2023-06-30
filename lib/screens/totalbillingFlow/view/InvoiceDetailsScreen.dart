@@ -1,21 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instacare/Utils/Responsive.dart';
+
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/interText.dart';
+
 import '../../../Utils/Commonwidgets.dart';
+import '../../../Utils/MyClipper.dart';
 import '../../../Utils/appAssets.dart';
 import '../../../Utils/appColor.dart';
 import '../../../Utils/montserratText.dart';
 
-class InvoiceDetailsScreen extends StatefulWidget {
-  const InvoiceDetailsScreen({super.key});
+class SolloInvoiceScreen extends StatefulWidget {
+  const SolloInvoiceScreen({super.key});
 
   @override
-  State<InvoiceDetailsScreen> createState() => _InvoiceDetailsScreenState();
+  State<SolloInvoiceScreen> createState() => _SolloInvoiceScreenState();
 }
 
-class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
+class _SolloInvoiceScreenState extends State<SolloInvoiceScreen> {
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -28,6 +31,12 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
           fontWeight: FontWeight.w600,
           color: AppColors.blue,
         ),
+        trailingIcon: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: Image.asset(AppAssets.bell,height: Reponsive_.crosslength*0.03,width: Reponsive_.crosslength*0.03,),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -40,8 +49,9 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
             height: Reponsive_.crosslength*0.3,
             child: Stack(
               children: [
+
+                Image.asset('assets/x/zig_zag_edges_bg.png',fit: BoxFit.cover,height: double.infinity,),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: Reponsive_.crosslength*0.02,),
                     InterText(
@@ -116,7 +126,7 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppAssets.downodTimeCard,color: AppColors.blue,height: Reponsive_.crosslength*0.025,width: Reponsive_.crosslength*0.025,),
+              Image.asset('assets/profileFlow/download.png',color: AppColors.blue,height: Reponsive_.crosslength*0.025,width: Reponsive_.crosslength*0.025,),
               InterText(
                 text: "    Download Invoice",
                 fontSize: Reponsive_.crosslength*0.02,
@@ -134,39 +144,39 @@ class _InvoiceDetailsScreenState extends State<InvoiceDetailsScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.01,vertical: Reponsive_.crosslength*0.01,),
       margin: EdgeInsets.only(left: Reponsive_.crosslength*0.01,right: Reponsive_.crosslength*0.01,top: Reponsive_.crosslength*0.006,),
-                  decoration: BoxDecoration(
-                    color: AppColors.backGroundColor,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: InterText(
-                          text: desc,
-                          fontSize: Reponsive_.crosslength*0.015,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Expanded(
-                        child: InterText(
-                          text: qty,
-                          fontSize: Reponsive_.crosslength*0.015,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Expanded(
-                        child: InterText(
-                          text: amount,
-                          fontSize: Reponsive_.crosslength*0.015,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.black,
-                        ),
-                      ),
+      decoration: BoxDecoration(
+        color: AppColors.backGroundColor,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: InterText(
+              text: desc,
+              fontSize: Reponsive_.crosslength*0.015,
+              fontWeight: FontWeight.w600,
+              color: AppColors.black,
+            ),
+          ),
+          Expanded(
+            child: InterText(
+              text: qty,
+              fontSize: Reponsive_.crosslength*0.015,
+              fontWeight: FontWeight.w600,
+              color: AppColors.black,
+            ),
+          ),
+          Expanded(
+            child: InterText(
+              text: amount,
+              fontSize: Reponsive_.crosslength*0.015,
+              fontWeight: FontWeight.w600,
+              color: AppColors.black,
+            ),
+          ),
 
-                    ],
-                  ),
-                );
+        ],
+      ),
+    );
   }
 }

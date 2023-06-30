@@ -80,4 +80,6 @@ class AppAssets {
   static const  editIcon= '$dashBoardFlow/editIcon.png';
   static const  deleteIcon= '$dashBoardFlow/delectIcon.png';
   static const  closeIcon= '$dashBoardFlow/closeIcon.png';
+  static const  downlodLeft= '$dashBoardFlow/downlodLeft.png';
+  static const  shiftBackGroundScreen='$dashBoardFlow/shiftBackgroundPhoto.png';
 }

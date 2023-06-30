@@ -39,8 +39,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     MarketPlaceScreen(showAppApr: false),
     WhoIsOnScreen(),
     PeopleScreen(),
-    //EmployeeFacilitiesScreen(),`
-    FacilitiesScreen(),
+    EmployeeFacilitiesScreen(),
+    //FacilitiesScreen(),
     PayrollAccessScreen(),
     MessagesScreen(),
     TimeCardScreen(),

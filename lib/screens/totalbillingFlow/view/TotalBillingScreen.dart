@@ -78,7 +78,7 @@ class _TotalBillingScreenState extends State<TotalBillingScreen> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: (){
-                    toPushNavigator(context: context,PageName: InvoiceDetailsScreen());
+                    toPushNavigator(context: context,PageName: SolloInvoiceScreen());
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(

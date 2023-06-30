@@ -7,16 +7,17 @@ class CommonController extends GetxController{
 
   var height=Get.height;
   var width=Get.width;
-  final storage = GetStorage();
+  //final storage = GetStorage();
   StreamSubscription? subscription;
   var isoffline = false.obs;
-  dynamic read(String key){
-    return storage.read('$key');
-
-  }
-  void write(String key,var value){
-    storage.write('$key',value);
-  }
+  String instacareLoginValue="";
+  // dynamic read(String key){
+  //   return storage.read('$key');
+  //
+  // }
+  // void write(String key,var value){
+  //   storage.write('$key',value);
+  // }
   @override
   void onInit() {
     super.onInit();
