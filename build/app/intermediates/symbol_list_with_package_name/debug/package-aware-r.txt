@@ -1,4 +1,8 @@
 com.example.instacare
+anim svprogresshud_bg_fade_in
+anim svprogresshud_bg_fade_out
+anim svprogresshud_hudview_fade_in
+anim svprogresshud_hudview_fade_out
 attr activityAction
 attr activityName
 attr alpha
@@ -115,6 +119,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable svprogresshud_error
+drawable svprogresshud_info
+drawable svprogresshud_spinning
+drawable svprogresshud_success
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -158,14 +166,19 @@ id adjust_width
 id androidx_window_activity_scope
 id async
 id auto
+id backgroundGradientLayer
+id backgroundLayer
 id blocking
 id chronometer
 id dark
 id dialog_button
 id forever
+id hud_layout
+id hud_view
 id icon
 id icon_group
 id icon_only
+id imageContainer
 id info
 id italic
 id light
@@ -183,6 +196,7 @@ id right_icon
 id right_side
 id rtl
 id standard
+id statusLabel
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -214,6 +228,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout svprogresshud_layout
 mipmap ic_launcher
 mipmap launcher_icon
 string androidx_startup

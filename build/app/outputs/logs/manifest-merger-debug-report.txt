@@ -38,6 +38,7 @@ MERGED from [:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/bu
 MERGED from [:flutter_plugin_android_lifecycle] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_svprogresshud] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/imac/.gradle/caches/transforms-3/66b0041439e8822f9b33c14e9dfd6828/transformed/jetified-play-services-location-17.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] /Users/imac/.gradle/caches/transforms-3/e72594a5e1ad3cdd56ec026860a0aae9/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
@@ -124,6 +125,8 @@ MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/buil
 MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_svprogresshud] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_svprogresshud] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-location:17.0.0] /Users/imac/.gradle/caches/transforms-3/66b0041439e8822f9b33c14e9dfd6828/transformed/jetified-play-services-location-17.0.0/AndroidManifest.xml:5:5-44

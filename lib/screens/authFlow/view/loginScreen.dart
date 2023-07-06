@@ -53,7 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
               )
             ),
             child: ListView(
-
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.only(

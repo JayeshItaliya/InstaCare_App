@@ -47,6 +47,7 @@ dependencies:
   easy_geofencing:
   flutter_rating_bar:
   flutter_svprogresshud:
+  dio: ^5.2.1+1
 
 
 

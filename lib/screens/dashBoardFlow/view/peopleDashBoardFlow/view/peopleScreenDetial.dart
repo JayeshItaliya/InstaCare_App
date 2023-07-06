@@ -1491,10 +1491,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                           itemBuilder: (context, index) {
                             return Obx(() => GestureDetector(
                               onTap: () {
-                                peopleController.toggleSwitch(
-                                    index,
-                                    peopleController
-                                        .switchValues[index].value);
+                                peopleController.toggleSwitch(index, peopleController.switchValues[index].value);
                               },
                               child: Padding(
                                 padding: EdgeInsets.only(
@@ -1510,25 +1507,23 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                       fontWeight: FontWeight.w400,
                                       color: AppColors.black,
                                     ),
-                                    FlutterSwitch(
-                                      activeText: "",
-                                      inactiveText: "",
-                                      width: Reponsive_.crosslength * 0.05,
-                                      height:
-                                      Reponsive_.crosslength * 0.025,
-                                      activeColor: AppColors.deepGreen,
-                                      inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                      toggleSize: 20.0,
-                                      value: peopleController
-                                          .switchValues[index].value,
-                                      borderRadius: 50.0,
-                                      showOnOff: true,
-                                      onToggle: (val) async {
-                                        peopleController.toggleSwitch(
-                                            index, val);
-                                      },
-                                    )
+                                      FlutterSwitch(
+                                        activeText: "",
+                                        inactiveText: "",
+                                        width: Reponsive_.crosslength * 0.05,
+                                        height:
+                                        Reponsive_.crosslength * 0.025,
+                                        activeColor: AppColors.deepGreen,
+                                        inactiveColor:
+                                        Color.fromRGBO(217, 217, 217, 1),
+                                        toggleSize: 20.0,
+                                        value: peopleController.switchValues[index].value,
+                                        borderRadius: 50.0,
+                                        showOnOff: true,
+                                        onToggle: (val) async {
+                                           peopleController.toggleSwitch(index, !val);
+                                        },
+                                      ),
                                   ],
                                 ),
                               ),
@@ -2073,8 +2068,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               inactiveColor:
                               Color.fromRGBO(217, 217, 217, 1),
                               toggleSize: 20.0,
-                              value:
-                              profileController.switchValues[0].value,
+                              value: profileController.switchValues[0].value,
                               borderRadius: 50.0,
                               showOnOff: true,
                               onToggle: (val) async {

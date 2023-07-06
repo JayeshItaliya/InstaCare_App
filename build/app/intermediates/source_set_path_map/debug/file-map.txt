@@ -26,6 +26,7 @@ com.example.instacare.app-merged_res-24 /Users/imac/Desktop/GitHub/Insta_care_ap
 com.example.instacare.app-packaged_res-25 /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/packaged_res/debug
 com.example.instacare.app-packaged_res-26 /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/packaged_res/debug
 com.example.instacare.app-packaged_res-27 /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
-com.example.instacare.app-packaged_res-28 /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/packaged_res/debug
-com.example.instacare.app-packaged_res-29 /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/packaged_res/debug
-com.example.instacare.app-packaged_res-30 /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/packaged_res/debug
+com.example.instacare.app-packaged_res-28 /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/packaged_res/debug
+com.example.instacare.app-packaged_res-29 /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/packaged_res/debug
+com.example.instacare.app-packaged_res-30 /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/packaged_res/debug
+com.example.instacare.app-packaged_res-31 /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/packaged_res/debug

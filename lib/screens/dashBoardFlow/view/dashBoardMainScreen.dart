@@ -106,7 +106,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
       body: cx.screens[selected_index],
       drawer: Drawer(
-        width:  Reponsive_.crosslength*0.38,
+        width:  Reponsive_.crosslength*0.35,
         backgroundColor: Colors.transparent,
         child: CommonDrawer(onItemClick: (index){
           setState(() {

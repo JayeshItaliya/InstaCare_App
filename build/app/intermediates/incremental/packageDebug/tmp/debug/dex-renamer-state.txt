@@ -1,4 +1,4 @@
-#Thu Jul 06 13:48:14 IST 2023
+#Thu Jul 06 17:02:51 IST 2023
 base.0=/Users/imac/Desktop/GitHub/Insta_care_app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
