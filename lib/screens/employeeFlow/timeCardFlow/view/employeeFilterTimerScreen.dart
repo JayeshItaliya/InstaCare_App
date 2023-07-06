@@ -5,6 +5,7 @@ import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
+import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -97,6 +98,32 @@ class _EmployeeFilterTimerScreenState extends State<EmployeeFilterTimerScreen> {
             ],
           ),
         ) ,
+      bottomSheet: Container(
+        height: Reponsive_.crosslength*0.06,
+        margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.01,vertical: Reponsive_.crosslength*0.01),
+        child: Row(
+          children: [
+            Expanded(
+              child: CommonButton(
+                onTap: (){
+                  onBack(context);
+                },
+                text:"APPLY",
+              ),
+            ),
+            SizedBox(
+              width: Reponsive_.crosslength * 0.01,
+            ),
+            Expanded(
+              child: CommonButton(
+                onTap: (){},
+                text:"RESET",
+                color: AppColors.allGray,
+              ),
+            )
+          ],
+        ),
+      )
     );
   }
 }

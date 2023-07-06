@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Zlr24jxVCUOc34MEDESjF1eEMN0=
+		oxip8lVqT6qLxCsGybGjPSbN9I4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		EDxSmqQpTu4P/h5iDitCtBuVrts=
+		jpaw/mayLxqGuMZg1/bhVJSyPes=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		anHpl9aSfcZ/YjVeoUj4X6HP1BQ=
+		bn039mkFCJBINiqDKCbis6i8elI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.smcbin</key>
 		<data>
-		UEfjNyKwZvFlAzsTUxqgGd4ssbo=
+		3xQfrrLVA4uyKAWdxdne30/eD1w=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		QE31/NeUWlE2HZ7rKbJ9XWBZOAQ=
+		MRx2cwmh8szaHWF4Mpjs6Dga52s=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/authFlow/appLogo.png</key>
 		<data>
@@ -388,6 +388,10 @@
 		<data>
 		Ehd3cwSU4P4yFwhBWuNUt0wYTuU=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/search1.png</key>
+		<data>
+		5QpKEpORpdOHX4Ql+sqdmJ+/R38=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/star.png</key>
 		<data>
 		1X9rXTu93sLZfcTDNgH5ep9QpCY=
@@ -404,6 +408,10 @@
 		<data>
 		NPLWSgRygESHcKOoPei0I965mSE=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/coffe.png</key>
+		<data>
+		+2+7g3M3GZ6fuTHtupKoJ6EcSPc=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/direction.png</key>
 		<data>
 		rB3EYLPL6N+TOVGCSpi+spJgLz0=
@@ -411,6 +419,10 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/x/double_tick.png</key>
 		<data>
 		fiazCaIjBKnz0hvQXVjO85nAilg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/downlodShift.png</key>
+		<data>
+		on9m4CBa5NM4R8yaUsquUcncg/U=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/flag.png</key>
 		<data>
@@ -423,6 +435,14 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/x/mw.png</key>
 		<data>
 		9zWoLDzTiA4eNFO5WheyFDpah+Y=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/new_bg.png</key>
+		<data>
+		+npoiZg9E9qi7LoljOiIzzkTZKc=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/news.png</key>
+		<data>
+		SO8DL0XDwJT4t1p52C9DJJR2kFs=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/secure.png</key>
 		<data>
@@ -462,7 +482,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		etWqVExHcfbsWms6xSvMWtFo9N0=
+		PkyjYiaFjGCEEnqzlg2/k9xeWCc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -478,7 +498,7 @@
 		</data>
 		<key>Frameworks/DKImagePickerController.framework/DKImagePickerController</key>
 		<data>
-		sDuuDSbFKWS4uFeIAHiBH2TkYZ0=
+		1bwpIDYo/yu+ToxR+ukHGUUEWG8=
 		</data>
 		<key>Frameworks/DKImagePickerController.framework/DKImagePickerController.bundle/Assets.car</key>
 		<data>
@@ -678,7 +698,7 @@
 		</data>
 		<key>Frameworks/DKPhotoGallery.framework/DKPhotoGallery</key>
 		<data>
-		EisnqQ6KNFzcgjJNgzRLFdrMfPU=
+		ByZvKWqMrKR3ZC0DWPXctdCI2qs=
 		</data>
 		<key>Frameworks/DKPhotoGallery.framework/DKPhotoGallery.bundle/Assets.car</key>
 		<data>
@@ -813,7 +833,7 @@
 		</data>
 		<key>Frameworks/Reachability.framework/Reachability</key>
 		<data>
-		lDh3jq5T43BbhTAjSGkRuIUUkj8=
+		kjBaLBnbRVaSNbkmo1JttSzFiSo=
 		</data>
 		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -825,7 +845,7 @@
 		</data>
 		<key>Frameworks/SDWebImage.framework/SDWebImage</key>
 		<data>
-		sm71rDuVDMD3F+ObKnSYAOhVDQE=
+		1LYcestbp6GKb3Ju0XLJDb+IrjY=
 		</data>
 		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -837,7 +857,7 @@
 		</data>
 		<key>Frameworks/SwiftyGif.framework/SwiftyGif</key>
 		<data>
-		ydB8ScpsW7dZmf5GL5xJ0Teq0cw=
+		fbqvb9nAHImRXOi+qoFpoFFsEeE=
 		</data>
 		<key>Frameworks/SwiftyGif.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -853,7 +873,7 @@
 		</data>
 		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
 		<data>
-		m+QAvqXVea49AI3ttW1J/dKEXcM=
+		TzhWeMh+CirRq8UXAiOsznHNPN4=
 		</data>
 		<key>Frameworks/file_picker.framework/Info.plist</key>
 		<data>
@@ -865,7 +885,67 @@
 		</data>
 		<key>Frameworks/file_picker.framework/file_picker</key>
 		<data>
-		LTEm2WM3Qsh1G84xx63MkOpfmY8=
+		pc+GC8MdFUvU05gnp2zeNh+cubU=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/Info.plist</key>
+		<data>
+		iYBhDdBZ2q/TWUQh9TnjUKhGZBw=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask.png</key>
+		<data>
+		oqIJzVxhZua/CZX+TGK3kylFilY=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask@2x.png</key>
+		<data>
+		3aAb8SeX29Ro7z1pt6A1yqUAaHs=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask@3x.png</key>
+		<data>
+		pPD0GLNI2PnWq2CX6UyQ9H52T9g=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error.png</key>
+		<data>
+		oP6f/Zad0pEL8xrimTdNlSXrrpA=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error@2x.png</key>
+		<data>
+		cFCuvbmEkaKmhj2RThSqw/5KUtM=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error@3x.png</key>
+		<data>
+		QSlxhLYpqk8M4tlq+X0hXbamUH0=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info.png</key>
+		<data>
+		CP1bXzRkp6v+a6oAHECMgzhmOIU=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info@2x.png</key>
+		<data>
+		yx+ZQImmZJ+j/av7X/uJpzaqomU=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info@3x.png</key>
+		<data>
+		5MgHR68ek5Ayg9vc2oGqk1wMpdQ=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success.png</key>
+		<data>
+		oQ/IlYYGw5vH/rx4pqvYiNddu8c=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success@2x.png</key>
+		<data>
+		P1jXd1XGKWq/KG50KF6pWjBVwBo=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success@3x.png</key>
+		<data>
+		hmliT+WZg212OTNmAhP+uSOyYio=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/_CodeSignature/CodeResources</key>
+		<data>
+		l1g5YArSJLgFhvViXe68N/ugHBo=
+		</data>
+		<key>Frameworks/flutter_svprogresshud.framework/flutter_svprogresshud</key>
+		<data>
+		JICsG3z/JWd4T7s6+lLO/Zbw/gk=
 		</data>
 		<key>Frameworks/geolocator_apple.framework/Info.plist</key>
 		<data>
@@ -877,7 +957,7 @@
 		</data>
 		<key>Frameworks/geolocator_apple.framework/geolocator_apple</key>
 		<data>
-		D1p0BhnzCTZAm+znqlVeeB0wlHk=
+		9yFNt12c28Av/aWS7mZ/H4ZzVsE=
 		</data>
 		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
 		<data>
@@ -889,7 +969,7 @@
 		</data>
 		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
 		<data>
-		qWq4z4xL8ZPUAaIsY7GqHRHGs1Q=
+		1JnYv/bSEkjG0yQ2xveJogKl87A=
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
 		<data>
@@ -901,7 +981,7 @@
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
 		<data>
-		QZE6Rz+3fx82h4i3k7TQbFF0PQ0=
+		3rSuMzT9dUT8O002d8p/ZChTGmU=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -992,7 +1072,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zTPS7ipst9mCoed7KUDRv9tUm2vHQCEKB2Z59gtnbx4=
+			GScK+jmkMeSno+J9TXXN8P6qhO1HiF9mDWTh6zd0VOw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1006,21 +1086,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vPxGtNxRkYj6CGms1BGK1n+Ea54N9g1IO9bQtfxQc5w=
+			UKgqrIa/kR/Ig9EwZWtv45Nm0s660mllRfwARta6UU0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kp9HWjn86oiGtYIDuN2iyymSMOUyf5QMeP8aV+vHaLo=
+			MZEfj4yxk6fEZtXhCCsmvA3daa8+8yllz7hsAGTS/y0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.smcbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5joErMcX1WMiEUc1r5nte6v12oRAKixieq2ajQopvQs=
+			bJxgIJpuBYg4K1Dhwr5Nm7mxXu1SsUZfY4hkL8UqzbM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1034,7 +1114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nj1ZIHjT+Xllt0Y+HxZUPHs4S3QKw0RTT1OHcDj6/8o=
+			NWXBBzhQ3NUPxnBLDiEw57o1Rcq1aCuSHjj2Zbdxj+o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/authFlow/appLogo.png</key>
@@ -1590,6 +1670,13 @@
 			1Q5N5yXnvLnvIGhoxwQZ8b/n3ncL1ol1bnOwpQcfq0c=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/search1.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HXcJEPRge96Giyyode6DAkYgcwx6tPQR1sKlV+lE4Qs=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/profileFlow/star.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1618,6 +1705,13 @@
 			5PdEG0AgxKWbaQ27/vyt4f/n0uqEhzemVwEhlF2pcro=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/coffe.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xJU8MWJ/EnUY1JYU53kAty6Nt3HMkOmuRxP8sQv+9SU=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/direction.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1630,6 +1724,13 @@
 			<key>hash2</key>
 			<data>
 			WfAjgZW+tSrCBoGdbvNFT6t+lUOqnU0WYgj7uGnycds=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/downlodShift.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sECTlfWGJS2xeY5xneJMdx24Kp0uBulLv81Jlm56AiI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/flag.png</key>
@@ -1651,6 +1752,20 @@
 			<key>hash2</key>
 			<data>
 			miwS89kjtAboiCTWIHrab1JS3dFcTJUtE+zFW99kwcU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/new_bg.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wIByOO63ceepjXceRivuMTLjzBWe0N09lUQbXz1bHMw=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/x/news.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KB+AZlLq+9et2aARO+yNxToORBG5VOGcMQAH1MRu4xQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/x/secure.png</key>
@@ -1720,7 +1835,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+4U6Yx5s4O7PtSxZqo/jufZIdamRnG2055j+/HH8CHQ=
+			Ocn7SB+RK5zMTS246Q1xI3yKVP8uk4Laku0p7C2EwIs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1748,7 +1863,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			L668mDx5KkSUWWy6TTImYgDwIVKr3iBH1nVbqmRF/RI=
+			yo89WHU0IrGYs3bulFkDua9/tG8HO74MPu8PfSWI5As=
 			</data>
 		</dict>
 		<key>Frameworks/DKImagePickerController.framework/DKImagePickerController.bundle/Assets.car</key>
@@ -1963,7 +2078,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qXuIX3l+x/1kxDSMgrC8Hr+N/xDcusHZXfDXkfOlTZA=
+			SljBo9UkvHMDxKwk4o4Ve+6gubU/otcpCdNuiOruiak=
 			</data>
 		</dict>
 		<key>Frameworks/DKPhotoGallery.framework/DKPhotoGallery.bundle/Assets.car</key>
@@ -2179,7 +2294,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f63jsxyMUnsusHCWqT6rauckB/w+CTUESQRygiQemG4=
+			twtcHP5Tf8G7ZWc1+ivNF602rGH5x0c8TZwV+aUtmVM=
 			</data>
 		</dict>
 		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
@@ -2200,7 +2315,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2xxBSIiVKnbTetVZUfJuSXWSDBzgyIY+iruUHTjQUgw=
+			9BaGPpyqk0w5MHCvMuYgPf3F4nleiHhra79KZSvHlNk=
 			</data>
 		</dict>
 		<key>Frameworks/SDWebImage.framework/_CodeSignature/CodeResources</key>
@@ -2221,7 +2336,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PM8USwbbmDU+CyCsbuFOQyYuaVKhiqO6zVAAITzky9g=
+			WawSQtH08RimsYNUDd1YSBQyBybdq7ioxTlMn+kJah4=
 			</data>
 		</dict>
 		<key>Frameworks/SwiftyGif.framework/_CodeSignature/CodeResources</key>
@@ -2249,7 +2364,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NrVilGfcL2kuufIMCXS/MnPvMLyQhnxslb/5P94hb2s=
+			yxW4cm+C3V2JezfT1Urctg9M8Yiy2QpVFQg2y4zDUZE=
 			</data>
 		</dict>
 		<key>Frameworks/file_picker.framework/Info.plist</key>
@@ -2270,7 +2385,112 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mXs4i/xjzVt7sGZSfmrPX/NfB/v5ajjM149lMmVkKW4=
+			BUbdYU2jkK1MZg7jHGE3aDe5+WFFrjbpJjrK87oaLMQ=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kFUoKbD2LyDxNWvm2vtu5m1/QzQ03sNhOBcF6eb3oiE=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DDw2jnXp1WjofT+IkD6qy3+dLIzDE9vrxNSPoeQO4jo=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6QAJXoYU7vQpTdzUcb2HrKhSj6gCcrZb9r6z0J5yK+w=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/angle-mask@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iwwAX8HeeU70vQudb1L6z80VbnuVeJ+zn94jLMovmKs=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UDk/X+yyN+USnDW9JFp7P9O5irCLZkeybVB1BEDVunA=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xc9fgzh3g2FX8j9dYqux/gm+73IDul7Vb0KaMAQZo+E=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/error@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			P6wK1oxOL6vyD7o9q9+hP9jctZaTyluZgm1zpKgw0dM=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GeypxgyrUdKQ8Nyqc9w0q9XLCdtRbk4cJi9EE5QXXs8=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KLsrQZrjUwrsUtZSul1bJbNH8OTb5+YrjaVW+rbl64Q=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/info@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eer51e9B3uVrPmnlKfYiqok7LLlR6cnUt8JBmo2oG3Y=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZneDtnotiia14nbyRklrCVgGmnlPcjpSwUjyHSfPeXc=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hbpOiBtrYWqPZJYnEBIf/dZWn+6rFwHRPp0WzU9gA18=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/SVProgressHUD.bundle/success@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EMic5PZw5ab7sBUjL5t1YMrH5WnRAJCbgeMLFJgZQ/Q=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oCEJgDi/GAGlXydoV2KtyvyHLe2TaPy8rzOEzpTu+mo=
+			</data>
+		</dict>
+		<key>Frameworks/flutter_svprogresshud.framework/flutter_svprogresshud</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			in8nBokwWaFJk4xJvOE4OaSvbPiv4QyifEvk+uTy8ss=
 			</data>
 		</dict>
 		<key>Frameworks/geolocator_apple.framework/Info.plist</key>
@@ -2291,7 +2511,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			C8zfrIHgsgT6BundxBbFpowkr37Wyjkk+Un2GhjuScg=
+			W2ycda4o7RNIwuXqw5xPbO6zXghm6iLVfZhHTbv4gR4=
 			</data>
 		</dict>
 		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
@@ -2312,7 +2532,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sv2n6tKcIdOkBm9oY8Bv/jpmyqXvLZTTEw9X373NhgU=
+			KR/VQ+dLT+mZ4xg/BP2kRTv9E7cMPtc3o3pFD1GL5Mw=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
@@ -2333,7 +2553,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fvgPCMsE/57aLKsj69jsDaVEyS2Dnynoo+GNMRgMb3A=
+			+5T1//cEsmEhyrw6hHio7HVkB/EPwacZ7rlVwwu6BqU=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>

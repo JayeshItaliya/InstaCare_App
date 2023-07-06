@@ -11,6 +11,7 @@ import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
+import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
@@ -28,6 +29,7 @@ class TimeCardDetailScreen extends StatefulWidget {
 
 class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
   final timeDetailController = Get.put(TimeCardDetailController());
+  final cx = Get.put(CommonController());
 
   @override
   Widget build(BuildContext context) {
@@ -104,8 +106,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                           children: [
                             Container(
                               alignment: Alignment.center,
-                              height: Reponsive_.crosslength * 0.02,
-                              width: Reponsive_.crosslength * 0.02,
+                              width: Reponsive_.crosslength * 0.03,
+                              height: Reponsive_.crosslength * 0.03,
                               decoration: const BoxDecoration(
                                   color: AppColors.deepGreen,
                                   shape: BoxShape.circle),
@@ -141,39 +143,92 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
               height: Reponsive_.crosslength * 0.01,
             ),
             Container(
-              height: widget.index == 0 ? null : Reponsive_.crosslength * 0.65,
               decoration: BoxDecoration(
                   color: AppColors.white,
                   borderRadius: BorderRadius.all(
                       Radius.circular(Reponsive_.crosslength * 0.015))),
               padding: EdgeInsets.all(Reponsive_.crosslength * 0.015),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Details",
-                      fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.px16,
-                      color: AppColors.blue,
-                    ),
-                    SizedBox(
-                      height: Reponsive_.crosslength * 0.015,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
+              child: ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  InterText(
+                    text: "Details",
+                    fontWeight: FontWeight.w600,
+                    fontSize: Reponsive_.px16,
+                    color: AppColors.blue,
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength * 0.015,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Worker",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "Granny Weatherwax",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black,
+                            height: 1.5,
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Worker’s Documents",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.black,
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(
+                                AppAssets.downodTimeCard,
+                                height: Reponsive_.crosslength * 0.02,
+                                width: Reponsive_.crosslength * 0.02,
+                              ),
+                              InterText(
+                                text: "  Download",
+                                fontSize: Reponsive_.px16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blue,
+                                height: 1.5,
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength * 0.02,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InterText(
-                              text: "Worker",
+                              text: "Start Date",
                               fontSize: Reponsive_.px12,
                               fontWeight: FontWeight.normal,
                               color: AppColors.black,
                             ),
                             InterText(
-                              text: "Granny Weatherwax",
+                              text: "Wed, Feb 01 2023",
                               fontSize: Reponsive_.px18,
                               fontWeight: FontWeight.w600,
                               color: AppColors.black,
@@ -181,205 +236,150 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                             ),
                           ],
                         ),
-                        Column(
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InterText(
-                              text: "Worker’s Documents",
+                              text: "Start Time",
                               fontSize: Reponsive_.px12,
                               fontWeight: FontWeight.normal,
                               color: AppColors.black,
                             ),
-                            Row(
+                            InterText(
+                              text: "7:00AM",
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                              height: 1.5,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength * 0.02,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "End Date",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.normal,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: "Wed, Feb 01 2023",
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                              height: 1.5,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Start Time",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.normal,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: "3:00AM",
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                              height: 1.5,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: Reponsive_.crosslength * 0.02),
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Duration",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "8 Hours 00 Minutes",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black,
+                            height: 1.5,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength * 0.02,
+                  ),
+                  widget.index == 1
+                      ? Container(
+                          child: AppWidget().getTextField(
+                            hintText: "Add Notes",
+                            inputTextStyle: GoogleFonts.inter(
+                                fontWeight: FontWeight.w400,
+                                fontSize: Reponsive_.px16,
+                                color: AppColors.black),
+                            hintStyle: GoogleFonts.inter(
+                                fontWeight: FontWeight.w400,
+                                fontSize: Reponsive_.px16,
+                                color: AppColors.hintTextGrey),
+                            maxLine: 10,
+                          ),
+                        )
+                      : Container(),
+                  widget.index == 0
+                      ? Wrap(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Image.asset(
-                                  AppAssets.downodTimeCard,
-                                  height: Reponsive_.crosslength * 0.02,
-                                  width: Reponsive_.crosslength * 0.02,
+                                InterText(
+                                  text: "Manager Notes",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                SizedBox(
+                                  height: 5,
                                 ),
                                 InterText(
-                                  text: "  Download",
-                                  fontSize: Reponsive_.px16,
+                                  text:
+                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus nibh in sem volutpat sagittis.",
+                                  fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
-                                  color: AppColors.blue,
-                                  height: 1.5,
+                                  color: AppColors.black,
+                                  maxLines: 10,
                                 ),
                               ],
                             ),
                           ],
                         )
-                      ],
-                    ),
-                    SizedBox(
-                      height: Reponsive_.crosslength * 0.02,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InterText(
-                                text: "Start Date",
-                                fontSize: Reponsive_.px12,
-                                fontWeight: FontWeight.normal,
-                                color: AppColors.black,
-                              ),
-                              InterText(
-                                text: "Wed, Feb 01 2023",
-                                fontSize: Reponsive_.px18,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.black,
-                                height: 1.5,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InterText(
-                                text: "Start Time",
-                                fontSize: Reponsive_.px12,
-                                fontWeight: FontWeight.normal,
-                                color: AppColors.black,
-                              ),
-                              InterText(
-                                text: "7:00AM",
-                                fontSize: Reponsive_.px18,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.blue,
-                                height: 1.5,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: Reponsive_.crosslength * 0.02,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InterText(
-                                text: "End Date",
-                                fontSize: Reponsive_.px12,
-                                fontWeight: FontWeight.normal,
-                                color: AppColors.black,
-                              ),
-                              InterText(
-                                text: "Wed, Feb 01 2023",
-                                fontSize: Reponsive_.px18,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.black,
-                                height: 1.5,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InterText(
-                                text: "Start Time",
-                                fontSize: Reponsive_.px12,
-                                fontWeight: FontWeight.normal,
-                                color: AppColors.black,
-                              ),
-                              InterText(
-                                text: "3:00AM",
-                                fontSize: Reponsive_.px18,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.blue,
-                                height: 1.5,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: Reponsive_.crosslength * 0.02),
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Duration",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.normal,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "8 Hours 00 Minutes",
-                              fontSize: Reponsive_.px18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black,
-                              height: 1.5,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: Reponsive_.crosslength * 0.02,
-                    ),
-                    widget.index == 1
-                        ? Container(
-                            child: AppWidget().getTextField(
-                              hintText: "Add Notes",
-                              inputTextStyle: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: Reponsive_.px16,
-                                  color: AppColors.black),
-                              hintStyle: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: Reponsive_.px16,
-                                  color: AppColors.hintTextGrey),
-                              maxLine: 100,
-                            ),
-                          )
-                        : Container(),
-                    widget.index == 0
-                        ? Wrap(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "Manager Notes",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  InterText(
-                                    text:
-                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus nibh in sem volutpat sagittis.",
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                    maxLines: 10,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )
-                        : Container(),
-                  ],
-                ),
+                      : Container(),
+                ],
               ),
             ),
             widget.index == 0
@@ -404,6 +404,9 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                     ),
                   )
                 : Container(),
+            cx.instacareLoginValue.toString().contains("instacare")? SizedBox(
+              height: Reponsive_.crosslength*0.10,
+            ):Container(),
             widget.index == 0
                 ? Expanded(
                     child: SizedBox(),
@@ -416,7 +419,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                   horizontal: Reponsive_.crosslength * 0.015),
               child: Row(
                 children: [
-                  Expanded(
+                 cx.instacareLoginValue.toString().contains("instacare")?
+                 Expanded(
                     child: CommonButton(
                       text: widget.index == 1
                           ? "Process".toUpperCase()
@@ -439,7 +443,8 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                         }
                       },
                     ),
-                  ),
+                  ):
+                  Container(),
                   SizedBox(
                     width: 10,
                   ),
@@ -526,6 +531,9 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 30,
             )
           ],
         ),

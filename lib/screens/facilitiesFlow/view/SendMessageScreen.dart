@@ -8,13 +8,11 @@ import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
-import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/controller/filterController.dart';
-import 'package:instacare/screens/employeeSelectionFlow/view/SendingScreen.dart';
+import 'package:instacare/screens/employeeFlow/employeeSelectionFlow/view/FacilityEmployeeSelectionScreen.dart';
 import '../../../Utils/CommonDropDown.dart';
 import '../../../Utils/appColor.dart';
 import '../../../Utils/commonButton.dart';
 import '../../../Utils/pageNavigator.dart';
-import '../../employeeSelectionFlow/view/FacilityEmployeeSelectionScreen.dart';
 import '../controller/SendMessageController.dart';
 
 
@@ -48,7 +46,7 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
               InkWell(
                 child: Container(
                   width: 100,
-                  height: 5,
+                  height: 3,
                   color: AppColors.yallow,
                 ),
                 onTap: (){
@@ -158,7 +156,7 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
           ),
           const Expanded(child: SizedBox()),
           SizedBox(
-            height: Reponsive_.crosslength * 0.2,
+            height: Reponsive_.crosslength/70,
           ),
           Row(
             children: [
@@ -174,6 +172,7 @@ class _SendMessageScreenState extends State<SendMessageScreen> {
               ),
             ],
           ),
+          SizedBox(width: Reponsive_.crosslength*0.01,),
         ],
       ),
     );

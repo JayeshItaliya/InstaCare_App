@@ -33,84 +33,96 @@ class _RunningShiftInScreenState extends State<RunningShiftInScreen> {
           Container(
             width: Reponsive_.w,
             height: Reponsive_.crosslength/2.5,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AppAssets.shiftBackGroundScreen),
-                fit: BoxFit.cover,
-                colorFilter:  ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
-              )
-            ),
-            padding:EdgeInsets.only(top: Reponsive_.crosslength/30,),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child:Stack(
               children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.arrow_back,color: AppColors.white),
-                      onPressed: (){
-                        onBack(context);
-                      },
-                    ),
-                    MontserratText(
-                      text: "Shift In Process",
-                      fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.px18,
-                      color:AppColors.white,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: Reponsive_.crosslength/100),
-                      child: Image.asset(AppAssets.bell,width: 25,height: 25,color: AppColors.white,),
+                Container(
+                  margin:EdgeInsets.only(bottom: Reponsive_.crosslength*0.015),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(AppAssets.shiftBackGroundScreen),
+                      fit: BoxFit.cover,
+                      colorFilter:  ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
                     )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: Reponsive_.crosslength/80,right: Reponsive_.crosslength/80),
+                  ),
+                  padding:EdgeInsets.only(top: Reponsive_.crosslength/30,),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InterText(
-                            text: "Saturday, 18 March 2023",
-                            fontWeight: FontWeight.w600,
-                            fontSize: Reponsive_.px20,
-                            color: AppColors.white,
+                          IconButton(
+                            icon: Icon(Icons.arrow_back,color: AppColors.white),
+                            onPressed: (){
+                              onBack(context);
+                            },
                           ),
-                          Row(
-                            children: [
-                              Image.asset(AppAssets.senderEmp),
-                              SizedBox(
-                                width: Reponsive_.crosslength/110,
-                              ),
-                              InterText(
-                                text: "5.2 mi",
-                                fontWeight: FontWeight.w400,
-                                fontSize: Reponsive_.px14,
-                                color: AppColors.white,
-                              ),
-                            ],
+                          MontserratText(
+                            text: "Shift In Process",
+                            fontWeight: FontWeight.w700,
+                            fontSize: Reponsive_.px24,
+                            color:AppColors.white,
                           ),
+                          Padding(
+                            padding: EdgeInsets.only(right: Reponsive_.crosslength/100),
+                            child: Image.asset(AppAssets.bell,width: 20,height: 20,color: AppColors.white,),
+                          )
                         ],
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/60,
-                      ),
-                      MontserratText(
-                        text: "Elevate Care North Branch - CNA",
-                        fontSize: Reponsive_.px24,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.white,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/35,
-                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/80,right: Reponsive_.crosslength/80),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InterText(
+                                  text: "Saturday, 18 March 2023",
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Reponsive_.px20,
+                                  color: AppColors.white,
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(AppAssets.senderEmp),
+                                    SizedBox(
+                                      width: Reponsive_.crosslength/110,
+                                    ),
+                                    InterText(
+                                      text: "5.2 mi",
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: Reponsive_.px14,
+                                      color: AppColors.white,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: Reponsive_.crosslength/60,
+                            ),
+                            MontserratText(
+                              text: "Elevate Care North Branch - CNA",
+                              fontSize: Reponsive_.px24,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.white,
+                            ),
+                            SizedBox(
+                              height: Reponsive_.crosslength/35,
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
-                )
+                ),
+                Positioned(
+                  child: Image.asset("assets/x/downlodShift.png",scale: 3.5),
+                  bottom: Reponsive_.crosslength*0.002,
+                  right:Reponsive_.crosslength*0.015 ,
+                ),
               ],
             ),
           ),
@@ -281,212 +293,287 @@ class _RunningShiftInScreenState extends State<RunningShiftInScreen> {
                         context: context,
                         childView: ListView(
                           shrinkWrap: true,
+                          padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02),
                           physics: NeverScrollableScrollPhysics(),
                           children: [
-                            CommonContainer(
-                              child: ListView(
-                                shrinkWrap: true,
-                                padding: EdgeInsets.zero,
-                                physics: NeverScrollableScrollPhysics(),
-                                children: [
-                                  ListTile(
-                                    onTap: (){
-                                      shiftController.lunchBreakValue.value=!shiftController.lunchBreakValue.value;
-                                      if(shiftController.lunchBreakValue.value==true) {
-                                        shiftController.lunchValue.value="Lunch Break";
-                                        print(shiftController.lunchValue.value);
-                                      }
-                                    },
-                                    leading: Transform.scale(
-                                      scale: 1.3,
-                                      child: Obx(
-                                            ()=> Checkbox(
-                                          shape: CircleBorder(),
-                                              side: MaterialStateBorderSide.resolveWith(
-                                                    (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
-                                              ),
-                                          value: shiftController.lunchBreakValue.value,
-                                          activeColor: AppColors.buttonColor,
-                                          onChanged: (bool? newValue) {
-                                            shiftController.lunchBreakValue.value=newValue!;
-                                            if(shiftController.lunchBreakValue.value==true) {
-                                              shiftController.lunchValue.value="Lunch Break";
-                                              print(shiftController.lunchValue.value);
-                                            }
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                    title: InterText(
-                                      text: "Lunch Break",
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.black,
-                                      fontSize: Reponsive_.px18,
-                                    ),
-                                    subtitle: InterText(
-                                      text: "1 hour",
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.black,
-                                      fontSize: Reponsive_.px18,
-                                    ),
-                                    trailing: Image.asset(AppAssets.lunchBrake,width: 30,height: 30),
-                                    contentPadding: EdgeInsets.zero,
-
-                                  ),
-                                ],
-                              ),
-                              bgcolor: AppColors.backGroundColor,
-                            ),
                             SizedBox(
-                              height: Reponsive_.crosslength/80,
+                              height: Reponsive_.crosslength*0.03,
                             ),
-                            CommonContainer(
-                              child: ListView(
-                                shrinkWrap: true,
-                                padding: EdgeInsets.zero,
-                                physics: NeverScrollableScrollPhysics(),
-                                children: [
-                                  ListTile(
-                                    onTap: (){
-                                      shiftController.coffeeValue.value=!shiftController.coffeeValue.value;
-                                      if(shiftController.lunchBreakValue.value==true) {
-                                        shiftController.lunchValue.value="Coffee Break";
-                                        print(shiftController.lunchValue.value);
-                                      }
-                                    },
-                                    leading: Transform.scale(
-                                      scale: 1.3,
-                                      child: Obx(
-                                            ()=> Checkbox(
-                                          shape: CircleBorder(),
-                                              side: MaterialStateBorderSide.resolveWith(
-                                                    (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
-                                              ),
-                                          value: shiftController.coffeeValue.value,
-                                          activeColor: AppColors.buttonColor,
-                                          onChanged: (bool? newValue) {
-                                            shiftController.coffeeValue.value=newValue!;
-                                            if(shiftController.lunchBreakValue.value==true) {
-                                              shiftController.lunchValue.value="Coffee Break";
-                                              print(shiftController.lunchValue.value);
-                                            }
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                    contentPadding: EdgeInsets.zero,
-                                    title: InterText(
-                                      text: "Coffee Break",
-                                      fontWeight: FontWeight.w600,
-                                      color: AppColors.black,
-                                      fontSize: Reponsive_.px18,
-                                    ),
-                                    subtitle: InterText(
-                                      text: "15 minutes",
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.black,
-                                      fontSize: Reponsive_.px18,
-                                    ),
-                                    trailing: Image.asset(AppAssets.coffee,width: 30,height: 30),
-                                  ),
-                                ],
-                              ),
-                              bgcolor: AppColors.backGroundColor,
+                            MontserratText(
+                              text: "    Add Break Time",
+                              fontSize: Reponsive_.px30,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.black
                             ),
-
-                            SizedBox(
-                              height: Reponsive_.crosslength/80,
-                            ),
-                            CommonContainer(
-                              child: ListView(
-                                shrinkWrap: true,
-                                padding: EdgeInsets.zero,
-                                physics: NeverScrollableScrollPhysics(),
-                                children: [
-                                  ListTile(
-                                    contentPadding: EdgeInsets.zero,
-                                    onTap: (){
-                                      shiftController.otherBrake.value=!shiftController.otherBrake.value;
-                                      if(shiftController.lunchBreakValue.value==true) {
-                                        shiftController.lunchValue.value="Other Break";
-                                        print(shiftController.lunchValue.value);
-                                      }
-                                    },
-                                    leading: Transform.scale(
-                                      scale: 1.3,
-                                      child: Obx(
-                                            ()=> Checkbox(
-                                          shape: CircleBorder(),
-                                          value: shiftController.otherBrake.value,
-                                              side: MaterialStateBorderSide.resolveWith(
-                                                    (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
-                                              ),
-                                          activeColor: AppColors.buttonColor,
-                                          onChanged: (bool? newValue) {
-                                            shiftController.otherBrake.value=newValue!;
-                                            if(shiftController.lunchBreakValue.value==true) {
-                                              shiftController.lunchValue.value="Other Break";
-                                              print(shiftController.lunchValue.value);
-                                            }
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                                    title: Column(
+                            GestureDetector(
+                              onTap: (){
+                                shiftController.lunchBreakValue.value=!shiftController.lunchBreakValue.value;
+                                if(shiftController.lunchBreakValue.value==true) {
+                                  shiftController.lunchValue.value="Lunch Break";
+                                  print(shiftController.lunchValue.value);
+                                }
+                              },
+                              child: CommonContainer(
+                                borderRadius: 30,
+                                paddingright:Reponsive_.crosslength*0.02 ,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  padding: EdgeInsets.zero,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  children: [
+                                    Row(
                                       children: [
-                                        InterText(
-                                          text: "Other Break",
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.black,
-                                          fontSize: Reponsive_.px18,
+                                        Expanded(
+                                          flex: 0,
+                                          child:Transform.scale(
+                                            scale: 1.3,
+                                            child: Obx(
+                                                  ()=> Checkbox(
+                                                shape: CircleBorder(),
+                                                side: MaterialStateBorderSide.resolveWith(
+                                                      (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                                                ),
+                                                value: shiftController.lunchBreakValue.value,
+                                                activeColor: AppColors.buttonColor,
+                                                onChanged: (bool? newValue) {
+                                                  shiftController.lunchBreakValue.value=newValue!;
+                                                  if(shiftController.lunchBreakValue.value==true) {
+                                                    shiftController.lunchValue.value="Lunch Break";
+                                                    print(shiftController.lunchValue.value);
+                                                  }
+                                                },
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                         SizedBox(
-                                          height: Reponsive_.crosslength/90,
+                                          width: Reponsive_.crosslength*0.005,
                                         ),
-                                        Container(
-                                          height: Reponsive_.crosslength/30,
-                                          width: Reponsive_.crosslength/7,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            color: AppColors.white,
-                                            borderRadius: BorderRadius.circular(30)
-                                          ),
-                                          child: InterText(
-                                            text: "Break Start Time",
-                                            fontSize: Reponsive_.px14,
-                                            fontWeight: FontWeight.w400,
+                                        Expanded(
+                                          flex: 3,
+                                          child:Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                            InterText(
+                                            text: "Lunch Break",
+                                            fontWeight: FontWeight.w600,
                                             color: AppColors.black,
+                                            fontSize: Reponsive_.px18,
+                                             ),
+                                              SizedBox(
+                                                height: Reponsive_.crosslength*0.01,
+                                              ),
+                                              InterText(
+                                                text: "1 hour",
+                                                fontWeight: FontWeight.w400,
+                                                color: AppColors.black,
+                                                fontSize: Reponsive_.px18,
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                        SizedBox(
-                                          height: Reponsive_.crosslength/100,
-                                        ),
-                                        Container(
-                                          height: Reponsive_.crosslength/30,
-                                          width: Reponsive_.crosslength/7,
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                              color: AppColors.white,
-                                              borderRadius: BorderRadius.circular(30)
-                                          ),
-                                          child: InterText(
-                                            text: "Break End Time",
-                                            fontSize: Reponsive_.px14,
-                                            fontWeight: FontWeight.w400,
-                                            color: AppColors.black,
-                                          ),
-                                        ),
+                                        Expanded(
+                                          flex: 0,
+                                          child:Image.asset(AppAssets.lunchBrake,width: 30,height: 30),
+                                        )
                                       ],
-                                      crossAxisAlignment: CrossAxisAlignment.start,
                                     ),
-                                    trailing: Image.asset(AppAssets.other,width: 30,height: 30),
-                                  ),
-                                ],
+                                  ],
+                                ),
+                                bgcolor: AppColors.backGroundColor,
                               ),
-                              bgcolor: AppColors.backGroundColor,
                             ),
+
+                            GestureDetector(
+                              onTap: (){
+                                shiftController.coffeeValue.value=!shiftController.coffeeValue.value;
+                                if(shiftController.lunchBreakValue.value==true) {
+                                  shiftController.lunchValue.value="Coffee Break";
+                                  print(shiftController.lunchValue.value);
+                                }
+                              },
+                              child: CommonContainer(
+                                margintop: Reponsive_.crosslength*0.01,
+                                paddingright:Reponsive_.crosslength*0.02 ,
+
+                                borderRadius: 30,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  padding: EdgeInsets.zero,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          flex: 0,
+                                          child:Transform.scale(
+                                            scale: 1.3,
+                                            child: Obx(
+                                                  ()=> Checkbox(
+                                                shape: CircleBorder(),
+                                                side: MaterialStateBorderSide.resolveWith(
+                                                      (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                                                ),
+                                                value: shiftController.coffeeValue.value,
+                                                activeColor: AppColors.buttonColor,
+                                                onChanged: (bool? newValue) {
+                                                  shiftController.coffeeValue.value=newValue!;
+                                                  if(shiftController.lunchBreakValue.value==true) {
+                                                    shiftController.lunchValue.value="Coffee Break";
+                                                    print(shiftController.lunchValue.value);
+                                                  }
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: Reponsive_.crosslength*0.005,
+                                        ),
+                                        Expanded(
+                                          flex: 2,
+                                          child:Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              InterText(
+                                                text: "Coffee Break",
+                                                fontWeight: FontWeight.w600,
+                                                color: AppColors.black,
+                                                fontSize: Reponsive_.px18,
+                                              ),
+                                              SizedBox(
+                                                height: Reponsive_.crosslength*0.01,
+                                              ),
+                                              InterText(
+                                                text: "15 minutes",
+                                                fontWeight: FontWeight.w400,
+                                                color: AppColors.black,
+                                                fontSize: Reponsive_.px18,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Expanded(
+                                          flex: 0,
+                                          child:Image.asset("assets/x/coffe.png",width: 30,height: 30,color: AppColors.buttonColor),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                bgcolor: AppColors.backGroundColor,
+                              ),
+                            ),
+
+                            GestureDetector(
+                              onTap: (){
+                                shiftController.otherBrake.value=!shiftController.otherBrake.value;
+                                if(shiftController.lunchBreakValue.value==true) {
+                                  shiftController.lunchValue.value="Other Break";
+                                  print(shiftController.lunchValue.value);
+                                }
+                              },
+                              child: CommonContainer(
+                                margintop: Reponsive_.crosslength*0.01,
+                                paddingright:Reponsive_.crosslength*0.02 ,
+                                borderRadius: 30,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  padding: EdgeInsets.zero,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  children: [
+                                    Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          flex: 0,
+                                          child:Transform.scale(
+                                            scale: 1.3,
+                                            child: Obx(
+                                                  ()=> Checkbox(
+                                                shape: CircleBorder(),
+                                                value: shiftController.otherBrake.value,
+                                                side: MaterialStateBorderSide.resolveWith(
+                                                      (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                                                ),
+                                                activeColor: AppColors.buttonColor,
+                                                onChanged: (bool? newValue) {
+                                                  shiftController.otherBrake.value=newValue!;
+                                                  if(shiftController.lunchBreakValue.value==true) {
+                                                    shiftController.lunchValue.value="Other Break";
+                                                    print(shiftController.lunchValue.value);
+                                                  }
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+
+                                        Expanded(
+                                          flex: 2,
+                                          child:Column(
+                                            children: [
+                                              InterText(
+                                                text: " Other Break",
+                                                fontWeight: FontWeight.w600,
+                                                color: AppColors.black,
+                                                fontSize: Reponsive_.px18,
+                                              ),
+                                              SizedBox(
+                                                height: Reponsive_.crosslength*0.01,
+                                              ),
+                                              Container(
+                                                height: Reponsive_.crosslength/30,
+                                                width: Reponsive_.crosslength/7,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                    color: AppColors.white,
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                child: InterText(
+                                                  text: "Break Start Time",
+                                                  fontSize: Reponsive_.px14,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: AppColors.black,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: Reponsive_.crosslength/100,
+                                              ),
+                                              Container(
+                                                height: Reponsive_.crosslength/30,
+                                                width: Reponsive_.crosslength/7,
+                                                alignment: Alignment.center,
+                                                decoration: BoxDecoration(
+                                                    color: AppColors.white,
+                                                    borderRadius: BorderRadius.circular(30)
+                                                ),
+                                                child: InterText(
+                                                  text: "Break End Time",
+                                                  fontSize: Reponsive_.px14,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: AppColors.black,
+                                                ),
+                                              ),
+                                            ],
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                          ),
+                                        ),
+
+                                        Expanded(
+                                          flex: 0,
+                                          child:Image.asset(AppAssets.other,width: 30,height: 30),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                bgcolor: AppColors.backGroundColor,
+                              ),
+                            ),
+
                             SizedBox(
-                              height: Reponsive_.crosslength/80,
+                              height: Reponsive_.crosslength*0.025,
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -494,7 +581,7 @@ class _RunningShiftInScreenState extends State<RunningShiftInScreen> {
                                 children: [
                                   Expanded(
                                     child: CommonButton(
-                                      text: "Add Break Time",
+                                      text: "ADD BREAK TIME",
                                       onTap: (){
                                         onBack(context);
                                       },
@@ -503,7 +590,10 @@ class _RunningShiftInScreenState extends State<RunningShiftInScreen> {
                                 ],
                                 mainAxisAlignment: MainAxisAlignment.center,
                               ),
-                            )
+                            ),
+                            SizedBox(
+                              height: Reponsive_.crosslength*0.020,
+                            ),
                           ],
                         )
                       );

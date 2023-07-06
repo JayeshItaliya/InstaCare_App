@@ -26,7 +26,7 @@ class _AwesomeShiftScreenState extends State<AwesomeShiftScreen> {
           ),
           Image.asset(AppAssets.calendarCheck,height: Reponsive_.crosslength/15,width: Reponsive_.crosslength/15,),
           SizedBox(
-            height: Reponsive_.crosslength/30 ,
+            height: Reponsive_.crosslength*0.025,
           ),
           InterText(
             text: "Awesome!",
@@ -36,7 +36,7 @@ class _AwesomeShiftScreenState extends State<AwesomeShiftScreen> {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: Reponsive_.crosslength/60,
+            height: Reponsive_.crosslength*0.015,
           ),
           InterText(
             text: "You successfully booked the shift.",
@@ -74,13 +74,13 @@ class _AwesomeShiftScreenState extends State<AwesomeShiftScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppAssets.sun,color: AppColors.yallow),
+              Image.asset(AppAssets.sun,color: AppColors.yallow,scale: 1.5),
               SizedBox(
                 width: Reponsive_.crosslength/100,
               ),
               InterText(
                 text: "7:00 AM - 3:00 PM",
-                color: AppColors.blue,
+                color: AppColors.black,
                 fontSize: Reponsive_.px16,
                 fontWeight: FontWeight.w700,
                 textAlign: TextAlign.center,
@@ -96,10 +96,8 @@ class _AwesomeShiftScreenState extends State<AwesomeShiftScreen> {
               toPushNavigator(context: context,PageName: RunningShiftInScreen());
             },
             child: Container(
-              padding: EdgeInsets.symmetric(
-                vertical: Reponsive_.crosslength/60,
-              ),
-              margin: EdgeInsets.symmetric(horizontal:Reponsive_.crosslength/9.2 ),
+              padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.015,),
+              margin: EdgeInsets.symmetric(horizontal:Reponsive_.crosslength*0.12 ),
               decoration: BoxDecoration(
                 color: AppColors.deepGreen,
                 borderRadius: BorderRadius.circular(25)
@@ -107,7 +105,7 @@ class _AwesomeShiftScreenState extends State<AwesomeShiftScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(AppAssets.downlodLeft,height: Reponsive_.crosslength/40,width: Reponsive_.crosslength/40,),
+                  Image.asset(AppAssets.downlodLeft,height: Reponsive_.crosslength/45,width: Reponsive_.crosslength/45,),
                   SizedBox(
                     width: Reponsive_.crosslength/100,
                   ),

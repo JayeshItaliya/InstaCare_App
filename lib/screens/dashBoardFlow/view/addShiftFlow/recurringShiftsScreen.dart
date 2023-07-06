@@ -792,7 +792,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               children: [
                 Expanded(
                   child: CommonButton(
-                    text: "Publish",
+                    text: "PUBLISH",
                     onTap: (){},
                   ),
                 ),
@@ -801,7 +801,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                 ),
                 Expanded(
                   child: CommonButton(
-                    text: "Assign",
+                    text: "ASSIGN",
                     onTap: (){},
                   ),
                 ),

@@ -137,6 +137,7 @@ class _EmployeeFacilitiesScreenState extends State<EmployeeFacilitiesScreen> {
                                       onTap: () {
                                         CommonBottonSheet(
                                           context: context,
+                                          backGroundColor: Color.fromRGBO(255, 231, 233, 1),
                                           childView: ListView(
                                             shrinkWrap: true,
                                             physics:

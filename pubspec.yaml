@@ -46,6 +46,7 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   easy_geofencing:
   flutter_rating_bar:
+  flutter_svprogresshud:
 
 
 

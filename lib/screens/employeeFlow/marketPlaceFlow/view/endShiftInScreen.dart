@@ -29,89 +29,98 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
           Container(
             width: Reponsive_.w,
             height: Reponsive_.crosslength/2.5,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(AppAssets.shiftBackGroundScreen),
-                  fit: BoxFit.cover,
-                  colorFilter:  ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
-                )
-            ),
-            padding:EdgeInsets.only(top: Reponsive_.crosslength/30,),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Stack(
               children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.arrow_back,color: AppColors.white),
-                      onPressed: (){
-                        onBack(context);
-                      },
-                    ),
-                    MontserratText(
-                      text: "Summary",
-                      fontWeight: FontWeight.w600,
-                      fontSize: Reponsive_.px18,
-                      color:AppColors.white,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: Reponsive_.crosslength/100),
-                      child: Image.asset(AppAssets.bell,width: 25,height: 25,color: AppColors.white,),
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: Reponsive_.crosslength/80,right: Reponsive_.crosslength/80),
+                Container(
+                  margin:EdgeInsets.only(bottom: Reponsive_.crosslength*0.015),
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(AppAssets.shiftBackGroundScreen),
+                        fit: BoxFit.cover,
+                        colorFilter:  ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.darken),
+                      )
+                  ),
+                  padding:EdgeInsets.only(top: Reponsive_.crosslength/30,),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InterText(
-                            text: "Saturday, 18 March 2023",
-                            fontWeight: FontWeight.w600,
-                            fontSize: Reponsive_.px20,
-                            color: AppColors.white,
+                          IconButton(
+                            icon: Icon(Icons.arrow_back,color: AppColors.white),
+                            onPressed: (){
+                              onBack(context);
+                            },
                           ),
-                          Row(
-                            children: [
-                              Image.asset(AppAssets.senderEmp),
-                              SizedBox(
-                                width: Reponsive_.crosslength/110,
-                              ),
-                              InterText(
-                                text: "5.2 mi",
-                                fontWeight: FontWeight.w400,
-                                fontSize: Reponsive_.px14,
-                                color: AppColors.white,
-                              ),
-                            ],
+                          MontserratText(
+                            text: "Summary",
+                            fontWeight: FontWeight.w700,
+                            fontSize: Reponsive_.px24,
+                            color:AppColors.white,
                           ),
+                          Padding(
+                            padding: EdgeInsets.only(right: Reponsive_.crosslength/100),
+                            child: Image.asset(AppAssets.bell,width: 25,height: 25,color: AppColors.white,),
+                          )
                         ],
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/60,
-                      ),
-                      MontserratText(
-                        text: "Elevate Care North Branch - CNA",
-                        fontSize: Reponsive_.px24,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.white,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/35,
-                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/80,right: Reponsive_.crosslength/80),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InterText(
+                                  text: "Saturday, 18 March 2023",
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Reponsive_.px20,
+                                  color: AppColors.white,
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(AppAssets.senderEmp),
+                                    SizedBox(
+                                      width: Reponsive_.crosslength/110,
+                                    ),
+                                    InterText(
+                                      text: "5.2 mi",
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: Reponsive_.px14,
+                                      color: AppColors.white,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: Reponsive_.crosslength/60,
+                            ),
+                            MontserratText(
+                              text: "Elevate Care North Branch - CNA",
+                              fontSize: Reponsive_.px24,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.white,
+                            ),
+                            SizedBox(
+                              height: Reponsive_.crosslength/35,
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
-                )
+                ),
+                Positioned(
+                  child: Image.asset("assets/x/downlodShift.png",scale: 3.5),
+                  bottom: Reponsive_.crosslength*0.002,
+                  right:Reponsive_.crosslength*0.015 ,
+                ),
               ],
             ),
-          ),
-          SizedBox(
-            height: Reponsive_.crosslength/80,
           ),
           CommonContainer(
             child: ListView(
@@ -122,12 +131,20 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(AppAssets.clockTimeEmp,height: 16,width: 16),
-                    InterText(
-                      text: "Morning Shift - 8 Hours",
-                      fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.px16,
-                      color: AppColors.black,
+                    Row(
+                      children: [
+                        Image.asset(AppAssets.clockTimeEmp,height: 16,width: 16),
+                        SizedBox(
+                          width: Reponsive_.crosslength*0.01,
+                        ),
+                        InterText(
+                          text: "Morning Shift - 8 Hours",
+                          fontWeight: FontWeight.w400,
+                          fontSize: Reponsive_.px16,
+                          color: AppColors.black,
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
                     ),
                     Row(
                       children: [
@@ -165,9 +182,6 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
               ],
             ),
           ),
-          SizedBox(
-            height: Reponsive_.crosslength/80,
-          ),
           CommonContainer(
             child: ListView(
               shrinkWrap: true,
@@ -184,10 +198,10 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
                       color: AppColors.black,
                     ),
                     Container(
-                      width: Reponsive_.crosslength/20,
-                      height: Reponsive_.crosslength/20,
+                      width: Reponsive_.crosslength/25,
+                      height: Reponsive_.crosslength/25,
                       alignment: Alignment.center,
-                      child: Image.asset(AppAssets.downlodLeft,width: 20,height: 20),
+                      child: Image.asset(AppAssets.downlodLeft,scale: 3,),
                       decoration: BoxDecoration(
                           color: AppColors.deepGreen,
                           shape: BoxShape.circle
@@ -222,10 +236,6 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
             ),
           ),
 
-
-          SizedBox(
-            height: Reponsive_.crosslength/80,
-          ),
           CommonContainer(
             child: ListView(
               shrinkWrap: true,
@@ -242,10 +252,10 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
                       color: AppColors.black,
                     ),
                     Container(
-                      width: Reponsive_.crosslength/20,
-                      height: Reponsive_.crosslength/20,
+                      width: Reponsive_.crosslength/25,
+                      height: Reponsive_.crosslength/25,
                       alignment: Alignment.center,
-                      child: Image.asset(AppAssets.downlodLeft,width: 20,height: 20),
+                      child: Image.asset(AppAssets.downlodLeft,scale: 3,),
                       decoration: BoxDecoration(
                           color: AppColors.redColor,
                           shape: BoxShape.circle
@@ -310,7 +320,7 @@ class _ShiftSummaryScreenState extends State<ShiftSummaryScreen> {
             ),
           ),
           SizedBox(
-            height: Reponsive_.crosslength/50,
+            height: Reponsive_.crosslength/8,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

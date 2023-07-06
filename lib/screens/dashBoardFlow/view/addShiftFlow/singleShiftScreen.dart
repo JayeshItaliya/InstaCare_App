@@ -656,7 +656,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               children: [
                 Expanded(
                     child: CommonButton(
-                        text: "Publish",
+                        text: "PUBLISH",
                          onTap: (){},
                       ),
                     ),
@@ -665,7 +665,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                 ),
                 Expanded(
                   child: CommonButton(
-                      text: "Assign",
+                      text: "ASSIGN",
                       onTap: (){},
                     ),
                   ),

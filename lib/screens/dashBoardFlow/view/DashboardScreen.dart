@@ -124,7 +124,8 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AppAssets.dallyShift)
+                              image: AssetImage(AppAssets.dallyShift),
+                            fit: BoxFit.fill
                           ),
                         ),
                         child: ListView(
@@ -132,14 +133,14 @@ class _DashboardState extends State<Dashboard> {
                           physics: NeverScrollableScrollPhysics(),
                           children: [
                             InterText(
-                              text: "24",
+                              text: " 24",
                               color: AppColors.yallow,
                               fontSize: Reponsive_.px40,
                               fontWeight: FontWeight.w700,
                             ),
                             Gap(10.h),
                             InterText(
-                              text: "Open Shifts",
+                              text: "  Open Shifts",
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
@@ -171,7 +172,8 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(AppAssets.confirmShift)
+                                image: AssetImage(AppAssets.confirmShift),
+                                fit: BoxFit.fill
                             )
                         ),
                         child: ListView(
@@ -179,14 +181,14 @@ class _DashboardState extends State<Dashboard> {
                           physics: NeverScrollableScrollPhysics(),
                           children: [
                             InterText(
-                              text: "30",
+                              text: " 30",
                               color: AppColors.yallow,
                               fontSize: Reponsive_.px40,
                               fontWeight: FontWeight.w700,
                             ),
                             Gap(10.h),
                             InterText(
-                              text: "Confirmed Shifts",
+                              text: "  Confirmed Shifts",
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
@@ -224,7 +226,8 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AppAssets.confirmShift)
+                              image: AssetImage(AppAssets.confirmShift),
+                              fit: BoxFit.fill
                           ),
                         ),
                         child: ListView(
@@ -232,14 +235,14 @@ class _DashboardState extends State<Dashboard> {
                           physics: NeverScrollableScrollPhysics(),
                           children: [
                             InterText(
-                              text: "20",
+                              text: " 20",
                               color: AppColors.yallow,
                               fontSize: Reponsive_.px40,
                               fontWeight: FontWeight.w700,
                             ),
                             Gap(10.h),
                             InterText(
-                              text: "Shifts in Progress",
+                              text: "  Shifts in Progress",
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
@@ -271,7 +274,8 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(AppAssets.completed)
+                                image: AssetImage(AppAssets.completed),
+                                fit: BoxFit.fill
                             )
                         ),
                         child: ListView(
@@ -279,14 +283,14 @@ class _DashboardState extends State<Dashboard> {
                           physics: NeverScrollableScrollPhysics(),
                           children: [
                             InterText(
-                              text: "8",
+                              text: " 8",
                               color: AppColors.yallow,
                               fontSize: Reponsive_.px40,
                               fontWeight: FontWeight.w700,
                             ),
                             Gap(10.h),
                             InterText(
-                              text: "Completed Shifts",
+                              text: "  Completed Shifts",
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
@@ -324,7 +328,8 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AppAssets.callOffer)
+                              image: AssetImage(AppAssets.callOffer),
+                              fit: BoxFit.fill
                           ),
                         ),
                         child: ListView(
@@ -332,14 +337,14 @@ class _DashboardState extends State<Dashboard> {
                           physics: NeverScrollableScrollPhysics(),
                           children: [
                             InterText(
-                              text: "4",
+                              text: " 4",
                               color: AppColors.yallow,
                               fontSize: Reponsive_.px40,
                               fontWeight: FontWeight.w700,
                             ),
                             Gap(10.h),
                             InterText(
-                              text: "Call Offs Shifts",
+                              text: "  Call Offs Shifts",
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
@@ -371,11 +376,12 @@ class _DashboardState extends State<Dashboard> {
                         padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                         decoration: const BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(AppAssets.createNew)
+                                image: AssetImage(AppAssets.createNew),
+                                fit: BoxFit.fill
                             )
                         ),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -389,6 +395,7 @@ class _DashboardState extends State<Dashboard> {
                               color: AppColors.white,
                               fontSize: Reponsive_.px16,
                               fontWeight: FontWeight.w600,
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -411,7 +418,8 @@ class _DashboardState extends State<Dashboard> {
                       padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(AppAssets.late)
+                            image: AssetImage(AppAssets.late),
+                            fit: BoxFit.fill
                         ),
                       ),
                       child: ListView(
@@ -419,14 +427,14 @@ class _DashboardState extends State<Dashboard> {
                         physics: NeverScrollableScrollPhysics(),
                         children: [
                           InterText(
-                            text: "0",
+                            text: " 0",
                             color: AppColors.yallow,
                             fontSize: Reponsive_.px40,
                             fontWeight: FontWeight.w700,
                           ),
                           Gap(10.h),
                           InterText(
-                            text: "Facility Cancellation",
+                            text: "  Facility Cancellation",
                             color: AppColors.white,
                             fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.w600,
@@ -441,21 +449,22 @@ class _DashboardState extends State<Dashboard> {
                       padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01,left: Reponsive_.crosslength*0.01,bottom: Reponsive_.crosslength*0.015),
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(AppAssets.late)
+                              image: AssetImage(AppAssets.late),
+                              fit: BoxFit.fill
                           )
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           InterText(
-                            text: "0",
+                            text: " 0",
                             color: AppColors.yallow,
                             fontSize: Reponsive_.px40,
                             fontWeight: FontWeight.w700,
                           ),
                           Gap(10.h),
                           InterText(
-                            text: "Late",
+                            text: "  Late",
                             color: AppColors.white,
                             fontSize: Reponsive_.px16,
                             fontWeight: FontWeight.w600,

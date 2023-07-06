@@ -236,6 +236,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "flutter_svprogresshud",
+      "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/flutter_svprogresshud-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_switch",
       "rootUri": "file:///Users/imac/.pub-cache/hosted/pub.dev/flutter_switch-0.3.2",
       "packageUri": "lib/",
@@ -614,7 +620,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-07-04T12:11:14.071405Z",
+  "generated": "2023-07-06T10:50:18.366792Z",
   "generator": "pub",
   "generatorVersion": "3.1.0-163.1.beta"
 }

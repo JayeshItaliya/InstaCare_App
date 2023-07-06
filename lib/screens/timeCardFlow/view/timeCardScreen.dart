@@ -2,16 +2,22 @@ import 'dart:async';
 import 'package:easy_geofencing/easy_geofencing.dart';
 import 'package:easy_geofencing/enums/geofence_status.dart';
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
+import 'package:instacare/Utils/commonButton.dart';
+import 'package:instacare/Utils/commonButtonSheet.dart';
+import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:get/get.dart';
 import 'package:instacare/screens/timeCardFlow/controller/controller/timeCardController.dart';
+import 'package:instacare/screens/timeCardFlow/controller/controller/timecardDetailController.dart';
 import 'package:instacare/screens/timeCardFlow/view/applyFilterScreen.dart';
 import 'package:instacare/screens/timeCardFlow/view/timecardDetailScreen.dart';
 import 'package:geolocator/geolocator.dart';
@@ -37,7 +43,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
   bool isReady = false;
   Position? position;
   String date1='',time1='',date2='',time2='';
-
+  final cx=Get.put(CommonController());
   @override
   void initState() {
     super.initState();
@@ -438,7 +444,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                       mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                       children: [
-                                        GestureDetector(
+                                        cx.instacareLoginValue.toString().contains("instacare")? GestureDetector(
                                           child: InterText(
                                             text: "  Edit",
                                             fontSize: Reponsive_.px14,
@@ -448,7 +454,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                           onTap: (){
                                             toPushNavigator(context: context,PageName: TimecardEdit() );
                                           },
-                                        ),
+                                        ):Container(),
                                         Row(
                                           children: [
                                             Image.asset(
@@ -461,22 +467,96 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                                             ),
                                           ],
                                         ),
-                                        InterText(
-                                          text: "Report an Issue  ",
-                                          fontSize: Reponsive_.px14,
-                                          fontWeight: FontWeight.w600,
-                                          color: AppColors.blue,
+                                        GestureDetector(
+                                          child: InterText(
+                                            text: "Report an Issue  ",
+                                            fontSize: Reponsive_.px14,
+                                            fontWeight: FontWeight.w600,
+                                            color: AppColors.blue,
+                                          ),
+                                          onTap: () {
+                                            CommonBottonSheet(
+                                                context: context,
+                                                childView: ListView(
+                                                  shrinkWrap: true,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength / 25,
+                                                    ),
+                                                    InterText(
+                                                      text: "Confirmation",
+                                                      fontSize: 30,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: AppColors.black,
+                                                      textAlign: TextAlign.center,
+                                                    ),
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                          top: 10, left: 10, right: 10),
+                                                      child: InterText(
+                                                        text:
+                                                        "Do you want to “Report” all the selected shifts timecards?",
+                                                        maxLines: 2,
+                                                        color: AppColors.black,
+                                                        fontSize: Reponsive_.px18,
+                                                        fontWeight: FontWeight.normal,
+                                                        textAlign: TextAlign.center,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.all(8.0),
+                                                      child: CommonDropDown(
+                                                          context: context,
+                                                          list: timeDetailController.timeZone,
+                                                          mycontrollerValue:
+                                                          timeDetailController.timeZoneValue),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    AppWidget().getTextField(
+                                                        hintText: "Add Notes", maxLine: 5),
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength / 25,
+                                                    ),
+                                                    Padding(
+                                                      padding: const EdgeInsets.all(10.0),
+                                                      child: Row(
+                                                        children: [
+                                                          Expanded(
+                                                            child: CommonButton(
+                                                              text: "UnProcess".toUpperCase(),
+                                                              onTap: () {
+                                                                onBack(context);
+                                                              },
+                                                            ),
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Expanded(
+                                                            child: CommonButton(
+                                                              text: "Cancel".toUpperCase(),
+                                                              onTap: () {
+                                                                onBack(context);
+                                                              },
+                                                              color: AppColors.allGray,
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ));
+                                          },
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-                                onTap: () {
-                                  toPushNavigator(
-                                      context: context,
-                                      PageName: TimeCardDetailScreen(
-                                        index: index,
-                                      ));
+                                onTap: (){
+                                  print(index);
+                                  toPushNavigator(context: context,PageName: TimeCardDetailScreen(index: index,));
                                 },
                               ),
                             )
@@ -488,16 +568,16 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
                 })
           ],
         ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton:cx.instacareLoginValue.toString().contains("instacare")?FloatingActionButton(
         backgroundColor: AppColors.yallow,
         onPressed: () {
           toPushNavigator(context: context,PageName: TimecardEdit(newTimeCard: true,));
         },
         child: const Icon(Icons.add, color: AppColors.white),
-      ),
+      ):Container(),
     );
   }
-
+  final timeDetailController = Get.put(TimeCardDetailController());
   Widget CardList() {
     return const Flexible(
         child: Card(

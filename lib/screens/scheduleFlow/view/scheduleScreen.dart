@@ -18,7 +18,7 @@ import 'package:get/get.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/schedulefilterScreen.dart';
-import 'package:instacare/screens/employeeSelectionFlow/controller/FacilityEmployeeSelectionController.dart';
+import 'package:instacare/screens/employeeFlow/employeeSelectionFlow/controller/FacilityEmployeeSelectionController.dart';
 import 'package:instacare/screens/scheduleFlow/controller/scheduleController.dart';
 import 'package:instacare/screens/scheduleFlow/view/editScheduleShiftScreen.dart';
 
@@ -955,8 +955,10 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         padding: const EdgeInsets.only(bottom: 30),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SizedBox(
+           cx.instacareLoginValue.toString().contains("instacare")?
+           SizedBox(
               height: Reponsive_.px30*2,
               child: FloatingActionButton(
                 backgroundColor: Color.fromRGBO(243, 48, 71, 1),
@@ -1027,7 +1029,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                 },
                 child: Image.asset(AppAssets.delete,scale: 1.2),
               ),
-            ),
+            )
+               :Container(),
             Gap(10),
             SizedBox(
               height: Reponsive_.px30*2,

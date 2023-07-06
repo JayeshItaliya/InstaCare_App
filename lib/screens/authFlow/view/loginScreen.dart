@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/loader.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/authFlow/view/forgotPasswordScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';

@@ -38,11 +38,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
               child: Stack(
                 children: [
                   Container(
-                    width: Reponsive_.w,
-                    height: Reponsive_.crosslength*0.4,
-                    padding: EdgeInsets.only(
-                        top: Reponsive_.crosslength*0.03
-                    ),
+                    margin:EdgeInsets.only(bottom: Reponsive_.crosslength*0.01),
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(imageUrl),
@@ -132,9 +128,10 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                     ),
                   ),
                   Positioned(
-                      left:Reponsive_.crosslength/2.3 ,
-                      bottom: 0,
-                      child: Image.asset(AppAssets.downlodEmp,width: 30,height: 30,)),
+                    child: Image.asset("assets/x/downlodShift.png",scale: 3.5),
+                    bottom: Reponsive_.crosslength*0.002,
+                    right:Reponsive_.crosslength*0.015 ,
+                  ),
                 ],
               ),
             ),

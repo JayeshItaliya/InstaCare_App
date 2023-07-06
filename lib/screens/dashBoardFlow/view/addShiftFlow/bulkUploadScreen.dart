@@ -61,7 +61,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                       borderRadius: BorderRadius.circular(30)
                   ),
                   child: InterText(
-                    text: 'Upload File',
+                    text: 'UPLOAD FILE',
                     color: AppColors.white,
                     fontWeight: FontWeight.w700,
                     fontSize: Reponsive_.px18,
