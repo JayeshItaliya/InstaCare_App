@@ -98,7 +98,7 @@ class Commonwidgets {
           InterText(
               text: text,
               fontWeight: weight,
-              fontSize: Reponsive_.crosslength * 0.017,
+              fontSize: Reponsive_.px12,
               color: AppColors.hintTextGrey),
           SizedBox(
             width: Reponsive_.crosslength * 0.025,

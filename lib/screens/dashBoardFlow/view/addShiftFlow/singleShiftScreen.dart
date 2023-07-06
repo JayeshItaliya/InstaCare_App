@@ -40,11 +40,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Facility",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Facility",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
             ),
             SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
@@ -59,11 +62,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Role",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Role",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
             ),
             SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
@@ -78,11 +84,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Number of Positions (Open Shifts)",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Number of Positions (Open Shifts)",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
             ),
             SizedBox(height: Reponsive_.crosslength*0.01),
             CommonDropDown(
@@ -97,11 +106,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Date",
-              color: AppColors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.px16,
+            Padding(
+              padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Date",
+                color: AppColors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px16,
+              ),
             ),
             Gap(10),
             InkWell(
@@ -141,11 +153,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Shift Time",
-              color: AppColors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.px16,
+            Padding(
+              padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Shift Time",
+                color: AppColors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px16,
+              ),
             ),
             ListView.builder(
                 itemCount: timeData.length,
@@ -162,6 +177,9 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                             shape: CircleBorder(),
                             value: timeData[index].checkValue,
                             activeColor: AppColors.buttonColor,
+                            side: MaterialStateBorderSide.resolveWith(
+                                  (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                            ),
                             onChanged: (bool? newValue) {
                               setState(() {
                                 timeData[index].checkValue = newValue!;
@@ -194,11 +212,14 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               children: [
                 Expanded(
                   flex: 2,
-                  child: InterText(
-                    text: "Start Time",
-                    fontSize: Reponsive_.px16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.black,
+                  child: Padding(
+                    padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+                    child: InterText(
+                      text: "Start Time",
+                      fontSize: Reponsive_.px16,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -276,15 +297,19 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Rate (per hour)",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Rate (per hour)",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(height: 10,),
                       SizedBox(
-                        height: 40,
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: AppWidget().getTextField(
                           hintText: "\$45",
                           filledColor: AppColors.white
@@ -354,13 +379,18 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentives",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentives",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: Reponsive_.crosslength/80,
+                      ),
                       Row(
                         children: [
                           Radio(
@@ -407,19 +437,26 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive By",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive By",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                             context: context,
                             list: singleShiftController.incentiveByList,
                             mycontrollerValue: singleShiftController.incentiveByValue,
+                          color: AppColors.white
 
                         ),
                       )
@@ -436,13 +473,18 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive Type",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding:  EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive Type",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: Reponsive_.crosslength/80,
+                      ),
                       Row(
                         children: [
                           Radio(
@@ -489,19 +531,26 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive Amount",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding:EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive Amount",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: singleShiftController.incentiveByList,
                           mycontrollerValue: singleShiftController.incentiveByValue,
+                          color: AppColors.white
 
                         ),
                       )
@@ -518,19 +567,26 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Floor Number",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Floor Number",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: singleShiftController.incentiveByList,
                           mycontrollerValue: singleShiftController.incentiveByValue,
+                          color: AppColors.white
 
                         ),
                       )
@@ -543,19 +599,26 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Supervisor",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Supervisor",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: singleShiftController.incentiveByList,
                           mycontrollerValue: singleShiftController.incentiveByValue,
+                          color: AppColors.white
 
                         ),
                       )
@@ -568,7 +631,7 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

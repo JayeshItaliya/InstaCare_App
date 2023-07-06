@@ -39,14 +39,14 @@ class _TimeCardDetailScreenState extends State<TimeCardDetailScreen> {
         title: MontserratText(
           text: "Timecard Detail",
           fontSize: Reponsive_.px24,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
       ),
       body: Padding(
         padding:
             EdgeInsets.symmetric(horizontal: Reponsive_.crosslength * 0.01),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
               height: Reponsive_.crosslength * 0.01,

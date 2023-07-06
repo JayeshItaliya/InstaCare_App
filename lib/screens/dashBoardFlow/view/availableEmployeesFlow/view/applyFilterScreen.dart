@@ -26,14 +26,14 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.white,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: MontserratText(
-            text: "Apply Filter",
+            text: " Apply Filter",
             fontSize: Reponsive_.px30,
             fontWeight: FontWeight.w700,
             color: AppColors.black,
@@ -52,13 +52,13 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
         ],
       ),
       body: ListView(
-        padding: padding,
+        padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02,right: Reponsive_.crosslength*0.02),
         children: [
           CommonDropDown(
               context: context,
               list: filterController.roleList,
               mycontrollerValue: filterController.roleListValue,
-            color: AppColors.white
+            color: AppColors.backGroundColor
           ),
           const SizedBox(
             height: 15,
@@ -67,11 +67,11 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
             () => GestureDetector(
               child: Container(
                 width: cx.width,
-                height: cx.height / 10,
+                height:Reponsive_.crosslength*0.06,
                 alignment: Alignment.center,
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 decoration: BoxDecoration(
-                    color: AppColors.white,
+                    color: AppColors.backGroundColor,
                     borderRadius: BorderRadius.circular(30)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,8 +95,8 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
               },
             ),
           ),
-          const SizedBox(
-            height: 20,
+            SizedBox(
+            height: Reponsive_.crosslength*0.02,
           ),
           InterText(
             text: "Shift Time",
@@ -104,24 +104,24 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
             fontSize: Reponsive_.px18,
             color: AppColors.black,
           ),
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: Reponsive_.crosslength*0.01,
           ),
           Obx(() => GestureDetector(
                 child: Container(
                   alignment: Alignment.center,
                   width: cx.width,
-                  height: cx.height / 10,
+                  height: Reponsive_.crosslength*0.06,
                   decoration: BoxDecoration(
                       color: filterController.morningShift.value == true
                           ? AppColors.buttonColor
-                          : null,
+                          : AppColors.backGroundColor,
                       borderRadius: BorderRadius.circular(30),
                       border: filterController.morningShift.value == false
                           ? Border.all(color: AppColors.buttonColor, width: 1)
                           : null),
                   child: InterText(
-                    text: "Morning Shifts 7:00AM - 3:00PM",
+                    text: "Morning Shifts       7:00AM - 3:00PM",
                     color: filterController.morningShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
@@ -134,24 +134,24 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                       !filterController.morningShift.value;
                 },
               )),
-          const SizedBox(
-            height: 15,
+            SizedBox(
+            height: Reponsive_.crosslength*0.01,
           ),
           Obx(() => GestureDetector(
                 child: Container(
                   alignment: Alignment.center,
                   width: cx.width,
-                  height: cx.height / 10,
+                  height: Reponsive_.crosslength*0.06,
                   decoration: BoxDecoration(
                       color: filterController.afterNoonShift.value == true
                           ? AppColors.buttonColor
-                          : null,
+                          : AppColors.backGroundColor,
                       borderRadius: BorderRadius.circular(30),
                       border: filterController.afterNoonShift.value == false
                           ? Border.all(color: AppColors.buttonColor, width: 1)
                           : null),
                   child: InterText(
-                    text: "Afternoon Shifts 3:00PM - 11:00PM",
+                    text: "Afternoon Shifts       3:00PM - 11:00PM",
                     color: filterController.afterNoonShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
@@ -164,24 +164,24 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
                       !filterController.afterNoonShift.value;
                 },
               )),
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: Reponsive_.crosslength*0.01,
           ),
           Obx(() => GestureDetector(
                 child: Container(
                   alignment: Alignment.center,
                   width: cx.width,
-                  height: cx.height / 10,
+                  height: Reponsive_.crosslength*0.06,
                   decoration: BoxDecoration(
                       color: filterController.nightShift.value == true
                           ? AppColors.buttonColor
-                          : null,
+                          : AppColors.backGroundColor,
                       borderRadius: BorderRadius.circular(30),
                       border: filterController.nightShift.value == false
                           ? Border.all(color: AppColors.buttonColor, width: 1)
                           : null),
                   child: InterText(
-                    text: "Night Shifts 11:00PM - 7:00AM",
+                    text: "Night Shifts        11:00PM - 7:00AM",
                     color: filterController.nightShift.value == true
                         ? AppColors.white
                         : AppColors.buttonColor,
@@ -196,15 +196,15 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
               )),
         ],
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(10.0),
+      bottomSheet: Container(
+        height: Reponsive_.crosslength*0.06,
+        margin:  EdgeInsets.all(Reponsive_.crosslength*0.02),
         child: Row(
           children: [
             Expanded(
               child: CommonButton(
-                text: "Apply",
+                text: "APPLY",
                 onTap: () {},
-                height: 60,
               ),
             ),
             SizedBox(
@@ -212,9 +212,8 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
             ),
             Expanded(
               child: CommonButton(
-                text: "Reset",
+                text: "RESET",
                 onTap: () {},
-                height: 60,
                 color: AppColors.allGray,
               ),
             ),

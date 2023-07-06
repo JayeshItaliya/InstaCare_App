@@ -121,6 +121,9 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
               fontSize: Reponsive_.crosslength * 0.02,
               fontWeight: FontWeight.w700,
             ),
+            SizedBox(
+              height: Reponsive_.crosslength*0.01,
+            ),
             InterText(
               text: 'Only show shifts for the selected time frame',
               color: AppColors.hintTextGrey,
@@ -128,14 +131,18 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
               fontWeight: FontWeight.w400,
               maxLines: 2,
             ),
+            SizedBox(
+              height: Reponsive_.crosslength*0.01,
+            ),
             GridView.builder(
               itemCount: selectTimeShift.length,
+              padding: EdgeInsets.zero,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: Reponsive_.crosslength*0.01,
-                mainAxisExtent: Reponsive_.crosslength*0.085
+                mainAxisExtent: Reponsive_.crosslength*0.065
               ),
               itemBuilder: (context, index) {
                 TimeShift timeShift=selectTimeShift[index];
@@ -144,12 +151,12 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
                     GestureDetector(
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                          vertical: Reponsive_.crosslength * 0.02,
+                          vertical: Reponsive_.crosslength * 0.01,
                           horizontal: Reponsive_.crosslength * 0.01,
                         ),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
-                                Reponsive_.crosslength * 0.04),
+                                Reponsive_.crosslength * 0.015),
                             color:timeShift.tapValue==true?AppColors.buttonColor:AppColors.white,
                           border:timeShift.tapValue==true?null:Border.all(width: 1.2, color: AppColors.buttonColor)
                         ),
@@ -199,10 +206,10 @@ class _MarketPlaceFilterScreenState extends State<MarketPlaceFilterScreen> {
           ],
         ),
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
+      bottomSheet: Container(
+        height: Reponsive_.crosslength*0.06,
+        margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,vertical: Reponsive_.crosslength*0.02),
         child: Row(
-
           children: [
             Expanded(
               child: CommonButton(

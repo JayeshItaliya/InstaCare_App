@@ -21,7 +21,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -29,10 +29,10 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
         leading: Padding(
           padding:   EdgeInsets.only(left:Reponsive_.crosslength*0.01,top:Reponsive_.crosslength*0.01),
           child: MontserratText(
-            text: "Apply Filter",
+            text: "  Apply Filter",
             fontWeight: FontWeight.w700,
             fontSize: Reponsive_.px30,
-            color: AppColors.blue,
+            color: AppColors.black,
           ),
         ),
         actions: [
@@ -52,7 +52,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.role,
               mycontrollerValue: peopleController.roleValue,
             color: AppColors.backGroundColor,
-            hint: ""
+            hint: "Select"
           ),
           SizedBox(
             height: 10,
@@ -62,7 +62,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.status,
               mycontrollerValue: peopleController.statusValue,
               color: AppColors.backGroundColor,
-              hint: ""
+              hint: "Select"
           ),
           SizedBox(
             height: 10,
@@ -72,7 +72,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.rating,
               mycontrollerValue: peopleController.ratingValue,
               color: AppColors.backGroundColor,
-              hint: ""
+              hint: "Select"
           ),
           SizedBox(
             height: 10,
@@ -82,7 +82,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.points,
               mycontrollerValue: peopleController.pointsValue,
               color: AppColors.backGroundColor,
-              hint: ""
+              hint: "Select"
           ),
           SizedBox(
             height: 10,
@@ -92,18 +92,19 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.lastActive,
               mycontrollerValue: peopleController.activeValue,
               color: AppColors.backGroundColor,
-              hint: ""
+              hint: "Select"
           ),
         ],
       ),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(8.0),
+      bottomSheet: Container(
+        margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,vertical: Reponsive_.crosslength*0.02),
+        height: Reponsive_.crosslength*0.06,
         child: Row(
           children: [
             Expanded(
               flex: 1,
               child: CommonButton(
-               text: "Apply",
+               text: "APPLY",
                 onTap: (){},
               ),
             ),
@@ -111,7 +112,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
             Expanded(
               flex: 1,
               child: CommonButton(
-                text: "Reset",
+                text: "RESET",
                 color: AppColors.allGray,
                 onTap: (){},
 

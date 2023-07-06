@@ -34,7 +34,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
           children: [
             SizedBox(
               width: Reponsive_.w,
-              height: Reponsive_.crosslength/2.2,
+              height: Reponsive_.crosslength/3,
               child: Stack(
                 children: [
                   Container(
@@ -46,7 +46,8 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(imageUrl),
-                            fit: BoxFit.cover
+                            fit: BoxFit.cover,
+                          colorFilter:  ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
                         )
                     ),
                     child: Column(
@@ -64,7 +65,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                     },
                                     icon: Icon(Icons.arrow_back,color: AppColors.white,size: 26,)
                                 ),
-                                Image.asset(AppAssets.empLogo,color: AppColors.deepGreen),
+                                Image.asset(AppAssets.empLogo,color: AppColors.deepGreen,scale: 1.5),
                               ],
                             ),
                             Padding(
@@ -72,7 +73,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                               child: Row(
 
                                 children: [
-                                  Image.asset(AppAssets.bell,width: 30,height: 30,color: AppColors.white,)
+                                  Image.asset(AppAssets.bell,scale: 3,color: AppColors.white,)
                                 ],
                               ),
                             )
@@ -85,9 +86,12 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                             children: [
                               MontserratText(
                                 text: "Elevate Care North Branch",
-                                fontSize: 24,
+                                fontSize: Reponsive_.px24,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.white,
+                              ),
+                              SizedBox(
+                                height: Reponsive_.crosslength*0.01,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -128,16 +132,17 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                     ),
                   ),
                   Positioned(
-                      top: Reponsive_.crosslength/2.6,
                       left:Reponsive_.crosslength/2.3 ,
+                      bottom: 0,
                       child: Image.asset(AppAssets.downlodEmp,width: 30,height: 30,)),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8,right: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            CommonContainer(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   InterText(
                     text: 'About',
@@ -154,8 +159,14 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                     fontSize: Reponsive_.px12,
                     color: AppColors.black,
                   ),
+                  SizedBox(
+                    height: Reponsive_.crosslength/100,
+                  ),
                   InterText(
                     maxLines: 10,
+                    fontSize: Reponsive_.px16,
+                    fontWeight: FontWeight.w600,
+                    height: 1.5,
                     text: "Fusce eget mattis nulla. Nunc ligula sem, ornare sed feugiat sit amet, consectetur eget urna. Praesent non fermentum quam, sed tincidunt orci. Ut enim arcu, pellentesque eu quam in, sollicitudin ultrices tellus. Integer at efficitur arcu. Duis eleifend, leo sit amet dictum tincidunt, felis ipsum suscipit nisl, in laoreet nibh elit eu tortor. In pretium felis dolor.",
                   ),
                   SizedBox(
@@ -163,6 +174,9 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                   ),
                   InterText(
                     maxLines: 10,
+                    fontSize: Reponsive_.px16,
+                    fontWeight: FontWeight.w600,
+                    height: 1.5,
                     text: "Integer sed quam ultrices, sagittis tellus a, venenatis ex. Pellentesque condimentum tristique ante, sed scelerisque sapien lobortis quis.",
                   ),
                 ],
@@ -175,6 +189,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
               bgcolor: AppColors.white,
               child: ListView(
                 shrinkWrap: true,
+                padding: EdgeInsets.zero,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
                   Column(
@@ -209,7 +224,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                         color: AppColors.black,
                       ),
                       SizedBox(
-                        height: Reponsive_.crosslength/60,
+                        height: Reponsive_.crosslength/130,
                       ),
                       InterText(
                         text: "Joel Newman",
@@ -229,7 +244,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                         color: AppColors.black,
                       ),
                       SizedBox(
-                        height: Reponsive_.crosslength/60,
+                        height: Reponsive_.crosslength/130,
                       ),
                       InterText(
                         text: "8888888888",
@@ -249,7 +264,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                         color: AppColors.black,
                       ),
                       SizedBox(
-                        height: Reponsive_.crosslength/60,
+                        height: Reponsive_.crosslength/130,
                       ),
                       InterText(
                         text: "5454 Fargo Ave",
@@ -257,28 +272,6 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                         fontWeight: FontWeight.w600,
                         color: AppColors.black,
                       ),
-
-
-                      SizedBox(
-                        height: Reponsive_.crosslength/60,
-                      ),
-                      InterText(
-                        text: "Address",
-                        fontSize: Reponsive_.px12,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.black,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/60,
-                      ),
-                      InterText(
-                        text: "5454 Fargo Ave",
-                        fontSize: Reponsive_.px18,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black,
-                      ),
-
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -295,7 +288,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 color: AppColors.black,
                               ),
                               SizedBox(
-                                height: Reponsive_.crosslength/60,
+                                height: Reponsive_.crosslength/130,
                               ),
                               InterText(
                                 text: "Skokie",
@@ -314,7 +307,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 color: AppColors.black,
                               ),
                               SizedBox(
-                                height: Reponsive_.crosslength/60,
+                                height: Reponsive_.crosslength/130,
                               ),
                               InterText(
                                 text: "60077",
@@ -338,7 +331,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 color: AppColors.black,
                               ),
                               SizedBox(
-                                height: Reponsive_.crosslength/60,
+                                height: Reponsive_.crosslength/130,
                               ),
                               InterText(
                                 text: "Illinois",
@@ -358,7 +351,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 color: AppColors.black,
                               ),
                               SizedBox(
-                                height: Reponsive_.crosslength/60,
+                                height: Reponsive_.crosslength/130,
                               ),
                               InterText(
                                 text: "United States",
@@ -403,7 +396,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                 children: [
                   Expanded(
                     child: CommonButton(
-                      text: "Request Shift",
+                      text: "REQUEST SHIFT",
                       onTap: (){
                         CommonBottonSheet(
                           context: context,
@@ -416,14 +409,18 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 height: Reponsive_.crosslength/30,
                               ),
                               MontserratText(
-                                text: "Request Shift",
+                                text: "  Request Shift",
                                 fontSize: Reponsive_.px30,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.black,
                               ),
+                              SizedBox(
+                                height: Reponsive_.crosslength/100,
+                              ),
                               ListView.builder(
                                   itemCount: employeeFacilitiesController.dallyServices.length,
                                   shrinkWrap: true,
+                                  padding: EdgeInsets.zero,
                                   physics: NeverScrollableScrollPhysics(),
                                   itemBuilder: (context, index) {
                                     return Row(
@@ -450,8 +447,8 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                           child: InterText(
                                             text: employeeFacilitiesController.dallyServices[index].toString(),
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 17,
-                                            color: AppColors.black,
+                                            fontSize: Reponsive_.px18,
+                                            color: AppColors.hintTextGrey,
                                           ),
                                           onTap: (){
                                             employeeFacilitiesController.dallyServicesValue.value=employeeFacilitiesController.dallyServices[index];
@@ -475,13 +472,10 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 child: Container(
                                   width: Reponsive_.w,
                                   height: 50,
-                                  padding: EdgeInsets.only(left: 10,right: 10),
+                                  padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02,right: Reponsive_.crosslength*0.02),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(30),
-                                    border: Border.all(
-                                      color: AppColors.buttonColor,
-                                      width: 0.5
-                                    ),
+                                    color: AppColors.backGroundColor,
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -498,19 +492,19 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                                 ),
                               ),
                               SizedBox(
-                                height: Reponsive_.crosslength/50,
+                                height: Reponsive_.crosslength/80,
                               ),
                               CommonDropDown(
                                   context: context,
                                   list: employeeFacilitiesController.shift,
                                   mycontrollerValue: employeeFacilitiesController.shiftValue,
-                                color: AppColors.white
+                                color: AppColors.backGroundColor
                               ),
                               SizedBox(
                                 height: Reponsive_.crosslength/50,
                               ),
                               CommonButton(
-                                  text: "Submit Request",
+                                  text: "SUBMIT REQUEST",
                                   onTap: (){
                                     onBack(context);
                                   }
@@ -529,7 +523,7 @@ class _EmpFacilitiesScreenDeatilsState extends State<EmpFacilitiesScreenDeatils>
                   ),
                   Expanded(
                     child: CommonButton(
-                      text: "Message",
+                      text: "MESSAGE",
                       onTap: (){},
                     ),
                   )

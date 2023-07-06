@@ -19,6 +19,7 @@ import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/shiftDeatilsScreen.dart';
+import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/AwesomeShiftDoneScreen.dart';
 import 'MarketPlaceFilterScreen.dart';
 
 class MarketPlaceScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen>  with SingleTicke
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
   }
-
+String dateRangeValue="23/4/2023 - 29/4/2023";
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -55,12 +56,14 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen>  with SingleTicke
         appBar:widget.showAppApr==true? CommonAppBar(
           icon: IconButton(
             icon: Icon(Icons.arrow_back,color: AppColors.black),
-            onPressed: (){},
+            onPressed: (){
+              onBack(context);
+            },
           ),
           title: MontserratText(
             text: "Marketplace",
             fontSize: Reponsive_.px24,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
             color: AppColors.blue,
           ),
         ):null,
@@ -70,8 +73,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen>  with SingleTicke
             Container(
               color: Colors.white,
               child: TabBar(
-                controller:_tabController ,
-
+                controller:_tabController,
                 indicatorColor: Colors.white,
                 onTap: (index){
                   setState(() {
@@ -117,28 +119,34 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen>  with SingleTicke
               children: [
                 Expanded(
                   child: Container(
+                    height: Reponsive_.crosslength*0.04,
                     margin: EdgeInsets.only(top: Reponsive_.crosslength*0.005,left: Reponsive_.crosslength*0.015,right: Reponsive_.crosslength*0.008),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.025)
                     ),
                     child: TextField(
+                      style: GoogleFonts.inter(color:AppColors.hintTextGrey,fontWeight: FontWeight.w400,fontSize: Reponsive_.px14),
                       decoration: InputDecoration(
                         isDense: true,fillColor: Colors.blue,
                         border: InputBorder.none,
-                        hintText: '23/4/2023 - 29/4/2023',
+                        hintText: dateRangeValue,
                         suffixIcon: GestureDetector(
-                            child: Image.asset('assets/x/calendar.png',scale: 3,alignment: Alignment.centerLeft),
+                            child: Image.asset('assets/x/calendar.png',scale: 3.5,alignment: Alignment.centerLeft),
                           onTap: (){
                               DateConverter.RangeDatePicker(
                                   context: context,
                                   monthType: false,
-                                  dateRang: false
-                              );
+                                  dateRang: true,
+                              ).then((value) {
+                                setState(() {
+                                  dateRangeValue=value!;
+                                });
+                              });
                           },
                         ),
-                        helperStyle: GoogleFonts.inter(color:AppColors.hintTextGrey,fontWeight: FontWeight.w400 ),
-                        contentPadding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,vertical: Reponsive_.crosslength*0.015),
+                        helperStyle: GoogleFonts.inter(color:AppColors.hintTextGrey,fontWeight: FontWeight.w400,fontSize: Reponsive_.px14),
+                        contentPadding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,vertical: Reponsive_.crosslength*0.01),
                       ),
 
                     ),
@@ -151,7 +159,7 @@ class _MarketPlaceScreenState extends State<MarketPlaceScreen>  with SingleTicke
                   },
                   child: Padding(
                     padding:EdgeInsets.only(top: Reponsive_.crosslength*0.005,right: Reponsive_.crosslength*0.015),
-                    child: Image.asset(AppAssets.filtetr,alignment: Alignment.center,),
+                    child: Image.asset(AppAssets.filtetr,alignment: Alignment.center,scale: 1.2),
                   ),
                 )
               ],
@@ -202,163 +210,13 @@ class _PageState extends State<Page>{
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (){
-              CommonBottonSheet(
-                  context: context,
-                  childView: ListView(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    children: [
-                      SizedBox(
-                        height: Reponsive_.crosslength/60,
-                      ),
-                      MontserratText(
-                        text: "Shift Details".toUpperCase(),
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.blue,
-                        fontSize: Reponsive_.px12,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/40,
-                      ),
-                      MontserratText(
-                        text: "7:00AM - 3:00PM",
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.blue,
-                        fontSize: Reponsive_.px30,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/70,
-                      ),
-                      MontserratText(
-                        text: "Saturday, March 11 2023",
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.blue,
-                        fontSize: Reponsive_.px18,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/70,
-                      ),
-                      InterText(
-                        text: "Elevate Care North Branch",
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.blue,
-                        fontSize: Reponsive_.px14,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/80,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(AppAssets.location),
-                          SizedBox(
-                            width: Reponsive_.crosslength/110,
-                          ),
-                          InterText(
-                            text: "Seattle Grace - 135 Ridgewood Ave.",
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.blue,
-                            fontSize: Reponsive_.px14,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ) ,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CommonContainer(
-                            bgcolor: AppColors.light_yallow,
-                            borderRadius: Reponsive_.crosslength*0.007,
-                            padding: Reponsive_.crosslength*0.008,
-                            marginleft: 2,
-                            marginright: 0.01,
-                            child: Row(
-                              children: [
-                                Image.asset('assets/x/direction.png',scale: 4,),
-                                InterText(text: ' 5.2 mi',fontSize: Reponsive_.crosslength*0.015,color:AppColors.yallow ,),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: Reponsive_.crosslength/110,
-                          ),
-                          CommonContainer(
-                            bgcolor: AppColors.yallow,
-                            borderRadius: Reponsive_.crosslength*0.007,
-                            padding: Reponsive_.crosslength*0.008,
-                            marginleft: 2,
-                            marginright: 0.01,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                InterText(text: 'Incentive +\$5/hr',fontSize: Reponsive_.crosslength*0.015,color:AppColors.black ,),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/90,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.verified_user,color: AppColors.deepGreen,),
-                          InterText(
-                            text: "Cancellation Guarantee",
-                            fontWeight: FontWeight.w300,
-                            color: AppColors.black,
-                            fontSize: Reponsive_.px12,
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/40,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: Reponsive_.crosslength/80,right: Reponsive_.crosslength/80),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child:CommonButton(
-                                  text: "Accept",
-                                  onTap: (){
-                                    toPushNavigator(context: context,PageName: ShiftsDeatilsScreen());
-                                  }
-                              ),
-                            ),
-                            SizedBox(
-                              width: Reponsive_.crosslength/80,
-                            ),
-                            Expanded(
-                              child:CommonButton(
-                                  text: "Close",
-                                  onTap: (){
-                                    onBack(context);
-                                  },
-                                color: AppColors.allGray,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: Reponsive_.crosslength/80,
-                      ),
-                    ],
-                  ),
-              );
+              toPushNavigator(context: context,PageName: ShiftDeatilsScreen());
             },
             child: CommonContainer(
               marginbottom: Reponsive_.crosslength*0.01,
               marginleft: Reponsive_.crosslength*0.015,
               marginright: Reponsive_.crosslength*0.015,
               margintop: 0.01,
-
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -376,7 +234,6 @@ class _PageState extends State<Page>{
                         fontSize: Reponsive_.crosslength * 0.01,
                         fontWeight: FontWeight.w400,
                       ),
-
                       CommonContainer(
                         bgcolor: AppColors.yallow,
                         borderRadius: Reponsive_.crosslength*0.007,
@@ -409,7 +266,7 @@ class _PageState extends State<Page>{
                                 textOverflow: TextOverflow.ellipsis,
                                 text: 'Blue Door Nursing & Rehab',
                                 color: Color(0xff02050A),
-                                fontSize: Reponsive_.crosslength * 0.017,
+                                fontSize: Reponsive_.px18,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -421,13 +278,13 @@ class _PageState extends State<Page>{
                         ),
                         Row(
                           children: [
-                            Image.asset('assets/x/secure.png',height: Reponsive_.crosslength*0.02,width: Reponsive_.crosslength*0.02,),
+                            Image.asset('assets/x/secure.png',height: Reponsive_.crosslength*0.015,width: Reponsive_.crosslength*0.015,),
                             InterText(
-                              text: '  Cancellation Guarantee',
+                              text: ' Cancellation Guarantee',
                               maxLines: 2,
                               color: AppColors.black,
-                              fontSize: Reponsive_.crosslength * 0.015,
-                              fontWeight: FontWeight.w400,
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w300,
                             ),
                           ],
                         ),

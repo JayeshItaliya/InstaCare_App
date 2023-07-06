@@ -37,7 +37,8 @@ class _FacilityDetailScreenState extends State<FacilityDetailScreen>
         appBar: CommonAppBar(
           title: InterText(text: 'Beacon Health Center', color: AppColors.blue),
         ),
-        floatingActionButton: InkWell(
+        floatingActionButton:
+        InkWell(
           onTap: (){
             showModalBottomSheet(
               isScrollControlled: true,
@@ -69,7 +70,8 @@ class _FacilityDetailScreenState extends State<FacilityDetailScreen>
                 'assets/dashBoardFlow/mail.png',
                 scale: 1,
                 color: Colors.white,
-              )),
+              )
+          ),
         ),
         body: Column(
           children: [

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
+import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonDrawerModel.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -29,6 +31,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
     super.initState();
   }
   final globalKey = GlobalKey<PopupMenuButtonState>();
+  final cx = Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -221,7 +224,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                   ),
                   ListView.builder(
                       shrinkWrap: true,
-                      itemCount: DrawerItem.drawerItem.length,
+                      itemCount: cx.screens.length,
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) {
                         print(DrawerItem.drawerItem.length);
@@ -230,9 +233,9 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         return Column(
                           children: [
                             ListTile(
-                              leading: SvgPicture.asset(data.image),
+                              leading: SvgPicture.asset(cx.image[index]),
                               title: InterText(
-                                text: data.name,
+                                text: cx.drowerTitle[index],
                                 fontWeight: FontWeight.w500,
                                 fontSize: Reponsive_.px16,
                                 color: AppColors.white,
@@ -244,7 +247,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                 }
                               },
                             ),
-                            index == DrawerItem.drawerItem.length - 1
+                            index == cx.drowerTitle.length - 1
                                 ? Column(
                                     children: [
                                       SizedBox(

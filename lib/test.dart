@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/authFlow/view/loginScreen.dart';

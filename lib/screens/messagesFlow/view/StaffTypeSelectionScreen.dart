@@ -121,7 +121,7 @@ class _StaffTypeSelectionScreenState extends State<StaffTypeSelectionScreen> {
                     },
                     child: Container(
                       margin: EdgeInsets.only(
-                        top: Reponsive_.crosslength * 0.02,
+                        top: Reponsive_.crosslength * 0.01,
                         left: Reponsive_.crosslength * 0.015,
                         right: Reponsive_.crosslength * 0.015,
                       ),
@@ -131,7 +131,7 @@ class _StaffTypeSelectionScreenState extends State<StaffTypeSelectionScreen> {
                             c.selected_insta_care_staff_arr.contains(index)
                                 ? 'assets/x/check.png'
                                 : 'assets/x/uncheck.png',
-                            height: Reponsive_.crosslength * 0.03,
+                            height: Reponsive_.crosslength * 0.028,
                           ),
                           SizedBox(
                             width: Reponsive_.crosslength * 0.02,
@@ -140,8 +140,8 @@ class _StaffTypeSelectionScreenState extends State<StaffTypeSelectionScreen> {
                             child: Row(
                               children: [
                                 Container(
-                                  height: Reponsive_.crosslength * 0.06,
-                                  width: Reponsive_.crosslength * 0.06,
+                                  height: Reponsive_.px20*2,
+                                  width: Reponsive_.px40 ,
                                   decoration: BoxDecoration(
                                       shape: c.selected_staff_type=='Facility'?BoxShape.rectangle:BoxShape.circle,
                                       borderRadius: c.selected_staff_type!='Facility'?null:BorderRadius.all(Radius.circular(10)),
@@ -160,20 +160,23 @@ class _StaffTypeSelectionScreenState extends State<StaffTypeSelectionScreen> {
                               ],
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: Reponsive_.crosslength * 0.01,
-                                vertical: Reponsive_.crosslength * 0.003),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    Reponsive_.crosslength * 0.02),
-                                border: Border.all(color: AppColors.yallow),
-                                color: AppColors.light_yallow),
-                            child: InterText(
-                              text: 'Staff',
-                              color: AppColors.yallow,
-                              fontSize: Reponsive_.crosslength * 0.015,
-                              fontWeight: FontWeight.w400,
+                          Visibility(
+                            visible:  c.selected_staff_type=='Instacare Staff'||c.selected_staff_type=='Employee',
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: Reponsive_.crosslength * 0.01,
+                                  vertical: Reponsive_.crosslength * 0.003),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                      Reponsive_.crosslength * 0.02),
+                                  border: Border.all(color: AppColors.yallow),
+                                  color: AppColors.light_yallow),
+                              child: InterText(
+                                text: 'Staff',
+                                color: AppColors.yallow,
+                                fontSize: Reponsive_.crosslength * 0.015,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ],

@@ -30,8 +30,8 @@ class _ReminderScreenState extends State<ReminderScreen> {
       appBar: CommonAppBar(
         title: MontserratText(
           text: "Reminders",
-          fontWeight: FontWeight.w600,
-          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          fontSize: Reponsive_.px24,
           color: AppColors.blue,
         ),
       ),
@@ -41,11 +41,11 @@ class _ReminderScreenState extends State<ReminderScreen> {
           itemCount: item.length,
           itemBuilder: (context, index) {
             return Container(
-              padding: EdgeInsets.only(left: 16, top: 15, right: 16, bottom: 8),
+              padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02, top: Reponsive_.crosslength*0.015, right: Reponsive_.crosslength*0.02, bottom: Reponsive_.crosslength*0.02),
               margin: EdgeInsets.only(top: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(width: 2, color: AppColors.yallow)),
+                  border: Border.all(width: 1, color: AppColors.yallow)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -64,24 +64,28 @@ class _ReminderScreenState extends State<ReminderScreen> {
                       )
                     ],
                   ),
-                  Gap(10.h),
+                  Gap(Reponsive_.crosslength*0.005),
                   InterText(
                     text: item[index].messages,
                     color: AppColors.black,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     maxLines: 10,
+                    height: 1.5,
                   )
                 ],
               ),
             );
           }),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.yallow,
-        onPressed: (){
-          toPushNavigator(context: context,PageName: const CreateReminderScreen());
-        },
-        child:Icon(Icons.add,color: AppColors.white) ,
+      floatingActionButton: SizedBox(
+        height: Reponsive_.crosslength * 0.06,
+        child: FloatingActionButton(
+          backgroundColor: AppColors.yallow,
+          onPressed: (){
+            toPushNavigator(context: context,PageName: const CreateReminderScreen());
+          },
+          child:Icon(Icons.add,color: AppColors.white) ,
+        ),
       ),
     );
   }

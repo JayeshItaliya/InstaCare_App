@@ -31,13 +31,13 @@ class _SupportScreenState extends State<SupportScreen> {
         padding: padding,
         children: [
           InterText(
-            text: "Select Reason",
+            text: "     Select Reason",
             fontSize: Reponsive_.px16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
           SizedBox(
-            height: 10,
+            height: Reponsive_.crosslength*0.005,
           ),
           CommonDropDown(
               context: context,
@@ -46,16 +46,16 @@ class _SupportScreenState extends State<SupportScreen> {
              color: AppColors.white
           ),
           SizedBox(
-            height: 10,
+            height: Reponsive_.crosslength*0.025,
           ),
           InterText(
-            text: "Note",
+            text: "      Note",
             fontSize: Reponsive_.px16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
           ),
           SizedBox(
-            height: 10,
+            height: Reponsive_.crosslength*0.005,
           ),
           AppWidget().getTextField(
             hintText: "",

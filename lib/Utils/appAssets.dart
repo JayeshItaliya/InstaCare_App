@@ -82,4 +82,11 @@ class AppAssets {
   static const  closeIcon= '$dashBoardFlow/closeIcon.png';
   static const  downlodLeft= '$dashBoardFlow/downlodLeft.png';
   static const  shiftBackGroundScreen='$dashBoardFlow/shiftBackgroundPhoto.png';
+  static const  clockTimeEmp='$dashBoardFlow/clockTimerEmp.png';
+  static const  coffee='$dashBoardFlow/coffe.png';
+  static const  lunchBrake='$dashBoardFlow/lunchBrake.png';
+  static const  other='$dashBoardFlow/other.png';
+  static const  dashbard='$dashBoardFlow/Dashboard11.png';
+  static const  dashbard1='$dashBoardFlow/Dashboard22.png';
+  static const  doctorPhoto='$dashBoardFlow/doctorPhoto.png';
 }

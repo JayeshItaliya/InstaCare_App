@@ -32,7 +32,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
         title: MontserratText(
           text: "Granny Weatherwax",
           fontSize: Reponsive_.crosslength * 0.02,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
         actions: [
@@ -174,7 +174,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                     text:
                         'Donec lacinia erat ac est hendrerit, sit amet scelerisque lorem lacinia.',
                     color: AppColors.hintTextGrey,
-                    fontSize: Reponsive_.crosslength * 0.015,
+                    fontSize: Reponsive_.px14,
                     fontWeight: FontWeight.w400,
                   ),
                   SizedBox(
@@ -194,14 +194,14 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                         child: InterText(
                           text: 'Email',
                           color: AppColors.hintTextGrey,
-                          fontSize: Reponsive_.crosslength * 0.015,
+                          fontSize: Reponsive_.px12,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
                       InterText(
                         text: '9:48AM',
                         color: AppColors.blue,
-                        fontSize: Reponsive_.crosslength * 0.015,
+                        fontSize: Reponsive_.px12,
                         fontWeight: FontWeight.w600,
                       ),
                     ],
@@ -248,7 +248,7 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                               'Donec lacinia erat ac est hendrerit, sit amet scelerisque lorem lacinia.',
                           softWrap: true,
                           color: AppColors.hintTextGrey,
-                          fontSize: Reponsive_.crosslength * 0.015,
+                          fontSize: Reponsive_.px14,
                           fontWeight: FontWeight.w400,
                           maxLines: 10,
                         ),
@@ -277,14 +277,14 @@ class _ChatRoomScreenState extends State<ChatRoomScreen> {
                         child: InterText(
                           text: 'Email',
                           color: AppColors.hintTextGrey,
-                          fontSize: Reponsive_.crosslength * 0.015,
+                          fontSize: Reponsive_.px14,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
                       InterText(
                         text: '9:48AM',
                         color: AppColors.blue,
-                        fontSize: Reponsive_.crosslength * 0.015,
+                        fontSize: Reponsive_.px12,
                         fontWeight: FontWeight.w600,
                       ),
                     ],

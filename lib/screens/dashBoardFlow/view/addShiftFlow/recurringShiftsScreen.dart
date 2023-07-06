@@ -41,11 +41,17 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Facility",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Facility",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
+            ),
+            SizedBox(
+              height: Reponsive_.crosslength/80,
             ),
             CommonDropDown(
                 context: context,
@@ -60,11 +66,17 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Role",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Role",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
+            ),
+            SizedBox(
+              height: Reponsive_.crosslength/80,
             ),
             CommonDropDown(
                 context: context,
@@ -79,11 +91,14 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Number of Positions",
-              fontSize: Reponsive_.px16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.black,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Number of Positions",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black,
+              ),
             ),
             SizedBox(height: 10,),
             CommonDropDown(
@@ -96,26 +111,30 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
           ],
         ),
         SizedBox(height: 15,),
-        InterText(
-          text: "Select Recurring Days",
-          fontSize: Reponsive_.px16,
-          fontWeight: FontWeight.w600,
-          color: AppColors.black,
+        Padding(
+          padding: EdgeInsets.only(left: Reponsive_.crosslength/60,),
+          child: InterText(
+            text: "Select Recurring Days",
+            fontSize: Reponsive_.px16,
+            fontWeight: FontWeight.w600,
+            color: AppColors.black,
+          ),
         ),
-
         SizedBox(
-          width: cx.width,
-          height: 120,
+          height:Reponsive_.crosslength/80 ,
+        ),
+        SizedBox(
+          height: Reponsive_.crosslength/9.5,
           child: ListView.builder(
             itemCount: weekDayList.length,
             shrinkWrap: true,
+            padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context,index){
               WeekDay weekDay=weekDayList[index];
               return Container(
                 alignment: Alignment.center,
-                margin: EdgeInsets.all(10),
-                width: 80,
+                margin: EdgeInsets.only(left: 8,right: 8),
                 decoration: BoxDecoration(
                   color: AppColors.white,
                   borderRadius: BorderRadius.circular(30)
@@ -130,6 +149,9 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         shape: CircleBorder(),
                         value: weekDay.dayValue,
                         activeColor: AppColors.buttonColor,
+                        side: MaterialStateBorderSide.resolveWith(
+                              (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                        ),
                         onChanged: (bool? newValue) {
                           setState(() {
                             weekDay.dayValue = newValue!;
@@ -171,18 +193,24 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
 
         Row(
           children: [
-            InterText(
-              text: "Date",
-              fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.px16,
-              color: AppColors.black,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Date",
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px16,
+                color: AppColors.black,
+              ),
             ),
             SizedBox(width: Reponsive_.crosslength/6,),
-            InterText(
-              text: "Duration",
-              fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.px16,
-              color: AppColors.black,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/100),
+              child: InterText(
+                text: "Duration",
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px16,
+                color: AppColors.black,
+              ),
             )
           ],
         ),
@@ -196,15 +224,17 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                    context: context,
                    dateRang: false,
                    monthType: false,
+                   dateType: true
                  ).then((value){
                    setState(() {
                      selectedDate=value;
+                     print(selectedDate);
                    });
                  });
                 },
                 child: Container(
-                  width: cx.width/2,
-
+                  width: Reponsive_.crosslength/10,
+                  height: Reponsive_.crosslength/20,
                   padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: AppColors.white,
@@ -231,71 +261,13 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               ),
             ),
             SizedBox(width: 10,),
-            Expanded(
-              child: Container(
-                height: 60,
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(30)
-                ),
-                child:Obx(
-                      () => InkWell(
-                    onTap: () {
-                      recurringShiftController.durationKey.currentState!
-                          .showButtonMenu();
-                    },
-                    child: Container(
-                      width: cx.width,
-                      height: cx.height / 12,
-                      padding: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InterText(
-                            text: recurringShiftController.durationValue.value,
-                            fontSize: Reponsive_.px16,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
-                          ),
-                          PopupMenuButton<String>(
-                            key: recurringShiftController.durationKey,
-                            itemBuilder: (context) {
-                              return recurringShiftController.durationList.map((str) {
-                                return PopupMenuItem(
-                                  value: str,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: <Widget>[
-                                      Gap(10.w),
-                                      InterText(
-                                        text: str.toString(),
-                                        color: AppColors.black,
-                                        fontSize: Reponsive_.px16,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              }).toList();
-                            },
-                            icon: Image.asset(AppAssets.dropDown),
-                            shape: RoundedRectangleBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(10.0.r))),
-                            color: AppColors.backGroundColor,
-                            onSelected: (v) {
-                              recurringShiftController.durationValue.value = v;
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+            SizedBox(
+              width: Reponsive_.crosslength/5.5,
+              height: Reponsive_.crosslength/20,
+              child: CommonDropDown(context: context,
+                list: recurringShiftController.durationList,
+                mycontrollerValue: recurringShiftController.durationValue,
+                color: AppColors.white
               ),
             )
           ],
@@ -304,11 +276,14 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InterText(
-              text: "Shift Time",
-              color: AppColors.black,
-              fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.px16,
+            Padding(
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+              child: InterText(
+                text: "Shift Time",
+                color: AppColors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: Reponsive_.px16,
+              ),
             ),
             ListView.builder(
                 itemCount: timeData.length,
@@ -325,6 +300,9 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                             shape: CircleBorder(),
                             value: timeData[index].checkValue,
                             activeColor: AppColors.buttonColor,
+                            side: MaterialStateBorderSide.resolveWith(
+                                  (states) => BorderSide(width: 1.0, color: AppColors.buttonColor),
+                            ),
                             onChanged: (bool? newValue) {
                               setState(() {
                                 timeData[index].checkValue = newValue!;
@@ -334,11 +312,18 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                         ),
                       ),
                       Expanded(
-                        child: InterText(
-                          text: timeData[index].timeShift,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          color: AppColors.black,
+                        child: GestureDetector(
+                          child: InterText(
+                            text: timeData[index].timeShift,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            color: AppColors.black,
+                          ),
+                          onTap: (){
+                            setState(() {
+                              timeData[index].checkValue=!timeData[index].checkValue!;
+                            });
+                          },
                         ),
                       ),
                     ],
@@ -349,11 +334,14 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               children: [
                 Expanded(
                   flex: 2,
-                  child: InterText(
-                    text: "Start Time",
-                    fontSize: Reponsive_.px16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.black,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                    child: InterText(
+                      text: "Start Time",
+                      fontSize: Reponsive_.px16,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -387,8 +375,8 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                       ),
                       SizedBox(width: 8,),
                       SizedBox(
-                        width: 100,
-                        height: 40,
+                        width: Reponsive_.crosslength/10,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                             context: context,
                             list: recurringShiftController.timeZone,
@@ -409,8 +397,8 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                       ),
                       SizedBox(width: 8,),
                       SizedBox(
-                        width: 100,
-                        height: 40,
+                        width: Reponsive_.crosslength/10,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                             context: context,
                             list: recurringShiftController.timeZone,
@@ -431,15 +419,19 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Rate (per hour)",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Rate (per hour)",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: Reponsive_.crosslength/80,),
                       SizedBox(
-                        height: 40,
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: AppWidget().getTextField(
                             hintText: "\$45",
                             filledColor: AppColors.white
@@ -453,24 +445,31 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Cancellation Guarantee",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Cancellation Guarantee",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 7,),
+                      SizedBox(height: Reponsive_.crosslength/80,),
                       Row(
                         children: [
-                          Radio(
-                            value: BestTutorSite.javatpoint,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.javatpoint,
+                              groupValue: _site,
+
+                              activeColor: AppColors.buttonColor,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "Yes",
@@ -478,15 +477,18 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
-                          Radio(
-                            value: BestTutorSite.tutorialandexample,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.tutorialandexample,
+                              groupValue: _site,
+                              activeColor: AppColors.buttonColor,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "NO",
@@ -509,25 +511,31 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentives",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentives",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: Reponsive_.crosslength/80,),
                       Row(
                         children: [
-                          Radio(
-                            value: BestTutorSite.javatpoint,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.javatpoint,
+                              groupValue: _site,
+                              activeColor: AppColors.buttonColor,
+                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "Yes",
@@ -535,15 +543,18 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
-                          Radio(
-                            value: BestTutorSite.tutorialandexample,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.tutorialandexample,
+                              groupValue: _site,
+                              activeColor: AppColors.buttonColor,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "NO",
@@ -562,20 +573,24 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive By",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive By",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
+                      SizedBox(height: Reponsive_.crosslength/80,),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: recurringShiftController.incentiveByList,
                           mycontrollerValue: recurringShiftController.incentiveByValue,
-
+                          color: AppColors.white,
                         ),
                       )
                     ],
@@ -591,25 +606,31 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive Type",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive Type",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: Reponsive_.crosslength/80,),
                       Row(
                         children: [
-                          Radio(
-                            value: BestTutorSite.javatpoint,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.javatpoint,
+                              groupValue: _site,
+                              activeColor: AppColors.buttonColor,
+                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "Yes",
@@ -617,15 +638,18 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                             fontWeight: FontWeight.normal,
                             color: AppColors.hintTextGrey,
                           ),
-                          Radio(
-                            value: BestTutorSite.tutorialandexample,
-                            groupValue: _site,
-                            activeColor: AppColors.buttonColor,
-                            onChanged: (BestTutorSite? value) {
-                              setState(() {
-                                _site = value!;
-                              });
-                            },
+                          Theme(
+                            data: ThemeData(unselectedWidgetColor: AppColors.buttonColor),
+                            child: Radio(
+                              value: BestTutorSite.tutorialandexample,
+                              groupValue: _site,
+                              activeColor: AppColors.buttonColor,
+                              onChanged: (BestTutorSite? value) {
+                                setState(() {
+                                  _site = value!;
+                                });
+                              },
+                            ),
                           ),
                           InterText(
                             text: "NO",
@@ -644,20 +668,26 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Incentive Amount",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Incentive Amount",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/45,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: recurringShiftController.incentiveByList,
                           mycontrollerValue: recurringShiftController.incentiveByValue,
-
+                          color: AppColors.white,
                         ),
                       )
                     ],
@@ -673,19 +703,26 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Floor Number",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Floor Number",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: recurringShiftController.incentiveByList,
                           mycontrollerValue: recurringShiftController.incentiveByValue,
+                          color: AppColors.white,
 
                         ),
                       )
@@ -698,19 +735,26 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment:  MainAxisAlignment.start,
                     children: [
-                      InterText(
-                        text: "Supervisor",
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: Reponsive_.px16,
+                      Padding(
+                        padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
+                        child: InterText(
+                          text: "Supervisor",
+                          color: AppColors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px16,
+                        ),
                       ),
                       SizedBox(
-                        width: 150,
-                        height: 60,
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      SizedBox(
+                        width: Reponsive_.crosslength/5.5,
+                        height: Reponsive_.crosslength/20,
                         child: CommonDropDown(
                           context: context,
                           list: recurringShiftController.incentiveByList,
                           mycontrollerValue: recurringShiftController.incentiveByValue,
+                          color: AppColors.white,
 
                         ),
                       )
@@ -723,7 +767,7 @@ class _RecurringShiftsScreenState extends State<RecurringShiftsScreen> {
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: EdgeInsets.only(left: Reponsive_.crosslength/60),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

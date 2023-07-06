@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonAppBar.dart';
+import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -12,6 +14,7 @@ import 'package:instacare/screens/employeeFlow/employeeDashBoardFlow/view/employ
 import 'package:instacare/screens/employeeFlow/facilitiesView/view/employeeFacilitiesScreen.dart';
 import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/MarketPlaceScreen.dart';
 import 'package:instacare/screens/employeeFlow/myAvailabilityFlow/screens/MyAvailability.dart';
+import 'package:instacare/screens/employeeFlow/timeCardFlow/view/employeeTimeCard.dart';
 import 'package:instacare/screens/facilitiesFlow/view/Facilities.dart';
 import 'package:instacare/screens/messagesFlow/view/MessagesScreen.dart';
 import 'package:instacare/screens/notifactionFlow/view/notificationScreen.dart';
@@ -31,51 +34,46 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
-  List<Widget> screens = [
-    //Dashboard(),
-    EmployeeDashBoardScreen(),
-    ScheduleScreen(),
-    MyAvailability(),
-    MarketPlaceScreen(showAppApr: false),
-    WhoIsOnScreen(),
-    PeopleScreen(),
-    EmployeeFacilitiesScreen(),
-    //FacilitiesScreen(),
-    PayrollAccessScreen(),
-    MessagesScreen(),
-    TimeCardScreen(),
-    TotalBillingScreen(),
-    SupportScreen(),
-  ];
-  List<dynamic> title = [
-    AppAssets.app,
-    "Schedule",
-    "My Availability",
-    "Marketplace",
-    "Who's ON",
-    "People",
-    "Facilities",
-    "Payroll",
-    "Messaging",
-    "TimeCards",
-    "Total Billing",
-    "Support",
-  ];
+
+
   int selected_index=0;
   final globalKey = GlobalKey<ScaffoldState>();
-
+  final cx = Get.put(CommonController());
+@override
+  void initState() {
+  if(cx.instacareLoginValue.toString().contains("instacare")){
+    cx.screens=instaWidget;
+    cx.title=instaTitle;
+    cx.image=instaImage;
+    cx.drowerTitle=instaDrowerTitle;
+  }
+  else if(cx.instacareLoginValue.toString().contains("faculty")){
+    cx.screens=instaFaculty;
+    cx.title=instaFacultyTitle;
+    cx.image=facultyImage;
+    cx.drowerTitle=facultyDrowerTitle;
+  }
+  else if(cx.instacareLoginValue.toString().contains("employee")){
+      cx.screens=instaEmployee;
+      cx.title=instaEmployeeTitle;
+      cx.image=employeeImage;
+      cx.drowerTitle=employeeDrowerTitle;
+  }
+  super.initState();
+}
   @override
   Widget build(BuildContext context) {
+
     Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
       key: globalKey,
       appBar: CommonAppBar(
-        title:selected_index==0?Image.asset(title[0],height: 27,):
+        title:selected_index==0?Image.asset(cx.title[0],height: 27,):
         MontserratText(
-            text: title[selected_index],
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
+            text: cx.title[selected_index],
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
         icon: InkWell(
@@ -106,7 +104,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           ),
         ],
       ),
-      body: screens[selected_index],
+      body: cx.screens[selected_index],
       drawer: Drawer(
         width:  Reponsive_.crosslength*0.38,
         backgroundColor: Colors.transparent,
@@ -118,5 +116,135 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
     );
   }
-}
+  List<Widget> instaWidget=[
+    Dashboard(),
+    ScheduleScreen(),
+    WhoIsOnScreen(),
+    PeopleScreen(),
+    FacilitiesScreen(),
+    MessagesScreen(),
+    TimeCardScreen(),
+    TotalBillingScreen(),
+    SupportScreen(),
+  ];
 
+List<String> instaTitle=[
+  AppAssets.app,
+  "Schedule",
+  "Who's ON",
+  "People",
+  "Facilities",
+  "Messaging",
+  "TimeCards",
+  "Total Billing",
+  "Support",
+];
+
+  List<Widget> instaFaculty=[
+    Dashboard(),
+    ScheduleScreen(),
+    WhoIsOnScreen(),
+    PeopleScreen(),
+    MessagesScreen(),
+    TimeCardScreen(),
+    TotalBillingScreen(),
+    SupportScreen(),
+  ];
+
+  List<String> instaFacultyTitle=[
+    AppAssets.app,
+    "Schedule",
+    "Who's ON",
+    "People",
+    "Messaging",
+    "TimeCards",
+    "Total Billing",
+    "Support",
+  ];
+
+  List<Widget> instaEmployee=[
+    EmployeeDashBoardScreen(),
+    MyAvailability(showAppBar: false),
+    MarketPlaceScreen(showAppApr: false),
+    EmployeeTimeCard(),
+    MessagesScreen(),
+    EmployeeFacilitiesScreen(),
+    PayrollAccessScreen(),
+    SupportScreen(),
+  ];
+
+  List<String> instaEmployeeTitle=[
+    AppAssets.dashbard,
+    "My Availability",
+    "Marketplace",
+    "TimeCards",
+    "Messaging",
+    "Facilities",
+    "Payroll",
+    "Support",
+  ];
+  List<String> instaImage=[
+    AppAssets.dashBoard,
+    AppAssets.schedules,
+    AppAssets.whosON,
+    AppAssets.people,
+    AppAssets.facilities,
+    AppAssets.massages,
+    AppAssets.timecard,
+    AppAssets.totalBilling,
+    AppAssets.support,
+  ];
+  List<String> facultyImage=[
+    AppAssets.dashBoard,
+    AppAssets.schedules,
+    AppAssets.whosON,
+    AppAssets.people,
+    AppAssets.facilities,
+    AppAssets.timecard,
+    AppAssets.totalBilling,
+    AppAssets.support,
+  ];
+  List<String> employeeImage=[
+    AppAssets.dashBoard,
+    AppAssets.whosON,
+    AppAssets.schedules,
+    AppAssets.timecard,
+    AppAssets.massages,
+    AppAssets.facilities,
+    AppAssets.people,
+    AppAssets.support,
+    AppAssets.massages,
+  ];
+
+  List<String> instaDrowerTitle=[
+    "Dashboard",
+    "Schedule",
+    "Who's ON",
+    "People",
+    "Facilities",
+    "Messaging",
+    "TimeCards",
+    "Total Billing",
+    "Support",
+  ];
+  List<String> facultyDrowerTitle=[
+    "Dashboard",
+    "Schedule",
+    "Who's ON",
+    "People",
+    "Messaging",
+    "TimeCards",
+    "Total Billing",
+    "Support",
+  ];
+  List<String> employeeDrowerTitle=[
+    "Dashboard",
+    "My Availability",
+    "Marketplace",
+    "TimeCards",
+    "Messaging",
+    "Facilities",
+    "Payroll",
+    "Support",
+  ];
+}

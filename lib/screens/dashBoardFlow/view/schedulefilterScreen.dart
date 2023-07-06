@@ -25,37 +25,35 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
   bool selectedShiftMorning = false;
   bool selectedShiftAfternoon = false;
   bool selectedShiftNight = false;
-  final GlobalKey<PopupMenuButtonState> popUpKey1 = GlobalKey();
-  final GlobalKey<PopupMenuButtonState> popUpKey2 = GlobalKey();
-  final GlobalKey<PopupMenuButtonState> popUpKey3 = GlobalKey();
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: AppColors.white,
-        leading: null,
-        title: MontserratText(
-          text: "Schedule Filter",
-          fontWeight: FontWeight.w700,
-          fontSize: 25,
-          color: AppColors.black,
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: Icon(
-                Icons.clear,
-                color: AppColors.hintTextGrey,
-              ))
-        ],
-      ),
       body: ListView(
-        padding: padding,
+        padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,vertical: Reponsive_.crosslength*0.04),
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              MontserratText(
+                text: "Schedule Filter",
+                fontWeight: FontWeight.w700,
+                fontSize: 25,
+                color: AppColors.black,
+                textAlign: TextAlign.start,
+              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  icon: Icon(
+                    Icons.clear,
+                    color: AppColors.hintTextGrey,
+                  )
+              )
+            ],
+          ),
+          SizedBox(height: Reponsive_.crosslength*0.02,),
           CommonDropDown(
             context: context,
               list: scheduleFilterController.facilities,
@@ -76,7 +74,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
               mycontrollerValue: scheduleFilterController.roleValue,
               color: AppColors.backGroundColor
           ),
-          Gap(20),
+          Gap(Reponsive_.crosslength*0.015),
           InterText(
             text: "Shift Time",
             color: AppColors.black,
@@ -90,7 +88,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                 child: InkWell(
                   child: Container(
                     alignment: Alignment.center,
-                    height: cx.height / 11,
+                    padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.01),
                     decoration: BoxDecoration(
                         color: selectedShiftMorning == true
                             ? AppColors.buttonColor
@@ -98,7 +96,8 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                         border: selectedShiftMorning == false
                             ? Border.all(color: AppColors.buttonColor, width: 2)
                             : null,
-                        borderRadius: BorderRadius.circular(30)),
+                        borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -117,7 +116,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                             InterText(
                               text: "7:00AM - 3:00PM",
@@ -125,7 +124,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                           ],
                         )
@@ -148,7 +147,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                     });
                   },
                   child: Container(
-                    height: cx.height / 11,
+                   padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.01),
                     decoration: BoxDecoration(
                         color: selectedShiftAfternoon == true
                             ? AppColors.buttonColor
@@ -156,12 +155,13 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                         border: selectedShiftAfternoon == false
                             ? Border.all(color: AppColors.buttonColor, width: 2)
                             : null,
-                        borderRadius: BorderRadius.circular(30)),
+                        borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(AppAssets.sun,
-                            color: selectedShiftMorning == false
+                            color: selectedShiftAfternoon == false
                                 ? Color.fromRGBO(126, 209, 230, 1)
                                 : null),
                         SizedBox(width: 5,),
@@ -175,7 +175,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                             InterText(
                               text: "3:00PM - 11:00PM",
@@ -183,7 +183,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                           ],
                         )
@@ -194,7 +194,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
               )
             ],
           ),
-          Gap(15),
+          Gap(Reponsive_.crosslength*0.007),
           Row(
             children: [
               Expanded(
@@ -205,7 +205,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                     });
                   },
                   child: Container(
-                    height: cx.height / 11,
+                   padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.01),
                     decoration: BoxDecoration(
                         color: selectedShiftNight == true
                             ? AppColors.buttonColor
@@ -213,11 +213,12 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                         border: selectedShiftNight == false
                             ? Border.all(color: AppColors.buttonColor, width: 2)
                             : null,
-                        borderRadius: BorderRadius.circular(30)),
+                        borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(AppAssets.night, color: selectedShiftMorning == false ? Color.fromRGBO(126, 209, 230, 1) : null),
+                        Image.asset(AppAssets.night, color: selectedShiftNight == false ? Color.fromRGBO(126, 209, 230, 1) : null),
                         SizedBox(width: 5,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -229,7 +230,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                             InterText(
                               text: "11:00PM - 7:00AM",
@@ -237,7 +238,7 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                                   ? AppColors.white
                                   : AppColors.buttonColor,
                               fontWeight: FontWeight.w600,
-                              fontSize: 13,
+                              fontSize: Reponsive_.crosslength*0.0135,
                             ),
                           ],
                         )
@@ -249,10 +250,11 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
               Gap(10),
               Expanded(
                 child: Container(
-                  height: cx.height / 11,
+                 padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.01),
                   decoration: BoxDecoration(
                       color: Colors.transparent,
-                      borderRadius: BorderRadius.circular(30)),
+                      borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
+                  ),
                 ),
               )
             ],
@@ -267,12 +269,12 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
               child: InkWell(
                 child: Container(
                   alignment: Alignment.center,
-                  height: 60,
+                  height: Reponsive_.crosslength*0.06,
                   decoration: BoxDecoration(
                       color: AppColors.buttonColor,
                       borderRadius: BorderRadius.circular(30)),
                   child: InterText(
-                    text: "Apply",
+                    text: "APPLY",
                     color: AppColors.white,
                     fontSize: Reponsive_.px18,
                     fontWeight: FontWeight.w700,
@@ -283,17 +285,17 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
                 },
               ),
             ),
-            Gap(20),
+            Gap(Reponsive_.crosslength*0.01),
             Expanded(
               child: InkWell(
                 child: Container(
                   alignment: Alignment.center,
-                  height: 60,
+                  height: Reponsive_.crosslength*0.06,
                   decoration: BoxDecoration(
                       color: AppColors.hintTextGrey,
                       borderRadius: BorderRadius.circular(30)),
                   child: InterText(
-                    text: "Reset",
+                    text: "RESET",
                     color: AppColors.white,
                     fontSize: Reponsive_.px18,
                     fontWeight: FontWeight.w700,

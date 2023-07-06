@@ -68,7 +68,7 @@ class _TimecardEditState extends State<TimecardEdit> {
         title: MontserratText(
           text:widget.newTimeCard==true?'Add Timecard':"Timecard Edit" ,
           fontSize: Reponsive_.px24,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
       ),

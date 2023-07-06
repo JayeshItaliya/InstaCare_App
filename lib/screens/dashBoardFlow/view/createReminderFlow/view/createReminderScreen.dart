@@ -8,6 +8,7 @@ import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
+import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:get/get.dart';
@@ -34,8 +35,8 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
         title: MontserratText(
           text: "Create Reminder",
           color: AppColors.blue,
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w700,
         ),
       ),
       body: ListView(
@@ -45,7 +46,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               InkWell(
             child: Container(
               width: cx.width,
-              height: cx.height/10,
+              height:Reponsive_.crosslength*0.06,
               padding: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                   color: AppColors.white,
@@ -88,11 +89,11 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
             },
           )
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: Reponsive_.crosslength*0.01,),
           Obx(() => InkWell(
             child: Container(
               width: cx.width,
-              height: cx.height/10,
+              height:Reponsive_.crosslength*0.06,
               padding: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                   color: AppColors.white,
@@ -127,40 +128,25 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               });
             },
           ),),
-          SizedBox(height: 15,),
+          SizedBox(height: Reponsive_.crosslength*0.01,),
          CommonDropDown(
               context: context,
               list: createReminderController.items,
               mycontrollerValue: createReminderController.selectedValue,
             color: AppColors.white,
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: Reponsive_.crosslength*0.01,),
           CommonDropDown(
             context: context,
             list: createReminderController.items1,
             mycontrollerValue: createReminderController.selectedValue1,
             color: AppColors.white,
           ),
-          SizedBox(height: 15,),
-          Container(
-            width: cx.width,
-
-            margin: EdgeInsets.only(left: 12),
-            padding: EdgeInsets.only(left: 12),
-            decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(30)),
-            child: TextFormField(
-              maxLines: 8,
-              style: GoogleFonts.inter(
-                  fontSize: Reponsive_.px16,
-                  color: AppColors.black,
-                  fontWeight: FontWeight.w600),
-              decoration: InputDecoration(
-                hintText: "Notes",
-                border: InputBorder.none,
-              ),
-            ),
+          SizedBox(height: Reponsive_.crosslength*0.01,),
+          AppWidget().getTextField(
+            hintText: "Notes",
+            filledColor: AppColors.white,
+            maxLine: 7
           ),
           SizedBox(height: 25,),
 
@@ -169,7 +155,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               Expanded(
                 child: CommonButton(
                   onTap: (){},
-                  text: "Create",
+                  text: "CREATE",
                   color: AppColors.buttonColor,
                 ),
               ),
@@ -177,7 +163,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               Expanded(
                 child: CommonButton(
                   onTap: (){},
-                  text: "Cancel",
+                  text: "CANCEL",
                   color: AppColors.allGray,
                 ),
               ),

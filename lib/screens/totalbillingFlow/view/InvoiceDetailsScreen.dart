@@ -28,7 +28,7 @@ class _SolloInvoiceScreenState extends State<SolloInvoiceScreen> {
         title: MontserratText(
           text: "Invoice 733",
           fontSize: Reponsive_.crosslength*0.025,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
         trailingIcon: [
@@ -49,7 +49,6 @@ class _SolloInvoiceScreenState extends State<SolloInvoiceScreen> {
             height: Reponsive_.crosslength*0.3,
             child: Stack(
               children: [
-
                 Image.asset('assets/x/zig_zag_edges_bg.png',fit: BoxFit.cover,height: double.infinity,),
                 Column(
                   children: [

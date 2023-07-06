@@ -6,15 +6,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
+import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonButton.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import '../../../../Utils/appAssets.dart';
 import '../controllers/MyAvailabilityController.dart';
 import 'FacilitySelectionScreen.dart';
 
 class MyAvailability extends StatefulWidget {
-  const MyAvailability({super.key});
+  bool showAppBar;
+   MyAvailability({super.key,required this.showAppBar});
 
   @override
   State<MyAvailability> createState() => _MyAvailabilityState();
@@ -27,6 +30,22 @@ class _MyAvailabilityState extends State<MyAvailability> {
     Reponsive_.init(context);
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
+      appBar: widget.showAppBar==true?
+      CommonAppBar(
+        icon: IconButton(
+          icon: Icon(Icons.arrow_back,color: AppColors.black),
+          onPressed: (){
+            onBack(context);
+          },
+        ),
+        title: MontserratText(
+          text: "My Availability",
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w600,
+          color: AppColors.blue,
+        ),
+      )
+          :null,
       body: Padding(
         padding: EdgeInsets.all(Reponsive_.crosslength * 0.015),
         child: ListView(

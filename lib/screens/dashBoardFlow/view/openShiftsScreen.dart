@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
@@ -18,7 +20,7 @@ import 'package:instacare/screens/dashBoardFlow/controller/openShiftsScreenContr
 import 'schedulefilterScreen.dart';
 
 class OpenShiftsScreen extends StatefulWidget {
-  String? title, headerText;
+  String? title, headerText1,headerText2;
   bool? enableCheckBox,
       showTime,
       bodyColor,
@@ -32,7 +34,8 @@ class OpenShiftsScreen extends StatefulWidget {
       this.title,
       this.bodyColor,
       this.enableCheckBox,
-      this.headerText,
+      this.headerText1,
+      this.headerText2,
       this.showTime,
       this.assignedIcon,
       this.incentiveIcon,
@@ -62,8 +65,8 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
       appBar: CommonAppBar(
         title: MontserratText(
           text: widget.title,
-          fontSize: 22,
-          fontWeight: FontWeight.w600,
+          fontSize:  Reponsive_.px24,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
         trailingIcon: [
@@ -78,64 +81,53 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
         ],
       ),
       body: ListView(
-        padding: padding,
+        padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,),
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InterText(
-                text: widget.headerText,
-                color: AppColors.blue,
-                fontWeight: FontWeight.w700,
-                fontSize: Reponsive_.px14,
+              Expanded(
+                flex: 3,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    InterText(
+                      text: widget.headerText1,
+                      color: AppColors.blue,
+                      fontWeight: FontWeight.w700,
+                      fontSize: Reponsive_.px18,
+                    ),
+                    InterText(
+                      text: widget.headerText2,
+                      color: AppColors.blue,
+                      softWrap: true,
+                      fontWeight: FontWeight.w400,
+                      fontSize: Reponsive_.px18,
+                    ),
+                  ],
+                ),
               ),
-              Gap(10.w),
-              Obx(() => Row(
-                    children: [
-                      MontserratText(
-                        text: openShiftController.openShiftValue.value,
-                        fontSize: Reponsive_.px14,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.hintTextGrey,
-                      ),
-                      PopupMenuButton<String>(
-                        itemBuilder: (context) {
-                          return openShiftController.openShift.map((str) {
-                            return PopupMenuItem(
-                              value: str,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Gap(10.w),
-                                  InterText(
-                                    text: str.toString(),
-                                    color: AppColors.black,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ],
-                              ),
-                            );
-                          }).toList();
-                        },
-                        icon: Image.asset(AppAssets.dropDown,
-                            color: AppColors.hintTextGrey),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0.r))),
-                        color: AppColors.white,
-                        onSelected: (v) {
-                          openShiftController.openShiftValue.value = v;
-                        },
-                      ),
-                      InkWell(
-                        child: Image.asset(AppAssets.filtetr),
-                        onTap: () {
-                          toPushNavigator(context: context,PageName: ScheduleFilterScreen());
-                        },
-                      )
-                    ],
-                  )),
+              Expanded(
+                flex: 2,
+                child:  Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: CommonDropDown(
+                              context: context,
+                              list: openShiftController.openShift,
+                              mycontrollerValue: openShiftController.openShiftValue
+                          ),
+                        ),
+                        InkWell(
+                          child: Image.asset(AppAssets.filtetr,scale: 1.3,),
+                          onTap: () {
+                            toPushNavigator(context: context,PageName: ScheduleFilterScreen());
+                          },
+                        )
+                      ],
+                    )
+                ),
             ],
           ),
           Gap(15),
@@ -153,7 +145,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                   child: Container(
                     margin: EdgeInsets.only(bottom: 10),
                     width: cx.width,
-                    height: cx.height/9,
+                    height: cx.height/10,
                     decoration: BoxDecoration(
                         color: widget.bodyColor == true
                             ? Color.fromRGBO(220, 246, 233, 1)
@@ -308,10 +300,10 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                       height: 20,
                     ),
                     MontserratText(
-                      text: "Schedule",
+                      text: "Schedule".toUpperCase(),
                       color: AppColors.blue,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                      fontSize: Reponsive_.px12,
+                      fontWeight: FontWeight.w400,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
@@ -324,15 +316,46 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                       fontWeight: FontWeight.bold,
                       textAlign: TextAlign.center,
                     ),
-                    InterText(
-                      text: "Do you really want to Delete shift(s)?",
-                      fontWeight: FontWeight.normal,
-                      fontSize: Reponsive_.px16,
-                      color: AppColors.black,
-                      textAlign: TextAlign.center,
+                    SizedBox(
+                      height: Reponsive_.crosslength*0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Do you really want to',
+                                  style: GoogleFonts.inter(
+                                    color: AppColors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: Reponsive_.px16,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: ' Delete ',
+                                  style: GoogleFonts.inter(
+                                    color: AppColors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Reponsive_.px16,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'shift(s)?',
+                                  style: GoogleFonts.inter(
+                                    color: AppColors.black,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: Reponsive_.px16,
+                                  ),
+                                ),
+                              ]
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
-                      height: 30,
+                      height: Reponsive_.crosslength*0.07,
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -340,7 +363,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                         children: [
                           Expanded(
                             child: CommonButton(
-                              text: "Yes",
+                              text: "YES",
                               onTap: (){},
                               color: AppColors.redColor,
                             ),
@@ -348,7 +371,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                           SizedBox(width: 5,),
                           Expanded(
                             child: CommonButton(
-                              text: "No, Go Back",
+                              text: "NO, GO BACK",
                               onTap: (){},
                             ),
                           )

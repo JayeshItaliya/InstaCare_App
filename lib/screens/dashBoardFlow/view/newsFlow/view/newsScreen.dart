@@ -25,8 +25,8 @@ class _NewsScreenState extends State<NewsScreen> {
       appBar: CommonAppBar(
         title: MontserratText(
           text: "News",
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
         trailingIcon: [
@@ -42,9 +42,7 @@ class _NewsScreenState extends State<NewsScreen> {
         itemBuilder: (context,index){
           NewsModel newsModel=newsList[index];
           return Container(
-            width: cx.width,
-            height: cx.height/5,
-            margin: const EdgeInsets.only(top: 10,bottom: 10),
+            margin:   EdgeInsets.only(top: Reponsive_.crosslength*0.01,),
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: AppColors.white,
@@ -65,7 +63,7 @@ class _NewsScreenState extends State<NewsScreen> {
                   fontSize: Reponsive_.px14,
                   fontWeight: FontWeight.w400,
                   color: AppColors.hintTextGrey,
-                  maxLines: 2,
+                  maxLines: 3,
                 ),
                 SizedBox( height: 10),
                 Row(
@@ -79,7 +77,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     ),
                     InterText(
                       text: newsModel.newsTime,
-                      fontSize: Reponsive_.px14,
+                      fontSize: Reponsive_.px10,
                       fontWeight: FontWeight.w400,
                       color: AppColors.black,
                     ),
@@ -89,75 +87,74 @@ class _NewsScreenState extends State<NewsScreen> {
             ),
           );
         },
-        padding: padding,
-
+        padding: EdgeInsets.only(left: Reponsive_.crosslength*0.02,right: Reponsive_.crosslength*0.02,bottom: Reponsive_.crosslength*0.02),
       ),
     );
   }
   List<NewsModel> newsList=[
     NewsModel(
       headerNews: "Print office #1 out of action",
-      newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+      newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
       newAutherName: "Rossy Clantoriya",
       newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),
     NewsModel(
         headerNews: "Print office #1 out of action",
-        newDisp: "Hi all,Just a quick note that print office number one is currently out of action. Please use the print office at location #2",
+        newDisp: "Hi all,\nJust a quick note that print office number one is currently out of action. Please use the print office at location #2",
         newAutherName: "Rossy Clantoriya",
         newsTime: "March 8, 2023  11:45AM"
     ),

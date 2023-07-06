@@ -33,8 +33,8 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
         title:  MontserratText(
           text: "Available Employees",
           color: AppColors.blue,
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
+          fontSize: Reponsive_.px24,
+          fontWeight: FontWeight.w700,
         ),
         icon: IconButton(
           icon: const Icon(Icons.arrow_back,color: AppColors.black),
@@ -51,21 +51,22 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
               Expanded(
                 child: Container(
                   alignment: Alignment.center,
-                  height: 50,
+                  height: Reponsive_.crosslength*0.05,
                   padding: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.circular(20)
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(20)
                   ),
                   child: TextFormField(
                     decoration:   InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "Search by name",
-                      hintStyle: GoogleFonts.inter(
-                        fontSize: Reponsive_.px14,
-                        color: AppColors.hintTextGrey,
-                        fontWeight: FontWeight.w400
-                      )
+                        border: InputBorder.none,
+                        hintText: "Search by name",
+                        isDense: true,
+                        hintStyle: GoogleFonts.inter(
+                            fontSize: Reponsive_.px14,
+                            color: AppColors.hintTextGrey,
+                            fontWeight: FontWeight.w400
+                        )
                     ),
                   ),
                 ),
@@ -74,8 +75,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
               GestureDetector(
                 child: Image.asset(
                   AppAssets.filtetr,
-                  width: 40,
-                  height: 40,
+                  scale: 1.2,
                 ),
                 onTap: (){
                   toPushNavigator(context: context,PageName: const ApplyFilterScreen());
@@ -95,8 +95,8 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                     Expanded(
                       flex:0,
                       child: Container(
-                        height: 50,
-                        width: 50,
+                        height: Reponsive_.crosslength*0.055,
+                        width: Reponsive_.crosslength*0.055,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -126,17 +126,16 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                               ),
                               Row(
                                 children: [
-                                  Image.asset(AppAssets.mail,),
+                                  Image.asset(AppAssets.mail, scale: 1.2,),
                                   const SizedBox(width: 10,),
                                   Container(
                                     alignment: Alignment.center,
-                                    height: 35,
-                                    width: 50,
+                                    padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.015,vertical: Reponsive_.crosslength*0.005),
                                     decoration: BoxDecoration(
                                       color: const Color.fromRGBO(255, 175, 50, 0.2),
                                       borderRadius: BorderRadius.circular(30),
                                       border: Border.all(
-                                        width: 2,
+                                        width: 1,
                                         color: AppColors.yallow
                                       )
                                     ),
@@ -154,7 +153,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                           InterText(
                             text: "Jasnah Kholin",
                             fontWeight: FontWeight.w600,
-                            fontSize: 22,
+                            fontSize: Reponsive_.px18,
                             color: AppColors.black,
                           ),
                           SizedBox(height: 5,),
@@ -182,7 +181,7 @@ class _AvailableEmployeesScreenState extends State<AvailableEmployeesScreen> {
                               ),
                               InterText(
                                 text: "Night-11:00PM-7:00AM",
-                                fontSize: Reponsive_.px12,
+                                fontSize: Reponsive_.px14,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.blue,
                               )

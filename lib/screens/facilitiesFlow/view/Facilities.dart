@@ -23,22 +23,30 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
       backgroundColor: AppColors.backGroundColor,
       body: Column(
         children: [
+          SizedBox(
+            height: Reponsive_.crosslength*0.01,
+          ),
           Container(
-            margin: EdgeInsets.only(top: Reponsive_.crosslength*0.02,left: Reponsive_.crosslength*0.015,right: Reponsive_.crosslength*0.015),
+            alignment: Alignment.center,
+            height: Reponsive_.crosslength*0.04,
+            padding: const EdgeInsets.only(left: 10),
+            margin:   EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02,),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(Reponsive_.crosslength*0.02)
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(20)
             ),
-            child: TextField(
-              decoration: InputDecoration(
-                suffixIcon: Image.asset('assets/profileFlow/search.png',scale: 30,alignment: Alignment.center),
-                isDense: true,fillColor: Colors.blue,
-                border: InputBorder.none,
-                  hintText: 'Search by Name',
-                  helperStyle: GoogleFonts.inter(color:AppColors.hintTextGrey,fontWeight: FontWeight.w400 ),
-                  contentPadding: EdgeInsets.only(top: Reponsive_.crosslength*0.015,left: Reponsive_.crosslength*0.015),
+            child: TextFormField(
+              decoration:   InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Search by name",
+                  isDense: true,
+                  suffixIcon:Image.asset("assets/profileFlow/search1.png",color: AppColors.blue,),
+                  hintStyle: GoogleFonts.inter(
+                      fontSize: Reponsive_.px14,
+                      color: AppColors.hintTextGrey,
+                      fontWeight: FontWeight.w400
+                  )
               ),
-
             ),
           ),
           SizedBox(height: Reponsive_.crosslength*0.015,),
@@ -51,7 +59,7 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
                   height: 2,
                 ),
               ),
-              InterText(text: '56 FacilitiesScreen',color:AppColors.hintTextGrey,fontWeight: FontWeight.w600,fontSize: Reponsive_.crosslength*0.015),
+              InterText(text: '56 FacilitiesScreen',color:AppColors.hintTextGrey,fontWeight: FontWeight.w600,fontSize: Reponsive_.px12 ),
               Expanded(
                 child: Container(
                   margin: EdgeInsets.only(right: Reponsive_.crosslength*0.015,left: Reponsive_.crosslength*0.02),

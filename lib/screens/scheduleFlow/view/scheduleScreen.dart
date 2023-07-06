@@ -96,7 +96,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       child: Container(
                         margin: EdgeInsets.only(bottom: 10),
                         width: cx.width,
-                        height: cx.height / 9,
+                        height: cx.height/10.5,
                         decoration: BoxDecoration(
                             color: AppColors.white,
                             borderRadius: BorderRadius.circular(20)),
@@ -153,15 +153,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                           fontSize: Reponsive_.px18,
                                           color: AppColors.black,
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 10),
-                                          child: InterText(
-                                            text: "7:00AM - 3:00PM",
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: Reponsive_.px12,
-                                            color: AppColors.hintTextGrey,
-                                          ),
-                                        )
                                       ],
                                     ),
                                     SizedBox(
@@ -872,20 +863,20 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               Gap(cx.height / 7)
             ],
           ),
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 10,right: 50),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.end,
-          //     children: [
-          //       GestureDetector(
-          //           child: Image.asset(AppAssets.filtetr),
-          //         onTap: (){
-          //           toPushNavigator(context: context,PageName: ScheduleFilterScreen());
-          //         },
-          //       ),
-          //     ],
-          //   ),
-          // ),
+          Padding(
+            padding:   EdgeInsets.only(top: Reponsive_.crosslength*0.01,right: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                    child: Image.asset(AppAssets.filtetr),
+                  onTap: (){
+                    toPushNavigator(context: context,PageName: ScheduleFilterScreen());
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       bottomSheet: Container(
@@ -965,83 +956,89 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              backgroundColor: Color.fromRGBO(243, 48, 71, 1),
-              onPressed: () {
-                CommonBottonSheet(
-                  context: context,
-                  childView: ListView(
-                    shrinkWrap: true,
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      MontserratText(
-                        text: "Schedule",
-                        color: AppColors.blue,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      MontserratText(
-                        text: "Confirmation",
-                        color: AppColors.redColor,
-                        fontSize: Reponsive_.px30,
-                        fontWeight: FontWeight.bold,
-                        textAlign: TextAlign.center,
-                      ),
-                      InterText(
-                        text: "Do you really want to Delete shift(s)?",
-                        fontWeight: FontWeight.normal,
-                        fontSize: Reponsive_.px16,
-                        color: AppColors.black,
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: CommonButton(
-                                text: "Yes",
-                                onTap: () {},
-                                color: AppColors.redColor,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Expanded(
-                              child: CommonButton(
-                                text: "No, Go Back",
-                                onTap: () {
-                                  onBack(context);
-                                },
-                              ),
-                            )
-                          ],
+            SizedBox(
+              height: Reponsive_.px30*2,
+              child: FloatingActionButton(
+                backgroundColor: Color.fromRGBO(243, 48, 71, 1),
+                onPressed: () {
+                  CommonBottonSheet(
+                    context: context,
+                    childView: ListView(
+                      shrinkWrap: true,
+                      children: [
+                        SizedBox(
+                          height: 20,
                         ),
-                      )
-                    ],
-                  ),
-                );
-              },
-              child: Image.asset(AppAssets.delete),
+                        MontserratText(
+                          text: "Schedule",
+                          color: AppColors.blue,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        MontserratText(
+                          text: "Confirmation",
+                          color: AppColors.redColor,
+                          fontSize: Reponsive_.px30,
+                          fontWeight: FontWeight.bold,
+                          textAlign: TextAlign.center,
+                        ),
+                        InterText(
+                          text: "Do you really want to Delete shift(s)?",
+                          fontWeight: FontWeight.normal,
+                          fontSize: Reponsive_.px16,
+                          color: AppColors.black,
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: CommonButton(
+                                  text: "Yes",
+                                  onTap: () {},
+                                  color: AppColors.redColor,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Expanded(
+                                child: CommonButton(
+                                  text: "No, Go Back",
+                                  onTap: () {
+                                    onBack(context);
+                                  },
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+                child: Image.asset(AppAssets.delete,scale: 1.2),
+              ),
             ),
             Gap(10),
-            FloatingActionButton(
-              backgroundColor: AppColors.yallow,
-              onPressed: () {
-                toPushNavigator(
-                    context: context, PageName: const AddShiftScreen());
-              },
-              child: Icon(Icons.add),
+            SizedBox(
+              height: Reponsive_.px30*2,
+              child: FloatingActionButton(
+                backgroundColor: AppColors.yallow,
+                onPressed: () {
+                  toPushNavigator(
+                      context: context, PageName: const AddShiftScreen());
+                },
+                child: Icon(Icons.add),
+              ),
             ),
           ],
         ),

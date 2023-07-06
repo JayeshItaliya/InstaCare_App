@@ -38,7 +38,7 @@ class _EditScheduleShiftState extends State<EditScheduleShift> {
         title: MontserratText(
           text: "Edit Shift",
           color: AppColors.blue,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           fontSize: Reponsive_.px24,
         ),
       ),

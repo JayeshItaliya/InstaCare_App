@@ -46,7 +46,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
         title: MontserratText(
           text: "People",
           fontSize: Reponsive_.crosslength * 0.025,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.w700,
           color: AppColors.blue,
         ),
       ),
@@ -54,8 +54,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
         children: [
           Container(
             width: cx.width,
-            margin: EdgeInsets.symmetric(
-                horizontal: Reponsive_.crosslength * 0.015),
+            margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength * 0.015),
             decoration: const BoxDecoration(
                 color: AppColors.blue,
                 borderRadius: BorderRadius.only(
@@ -88,13 +87,11 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                           SizedBox(
                             height: Reponsive_.px18,
                           ),
+                          cx.instacareLoginValue.toString().contains("instacare")?
                           GestureDetector(
                             child: Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: Reponsive_.crosslength * 0.025),
-                              padding: EdgeInsets.symmetric(
-                                  vertical: Reponsive_.crosslength * 0.0055,
-                                  horizontal: Reponsive_.crosslength * 0.005),
+                              margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength * 0.025),
+                              padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength * 0.0055, horizontal: Reponsive_.crosslength * 0.005),
                               alignment: Alignment.center,
                               width: double.infinity,
                               decoration: BoxDecoration(
@@ -123,7 +120,41 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               ),
                             ),
                             onTap: () {},
-                          ),
+                          ):Container(),
+                          cx.instacareLoginValue.toString().contains("faculty")?
+                          GestureDetector(
+                            child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength * 0.025),
+                              padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength * 0.0055, horizontal: Reponsive_.crosslength * 0.005),
+                              alignment: Alignment.center,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: AppColors.yallow,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(
+                                    Icons.star_border_purple500_outlined,
+                                    color: AppColors.blue,
+                                    size: Reponsive_.crosslength * 0.02,
+                                  ),
+                                  InterText(
+                                    text: "5/5",
+                                    color: AppColors.blue,
+                                    fontSize: Reponsive_.px16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  SizedBox(
+                                    height: Reponsive_.crosslength * 0.012,
+                                    width: 10,
+                                  )
+                                ],
+                              ),
+                            ),
+                            onTap: () {},
+                          ):Container(),
                           SizedBox(
                             height: Reponsive_.crosslength * 0.02,
                           ),
@@ -563,7 +594,8 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
             ),
           ),
 
-          Flexible(
+          Expanded(
+            flex: 20,
             child: ListView(
               padding: const EdgeInsets.only(
                 bottom: 20,
@@ -574,210 +606,202 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InterText(
-                              text: "Account Information",
-                              fontSize: Reponsive_.px16,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.blue,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InterText(
+                            text: "Account Information",
+                            fontSize: Reponsive_.px16,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blue,
+                          ),
+                          SizedBox(
+                            height: Reponsive_.crosslength * 0.012,
+                          ),
+                          InkWell(
+                            child: Image.asset(
+                              AppAssets.profileEdit,
+                              height: Reponsive_.crosslength * 0.03,
+                              width: Reponsive_.crosslength * 0.03,
                             ),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.012,
-                            ),
-                            InkWell(
-                              child: Image.asset(
-                                AppAssets.profileEdit,
-                                height: Reponsive_.crosslength * 0.03,
-                                width: Reponsive_.crosslength * 0.03,
-                              ),
-                              onTap: () {
-                                CommonBottonSheet(
-                                    context: context,
-                                    childView: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Column(
-                                        children: [
-                                          InterText(
-                                            text: "Account Information",
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: Reponsive_.px30,
-                                          ),
-                                          SizedBox(
-                                            height: 15,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Expanded(
+                            onTap: () {
+                              CommonBottonSheet(
+                                  context: context,
+                                  childView: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                      children: [
+                                        InterText(
+                                          text: "Account Information",
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: Reponsive_.px30,
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: AppWidget().getTextField(
+                                                  hintText: "First Name",
+                                                  label: "",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                                  filledColor: AppColors
+                                                      .backGroundColor,
+                                                  textEditingController:
+                                                  peopleController
+                                                      .firstNameController
+                                                      .value),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Expanded(
                                                 child: AppWidget().getTextField(
-                                                    hintText: "First Name",
-                                                    label: "",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                                    hintText: "Last Name",
+                                                    label: "",
+                                                    inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
                                                     filledColor: AppColors
                                                         .backGroundColor,
                                                     textEditingController:
-                                                        peopleController
-                                                            .firstNameController
-                                                            .value),
-                                              ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              Expanded(
-                                                  child: AppWidget().getTextField(
-                                                      hintText: "Last Name",
-                                                      label: "",
-                                                      inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
-                                                      filledColor: AppColors
-                                                          .backGroundColor,
-                                                      textEditingController:
-                                                          peopleController
-                                                              .lastNameController
-                                                              .value)),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          AppWidget().getTextField(
-                                              hintText: "Email",
-                                              label: "",
-                                              inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  peopleController
-                                                      .emailController.value),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          AppWidget().getTextField(
-                                              hintText: "Phone",
-                                              label: "",
-                                              inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  peopleController
-                                                      .mobileNumberController
-                                                      .value),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          CommonButton(
-                                            text: "Save & Close",
-                                            onTap: () {
-                                              print('hiiii');
-                                            },
-                                          )
-                                        ],
-                                      ),
-                                    ));
-                              },
-                            )
-                          ],
-                        ),
+                                                    peopleController
+                                                        .lastNameController
+                                                        .value)),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        AppWidget().getTextField(
+                                            hintText: "Email",
+                                            label: "",
+                                            inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                            filledColor:
+                                            AppColors.backGroundColor,
+                                            textEditingController:
+                                            peopleController
+                                                .emailController.value),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        AppWidget().getTextField(
+                                            hintText: "Phone",
+                                            label: "",
+                                            inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                            filledColor:
+                                            AppColors.backGroundColor,
+                                            textEditingController:
+                                            peopleController
+                                                .mobileNumberController
+                                                .value),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        CommonButton(
+                                          text: "Save & Close",
+                                          onTap: () {
+                                            print('hiiii');
+                                          },
+                                        )
+                                      ],
+                                    ),
+                                  ));
+                            },
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.01,
                       ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "First Name",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "Joel",
-                                    height: 1.5,
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "First Name",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "Joel",
+                                  height: 1.5,
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                            Expanded(
-                              flex: 2,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "Last Name",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "Newman",
-                                    height: 1.5,
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "Last Name",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "Newman",
+                                  height: 1.5,
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Email",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "joelnewman@gmail.com ",
-                              fontSize: Reponsive_.px18,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: AppColors.black,
-                            )
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Email",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "joelnewman@gmail.com ",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            height: 1.5,
+                            color: AppColors.black,
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Phone",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "8888888888",
-                              fontSize: Reponsive_.px18,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: AppColors.black,
-                            )
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Phone",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "8888888888",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            height: 1.5,
+                            color: AppColors.black,
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.01,
@@ -818,7 +842,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                         InterText(
                                           text: "Update Document",
                                           fontSize:
-                                              Reponsive_.crosslength * 0.03,
+                                          Reponsive_.crosslength * 0.03,
                                           fontWeight: FontWeight.w700,
                                           color: AppColors.black,
                                         ),
@@ -829,7 +853,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                             context: context,
                                             list: peopleController.docTypeList,
                                             mycontrollerValue:
-                                                peopleController.docValue,
+                                            peopleController.docValue,
                                             color: AppColors.backGroundColor),
                                         SizedBox(
                                           height: 15,
@@ -837,25 +861,127 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                         AppWidget().getTextField(
                                           hintText: "Expiration Date",
                                           filledColor:
-                                              AppColors.backGroundColor,
+                                          AppColors.backGroundColor,
                                         ),
                                         SizedBox(
                                           height: 20,
                                         ),
                                         Obx(
-                                          () => peopleController
-                                                  .documentList.isEmpty
+                                              () => peopleController
+                                              .documentList.isEmpty
                                               ? Row(
+                                            children: [
+                                              Expanded(
+                                                  child: GestureDetector(
+                                                    child: Image.asset(
+                                                        AppAssets.camera),
+                                                    onTap: () async {
+                                                      PickedFile? pickedFile =
+                                                      await ImagePicker()
+                                                          .getImage(
+                                                        source: ImageSource
+                                                            .camera,
+                                                        maxWidth: 1800,
+                                                        maxHeight: 1000,
+                                                      );
+                                                      if (pickedFile !=
+                                                          null) {
+                                                        setState(() {
+                                                          imageFile = File(
+                                                              pickedFile
+                                                                  .path);
+                                                          peopleController
+                                                              .documentList
+                                                              .add(
+                                                              imageFile!);
+                                                          print(peopleController
+                                                              .documentList);
+                                                        });
+                                                      }
+                                                    },
+                                                  )),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                  child: GestureDetector(
+                                                    child: Image.asset(
+                                                        AppAssets.gallery),
+                                                    onTap: () async {
+                                                      PickedFile? pickedFile =
+                                                      await ImagePicker()
+                                                          .getImage(
+                                                        source: ImageSource
+                                                            .gallery,
+                                                        maxWidth: 1800,
+                                                        maxHeight: 1000,
+                                                      );
+                                                      if (pickedFile !=
+                                                          null) {
+                                                        setState(() {
+                                                          imageFile = File(
+                                                              pickedFile
+                                                                  .path);
+                                                          peopleController
+                                                              .documentList
+                                                              .add(
+                                                              imageFile!);
+                                                          print(peopleController
+                                                              .documentList);
+                                                        });
+                                                      }
+                                                    },
+                                                  ))
+                                            ],
+                                          )
+                                              : Row(
+                                            children: [
+                                              Expanded(
+                                                child: imageFile == null
+                                                    ? Container(
+                                                  height: 180,
+                                                  decoration:
+                                                  BoxDecoration(
+                                                    color: AppColors
+                                                        .blue,
+                                                    borderRadius:
+                                                    BorderRadius
+                                                        .circular(
+                                                        10),
+                                                  ),
+                                                )
+                                                    : Container(
+                                                  height: 180,
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                      BorderRadius
+                                                          .circular(
+                                                          10),
+                                                      image: DecorationImage(
+                                                          image: FileImage(File(
+                                                              imageFile!
+                                                                  .path)),
+                                                          fit: BoxFit
+                                                              .cover)),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Expanded(
+                                                child: Column(
                                                   children: [
-                                                    Expanded(
-                                                        child: GestureDetector(
+                                                    GestureDetector(
                                                       child: Image.asset(
-                                                          AppAssets.camera),
+                                                          AppAssets
+                                                              .camera),
                                                       onTap: () async {
-                                                        PickedFile? pickedFile =
-                                                            await ImagePicker()
-                                                                .getImage(
-                                                          source: ImageSource
+                                                        PickedFile?
+                                                        pickedFile =
+                                                        await ImagePicker()
+                                                            .getImage(
+                                                          source:
+                                                          ImageSource
                                                               .camera,
                                                           maxWidth: 1800,
                                                           maxHeight: 1000,
@@ -869,25 +995,29 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                             peopleController
                                                                 .documentList
                                                                 .add(
-                                                                    imageFile!);
+                                                                imageFile!);
                                                             print(peopleController
                                                                 .documentList);
                                                           });
                                                         }
                                                       },
-                                                    )),
-                                                    SizedBox(
-                                                      width: 10,
                                                     ),
-                                                    Expanded(
-                                                        child: GestureDetector(
+                                                    SizedBox(
+                                                      height: Reponsive_
+                                                          .crosslength *
+                                                          0.012,
+                                                    ),
+                                                    GestureDetector(
                                                       child: Image.asset(
-                                                          AppAssets.gallery),
+                                                          AppAssets
+                                                              .gallery),
                                                       onTap: () async {
-                                                        PickedFile? pickedFile =
-                                                            await ImagePicker()
-                                                                .getImage(
-                                                          source: ImageSource
+                                                        PickedFile?
+                                                        pickedFile =
+                                                        await ImagePicker()
+                                                            .getImage(
+                                                          source:
+                                                          ImageSource
                                                               .gallery,
                                                           maxWidth: 1800,
                                                           maxHeight: 1000,
@@ -901,124 +1031,18 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                             peopleController
                                                                 .documentList
                                                                 .add(
-                                                                    imageFile!);
+                                                                imageFile!);
                                                             print(peopleController
                                                                 .documentList);
                                                           });
                                                         }
                                                       },
-                                                    ))
-                                                  ],
-                                                )
-                                              : Row(
-                                                  children: [
-                                                    Expanded(
-                                                      child: imageFile == null
-                                                          ? Container(
-                                                              height: 180,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: AppColors
-                                                                    .blue,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            10),
-                                                              ),
-                                                            )
-                                                          : Container(
-                                                              height: 180,
-                                                              decoration: BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              10),
-                                                                  image: DecorationImage(
-                                                                      image: FileImage(File(
-                                                                          imageFile!
-                                                                              .path)),
-                                                                      fit: BoxFit
-                                                                          .cover)),
-                                                            ),
                                                     ),
-                                                    SizedBox(
-                                                      width: 5,
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(
-                                                        children: [
-                                                          GestureDetector(
-                                                            child: Image.asset(
-                                                                AppAssets
-                                                                    .camera),
-                                                            onTap: () async {
-                                                              PickedFile?
-                                                                  pickedFile =
-                                                                  await ImagePicker()
-                                                                      .getImage(
-                                                                source:
-                                                                    ImageSource
-                                                                        .camera,
-                                                                maxWidth: 1800,
-                                                                maxHeight: 1000,
-                                                              );
-                                                              if (pickedFile !=
-                                                                  null) {
-                                                                setState(() {
-                                                                  imageFile = File(
-                                                                      pickedFile
-                                                                          .path);
-                                                                  peopleController
-                                                                      .documentList
-                                                                      .add(
-                                                                          imageFile!);
-                                                                  print(peopleController
-                                                                      .documentList);
-                                                                });
-                                                              }
-                                                            },
-                                                          ),
-                                                          SizedBox(
-                                                            height: Reponsive_
-                                                                    .crosslength *
-                                                                0.012,
-                                                          ),
-                                                          GestureDetector(
-                                                            child: Image.asset(
-                                                                AppAssets
-                                                                    .gallery),
-                                                            onTap: () async {
-                                                              PickedFile?
-                                                                  pickedFile =
-                                                                  await ImagePicker()
-                                                                      .getImage(
-                                                                source:
-                                                                    ImageSource
-                                                                        .gallery,
-                                                                maxWidth: 1800,
-                                                                maxHeight: 1000,
-                                                              );
-                                                              if (pickedFile !=
-                                                                  null) {
-                                                                setState(() {
-                                                                  imageFile = File(
-                                                                      pickedFile
-                                                                          .path);
-                                                                  peopleController
-                                                                      .documentList
-                                                                      .add(
-                                                                          imageFile!);
-                                                                  print(peopleController
-                                                                      .documentList);
-                                                                });
-                                                              }
-                                                            },
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    )
                                                   ],
                                                 ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                         SizedBox(
                                           height: 20,
@@ -1048,42 +1072,42 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                         child: peopleController.documentList.isEmpty
                             ? Container()
                             : ListView.builder(
-                                itemCount: peopleController.documentList.length,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  return Container(
-                                    alignment: Alignment.bottomCenter,
-                                    width: 130,
-                                    margin: EdgeInsets.only(
-                                      left: 8,
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue,
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                            image: FileImage(File(
-                                                peopleController
-                                                    .documentList[index].path)),
-                                            fit: BoxFit.cover)),
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      width: cx.width,
-                                      height: 23,
-                                      decoration: const BoxDecoration(
-                                        color: Color.fromRGBO(2, 5, 10, 0.3),
-                                        borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(10),
-                                            bottomRight: Radius.circular(10)),
-                                      ),
-                                      child: InterText(
-                                        text: "certificate",
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.white,
-                                      ),
-                                    ),
-                                  );
-                                }),
+                            itemCount: peopleController.documentList.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Container(
+                                alignment: Alignment.bottomCenter,
+                                width: 130,
+                                margin: EdgeInsets.only(
+                                  left: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                        image: FileImage(File(
+                                            peopleController
+                                                .documentList[index].path)),
+                                        fit: BoxFit.cover)),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: cx.width,
+                                  height: 23,
+                                  decoration: const BoxDecoration(
+                                    color: Color.fromRGBO(2, 5, 10, 0.3),
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10)),
+                                  ),
+                                  child: InterText(
+                                    text: "certificate",
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.white,
+                                  ),
+                                ),
+                              );
+                            }),
                       )
                     ],
                   ),
@@ -1094,234 +1118,226 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InterText(
-                              text: "Address",
-                              fontSize: Reponsive_.px16,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.blue,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InterText(
+                            text: "Address",
+                            fontSize: Reponsive_.px16,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blue,
+                          ),
+                          SizedBox(
+                            height: Reponsive_.crosslength * 0.012,
+                          ),
+                          InkWell(
+                            child: Image.asset(
+                              AppAssets.profileEdit,
+                              height: Reponsive_.crosslength * 0.03,
+                              width: Reponsive_.crosslength * 0.03,
                             ),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.012,
-                            ),
-                            InkWell(
-                              child: Image.asset(
-                                AppAssets.profileEdit,
-                                height: Reponsive_.crosslength * 0.03,
-                                width: Reponsive_.crosslength * 0.03,
-                              ),
-                              onTap: () {
-                                CommonBottonSheet(
-                                    context: context,
-                                    childView: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          InterText(
-                                            text: "Address",
-                                            fontWeight: FontWeight.w700,
-                                            fontSize:
-                                                Reponsive_.crosslength * 0.03,
-                                          ),
-                                          SizedBox(height: Reponsive_.crosslength*0.015,),
-                                          CommonDropDown(
-                                              context: context,
-                                              hint: 'Select Country',
-                                              mycontrollerValue:
+                            onTap: () {
+                              CommonBottonSheet(
+                                  context: context,
+                                  childView: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        InterText(
+                                          text: "Address",
+                                          fontWeight: FontWeight.w700,
+                                          fontSize:
+                                          Reponsive_.crosslength * 0.03,
+                                        ),
+                                        SizedBox(height: Reponsive_.crosslength*0.015,),
+                                        CommonDropDown(
+                                            context: context,
+                                            hint: 'Select Country',
+                                            mycontrollerValue:
+                                            profileController
+                                                .countryController,
+                                            list: profileController.list,
+                                            color: AppColors.backGroundColor
+                                        ),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: AppWidget().getTextField(
+                                                  hintText: "City",
+                                                  label: "",
+                                                  inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                                  filledColor: AppColors
+                                                      .backGroundColor,
+                                                  textEditingController:
                                                   profileController
-                                                      .countryController,
-                                              list: profileController.list,
-                                              color: AppColors.backGroundColor
-                                          ),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Expanded(
+                                                      .cityNameController
+                                                      .value),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Expanded(
                                                 child: AppWidget().getTextField(
-                                                    hintText: "City",
+                                                    hintText: "State",
                                                     label: "",
                                                     inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
                                                     filledColor: AppColors
                                                         .backGroundColor,
                                                     textEditingController:
-                                                        profileController
-                                                            .cityNameController
-                                                            .value),
-                                              ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              Expanded(
-                                                  child: AppWidget().getTextField(
-                                                      hintText: "State",
-                                                      label: "",
-                                                      inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
-                                                      filledColor: AppColors
-                                                          .backGroundColor,
-                                                      textEditingController:
-                                                          profileController
-                                                              .stateController
-                                                              .value)),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          AppWidget().getTextField(
-                                              hintText: "Zip",
-                                              label: "",
-                                              inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  profileController
-                                                      .zipController.value),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          CommonButton(
-                                            text: "Save & Close",
-                                            onTap: () {
-                                              print('hiiii');
-                                            },
-                                          )
-                                        ],
-                                      ),
-                                    ));
-                              },
-                            )
-                          ],
-                        ),
+                                                    profileController
+                                                        .stateController
+                                                        .value)),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        AppWidget().getTextField(
+                                            hintText: "Zip",
+                                            label: "",
+                                            inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),
+                                            filledColor:
+                                            AppColors.backGroundColor,
+                                            textEditingController:
+                                            profileController
+                                                .zipController.value),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        CommonButton(
+                                          text: "Save & Close",
+                                          onTap: () {
+                                            print('hiiii');
+                                          },
+                                        )
+                                      ],
+                                    ),
+                                  ));
+                            },
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Screen Name",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "Joel Newman",
-                              fontSize: Reponsive_.px18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black,
-                            )
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Screen Name",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "Joel Newman",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black,
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "Country",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "United States",
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "Country",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "United States",
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                            Expanded(
-                              flex: 2,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "City",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "Skokie",
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "City",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "Skokie",
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "State",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "illinois",
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "State",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "illinois",
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                            Expanded(
-                              flex: 2,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "Zip",
-                                    fontSize: Reponsive_.px12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black,
-                                  ),
-                                  InterText(
-                                    text: "60077",
-                                    fontSize: Reponsive_.px18,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.black,
-                                  )
-                                ],
-                              ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                InterText(
+                                  text: "Zip",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.black,
+                                ),
+                                InterText(
+                                  text: "60077",
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.black,
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -1332,127 +1348,121 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InterText(
-                              text: "General",
-                              fontSize: Reponsive_.px16,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.blue,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InterText(
+                            text: "General",
+                            fontSize: Reponsive_.px16,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blue,
+                          ),
+                          SizedBox(
+                            height: Reponsive_.crosslength * 0.012,
+                          ),
+                          InkWell(
+                            child: Image.asset(
+                              AppAssets.profileEdit,
+                              height: Reponsive_.crosslength * 0.03,
+                              width: Reponsive_.crosslength * 0.03,
                             ),
-                            SizedBox(
-                              height: Reponsive_.crosslength * 0.012,
-                            ),
-                            InkWell(
-                              child: Image.asset(
-                                AppAssets.profileEdit,
-                                height: Reponsive_.crosslength * 0.03,
-                                width: Reponsive_.crosslength * 0.03,
-                              ),
-                              onTap: () {
-                                CommonBottonSheet(
-                                    context: context,
-                                    childView: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          InterText(
-                                            text: "General",
-                                            fontWeight: FontWeight.w700,
-                                            fontSize:
-                                                Reponsive_.crosslength * 0.03,
-                                          ),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          CommonDropDown(
-                                              context: context,
-                                              hint: 'Select Time Zone',
-                                              list: profileController.timeZone,
-                                              mycontrollerValue:
-                                                  profileController
-                                                      .timeZoneController,
-                                              color: AppColors.backGroundColor),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          CommonDropDown(
-                                              context: context,hint: 'Select Language',
-                                              list: profileController
-                                                  .timeLanguage,
-                                              mycontrollerValue:
-                                                  profileController
-                                                      .languageController,
-                                              color: AppColors.backGroundColor),
-                                          SizedBox(
-                                            height:
-                                                Reponsive_.crosslength * 0.012,
-                                          ),
-                                          CommonButton(
-                                            text: "Save & Close",
-                                            onTap: () {
-                                              print('hiiii');
-                                            },
-                                          )
-                                        ],
-                                      ),
-                                    ));
-                              },
-                            )
-                          ],
-                        ),
+                            onTap: () {
+                              CommonBottonSheet(
+                                  context: context,
+                                  childView: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        InterText(
+                                          text: "General",
+                                          fontWeight: FontWeight.w700,
+                                          fontSize:
+                                          Reponsive_.crosslength * 0.03,
+                                        ),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        CommonDropDown(
+                                            context: context,
+                                            hint: 'Select Time Zone',
+                                            list: profileController.timeZone,
+                                            mycontrollerValue:
+                                            profileController
+                                                .timeZoneController,
+                                            color: AppColors.backGroundColor),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        CommonDropDown(
+                                            context: context,hint: 'Select Language',
+                                            list: profileController
+                                                .timeLanguage,
+                                            mycontrollerValue:
+                                            profileController
+                                                .languageController,
+                                            color: AppColors.backGroundColor),
+                                        SizedBox(
+                                          height:
+                                          Reponsive_.crosslength * 0.012,
+                                        ),
+                                        CommonButton(
+                                          text: "Save & Close",
+                                          onTap: () {
+                                            print('hiiii');
+                                          },
+                                        )
+                                      ],
+                                    ),
+                                  ));
+                            },
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Time Zone",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "Central Time (US/Can) (GMT-6:00)",
-                              fontSize: Reponsive_.px18,
-                              height: 1.5,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black,
-                            )
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Time Zone",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "Central Time (US/Can) (GMT-6:00)",
+                            fontSize: Reponsive_.px18,
+                            height: 1.5,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black,
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: Reponsive_.crosslength * 0.012,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InterText(
-                              text: "Language",
-                              fontSize: Reponsive_.px12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black,
-                            ),
-                            InterText(
-                              text: "English",
-                              fontSize: Reponsive_.px18,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: AppColors.black,
-                            )
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InterText(
+                            text: "Language",
+                            fontSize: Reponsive_.px12,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black,
+                          ),
+                          InterText(
+                            text: "English",
+                            fontSize: Reponsive_.px18,
+                            fontWeight: FontWeight.w600,
+                            height: 1.5,
+                            color: AppColors.black,
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -1463,19 +1473,16 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     children: [
-                      Expanded(
-                        flex: 0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            InterText(
-                              text: "Notifications",
-                              fontSize: Reponsive_.px16,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.blue,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InterText(
+                            text: "Notifications",
+                            fontSize: Reponsive_.px16,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blue,
+                          ),
+                        ],
                       ),
                       ListView.builder(
                           physics: NeverScrollableScrollPhysics(),
@@ -1483,49 +1490,49 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                           itemCount: peopleController.switchValues.length,
                           itemBuilder: (context, index) {
                             return Obx(() => GestureDetector(
-                                  onTap: () {
-                                    peopleController.toggleSwitch(
-                                        index,
-                                        peopleController
-                                            .switchValues[index].value);
-                                  },
-                                  child: Padding(
-                                    padding: EdgeInsets.only(
-                                        top: Reponsive_.crosslength * 0.01),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        InterText(
-                                          text: peopleController
-                                              .switchName[index],
-                                          fontSize: Reponsive_.px14,
-                                          fontWeight: FontWeight.w400,
-                                          color: AppColors.black,
-                                        ),
-                                        FlutterSwitch(
-                                          activeText: "",
-                                          inactiveText: "",
-                                          width: Reponsive_.crosslength * 0.05,
-                                          height:
-                                              Reponsive_.crosslength * 0.025,
-                                          activeColor: AppColors.deepGreen,
-                                          inactiveColor:
-                                              Color.fromRGBO(217, 217, 217, 1),
-                                          toggleSize: 20.0,
-                                          value: peopleController
-                                              .switchValues[index].value,
-                                          borderRadius: 50.0,
-                                          showOnOff: true,
-                                          onToggle: (val) async {
-                                            peopleController.toggleSwitch(
-                                                index, val);
-                                          },
-                                        )
-                                      ],
+                              onTap: () {
+                                peopleController.toggleSwitch(
+                                    index,
+                                    peopleController
+                                        .switchValues[index].value);
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: Reponsive_.crosslength * 0.01),
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InterText(
+                                      text: peopleController
+                                          .switchName[index],
+                                      fontSize: Reponsive_.px14,
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors.black,
                                     ),
-                                  ),
-                                ));
+                                    FlutterSwitch(
+                                      activeText: "",
+                                      inactiveText: "",
+                                      width: Reponsive_.crosslength * 0.05,
+                                      height:
+                                      Reponsive_.crosslength * 0.025,
+                                      activeColor: AppColors.deepGreen,
+                                      inactiveColor:
+                                      Color.fromRGBO(217, 217, 217, 1),
+                                      toggleSize: 20.0,
+                                      value: peopleController
+                                          .switchValues[index].value,
+                                      borderRadius: 50.0,
+                                      showOnOff: true,
+                                      onToggle: (val) async {
+                                        peopleController.toggleSwitch(
+                                            index, val);
+                                      },
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ));
                           })
                     ],
                   ),
@@ -1558,36 +1565,36 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                     padding: EdgeInsets.all(Reponsive_.crosslength*0.015),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         InterText(
                                           text: "Basic Information",
                                           fontWeight: FontWeight.w700,
                                           fontSize:
-                                              Reponsive_.crosslength * 0.03,
+                                          Reponsive_.crosslength * 0.03,
                                           color: AppColors.black,
                                         ),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.015,
+                                          Reponsive_.crosslength * 0.015,
                                         ),
                                         AppWidget().getTextField(
-                                            hintText: "Driver License Number",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
+                                          hintText: "Driver License Number",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         AppWidget().getTextField(
-                                            hintText: "Driver License Status",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
+                                          hintText: "Driver License Status",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         AppWidget().getTextField(
-                                            hintText: "SSN/TaxID",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
+                                          hintText: "SSN/TaxID",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         CommonDropDown(
                                             context: context,hint: 'Select Uniform Size',
@@ -1597,7 +1604,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                             color: AppColors.backGroundColor),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         CommonButton(
                                           text: "Save & Close",
@@ -1607,7 +1614,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                         ),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                       ],
                                     ),
@@ -1717,22 +1724,22 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               color: AppColors.black,
                             ),
                             Obx(() => FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: Reponsive_.crosslength * 0.05,
-                                  height: Reponsive_.crosslength * 0.025,
-                                  activeColor: AppColors.deepGreen,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value:
-                                      profileController.switchValues[0].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(0, !val);
-                                  },
-                                ))
+                              activeText: "",
+                              inactiveText: "",
+                              width: Reponsive_.crosslength * 0.05,
+                              height: Reponsive_.crosslength * 0.025,
+                              activeColor: AppColors.deepGreen,
+                              inactiveColor:
+                              Color.fromRGBO(217, 217, 217, 1),
+                              toggleSize: 20.0,
+                              value:
+                              profileController.switchValues[0].value,
+                              borderRadius: 50.0,
+                              showOnOff: true,
+                              onToggle: (val) async {
+                                profileController.toggleSwitch(0, !val);
+                              },
+                            ))
                           ],
                         ),
                       )
@@ -1770,60 +1777,60 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                     padding: EdgeInsets.all(Reponsive_.crosslength*0.015),
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         InterText(
                                           text: "Emergency Contact",
                                           fontWeight: FontWeight.w700,
                                           fontSize:
-                                              Reponsive_.crosslength * 0.03,
+                                          Reponsive_.crosslength * 0.03,
                                           color: AppColors.black,
                                         ),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.015,
+                                          Reponsive_.crosslength * 0.015,
                                         ),
                                         AppWidget().getTextField(
-                                            hintText: "Contact Name",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
+                                          hintText: "Contact Name",inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         AppWidget().getTextField(
-                                            hintText: "Phone",
+                                          hintText: "Phone",
                                           inputTextStyle: GoogleFonts.inter(fontSize: Reponsive_.px18,fontWeight: FontWeight.w400),),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         CommonDropDown(
                                             context: context,
                                             list:
-                                                profileController.timeLanguage,
+                                            profileController.timeLanguage,
                                             mycontrollerValue: profileController
                                                 .languageController,
                                             color: AppColors.backGroundColor),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         CommonDropDown(
                                             context: context,
                                             list:
-                                                profileController.timeLanguage,
+                                            profileController.timeLanguage,
                                             mycontrollerValue: profileController
                                                 .languageController,
                                             color: AppColors.backGroundColor),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         AppWidget().getTextField(
                                             hintText:
-                                                "RN/LPN/CNA License Number"),
+                                            "RN/LPN/CNA License Number"),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                         CommonButton(
                                           text: "Save & Close",
@@ -1833,7 +1840,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                         ),
                                         SizedBox(
                                           height:
-                                              Reponsive_.crosslength * 0.012,
+                                          Reponsive_.crosslength * 0.012,
                                         ),
                                       ],
                                     ),
@@ -1928,6 +1935,8 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                     ],
                   ),
                 ),
+                ///Profile Flow
+                cx.instacareLoginValue.toString().contains("instacare")?
                 CommonContainer(
                   margintop: Reponsive_.crosslength * 0.01,
                   child: ListView(
@@ -2023,7 +2032,9 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       ),
                     ],
                   ),
-                ),
+                )
+                    :Container(),
+                cx.instacareLoginValue.toString().contains("instacare")?
                 CommonContainer(
                   margintop: Reponsive_.crosslength * 0.01,
                   child: ListView(
@@ -2054,22 +2065,22 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               color: AppColors.black,
                             ),
                             Obx(() => FlutterSwitch(
-                                  activeText: "",
-                                  inactiveText: "",
-                                  width: Reponsive_.crosslength * 0.05,
-                                  height: Reponsive_.crosslength * 0.025,
-                                  activeColor: AppColors.deepGreen,
-                                  inactiveColor:
-                                      Color.fromRGBO(217, 217, 217, 1),
-                                  toggleSize: 20.0,
-                                  value:
-                                      profileController.switchValues[0].value,
-                                  borderRadius: 50.0,
-                                  showOnOff: true,
-                                  onToggle: (val) async {
-                                    profileController.toggleSwitch(0, !val);
-                                  },
-                                ))
+                              activeText: "",
+                              inactiveText: "",
+                              width: Reponsive_.crosslength * 0.05,
+                              height: Reponsive_.crosslength * 0.025,
+                              activeColor: AppColors.deepGreen,
+                              inactiveColor:
+                              Color.fromRGBO(217, 217, 217, 1),
+                              toggleSize: 20.0,
+                              value:
+                              profileController.switchValues[0].value,
+                              borderRadius: 50.0,
+                              showOnOff: true,
+                              onToggle: (val) async {
+                                profileController.toggleSwitch(0, !val);
+                              },
+                            ))
                           ],
                         ),
                       ),
@@ -2136,7 +2147,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               flex: 1,
                               child: InterText(
                                 text:
-                                    "Employee Influenza Vaccine Consent-Declination Form",
+                                "Employee Influenza Vaccine Consent-Declination Form",
                                 fontSize: Reponsive_.px14,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.black,
@@ -2147,22 +2158,22 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             Expanded(
                               flex: 0,
                               child: Obx(() => FlutterSwitch(
-                                    activeText: "",
-                                    inactiveText: "",
-                                    width: Reponsive_.crosslength * 0.05,
-                                    height: Reponsive_.crosslength * 0.025,
-                                    activeColor: AppColors.deepGreen,
-                                    inactiveColor:
-                                        Color.fromRGBO(217, 217, 217, 1),
-                                    toggleSize: 20.0,
-                                    value:
-                                        profileController.switchValues[0].value,
-                                    borderRadius: 50.0,
-                                    showOnOff: true,
-                                    onToggle: (val) async {
-                                      profileController.toggleSwitch(0, !val);
-                                    },
-                                  )),
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[0].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(0, !val);
+                                },
+                              )),
                             )
                           ],
                         ),
@@ -2182,7 +2193,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               flex: 1,
                               child: InterText(
                                 text:
-                                    "Religious Exemption Form - Employee Influenza",
+                                "Religious Exemption Form - Employee Influenza",
                                 fontSize: Reponsive_.px14,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.black,
@@ -2193,22 +2204,22 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             Expanded(
                               flex: 0,
                               child: Obx(() => FlutterSwitch(
-                                    activeText: "",
-                                    inactiveText: "",
-                                    width: Reponsive_.crosslength * 0.05,
-                                    height: Reponsive_.crosslength * 0.025,
-                                    activeColor: AppColors.deepGreen,
-                                    inactiveColor:
-                                        Color.fromRGBO(217, 217, 217, 1),
-                                    toggleSize: 20.0,
-                                    value:
-                                        profileController.switchValues[1].value,
-                                    borderRadius: 50.0,
-                                    showOnOff: true,
-                                    onToggle: (val) async {
-                                      profileController.toggleSwitch(1, !val);
-                                    },
-                                  )),
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[1].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(1, !val);
+                                },
+                              )),
                             )
                           ],
                         ),
@@ -2228,7 +2239,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                               flex: 1,
                               child: InterText(
                                 text:
-                                    "Medical Exemption Form - Employee Influenza",
+                                "Medical Exemption Form - Employee Influenza",
                                 fontSize: Reponsive_.px14,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.black,
@@ -2239,29 +2250,539 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             Expanded(
                               flex: 0,
                               child: Obx(() => FlutterSwitch(
-                                    activeText: "",
-                                    inactiveText: "",
-                                    width: Reponsive_.crosslength * 0.05,
-                                    height: Reponsive_.crosslength * 0.025,
-                                    activeColor: AppColors.deepGreen,
-                                    inactiveColor:
-                                        Color.fromRGBO(217, 217, 217, 1),
-                                    toggleSize: 20.0,
-                                    value:
-                                        profileController.switchValues[2].value,
-                                    borderRadius: 50.0,
-                                    showOnOff: true,
-                                    onToggle: (val) async {
-                                      profileController.toggleSwitch(2, !val);
-                                    },
-                                  )),
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[2].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(2, !val);
+                                },
+                              )),
                             )
                           ],
                         ),
                       ),
                     ],
                   ),
-                ),
+                )
+                    :Container(),
+                ///Faculty Flow
+                cx.instacareLoginValue.toString().contains("faculty")?
+                CommonContainer(
+                  margintop: Reponsive_.crosslength * 0.01,
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InterText(
+                            text: "Documents",
+                            color: AppColors.blue,
+                            fontSize: Reponsive_.px16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.deepGreen,
+                        documentText: "IL W-4 (Withholding / Exemptions)",
+                        documentButtonText: "Uploaded",
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.deepGreen,
+                        documentText: "Employment Verification)",
+                        documentButtonText: "Uploaded",
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.buttonColor,
+                        documentText: "Background Check Authentication",
+                        documentButtonText: "Add",
+                        addButton: true,
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.deepGreen,
+                        documentText: "Direct Deposit Form",
+                        documentButtonText: "Uploaded",
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.deepGreen,
+                        documentText: "Health Insurance  Form",
+                        documentButtonText: "Uploaded",
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.buttonColor,
+                        documentText: "8850",
+                        documentButtonText: "Add",
+                        addButton: true,
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.buttonColor,
+                        documentText: "CPR Certification",
+                        documentButtonText: "Add",
+                        addButton: true,
+                        onTap: () {},
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      DocumentsRow(
+                        buttonColor: AppColors.buttonColor,
+                        documentText: "Employee Handbook",
+                        documentButtonText: "Add",
+                        addButton: true,
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                )
+                    :Container(),
+                cx.instacareLoginValue.toString().contains("faculty")?
+                CommonContainer(
+                  margintop: Reponsive_.crosslength * 0.01,
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      InterText(
+                        text: "Immunization",
+                        color: AppColors.blue,
+                        fontSize: Reponsive_.px16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          profileController.toggleSwitch(
+                              0, profileController.switchValues[0].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Verify TB Test Results (Annual)",
+                              fontSize: Reponsive_.px14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            Obx(() => FlutterSwitch(
+                              activeText: "",
+                              inactiveText: "",
+                              width: Reponsive_.crosslength * 0.05,
+                              height: Reponsive_.crosslength * 0.025,
+                              activeColor: AppColors.deepGreen,
+                              inactiveColor:
+                              Color.fromRGBO(217, 217, 217, 1),
+                              toggleSize: 20.0,
+                              value:
+                              profileController.switchValues[0].value,
+                              borderRadius: 50.0,
+                              showOnOff: true,
+                              onToggle: (val) async {
+                                profileController.toggleSwitch(0, !val);
+                              },
+                            ))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      InterText(
+                        text: "Start TB Test Date",
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.black,
+                      ),
+                      InterText(
+                        text: "February 01, 2023",
+                        fontWeight: FontWeight.w600,
+                        fontSize: Reponsive_.px18,
+                        color: AppColors.black,
+                        height: 1.5,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      InterText(
+                        text: "Last TB Test Date",
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.black,
+                      ),
+                      InterText(
+                        text: "February 01, 2023",
+                        fontWeight: FontWeight.w600,
+                        fontSize: Reponsive_.px18,
+                        color: AppColors.black,
+                        height: 1.5,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      InterText(
+                        text: "COVID-19 Immunization Date",
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.black,
+                      ),
+                      InterText(
+                        text: "June 18, 2022",
+                        fontWeight: FontWeight.w600,
+                        fontSize: Reponsive_.px18,
+                        color: AppColors.black,
+                        height: 1.5,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          profileController.toggleSwitch(
+                              0, profileController.switchValues[0].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                "Employee Influenza Vaccine Consent-Declination Form",
+                                fontSize: Reponsive_.px14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[0].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(0, !val);
+                                },
+                              )),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          profileController.toggleSwitch(
+                              1, profileController.switchValues[1].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                "Religious Exemption Form - Employee Influenza",
+                                fontSize: Reponsive_.px14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[1].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(1, !val);
+                                },
+                              )),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength * 0.012,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          profileController.toggleSwitch(
+                              2, profileController.switchValues[2].value);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: InterText(
+                                text:
+                                "Medical Exemption Form - Employee Influenza",
+                                fontSize: Reponsive_.px14,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.black,
+                                maxLines: 2,
+                                textOverflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 0,
+                              child: Obx(() => FlutterSwitch(
+                                activeText: "",
+                                inactiveText: "",
+                                width: Reponsive_.crosslength * 0.05,
+                                height: Reponsive_.crosslength * 0.025,
+                                activeColor: AppColors.deepGreen,
+                                inactiveColor:
+                                Color.fromRGBO(217, 217, 217, 1),
+                                toggleSize: 20.0,
+                                value:
+                                profileController.switchValues[2].value,
+                                borderRadius: 50.0,
+                                showOnOff: true,
+                                onToggle: (val) async {
+                                  profileController.toggleSwitch(2, !val);
+                                },
+                              )),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                    :Container(),
+                cx.instacareLoginValue.toString().contains("employee")?
+                CommonContainer(
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      InterText(
+                        text: "Employee Checklist",
+                        fontWeight: FontWeight.w600,
+                        fontSize: Reponsive_.px16,
+                        color: AppColors.blue,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      checkListEmployee(
+                          leadingText: "IL W-4 (Withholding / Exemptions)",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Employment Verification",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Background Check Authentication Form",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Direct Deposit Form",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Health Insurance Acknowledgement Form",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "8850",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "CPR Certification",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/90,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Employee Handbook",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+                    ],
+                  ),
+                )
+                    :Container(),
+                cx.instacareLoginValue.toString().contains("employee")?
+                CommonContainer(
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                      InterText(
+                        text: "Immunization",
+                        fontWeight: FontWeight.w600,
+                        fontSize: Reponsive_.px16,
+                        color: AppColors.blue,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/80,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Verify TB Test Results (Annual)",
+                          buttonText: "Yes"
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      InterText(
+                        text: "Start TB Test Date",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      InterText(
+                        text: "February 01, 2023",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      InterText(
+                        text: "Last TB Test Date",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      InterText(
+                        text: "February 01, 2023",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
+                      ),
+
+
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      InterText(
+                        text: "COVID-19 Immunization Date",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      InterText(
+                        text: "June 18, 2022",
+                        color: AppColors.black,
+                        fontSize: Reponsive_.px18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Employee Influenza Vaccine Consent\nDeclination Form",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Religious Exemption Form - Employee\nInfluenza",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+
+                      SizedBox(
+                        height: Reponsive_.crosslength/100,
+                      ),
+                      checkListEmployee(
+                          leadingText: "Medical Exemption Form - Employee\nInfluenza",
+                          buttonText: "No",
+                          backGroundColor: AppColors.redColor
+                      ),
+                    ],
+                  ),
+                ):Container()
               ],
             ),
           ),
@@ -2456,6 +2977,39 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
           },
         );
       },
+    );
+  }
+
+  Widget checkListEmployee({String? leadingText,Color? backGroundColor,String? buttonText}){
+    return Row(
+      children: [
+        Expanded(
+          child: InterText(
+            text: leadingText.toString(),
+            fontSize: Reponsive_.px14,
+            fontWeight: FontWeight.w400,
+            color: AppColors.black,
+          ),
+        ),
+        Expanded(
+          flex: 0,
+          child: Container(
+            width: Reponsive_.crosslength/13,
+            height: Reponsive_.crosslength/40,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+                color:backGroundColor?? AppColors.deepGreen,
+                borderRadius: BorderRadius.circular(30)
+            ),
+            child: InterText(
+              text: buttonText.toString(),
+              color: AppColors.white,
+              fontWeight: FontWeight.w600,
+              fontSize: Reponsive_.px14,
+            ),
+          ),
+        )
+      ],
     );
   }
 }

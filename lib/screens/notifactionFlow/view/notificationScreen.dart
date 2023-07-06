@@ -41,10 +41,10 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
           elevation: 0,
           backgroundColor: AppColors.white,
           leading: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8,top: 8),
             child: MontserratText(
-              text: "Notification",
-              fontSize: Reponsive_.crosslength*0.040,
+              text: "  Notification",
+              fontSize:Reponsive_.px30 ,
               fontWeight: FontWeight.w700,
               color: AppColors.black,
             ),
@@ -70,13 +70,13 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
               InterText(
                   text: "Crucial",
                 color:selectedIndex==0?AppColors.blue:AppColors.hintTextGrey,
-                fontSize: Reponsive_.crosslength*0.025,
+                fontSize: Reponsive_.px16,
                 fontWeight: FontWeight.w600,
               ),
               InterText(
                 text: "Non-Crucial",
                 color:selectedIndex==1?AppColors.blue:AppColors.hintTextGrey,
-                fontSize: Reponsive_.crosslength*0.025,
+                fontSize:Reponsive_.px16 ,
                 fontWeight: FontWeight.w600,
               ),
             ],
@@ -98,13 +98,18 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
       itemCount: 10,
       shrinkWrap: true,
       itemBuilder: (context,index){
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.005),
+          margin: EdgeInsets.only(left: Reponsive_.crosslength*0.015,right: Reponsive_.crosslength*0.005,top: Reponsive_.crosslength*0.01),
+          decoration:BoxDecoration(
+            color: Color.fromRGBO(243, 48, 71, 0.1),
+            borderRadius: BorderRadius.circular(20)
+          ),
           child: ListTile(
             leading: Container(
               alignment: Alignment.center,
-              width: Reponsive_.crosslength*0.060,
-              height: Reponsive_.crosslength*0.060,
+              width: Reponsive_.crosslength*0.05,
+              height: Reponsive_.crosslength*0.05,
               decoration: BoxDecoration(
                 color: AppColors.redColor,
                 shape: BoxShape.circle
@@ -115,25 +120,28 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
               text: "Albert Mariao has called off for the shift 15 min before.",
               color: AppColors.black,
               fontWeight: FontWeight.w600,
-              fontSize: Reponsive_.crosslength*0.017,
+              fontSize: Reponsive_.px16,
               maxLines: 2,
             ),
-             subtitle: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                 InterText(
-                   text: "Care Health Center",
-                     color: AppColors.blue,
-                   fontSize: Reponsive_.crosslength*0.015,
-                   fontWeight: FontWeight.w600,
-                 ),
-                 InterText(
-                   text: "Just now",
-                   fontWeight:FontWeight.w600,
-                   fontSize: Reponsive_.crosslength*0.017,
-                   color: AppColors.redColor,
-                 )
-               ],
+             subtitle: Padding(
+               padding: EdgeInsets.only(top: Reponsive_.crosslength*0.005),
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   InterText(
+                     text: "Care Health Center",
+                       color: AppColors.blue,
+                     fontSize: Reponsive_.px12,
+                     fontWeight: FontWeight.w600,
+                   ),
+                   InterText(
+                     text: "Just now",
+                     fontWeight:FontWeight.w600,
+                     fontSize: Reponsive_.px12,
+                     color: AppColors.redColor,
+                   )
+                 ],
+               ),
              ),
           ),
         );
@@ -146,13 +154,18 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
         itemCount: 10,
         shrinkWrap: true,
         itemBuilder: (context,index){
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
+          return Container(
+            padding: EdgeInsets.symmetric(vertical: Reponsive_.crosslength*0.005),
+            margin: EdgeInsets.only(left: Reponsive_.crosslength*0.015,right: Reponsive_.crosslength*0.005,top: Reponsive_.crosslength*0.005),
+            decoration:BoxDecoration(
+                //color: Color.fromRGBO(243, 48, 71, 0.1),
+                borderRadius: BorderRadius.circular(20)
+            ),
             child: ListTile(
               leading: Container(
                 alignment: Alignment.center,
-                height: Reponsive_.crosslength*0.060,
-                width: 60.w,
+                width: Reponsive_.crosslength*0.05,
+                height: Reponsive_.crosslength*0.05,
                 decoration: BoxDecoration(
                     color: AppColors.buttonColor,
                     shape: BoxShape.circle
@@ -163,25 +176,28 @@ class _NotificationScreenState extends State<NotificationScreen> with TickerProv
                 text: "Albert Mariao has called off for the shift 15 min before.",
                 color: AppColors.black,
                 fontWeight: FontWeight.w600,
-                fontSize: Reponsive_.crosslength*0.017,
+                fontSize: Reponsive_.px16,
                 maxLines: 2,
               ),
-              subtitle: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InterText(
-                    text: "Care Health Center",
-                    color: AppColors.blue,
-                    fontSize: Reponsive_.crosslength*0.013,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  InterText(
-                    text: "Just now",
-                    fontWeight:FontWeight.w600,
-                    fontSize: Reponsive_.crosslength*0.016,
-                    color: AppColors.blue,
-                  )
-                ],
+              subtitle: Padding(
+                padding: EdgeInsets.only(top: Reponsive_.crosslength*0.005),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InterText(
+                      text: "Care Health Center",
+                      color: AppColors.blue,
+                      fontSize: Reponsive_.px12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    InterText(
+                      text: "Just now",
+                      fontWeight:FontWeight.w600,
+                      fontSize: Reponsive_.px12,
+                      color: AppColors.blue,
+                    )
+                  ],
+                ),
               ),
             ),
           );

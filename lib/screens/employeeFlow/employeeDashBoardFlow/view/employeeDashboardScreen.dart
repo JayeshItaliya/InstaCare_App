@@ -1,5 +1,8 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
@@ -10,10 +13,15 @@ import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/dashBoardFlow/view/peopleDashBoardFlow/view/peopleScreenDetial.dart';
 import 'package:instacare/screens/employeeFlow/PayrollFlow/view/payrollScreen.dart';
+import 'package:instacare/screens/employeeFlow/employeeDashBoardFlow/controller/employeeDashBoardController.dart';
 import 'package:instacare/screens/employeeFlow/marketPlaceFlow/view/MarketPlaceScreen.dart';
 import 'package:instacare/screens/employeeFlow/myAvailabilityFlow/screens/MyAvailability.dart';
 import 'package:instacare/screens/employeeFlow/timeCardFlow/view/employeeTimeCard.dart';
+import 'package:instacare/screens/messagesFlow/view/ChatRoomScreen.dart';
+import 'package:instacare/screens/messagesFlow/view/MessagesScreen.dart';
+import 'package:instacare/screens/peopleFlow/view/peopleScreen.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
 
 class EmployeeDashBoardScreen extends StatefulWidget {
@@ -25,10 +33,7 @@ class EmployeeDashBoardScreen extends StatefulWidget {
 }
 
 class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
+   final employeeController=Get.put(EmployeeDashBoardController());
 
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -40,11 +45,11 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
           MontserratText(
               text: "Upcoming Shifts",
               color: AppColors.hintTextGrey,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              fontSize: Reponsive_.px20,
+              fontWeight: FontWeight.w700,
               textAlign: TextAlign.center),
           SizedBox(
-            height: Reponsive_.crosslength / 30,
+            height: Reponsive_.crosslength*0.005,
           ),
           ListView.builder(
               shrinkWrap: true,
@@ -54,16 +59,20 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                 return GestureDetector(
                   child: Card(
                     color: AppColors.backGroundColor,
-                    elevation: 0,
+                    elevation: 1.5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    shadowColor: AppColors.backGroundColor,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8, bottom: 10),
+                      padding: const EdgeInsets.only(top: 8, bottom: 10,left: 8),
                       child: Row(
                         children: [
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: Reponsive_.w / 12,
-                              height: Reponsive_.h / 9,
+                              width: Reponsive_.px40*2,
+                              height: Reponsive_.px40*2,
                               decoration: ShapeDecoration(
                                 image: const DecorationImage(
                                   image: NetworkImage(
@@ -86,7 +95,7 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                               children: [
                                 InterText(
                                   text: "Elevate Care North Branch",
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: Reponsive_.px18,
                                   color: AppColors.black,
                                 ),
@@ -95,7 +104,7 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                                 ),
                                 InterText(
                                   text: "Tuesday, 21 March 2023",
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w600,
                                   fontSize: Reponsive_.px16,
                                   color: AppColors.hintTextGrey,
                                 ),
@@ -107,13 +116,14 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                                     const Icon(
                                       Icons.access_time_filled_rounded,
                                       color: AppColors.buttonColor,
+                                      size: 18,
                                     ),
                                     SizedBox(
                                       width: Reponsive_.crosslength / 200,
                                     ),
                                     InterText(
                                       text: "Clock In at 7:00AM",
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w600,
                                       fontSize: Reponsive_.px16,
                                       color: AppColors.buttonColor,
                                     ),
@@ -601,7 +611,9 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                                                         Expanded(
                                                           child: CommonButton(
                                                             text: "Go Back",
-                                                            onTap: (){},
+                                                            onTap: (){
+                                                              onBack(context);
+                                                            },
                                                             color: AppColors.buttonColor,
                                                           ),
                                                         ),
@@ -623,23 +635,212 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    InterText(
-                                      text: "Message",
-                                      color: AppColors.blue,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: Reponsive_.px14,
+                                    GestureDetector(
+                                      child: InterText(
+                                        text: "Message",
+                                        color: AppColors.blue,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: Reponsive_.px14,
+                                      ),
+                                      onTap: (){
+                                        toPushNavigator(context: context,PageName: ChatRoomScreen());
+                                      },
                                     ),
-                                    InterText(
-                                      text: "Arrive Late",
-                                      color: AppColors.blue,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: Reponsive_.px14,
+                                    GestureDetector(
+                                      child: InterText(
+                                        text: "Arrive Late",
+                                        color: AppColors.blue,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: Reponsive_.px14,
+                                      ),
+                                      onTap: (){
+                                        onBack(context);
+                                        CommonBottonSheet(
+                                          context: context,
+                                          childView: ListView(
+                                            padding: padding,
+                                            shrinkWrap: true,
+                                            physics: NeverScrollableScrollPhysics(),
+                                            children: [
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                children: [
+                                                  MontserratText(
+                                                    text: "Shift Information".toUpperCase(),
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: Reponsive_.px12,
+                                                    color: AppColors.blue,
+                                                  ),
+                                                  SizedBox(
+                                                    height: Reponsive_.crosslength/35,
+                                                  ),
+                                                  MontserratText(
+                                                    text: "Why Late?".toUpperCase(),
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: Reponsive_.px30,
+                                                    color: AppColors.redColor,
+                                                  ),
+                                                  SizedBox(
+                                                    height: Reponsive_.crosslength/45,
+                                                  ),
+                                                  InterText(
+                                                    text: "Why you late for your shift?".toUpperCase(),
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: Reponsive_.px16,
+                                                    color: AppColors.black,
+                                                  ),
+                                                  SizedBox(
+                                                    height: Reponsive_.crosslength/25,
+                                                  ),
+                                                  CommonDropDown(
+                                                      context: context,
+                                                      mycontrollerValue: employeeController.resonValue,
+                                                      list: employeeController.reson,
+                                                      color: AppColors.backGroundColor
+                                                  ),
+                                                  SizedBox(
+                                                    height: Reponsive_.crosslength/50,
+                                                  ),
+                                                  AppWidget().getTextField(
+                                                      hintText: "Please provide the reason",
+                                                      filledColor: AppColors.backGroundColor,
+                                                      maxLine: 5
+                                                  ),
+                                                  SizedBox(
+                                                    height: Reponsive_.crosslength/50,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Expanded(
+                                                        child: CommonButton(
+                                                          text: "Submit",
+                                                          onTap: (){},
+                                                          color: AppColors.redColor,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        width: Reponsive_.crosslength/80,
+                                                      ),
+                                                      Expanded(
+                                                        child: CommonButton(
+                                                          text: "Go Back",
+                                                          onTap: (){
+                                                            onBack(context);
+                                                          },
+                                                          color: AppColors.buttonColor,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          )
+                                        );
+                                      },
                                     ),
-                                    InterText(
-                                      text: "Report an Issue",
-                                      color: AppColors.blue,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: Reponsive_.px14,
+                                    GestureDetector(
+                                      child: InterText(
+                                        text: "Report an Issue",
+                                        color: AppColors.blue,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: Reponsive_.px14,
+                                      ),
+                                      onTap: (){
+                                        onBack(context);
+                                        CommonBottonSheet(
+                                            context: context,
+                                            childView: ListView(
+                                              padding: padding,
+                                              shrinkWrap: true,
+                                              physics: NeverScrollableScrollPhysics(),
+                                              children: [
+                                                Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength/35,
+                                                    ),
+                                                    MontserratText(
+                                                      text: "Confirmation".toUpperCase(),
+                                                      fontWeight: FontWeight.w700,
+                                                      fontSize: Reponsive_.px30,
+                                                      color: AppColors.black,
+                                                    ),
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength/45,
+                                                    ),
+                                                    Text.rich(
+                                                      textAlign: TextAlign.center,
+                                                      TextSpan(
+                                                        children: [
+                                                          TextSpan(text: 'Do you want to',style: GoogleFonts.inter(
+                                                            fontSize: Reponsive_.px18,
+                                                            fontWeight: FontWeight.w400,
+                                                            color: Colors.black
+                                                          )),
+                                                          TextSpan(text: '“Report”',style: GoogleFonts.inter(
+                                                              fontSize: Reponsive_.px18,
+                                                              fontWeight: FontWeight.bold,
+                                                              color: Colors.black
+                                                          )),
+                                                          TextSpan(text: 'all the selected\nshifts timecards?',style: GoogleFonts.inter(
+                                                              fontSize: Reponsive_.px18,
+                                                              fontWeight: FontWeight.w400,
+                                                              color: Colors.black,
+
+                                                          ),),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength/25,
+                                                    ),
+                                                    CommonDropDown(
+                                                        context: context,
+                                                        mycontrollerValue: employeeController.resonValue,
+                                                        list: employeeController.reson,
+                                                        color: AppColors.backGroundColor
+                                                    ),
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength/50,
+                                                    ),
+                                                    AppWidget().getTextField(
+                                                        hintText: "Please provide the reason",
+                                                        filledColor: AppColors.backGroundColor,
+                                                        maxLine: 5
+                                                    ),
+                                                    SizedBox(
+                                                      height: Reponsive_.crosslength/50,
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        Expanded(
+                                                          child: CommonButton(
+                                                            text: "Submit",
+                                                            onTap: (){},
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: Reponsive_.crosslength/80,
+                                                        ),
+                                                        Expanded(
+                                                          child: CommonButton(
+                                                            text: "Cancel",
+                                                            onTap: (){
+                                                              onBack(context);
+                                                            },
+                                                            color: AppColors.allGray,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            )
+                                        );
+                                      },
                                     ),
                                   ],
                                 ),
@@ -656,7 +857,7 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                 );
               }),
           SizedBox(
-            height: Reponsive_.crosslength / 35,
+            height: Reponsive_.crosslength*0.03,
           ),
           Row(
             children: [
@@ -675,8 +876,8 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                         InterText(
                           text: "42",
                           color: AppColors.yallow,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
+                          fontSize: Reponsive_.px40,
+                          fontWeight: FontWeight.w700,
                         ),
                         InterText(
                           text: "Marketplace",
@@ -693,13 +894,12 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                 ),
               ),
               SizedBox(
-                width: 10,
+                width: Reponsive_.crosslength*0.015,
               ),
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    toPushNavigator(
-                        PageName: ProfileScreen(), context: context);
+                    toPushNavigator(PageName: PeopleScreenDetil(), context: context);
                   },
                   child: Container(
                     width: Reponsive_.crosslength / 10,
@@ -726,14 +926,14 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
             ],
           ),
           SizedBox(
-            height: Reponsive_.crosslength / 35,
+            height: Reponsive_.crosslength*0.015,
           ),
           Row(
             children: [
               Expanded(
                 child: GestureDetector(
                   onTap: (){
-                    toPushNavigator(context: context,PageName: MyAvailability());
+                    toPushNavigator(context: context,PageName: MyAvailability(showAppBar: true,));
                   },
                   child: Container(
                     width: Reponsive_.crosslength / 10,
@@ -761,7 +961,7 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                 ),
               ),
               SizedBox(
-                width: 10,
+                width: Reponsive_.crosslength*0.015,
               ),
               Expanded(
                 child: GestureDetector(
@@ -791,6 +991,80 @@ class _EmployeeDashBoardScreenState extends State<EmployeeDashBoardScreen> {
                   onTap: (){
                     toPushNavigator(context: context,PageName: PayrollScreen());
                   },
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: Reponsive_.crosslength/50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InterText(
+                text: "Instacare Bulletin",
+                fontWeight: FontWeight.w700,
+                fontSize: Reponsive_.px18,
+                color: AppColors.black,
+              ),
+              InterText(
+                text: "View All",
+                fontWeight: FontWeight.w400,
+                fontSize: Reponsive_.px14,
+                color: AppColors.blue,
+              )
+            ],
+          ),
+          SizedBox(
+            height: Reponsive_.crosslength/50,
+          ),
+          Stack(
+            children: [
+              Image.asset("assets/x/news.png",fit: BoxFit.fitWidth,),
+              Container(
+                padding: EdgeInsets.all(Reponsive_.crosslength*0.03),
+                child: ListView(
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: [
+                    InterText(
+                      text: "Print office #1 out of action",
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.blue,
+                      fontSize: Reponsive_.px16,
+                    ),
+                    SizedBox(
+                      height: Reponsive_.crosslength/80,
+                    ),
+                    InterText(
+                      text: "Hi all, Just a quick note that print office number one is currently out of action. Please use the print office at location #2.",
+                      fontSize: Reponsive_.px14,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.black,
+                      maxLines: 10,
+                    ),
+                    SizedBox(
+                      height: Reponsive_.crosslength/80,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InterText(
+                          text: "Rossy Clantoriya",
+                          fontWeight: FontWeight.w400,
+                          fontSize: Reponsive_.px14,
+                          color: AppColors.black,
+                        ),
+                        InterText(
+                          text: "March 8, 2023  11:45AM",
+                          fontWeight: FontWeight.w400,
+                          fontSize: Reponsive_.px10,
+                          color: AppColors.black,
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

@@ -18,6 +18,7 @@ class AppWidget {
   Widget getTextField({
     String? fieldTitleText,
      String? hintText,
+     bool isDense=false,
     bool isPassword = false,
     TextEditingController? textEditingController,
     OutlineInputBorder? outlineInputBorder,
@@ -77,6 +78,7 @@ class AppWidget {
         scrollController: scrollController,
         maxLength: maxLength,
 
+
         toolbarOptions: const ToolbarOptions(
             selectAll: true, copy: true, cut: true, paste: true),
         // for scroll extra while keyboard open
@@ -133,7 +135,7 @@ class AppWidget {
         inputFormatters: inputFormatter,
         autofocus: false,
         decoration: InputDecoration(
-          border: border,
+          border: border,isDense: isDense,
           alignLabelWithHint: false,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           errorMaxLines: errorMaxLines ?? 1,
