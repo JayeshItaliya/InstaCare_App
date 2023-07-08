@@ -302,11 +302,11 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             ),
           ],
         ),
-      ),
+      ),/*
       drawer: Drawer(
         width:  cx.drawerSize,
-        child: const CommonDrawer(),
-      ),
+        child: CommonDrawer(),
+      ),*/
     );
   }
   List<OpenShift> listItem = [

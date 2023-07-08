@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/notifactionView/view/notificationScreen.dart';
 
 
 class CommonAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -27,10 +30,11 @@ class _CommonAppBarState extends State<CommonAppBar> {
   final globalKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return AppBar(
       backgroundColor: AppColors.white,
       centerTitle: true,
-      elevation: 8,
+      elevation: 0,
       leading: Padding(
         padding: const EdgeInsets.only(left: 5),
         child: widget.icon ??
@@ -43,12 +47,17 @@ class _CommonAppBarState extends State<CommonAppBar> {
                   Navigator.of(context).pop();
                 }),
       ),
-      leadingWidth: 30,
+      leadingWidth: Reponsive_.crosslength/30,
       title: widget.title,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Image.asset(AppAssets.bell,height: 20,width: 30,),
+          child: GestureDetector(
+              child: Image.asset(AppAssets.bell,height: 22,width: 22,),
+            onTap: (){
+                toPushNavigator(context: context, PageName: NotificationScreen());
+            },
+          ),
         ),
       ],
     );

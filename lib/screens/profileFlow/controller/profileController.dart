@@ -13,7 +13,7 @@ class ProfileController extends GetxController {
   ];
 
   void toggleSwitch(int index, bool value) {
-    switchValues[index].value = value;
+    switchValues[index].value = !value;
     if (kDebugMode) {
       print("switchValue==>$value");
     }
@@ -54,6 +54,12 @@ var zipController=TextEditingController(text: "60077").obs;
     "English",
     "Hindi",
     "Canada",
+  ];
+
+  var selectedSize="Select".obs;
+  List<String> uniformSizeArr=[
+    "XL",
+    "XXL",
   ];
 
 /// resetPassword Controller

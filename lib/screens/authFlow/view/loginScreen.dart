@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
@@ -24,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
   CommonController cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
+    Reponsive_.init(context);
     return Container(
       color: AppColors.backGroundColor,
       child: SafeArea(

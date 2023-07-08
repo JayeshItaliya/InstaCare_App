@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:instacare/screens/authFlow/splashScreen.dart';
+import 'package:instacare/screens/authFlow/view/splashScreen.dart';
 
-void main() {
+void main(){
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         return const GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'InstaCare App',
-           home:const SplashScreen(),
+           home: SplashScreen(),
+          //home: Test(),
         );
       },
 

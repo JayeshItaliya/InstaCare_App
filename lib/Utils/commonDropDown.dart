@@ -1,26 +1,27 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
 
 
-Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color}) {
+Widget CommonDropDown({required BuildContext context, required List<String> list, required RxString mycontrollerValue,Color? color,EdgeInsetsGeometry? padding,String hint=''}) {
   final cx=Get.put(CommonController());
   return Obx(() =>
       DropdownButtonHideUnderline(
         child: DropdownButton2(
-          isExpanded: true,
+          isExpanded: true,value: list.contains(mycontrollerValue.value)?mycontrollerValue.value:null,
           hint:   Row(
             children: [
               Expanded(
                 child: InterText(
-                    text: mycontrollerValue.value,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.black,
+                    text: hint,
+                  fontSize: Reponsive_.crosslength*0.018,
+                  color: AppColors.hintTextGrey,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
@@ -32,8 +33,8 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
             child: Text(
               item,
               style:   TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+                fontSize: Reponsive_.crosslength*0.018,
+                fontWeight: FontWeight.w400,
                 color: AppColors.black,
               ),
               overflow: TextOverflow.ellipsis,
@@ -43,11 +44,12 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
           //value:createReminderController.selectedValue.value,
           onChanged: (value) {
             mycontrollerValue.value = value as String;
+            print("dropDownValue==${mycontrollerValue.value.toString()}");
           },
           buttonStyleData: ButtonStyleData(
             width: cx.width,
-            height: cx.height/10,
-            padding: const EdgeInsets.only(left: 14, right: 14),
+            height: cx.height/15,
+            padding:padding??EdgeInsets.only(left: 14, right: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color:color??AppColors.backGroundColor,

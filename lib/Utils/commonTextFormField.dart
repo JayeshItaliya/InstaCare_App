@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'appColor.dart';
 
@@ -74,7 +75,7 @@ class AppWidget {
       return TextFormField(
         scrollController: scrollController,
         maxLength: maxLength,
-
+        readOnly: isReadOnly,
         toolbarOptions: const ToolbarOptions(
             selectAll: true, copy: true, cut: true, paste: true),
         // for scroll extra while keyboard open
@@ -124,13 +125,12 @@ class AppWidget {
         textInputAction: inputAction,
         style: inputTextStyle ??
             TextStyle(
-              fontSize: inputFontsize ?? 17,
+              fontSize: inputFontsize ?? Reponsive_.px16,
               fontWeight: inputFontWeight ?? FontWeight.w600,
               color: inputFontColor ?? AppColors.black,
             ),
         inputFormatters: inputFormatter,
-        autofocus: true,
-
+        autofocus: false,
         decoration: InputDecoration(
           border: border,
           alignLabelWithHint: false,
@@ -140,12 +140,13 @@ class AppWidget {
           label: InterText(
             text: label ?? "",
             fontWeight: labelFontWeight ?? FontWeight.w400,
-            fontSize: labelFontSize ?? 15,
+            fontSize: labelFontSize ?? Reponsive_.px16,
             textAlign: labelTextAlign ?? TextAlign.start,
           ),
+
           fillColor:filledColor?? AppColors.backGroundColor,
           contentPadding: contentPadding ??
-              const EdgeInsets.fromLTRB(20.0, 18.0, 0.0, 18.0),
+              EdgeInsets.fromLTRB(Reponsive_.crosslength*0.02,Reponsive_.crosslength*0.02,Reponsive_.crosslength*0.02,Reponsive_.crosslength*0.02,),
           focusedBorder: activeUnderLineInputBorder ??
               activeOutlineInputBorder ??
               activeTextFieldBorderStyle,
@@ -163,7 +164,7 @@ class AppWidget {
               textFieldBorderStyle,
           hintText: hintText ?? "",
           hintStyle: GoogleFonts.inter(
-              fontSize: 16,
+              fontSize: Reponsive_.px16,
               color:Color.fromRGBO(2, 5, 10, 0.5),
               fontWeight: FontWeight.w400
           ),
@@ -177,7 +178,7 @@ class AppWidget {
                 Center(
                   child: InterText(
                       text: '+91',
-                      fontSize: 16,
+                      fontSize: Reponsive_.px16,
                       fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(width: 10),
@@ -209,7 +210,7 @@ class AppWidget {
                 CupertinoIcons.eye,
                 color: AppColors.buttonColor,
               ))
-              : suffixIcon ?? const SizedBox(),
+              : suffixIcon,
         ),
       );
     });

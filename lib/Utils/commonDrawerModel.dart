@@ -16,6 +16,14 @@ class DrawerItem{
       name: "Schedules",
       image: AppAssets.schedules,
     ),
+   DrawerItem(
+     name: "My Availability",
+     image: AppAssets.whosON,
+   ),
+   DrawerItem(
+     name: "Marketplace",
+     image: AppAssets.schedules,
+   ),
     DrawerItem(
       name: "Who’s ON",
       image: AppAssets.whosON,
@@ -28,6 +36,10 @@ class DrawerItem{
       name: "Facilities",
       image: AppAssets.facilities,
     ),
+   DrawerItem(
+     name: "Payroll",
+     image: AppAssets.people,
+   ),
     DrawerItem(
       name: "Messaging",
       image: AppAssets.massages,
@@ -44,5 +56,6 @@ class DrawerItem{
       name: "Support",
       image: AppAssets.support,
     ),
+
   ];
 }

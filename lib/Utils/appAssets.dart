@@ -34,6 +34,7 @@ class AppAssets {
   static const logout = '$drowerFlow/logout.svg';
   static const appLogo = '$drowerFlow/appLogo.svg';
   static const app = '$drowerFlow/app.png';
+  static const supports = '$drowerFlow/supports.svg';
 
 
   ///dashBoardFlow
@@ -56,4 +57,15 @@ class AppAssets {
   static const  clock= '$dashBoardFlow/clock.png';
   static const  mail= '$dashBoardFlow/mail.png';
   static const  addDoc= '$dashBoardFlow/addDocment.png';
+  static const  messages= '$dashBoardFlow/messages.png';
+  static const  star= '$dashBoardFlow/star.png';
+  static const  docImage= '$dashBoardFlow/docImage.png';
+  static const  clockIn= '$dashBoardFlow/clockin.png';
+  static const  clockOut= '$dashBoardFlow/clockout.png';
+  static const  downodTimeCard= '$dashBoardFlow/downlodTimeCard.png';
+  static const  loader= '$dashBoardFlow/loader.png';
+  static const  loader1= '$dashBoardFlow/loader1.png';
+  static const  calenderEmployee= '$dashBoardFlow/calenderEmployee.png';
+  static const  settings= '$dashBoardFlow/settings.png';
+  static const  payroll= '$dashBoardFlow/payroll.png';
 }

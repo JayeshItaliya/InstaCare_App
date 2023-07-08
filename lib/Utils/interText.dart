@@ -12,6 +12,7 @@ class InterText extends StatelessWidget {
   List<Shadow>? shadow;
   int? maxLines;
   TextOverflow? textOverflow;
+  bool? softWrap;
   InterText(
       {Key? key,
         required this.text,
@@ -24,6 +25,7 @@ class InterText extends StatelessWidget {
         this.shadow,
         this.maxLines,
         this.textOverflow,
+        this.softWrap,
       })
       : super(key: key);
 
@@ -32,6 +34,7 @@ class InterText extends StatelessWidget {
     return Text(
       text ?? "",
       textAlign: textAlign,
+      softWrap: softWrap,
       maxLines:maxLines ?? 1,
       overflow: textOverflow,
       style: GoogleFonts.inter(
