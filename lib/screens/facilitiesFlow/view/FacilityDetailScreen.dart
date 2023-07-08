@@ -87,7 +87,7 @@ class _FacilityDetailScreenState extends State<FacilityDetailScreen>
                   setState(() {
                     selectedIndex = index;
                     _controller.animateToPage(selectedIndex,
-                        duration: Duration.(milliseconds: 100),
+                        duration: Duration(milliseconds: 100),
                         curve: Curves.bounceIn);
                   });
                 },
