@@ -52,7 +52,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.role,
               mycontrollerValue: peopleController.roleValue,
             color: AppColors.backGroundColor,
-            hint: "Select"
+            hint: "Select Role"
           ),
           SizedBox(
             height: 10,
@@ -62,7 +62,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.status,
               mycontrollerValue: peopleController.statusValue,
               color: AppColors.backGroundColor,
-              hint: "Select"
+              hint: "Select Status"
           ),
           SizedBox(
             height: 10,
@@ -72,7 +72,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.rating,
               mycontrollerValue: peopleController.ratingValue,
               color: AppColors.backGroundColor,
-              hint: "Select"
+              hint: "Select Rating"
           ),
           SizedBox(
             height: 10,
@@ -82,7 +82,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.points,
               mycontrollerValue: peopleController.pointsValue,
               color: AppColors.backGroundColor,
-              hint: "Select"
+              hint: "Select Points"
           ),
           SizedBox(
             height: 10,
@@ -92,7 +92,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               list: peopleController.lastActive,
               mycontrollerValue: peopleController.activeValue,
               color: AppColors.backGroundColor,
-              hint: "Select"
+              hint: "Latest Activity"
           ),
         ],
       ),

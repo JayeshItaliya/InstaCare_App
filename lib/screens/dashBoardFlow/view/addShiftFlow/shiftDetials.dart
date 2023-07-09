@@ -27,7 +27,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
           ),
           Column(
             children: [
-              Image.asset(AppAssets.calendarCheck),
+              Image.asset(AppAssets.calendarCheck,scale: 1.3),
               InterText(
                 text: "Awesome!",
                 fontWeight: FontWeight.w300,

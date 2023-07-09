@@ -98,6 +98,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable corner
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_call_answer
@@ -123,6 +124,7 @@ drawable svprogresshud_error
 drawable svprogresshud_info
 drawable svprogresshud_spinning
 drawable svprogresshud_success
+drawable toast_bg
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -229,6 +231,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout svprogresshud_layout
+layout toast_custom
 mipmap ic_launcher
 mipmap launcher_icon
 string androidx_startup

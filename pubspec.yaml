@@ -48,6 +48,10 @@ dependencies:
   flutter_rating_bar:
   flutter_svprogresshud:
   dio: ^5.2.1+1
+  shared_preferences:
+  fluttertoast: ^8.2.2
+  http: ^1.1.0
+  socket_io_client:
 
 
 

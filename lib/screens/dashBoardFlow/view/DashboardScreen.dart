@@ -11,6 +11,7 @@ import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/Utils/storeToken.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/view/availableEmployeesScreen.dart';
@@ -45,7 +46,31 @@ class _DashboardState extends State<Dashboard> {
 
   DateTime currentDateTime=DateTime.now();
   final cx=Get.put(CommonController());
-
+@override
+  void initState() {
+  storeData();
+    super.initState();
+  }
+  storeData()async{
+    print("****** login Data ******");
+    await StorageUtil.getData(StorageUtil.userLoginToken).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.firstName).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.lastName).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.profileImage).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.role).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.loginValue).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.fullName).then((value) => print(value));
+    await StorageUtil.getData(StorageUtil.firstName).then((value) => cx.firstName=value);
+    await StorageUtil.getData(StorageUtil.lastName).then((value) => cx.lastName=value);
+    await StorageUtil.getData(StorageUtil.profileImage).then((value) => cx.profileImage=value);
+    await StorageUtil.getData(StorageUtil.fullName).then((value) => cx.fullName=value);
+    await StorageUtil.getData(StorageUtil.role).then((value) => cx.role=value);
+    await StorageUtil.getData(StorageUtil.status).then((value)  {
+      cx.status=value.toString();
+      print(cx.status);
+    });
+    print("****** ******");
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

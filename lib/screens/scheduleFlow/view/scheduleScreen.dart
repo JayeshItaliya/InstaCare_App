@@ -962,6 +962,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               height: Reponsive_.px30*2,
               child: FloatingActionButton(
                 backgroundColor: Color.fromRGBO(243, 48, 71, 1),
+                heroTag: null,
                 onPressed: () {
                   CommonBottonSheet(
                     context: context,
@@ -1036,6 +1037,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               height: Reponsive_.px30*2,
               child: FloatingActionButton(
                 backgroundColor: AppColors.yallow,
+                heroTag: null,
                 onPressed: () {
                   toPushNavigator(
                       context: context, PageName: const AddShiftScreen());

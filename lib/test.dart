@@ -18,7 +18,7 @@ class _TestState extends State<Test> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Center(
+        child:Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

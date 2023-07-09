@@ -7,12 +7,18 @@ import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonButton.dart';
+import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/montserratText.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
+import 'package:instacare/model/employeeModel.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/controller/getEmployeeData.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/controller/singleShiftController.dart';
+import 'package:instacare/screens/employeeFlow/employeeSelectionFlow/controller/FacilityEmployeeSelectionController.dart';
 
 import '../../../../Utils/CommonDropDown.dart';
 
@@ -27,7 +33,8 @@ class SingleShiftScreen extends StatefulWidget {
 class _SingleShiftScreenState extends State<SingleShiftScreen> {
   final cx = Get.put(CommonController());
   final singleShiftController = Get.put(SingleShiftController());
-
+  final employeeEmployeeController = Get.put(EmployeeDataController());
+  final FacilityEmployeeSelectionController c = Get.put(FacilityEmployeeSelectionController());
   DateTime currentDateTime = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -666,7 +673,147 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
                 Expanded(
                   child: CommonButton(
                       text: "ASSIGN",
-                      onTap: (){},
+                      onTap: (){
+                        CommonBottonSheet(
+                          context: context,
+                          childView: ListView(
+                            padding: padding,
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            children: [
+                              MontserratText(
+                                text: "Assign Shift(s)",
+                                fontSize: Reponsive_.px24,
+                                color: AppColors.blue,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              SizedBox(
+                                height: Reponsive_.crosslength/45,
+                              ),
+                              InterText(
+                                text: "Please select the person to whom you want to assign shift(s).",
+                                fontSize: Reponsive_.px16,
+                                color: AppColors.black,
+                                fontWeight: FontWeight.w400,
+                                maxLines: 2,
+                              ),
+                              SizedBox(
+                                height:Reponsive_.crosslength/20,
+                              ),
+                              Obx(()=>employeeEmployeeController.loadingData.value==true?Center(child: CircularProgressIndicator(color: AppColors.buttonColor),):
+                              ListView.builder(
+                                  padding: EdgeInsets.only(top: Reponsive_.crosslength*0.01),
+                                  itemCount: employeeEmployeeController.employeeList.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) {
+                                    EmployeeList data=employeeEmployeeController.employeeList[index];
+                                    return Obx(() => InkWell(
+                                      onTap: () {
+                                        c.singleSelect(index);
+                                      },
+                                      child: Container(
+                                        margin: EdgeInsets.only(
+                                          top: Reponsive_.crosslength * 0.018,
+                                          left: Reponsive_.crosslength * 0.015,
+                                          right: Reponsive_.crosslength * 0.015,
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                              c.facility_emp_selection_arr[index]
+                                                  ? 'assets/x/check.png'
+                                                  : 'assets/x/uncheck.png',
+                                              height: Reponsive_.crosslength * 0.028,
+                                            ),
+                                            SizedBox(
+                                              width: Reponsive_.crosslength * 0.02,
+                                            ),
+                                            Expanded(
+                                              child: Row(
+                                                children: [
+                                                  Container(
+                                                    height: Reponsive_.crosslength * 0.04,
+                                                    width: Reponsive_.crosslength * 0.04,
+                                                    decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: DecorationImage(
+                                                            image: NetworkImage(
+                                                              data.imageUrl,
+                                                            ),
+                                                            fit: BoxFit.cover)),
+                                                  ),
+                                                  Expanded(
+                                                    child: InterText(
+                                                      text: '   ${data.fullname}',
+                                                      color: AppColors.black,
+                                                      textOverflow: TextOverflow.ellipsis,
+                                                      fontSize: Reponsive_.crosslength * 0.015,
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            if(index!=0)...{
+                                              SizedBox(
+                                                width: Reponsive_.crosslength * 0.12,
+                                                child: Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(
+                                                          horizontal: Reponsive_.crosslength *
+                                                              0.02,
+                                                          vertical: Reponsive_.crosslength *
+                                                              0.007),
+                                                      decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(
+                                                              Reponsive_.crosslength * 0.02),
+                                                          border: Border.all(
+                                                              color: getBorderColor(
+                                                                  c.emp_position_arr[index])),
+                                                          color: getBgColor(
+                                                              c.emp_position_arr[index])),
+                                                      child: InterText(
+                                                        text: data.role,
+                                                        color: getBorderColor(employeeEmployeeController.employeeList[index]),
+                                                        fontSize: Reponsive_.crosslength * 0.013,
+                                                        fontWeight: FontWeight.w700,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            }
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                    );
+                                  },
+                                ),
+                              ),
+                              SizedBox(
+                                height: Reponsive_.crosslength * 0.02,
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                      child: CommonButton(text: 'SELECT', onTap: (){onBack(context);},height: Reponsive_.crosslength*0.06)
+                                  ),
+                                  SizedBox(
+                                    width: Reponsive_.crosslength * 0.01,
+                                  ),
+                                  Expanded(
+                                      child: CommonButton(text: 'CANCEL', onTap: (){onBack(context);},color: AppColors.allGray,height: Reponsive_.crosslength*0.06,)
+                                  ),
+                                ],
+                              ),
+                              SizedBox(width: Reponsive_.crosslength*0.01,),
+                            ],
+                          )
+                        );
+                      },
                     ),
                   ),
               ],
@@ -678,6 +825,25 @@ class _SingleShiftScreenState extends State<SingleShiftScreen> {
         )
       ],
     );
+  }
+  Color getBorderColor(position) {
+    if(position=='rn'){
+      return AppColors.buttonColor;
+    }else if(position=='lpn'){
+      return AppColors.dark_purple;
+    }else{
+      return AppColors.dark_green;
+    }
+  }
+
+  Color getBgColor(position) {
+    if(position=='Staff'){
+      return AppColors.light_yallow;
+    }else if(position=='Manager'){
+      return AppColors.light_purple;
+    }else{
+      return AppColors.light_green;
+    }
   }
   BestTutorSite _site = BestTutorSite.javatpoint;
   String? selectedDate;

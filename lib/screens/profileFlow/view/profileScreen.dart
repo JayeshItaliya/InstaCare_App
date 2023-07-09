@@ -16,6 +16,7 @@ import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/loader.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/profileFlow/controller/profileController.dart';
@@ -33,6 +34,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   File? setProfileImage;
   final globalKey = GlobalKey<ScaffoldState>();
   File? imageFile;
+  List<String> status_arr = [
+    "",
+    "Available",
+    "Away",
+    "Busy",
+    "DND",
+    "Offline",
+  ];
+
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -46,9 +56,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           color: AppColors.blue,
         ),
         icon: IconButton(
-          icon: Icon(Icons.arrow_back,color: AppColors.black),
-          onPressed: (){
+          icon: Icon(Icons.arrow_back, color: AppColors.black),
+          onPressed: () {
             onBack(context);
+            profileController.get_profile_data();
           },
         ),
         trailingIcon: [
@@ -62,817 +73,939 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
-      body: ListView(
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          bottom: 20,
-        ),
-        children: [
-          Container(
-            width: cx.width,
-            margin: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength * 0.015),
-            decoration: const BoxDecoration(
-                color: AppColors.blue,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(16),
-                    bottomRight: Radius.circular(16))),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        InterText(
-                          text: "Emp. ID",
-                          fontSize: Reponsive_.px12,
-                          fontWeight: FontWeight.normal,
-                          color: AppColors.buttonColor,
-                        ),
-                        InterText(
-                          text: "511",
-                          fontSize: Reponsive_.px18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.buttonColor,
-                        )
-                      ],
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                            top: Reponsive_.crosslength * 0.01,
-                            left: Reponsive_.crosslength * 0.005,
-                            right: Reponsive_.crosslength * 0.005,
-                            bottom: Reponsive_.crosslength * 0.005,
-                          ),
-                          decoration: const BoxDecoration(
-                              color: AppColors.yallow,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(50),
-                                  bottomRight: Radius.circular(50))),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 9, right: 6, left: 6),
-                            child: setProfileImage == null
-                                ? Container(
-                              height: Reponsive_.crosslength * 0.1,
-                              width: Reponsive_.crosslength * 0.1,
-                                    decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                            image: NetworkImage(
-                                                "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                            fit: BoxFit.cover)),
-                                  )
-                                : Container(
-                              height: Reponsive_.crosslength * 0.1,
-                              width: Reponsive_.crosslength * 0.1,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                            image: FileImage(
-                                                File(imageFile!.path)),
-                                            fit: BoxFit.cover)),
-                                  ),
-                          ),
-                        ),
-                        Positioned(bottom: 0, right: Reponsive_.crosslength/100, child: edit_btn())
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        InterText(
-                          text: "Status",
-                          fontSize: Reponsive_.px12,
-                          fontWeight: FontWeight.normal,
-                          color: AppColors.buttonColor,
-                        ),
-                        InterText(
-                          text: "Available",
-                          fontSize: Reponsive_.px18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.buttonColor,
-                        )
-                      ],
-                    ),
-                  ],
+      body: Obx(
+        () => profileController.loading.value
+            ? Center(child: CircularProgressIndicator(backgroundColor: AppColors.buttonColor,))
+            : ListView(
+                padding:   EdgeInsets.only(
+                  left: Reponsive_.crosslength*0.01,
+                  right: Reponsive_.crosslength*0.01,
+                  bottom: 20,
                 ),
-                SizedBox(
-                  height: cx.height / 21,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                      children: [
-                        InterText(
-                          text: "Joel Newman",
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.white,
-                        ),
-                        InterText(
-                          text: "Instacare Staff",
-                          fontSize: Reponsive_.px12,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.buttonColor,
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: Reponsive_.crosslength * 0.015,
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            height: cx.height / Reponsive_.px30,
-          ),
-          CommonContainer(
-            child: ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InterText(
-                      text: "Account Information",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.blue,
-                    ),
-                    InkWell(
-                      child: Image.asset(
-                        AppAssets.profileEdit,
-                        height: Reponsive_.px30,
-                        width: Reponsive_.px30,
-                      ),
-                      onTap: () {
-                        CommonBottonSheet(
-                            context: context,
-                            childView: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                children: [
-                                  InterText(
-                                    text: "Account Information",
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: Reponsive_.px30,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  AppWidget().getTextField(
-                                      hintText: "Joel Newman",
-                                      label: "",
-                                      filledColor: AppColors.backGroundColor,
-                                      textEditingController: profileController
-                                          .fullNameController.value),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: AppWidget().getTextField(
-                                            hintText: "Joel",
-                                            label: "",
-                                            filledColor:
-                                                AppColors.backGroundColor,
-                                            textEditingController:
-                                                profileController
-                                                    .firstNameController
-                                                    .value),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Expanded(
-                                          child: AppWidget().getTextField(
-                                              hintText: "Newman",
-                                              label: "",
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  profileController
-                                                      .lastNameController
-                                                      .value)),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  AppWidget().getTextField(
-                                      hintText: "joelnewman@gmail.com",
-                                      label: "",
-                                      filledColor: AppColors.backGroundColor,
-                                      textEditingController: profileController
-                                          .emailController.value),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  AppWidget().getTextField(
-                                      hintText: "8888888888",
-                                      label: "",
-                                      filledColor: AppColors.backGroundColor,
-                                      textEditingController: profileController
-                                          .mobileNumberController.value),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CommonButton(
-                                    text: "Save & Close",
-                                    onTap: () {
-                                      print('hiiii');
-                                    },
-                                  )
-                                ],
-                              ),
-                            ));
-                      },
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Screen Name",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "Joel Newman",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InterText(
-                            text: "First Name",
-                            fontSize: Reponsive_.px12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          InterText(
-                            text: "Joel",
-                            fontSize: Reponsive_.px18,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
-                          )
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InterText(
-                            text: "Last Name",
-                            fontSize: Reponsive_.px12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          InterText(
-                            text: "Newman ",
-                            fontSize: Reponsive_.px18,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Email",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "joelnewman@gmail.com ",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Phone",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "8888888888",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CommonContainer(
-            child: ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InterText(
-                      text: "Address",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.blue,
-                    ),
-                    InkWell(
-                      child: Image.asset(
-                        AppAssets.profileEdit,
-                        height: Reponsive_.px30,
-                        width: Reponsive_.px30,
-                      ),
-                      onTap: () {
-                        CommonBottonSheet(
-                            context: context,
-                            childView: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "Address",
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: Reponsive_.px30,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  CommonDropDown(
-                                      context: context,
-                                      mycontrollerValue:
-                                          profileController.countryController,
-                                      list: profileController.list,
-                                      color: AppColors.backGroundColor),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: AppWidget().getTextField(
-                                            hintText: "Joel",
-                                            label: "",
-                                            filledColor:
-                                                AppColors.backGroundColor,
-                                            textEditingController:
-                                                profileController
-                                                    .cityNameController
-                                                    .value),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Expanded(
-                                          child: AppWidget().getTextField(
-                                              hintText: "Newman",
-                                              label: "",
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  profileController
-                                                      .stateController
-                                                      .value)),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  AppWidget().getTextField(
-                                      hintText: "joelnewman@gmail.com",
-                                      label: "",
-                                      filledColor: AppColors.backGroundColor,
-                                      textEditingController: profileController
-                                          .zipController.value),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CommonButton(
-                                    text: "Save & Close",
-                                    onTap: () {
-                                      print('hiiii');
-                                    },
-                                  )
-                                ],
-                              ),
-                            ));
-                      },
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Screen Name",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "Joel Newman",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InterText(
-                          text: "Country",
-                          fontSize: Reponsive_.px12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                        InterText(
-                          text: "United States",
-                          fontSize: Reponsive_.px18,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.black,
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InterText(
-                            text: "City",
-                            fontSize: Reponsive_.px12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          InterText(
-                            text: "Skokie",
-                            fontSize: Reponsive_.px18,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InterText(
-                          text: "State",
-                          fontSize: Reponsive_.px12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                        InterText(
-                          text: "illinois",
-                          fontSize: Reponsive_.px18,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.black,
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          InterText(
-                            text: "Zip",
-                            fontSize: Reponsive_.px12,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.black,
-                          ),
-                          InterText(
-                            text: "60077",
-                            fontSize: Reponsive_.px18,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CommonContainer(
-            child: ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InterText(
-                      text: "General",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.blue,
-                    ),
-                    InkWell(
-                      child: Image.asset(
-                        AppAssets.profileEdit,
-                        height: Reponsive_.px30,
-                        width: Reponsive_.px30,
-                      ),
-                      onTap: () {
-                        CommonBottonSheet(
-                            context: context,
-                            childView: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  InterText(
-                                    text: "General",
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: Reponsive_.px30,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CommonDropDown(
-                                      context: context,
-                                      list: profileController.timeZone,
-                                      mycontrollerValue: profileController
-                                          .timeZoneController,
-                                      color: AppColors.backGroundColor),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CommonDropDown(
-                                      context: context,
-                                      list: profileController.timeLanguage,
-                                      mycontrollerValue: profileController
-                                          .languageController,
-                                      color: AppColors.backGroundColor),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CommonButton(
-                                    text: "Save & Close",
-                                    onTap: () {
-                                      print('hiiii');
-                                    },
-                                  )
-                                ],
-                              ),
-                            ));
-                      },
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Time Zone",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "Central Time (US/Can) (GMT-6:00)",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InterText(
-                      text: "Language",
-                      fontSize: Reponsive_.px12,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.black,
-                    ),
-                    InterText(
-                      text: "English",
-                      fontSize: Reponsive_.px18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black,
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          InkWell(
-            child: CommonContainer(
-              child: ListView(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InterText(
-                        text: "Security",
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
+                  Container(
+                    width: cx.width,
+                    margin: EdgeInsets.symmetric(
+                        horizontal: Reponsive_.crosslength * 0.015),
+                    decoration: const BoxDecoration(
                         color: AppColors.blue,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      InterText(
-                        text: "Change Password",
-                        fontSize: Reponsive_.px12,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.blue,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            onTap: () {
-              CommonBottonSheet(
-                  context: context,
-                  childView: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(16),
+                            bottomRight: Radius.circular(16))),
                     child: Column(
                       children: [
-                        InterText(
-                          text: "Reset Password",
-                          fontSize: 30.sp,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.blue,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: [
+                                InterText(
+                                  text: "Emp. ID",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.normal,
+                                  color: AppColors.buttonColor,
+                                ),
+                                InterText(
+                                  text: profileController.id.value.toString(),
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.buttonColor,
+                                )
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.only(
+                                    top: Reponsive_.crosslength * 0.01,
+                                    left: Reponsive_.crosslength * 0.005,
+                                    right: Reponsive_.crosslength * 0.005,
+                                    bottom: Reponsive_.crosslength * 0.005,
+                                  ),
+                                  decoration: const BoxDecoration(
+                                      color: AppColors.yallow,
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(50),
+                                          bottomRight: Radius.circular(50))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 9, right: 6, left: 6),
+                                    child: setProfileImage == null
+                                        ? Container(
+                                            height:
+                                                Reponsive_.crosslength * 0.1,
+                                            width: Reponsive_.crosslength * 0.1,
+                                            decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
+                                                    fit: BoxFit.cover)),
+                                          )
+                                        : Container(
+                                            height:
+                                                Reponsive_.crosslength * 0.1,
+                                            width: Reponsive_.crosslength * 0.1,
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: DecorationImage(
+                                                    image: FileImage(
+                                                        File(imageFile!.path)),
+                                                    fit: BoxFit.cover)),
+                                          ),
+                                  ),
+                                ),
+                                Positioned(
+                                    bottom: 0,
+                                    right: Reponsive_.crosslength / 100,
+                                    child: edit_btn())
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                InterText(
+                                  text: "Status",
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.normal,
+                                  color: AppColors.buttonColor,
+                                ),
+                                InterText(
+                                  text: status_arr[int.parse(profileController
+                                      .status.value
+                                      .toString())],
+                                  fontSize: Reponsive_.px18,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.buttonColor,
+                                )
+                              ],
+                            ),
+                          ],
                         ),
                         SizedBox(
-                          height: 18.h,
+                          height: cx.height / 21,
                         ),
-                        AppWidget().getTextField(
-                            hintText: "Current Password",
-                            textEditingController:
-                                profileController.currentPassword.value),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                InterText(
+                                  text: profileController
+                                      .firstNameController.value.text,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.white,
+                                ),
+                                InterText(
+                                  text: profileController.role.value,
+                                  fontSize: Reponsive_.px12,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.buttonColor,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                         SizedBox(
-                          height: 18.h,
-                        ),
-                        AppWidget().getTextField(
-                            hintText: "New Password",
-                            textEditingController:
-                                profileController.newPassword.value),
-                        SizedBox(
-                          height: 18.h,
-                        ),
-                        CommonButton(
-                            text: "Update & Close",
-                            onTap: () {
-                              onBack(context);
-                            })
+                          height: Reponsive_.crosslength * 0.015,
+                        )
                       ],
                     ),
-                  ));
-            },
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CommonContainer(
-            child: ListView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InterText(
-                      text: "Notifications",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.blue,
-                    ),
-                  ],
-                ),
-                ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: profileController.switchValues.length,
-                    itemBuilder: (context, index) {
-                      return Obx(() =>
-                          GestureDetector(
-                            onTap: (){
-                              profileController.toggleSwitch(index, profileController.switchValues[index].value);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(
+                    height: cx.height / Reponsive_.px30,
+                  ),
+                  CommonContainer(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Account Information",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                            ),
+                            InkWell(
+                              child: Image.asset(
+                                AppAssets.profileEdit,
+                                height: Reponsive_.px30,
+                                width: Reponsive_.px30,
+                              ),
+                              onTap: () {
+                                CommonBottonSheet(
+                                    context: context,
+                                    childView: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Column(
+                                        children: [
+                                          InterText(
+                                            text: "Account Information",
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: Reponsive_.px30,
+                                          ),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          AppWidget().getTextField(
+                                              hintText: "Enter full name",
+                                              label: "",
+                                              filledColor:
+                                                  AppColors.backGroundColor,
+                                              textEditingController:
+                                                  profileController
+                                                      .fullNameController
+                                                      .value),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: AppWidget().getTextField(
+                                                    hintText:
+                                                        'Enter first name',
+                                                    label: "",
+                                                    filledColor: AppColors
+                                                        .backGroundColor,
+                                                    textEditingController:
+                                                        profileController
+                                                            .firstNameController
+                                                            .value),
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                  child: AppWidget().getTextField(
+                                                      hintText:
+                                                          "Enter last name",
+                                                      label: "",
+                                                      filledColor: AppColors
+                                                          .backGroundColor,
+                                                      textEditingController:
+                                                          profileController
+                                                              .lastNameController
+                                                              .value)),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          AppWidget().getTextField(
+                                              hintText: "Enter email",
+                                              label: "",
+                                              filledColor:
+                                                  AppColors.backGroundColor,
+                                              textEditingController:
+                                                  profileController
+                                                      .emailController.value),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          AppWidget().getTextField(
+                                              hintText: "Enter phone no.",
+                                              label: "",
+                                              filledColor:
+                                                  AppColors.backGroundColor,
+                                              textEditingController:
+                                                  profileController
+                                                      .mobileNumberController
+                                                      .value),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CommonButton(
+                                            text: "Save & Close",
+                                            onTap: () async {
+                                              print('update--');
+                                              await profileController.update_profile(context, file: imageFile);
+                                              setState(() {});
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    ));
+                              },
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Screen Name",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController.fullNameController.value.text.toString(),
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   InterText(
-                                    text: profileController.switchName[index],
-                                    fontSize: 14,
+                                    text: "First Name",
+                                    fontSize: Reponsive_.px12,
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.black,
                                   ),
-                                  FlutterSwitch(
-                                    activeText: "",
-                                    inactiveText: "",
-                                    width: 50.0,
-                                    height: 30.0,
-                                    activeColor: AppColors.buttonColor,
-                                    inactiveColor:
-                                        Color.fromRGBO(217, 217, 217, 1),
-                                    toggleSize: 20.0,
-                                    value: profileController
-                                        .switchValues[index].value,
-                                    borderRadius: 50.0,
-                                    showOnOff: true,
-                                    onToggle: (val) async {
-                                      profileController.toggleSwitch(index, !val);
-                                    },
+                                  InterText(
+                                    text: profileController
+                                        .firstNameController.value.text
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
                                   )
                                 ],
                               ),
                             ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  InterText(
+                                    text: "Last Name",
+                                    fontSize: Reponsive_.px12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                  ),
+                                  InterText(
+                                    text: profileController
+                                        .lastNameController.value.text
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Email",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController.emailController.value.text
+                                  .toString(),
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Phone",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController
+                                  .mobileNumberController.value.text
+                                  .toString(),
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength*0.001,
+                  ),
+                  CommonContainer(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Address",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                            ),
+                            InkWell(
+                              child: Image.asset(
+                                AppAssets.profileEdit,
+                                height: Reponsive_.px30,
+                                width: Reponsive_.px30,
+                              ),
+                              onTap: () {
+                                CommonBottonSheet(
+                                    context: context,
+                                    childView: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          InterText(
+                                            text: "Address",
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: Reponsive_.px30,
+                                          ),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          CommonDropDown(
+                                              context: context,
+                                              mycontrollerValue:
+                                                  profileController
+                                                      .countryController,
+                                              list: profileController.list,
+                                              color: AppColors.backGroundColor),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: AppWidget().getTextField(
+                                                    hintText: "Joel",
+                                                    label: "",
+                                                    filledColor: AppColors
+                                                        .backGroundColor,
+                                                    textEditingController:
+                                                        profileController
+                                                            .cityNameController
+                                                            .value),
+                                              ),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                  child: AppWidget().getTextField(
+                                                      hintText: "Newman",
+                                                      label: "",
+                                                      filledColor: AppColors
+                                                          .backGroundColor,
+                                                      textEditingController:
+                                                          profileController
+                                                              .stateController
+                                                              .value)),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          AppWidget().getTextField(
+                                              hintText: "joelnewman@gmail.com",
+                                              label: "",
+                                              filledColor:
+                                                  AppColors.backGroundColor,
+                                              textEditingController:
+                                                  profileController
+                                                      .zipController.value),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CommonButton(
+                                            text: "Save & Close",
+                                            onTap: () {
+                                              profileController.update_profile(context, file: imageFile);
+                                              setState(() {});
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    ));
+                              },
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Screen Name",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController
+                                  .fullNameController.value.text
+                                  .toString(),
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  InterText(
+                                    text: "Country",
+                                    fontSize: Reponsive_.px12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                  ),
+                                  InterText(
+                                    text: profileController
+                                        .countryController.value
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  InterText(
+                                    text: "City",
+                                    fontSize: Reponsive_.px12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                  ),
+                                  InterText(
+                                    text: profileController
+                                        .cityNameController.value.text
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  InterText(
+                                    text: "State",
+                                    fontSize: Reponsive_.px12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                  ),
+                                  InterText(
+                                    text: profileController
+                                        .stateController.value.text
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  InterText(
+                                    text: "Zip",
+                                    fontSize: Reponsive_.px12,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  InterText(
+                                    text: profileController
+                                        .zipController.value.text
+                                        .toString(),
+                                    fontSize: Reponsive_.px18,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.black,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength*0.001,
+                  ),
+                  CommonContainer(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "General",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                            ),
+                            InkWell(
+                              child: Image.asset(
+                                AppAssets.profileEdit,
+                                height: Reponsive_.px30,
+                                width: Reponsive_.px30,
+                              ),
+                              onTap: () {
+                                CommonBottonSheet(
+                                    context: context,
+                                    childView: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          InterText(
+                                            text: "General",
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: Reponsive_.px30,
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CommonDropDown(
+                                              context: context,
+                                              list: profileController.timeZone,
+                                              mycontrollerValue:
+                                                  profileController
+                                                      .timeZoneController,
+                                              color: AppColors.backGroundColor),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CommonDropDown(
+                                              context: context,
+                                              list: profileController
+                                                  .timeLanguage,
+                                              mycontrollerValue:
+                                                  profileController
+                                                      .languageController,
+                                              color: AppColors.backGroundColor),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          CommonButton(
+                                            text: "Save & Close",
+                                            onTap: () {
+                                              profileController.update_profile(context, file: imageFile);
+                                              setState(() {});
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    ));
+                              },
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Time Zone",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController.timeZoneController.value,
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InterText(
+                              text: "Language",
+                              fontSize: Reponsive_.px12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            InterText(
+                              text: profileController.languageController.value,
+                              fontSize: Reponsive_.px18,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength*0.001,
+                  ),
+                  InkWell(
+                    child: CommonContainer(
+                      child: ListView(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InterText(
+                                text: "Security",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blue,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              InterText(
+                                text: "Change Password",
+                                fontSize: Reponsive_.px12,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.blue,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    onTap: () {
+                      CommonBottonSheet(
+                          context: context,
+                          childView: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                InterText(
+                                  text: "Reset Password",
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.blue,
+                                ),
+                                SizedBox(
+                                  height: 18.h,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "Current Password",
+                                    validationFunction: (val) {
+                                      if (val.toString().isEmpty) {
+                                        return "current password not null";
+                                      }
+                                    },
+                                    textEditingController: profileController
+                                        .currentPassword.value),
+                                SizedBox(
+                                  height: 18.h,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "New Password",
+                                    validationFunction: (val) {
+                                      if (val.toString().isEmpty) {
+                                        return "current password not null";
+                                      }
+                                    },
+                                    textEditingController:
+                                        profileController.newPassword.value),
+                                SizedBox(
+                                  height: 18.h,
+                                ),
+                                AppWidget().getTextField(
+                                    hintText: "Confirm Password",
+                                    validationFunction: (val) {
+                                      if (val.toString().isEmpty) {
+                                        return "current password not null";
+                                      }
+                                    },
+                                    textEditingController: profileController
+                                        .confirmPassword.value),
+                                SizedBox(
+                                  height: 18.h,
+                                ),
+                                CommonButton(
+                                    text: "Update & Close",
+                                    onTap: () {
+                                      if (profileController.currentPassword
+                                              .value.text.isEmpty ||
+                                          profileController.currentPassword
+                                                  .value.text.length <
+                                              8) {
+                                        showErrorDialog(
+                                            'Invalid Current password');
+                                      } else if (profileController
+                                              .newPassword.value.text.isEmpty ||
+                                          profileController.currentPassword
+                                                  .value.text.length <
+                                              8) {
+                                        showErrorDialog(
+                                            'New password is not 8 character long !!');
+                                      } else if (profileController
+                                              .confirmPassword
+                                              .value
+                                              .text
+                                              .isEmpty ||
+                                          profileController.currentPassword
+                                                  .value.text.length <
+                                              8) {
+                                        showErrorDialog(
+                                            'Confirm password is not 8 character long !!');
+                                      } else if (profileController
+                                              .newPassword.value.text
+                                              .toString() !=
+                                          profileController
+                                              .confirmPassword.value.text
+                                              .toString()) {
+                                        showErrorDialog(
+                                            'New Password and Confirm Password not matched');
+                                      } else {
+                                        profileController.change_pwd(context);
+                                      }
+                                    })
+                              ],
+                            ),
                           ));
-                    })
-              ],
-            ),
-          )
-        ],
+                    },
+                  ),
+                  SizedBox(
+                    height: Reponsive_.crosslength*0.001,
+                  ),
+                  CommonContainer(
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Notifications",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.blue,
+                            ),
+                          ],
+                        ),
+                        ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: profileController.switchValues.length,
+                            itemBuilder: (context, index) {
+                              return Obx(() => GestureDetector(
+                                    onTap: () {
+                                      profileController.toggleSwitch(
+                                          index,
+                                          profileController
+                                              .switchValues[index].value);
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          InterText(
+                                            text: profileController
+                                                .switchName[index],
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400,
+                                            color: AppColors.black,
+                                          ),
+                                          FlutterSwitch(
+                                            activeText: "",
+                                            inactiveText: "",
+                                            width: 50.0,
+                                            height: 30.0,
+                                            activeColor: AppColors.buttonColor,
+                                            inactiveColor: Color.fromRGBO(
+                                                217, 217, 217, 1),
+                                            toggleSize: 20.0,
+                                            value: profileController
+                                                .switchValues[index].value,
+                                            borderRadius: 50.0,
+                                            showOnOff: true,
+                                            onToggle: (val) async {
+                                              profileController.toggleSwitch(
+                                                  index, !val);
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ));
+                            })
+                      ],
+                    ),
+                  )
+                ],
+              ),
       ),
     );
   }
@@ -906,6 +1039,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
     return imageFile;
   }
+
   Widget edit_btn() {
     return InkWell(
       child: Image.asset(
@@ -952,11 +1086,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             )
                           ],
                         ),
-                        SizedBox(height: Reponsive_.crosslength*0.015,),
-                        MontserratText(text: 'Update Profile Photo',fontWeight: FontWeight.w700,fontSize: Reponsive_.px30,color: AppColors.black,textAlign: TextAlign.center),
-                        SizedBox(height: Reponsive_.crosslength*0.015,),
+                        SizedBox(
+                          height: Reponsive_.crosslength * 0.015,
+                        ),
+                        MontserratText(
+                            text: 'Update Profile Photo',
+                            fontWeight: FontWeight.w700,
+                            fontSize: Reponsive_.px30,
+                            color: AppColors.black,
+                            textAlign: TextAlign.center),
+                        SizedBox(
+                          height: Reponsive_.crosslength * 0.015,
+                        ),
                         Padding(
-                          padding: EdgeInsets.all(Reponsive_.crosslength*0.015),
+                          padding:
+                              EdgeInsets.all(Reponsive_.crosslength * 0.015),
                           child: Column(
                             children: [
                               Row(
@@ -964,29 +1108,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   Expanded(
                                     child: imageFile == null
                                         ? Container(
-                                      height: Reponsive_.crosslength*0.2,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                          BorderRadius.circular(20),
-                                          color: Colors.green,
-                                          image: const DecorationImage(
-                                              image: NetworkImage(
-                                                  "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                              fit: BoxFit.cover)),
-                                    )
+                                            height:
+                                                Reponsive_.crosslength * 0.2,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                color: Colors.green,
+                                                image: const DecorationImage(
+                                                    image: NetworkImage(
+                                                        "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
+                                                    fit: BoxFit.cover)),
+                                          )
                                         : Container(
-                                      height: 180,
-                                      width: MediaQuery.of(context)
-                                          .size
-                                          .width,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                          BorderRadius.circular(20),
-                                          image: DecorationImage(
-                                              image: FileImage(
-                                                  File(imageFile!.path)),
-                                              fit: BoxFit.cover)),
-                                    ),
+                                            height: 180,
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                image: DecorationImage(
+                                                    image: FileImage(
+                                                        File(imageFile!.path)),
+                                                    fit: BoxFit.cover)),
+                                          ),
                                   ),
                                   SizedBox(
                                     width: 10.w,
@@ -1006,7 +1151,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           },
                                         ),
                                         SizedBox(
-                                          height: Reponsive_.crosslength*0.008,
+                                          height:
+                                              Reponsive_.crosslength * 0.008,
                                         ),
                                         InkWell(
                                           child: Image.asset(AppAssets.camera),
@@ -1019,11 +1165,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           },
                                         ),
                                         SizedBox(
-                                          height: Reponsive_.crosslength*0.005,
+                                          height:
+                                              Reponsive_.crosslength * 0.005,
                                         ),
                                         InterText(
                                           text: "Maximum size: 10MB",
-                                          fontSize: Reponsive_.crosslength*0.013,
+                                          fontSize:
+                                              Reponsive_.crosslength * 0.013,
                                           fontWeight: FontWeight.w500,
                                           textAlign: TextAlign.center,
                                           color: AppColors.hintTextGrey,
@@ -1036,13 +1184,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               SizedBox(
                                 width: 10.w,
                               ),
-
                               SizedBox(
                                 height: 20.h,
                               ),
                               CommonButton(
                                   text: "Upload & Save",
                                   onTap: () {
+                                    profileController.update_profile(context);
                                     onBack(context);
                                   })
                             ],

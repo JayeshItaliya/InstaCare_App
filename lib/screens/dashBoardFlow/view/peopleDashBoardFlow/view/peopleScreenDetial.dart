@@ -19,12 +19,14 @@ import 'package:instacare/Utils/documentsRow.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/model/peopleDetialModel.dart';
 import 'package:instacare/screens/dashBoardFlow/view/peopleDashBoardFlow/Controller/peopleController.dart';
 import 'package:instacare/screens/profileFlow/controller/profileController.dart';
 
 
 class PeopleScreenDetil extends StatefulWidget {
-  const PeopleScreenDetil({Key? key}) : super(key: key);
+  int? id;
+    PeopleScreenDetil({Key? key,this.id}) : super(key: key);
 
   @override
   State<PeopleScreenDetil> createState() => _PeopleScreenDetilState();
@@ -36,7 +38,12 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
   final profileController = Get.put(ProfileController());
   File? imageFile;
   File? setProfileImage;
-
+@override
+  void initState() {
+  print(widget.id);
+   peopleController.getData(widget.id!);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -50,7 +57,8 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
           color: AppColors.blue,
         ),
       ),
-      body: Column(
+      body: Obx(() =>peopleController.loadingValue.value==true?Center(child: CircularProgressIndicator(backgroundColor: AppColors.buttonColor,)):
+      Column(
         children: [
           Container(
             width: cx.width,
@@ -79,7 +87,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.buttonColor,
                           ),
                           InterText(
-                            text: "511",
+                            text: peopleController.peopleDetialModel.peopledata.id.toString(),
                             fontSize: Reponsive_.crosslength * 0.018,
                             fontWeight: FontWeight.bold,
                             color: AppColors.buttonColor,
@@ -99,7 +107,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Icon(
                                     Icons.star_border_purple500_outlined,
@@ -177,25 +185,24 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                         children: [
                           setProfileImage == null
                               ? Container(
-                                  height: Reponsive_.crosslength * 0.1,
-                                  width: Reponsive_.crosslength * 0.1,
-                                  decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                          fit: BoxFit.cover)),
-                                )
+                            height: Reponsive_.crosslength * 0.1,
+                            width: Reponsive_.crosslength * 0.1,
+                            decoration:   BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: NetworkImage(peopleController.peopleDetialModel.peopledata.image),
+                                    fit: BoxFit.cover)),
+                          )
                               : Container(
-                                  height: Reponsive_.crosslength * 0.1,
-                                  width: Reponsive_.crosslength * 0.1,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image:
-                                              FileImage(File(imageFile!.path)),
-                                          fit: BoxFit.cover)),
-                                ),
+                            height: Reponsive_.crosslength * 0.1,
+                            width: Reponsive_.crosslength * 0.1,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image:
+                                    FileImage(File(imageFile!.path)),
+                                    fit: BoxFit.cover)),
+                          ),
                           Positioned(bottom: 0, right: 0, child: edit_btn())
                         ],
                       ),
@@ -213,7 +220,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.buttonColor,
                           ),
                           InterText(
-                            text: "Available",
+                            text:getStatus(),
                             fontSize: Reponsive_.px18,
                             fontWeight: FontWeight.bold,
                             color: AppColors.buttonColor,
@@ -235,7 +242,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Icon(
                                     Icons.access_time_rounded,
@@ -573,7 +580,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                   ],
                 ),
                 InterText(
-                  text: "Granny Weatherwax",
+                  text: peopleController.peopleDetialModel.peopledata.fullname,
                   fontSize: Reponsive_.px24,
                   fontWeight: FontWeight.bold,
                   color: AppColors.white,
@@ -582,7 +589,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                   height: Reponsive_.crosslength * 0.005,
                 ),
                 InterText(
-                  text: "LPN",
+                  text: peopleController.peopleDetialModel.peopledata.role,
                   fontSize: Reponsive_.crosslength * 0.016,
                   fontWeight: FontWeight.bold,
                   color: AppColors.buttonColor,
@@ -729,7 +736,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "Joel",
+                                  text: peopleController.firstNameController.value.text,
                                   height: 1.5,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
@@ -750,7 +757,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "Newman",
+                                  text: peopleController.lastNameController.value.text,
                                   height: 1.5,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
@@ -774,7 +781,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.black,
                           ),
                           InterText(
-                            text: "joelnewman@gmail.com ",
+                            text: peopleController.emailController.value.text,
                             fontSize: Reponsive_.px18,
                             fontWeight: FontWeight.w600,
                             height: 1.5,
@@ -795,7 +802,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.black,
                           ),
                           InterText(
-                            text: "8888888888",
+                            text: peopleController.mobileNumberController.value.text,
                             fontSize: Reponsive_.px18,
                             fontWeight: FontWeight.w600,
                             height: 1.5,
@@ -1238,7 +1245,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.black,
                           ),
                           InterText(
-                            text: "Joel Newman",
+                            text: peopleController.peopleDetialModel.peopledata.fullname,
                             fontSize: Reponsive_.px18,
                             fontWeight: FontWeight.w600,
                             color: AppColors.black,
@@ -1262,7 +1269,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "United States",
+                                  text: peopleController.peopleDetialModel.peopledata.country,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
@@ -1282,7 +1289,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "Skokie",
+                                  text: peopleController.peopleDetialModel.peopledata.city,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
@@ -1309,7 +1316,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "illinois",
+                                  text: peopleController.peopleDetialModel.peopledata.state,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
@@ -1329,7 +1336,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                   color: AppColors.black,
                                 ),
                                 InterText(
-                                  text: "60077",
+                                  text: peopleController.peopleDetialModel.peopledata.zipcode,
                                   fontSize: Reponsive_.px18,
                                   fontWeight: FontWeight.w600,
                                   color: AppColors.black,
@@ -1435,7 +1442,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.black,
                           ),
                           InterText(
-                            text: "Central Time (US/Can) (GMT-6:00)",
+                            text: peopleController.peopleDetialModel.peopledata.timezone,
                             fontSize: Reponsive_.px18,
                             height: 1.5,
                             fontWeight: FontWeight.w600,
@@ -1456,7 +1463,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             color: AppColors.black,
                           ),
                           InterText(
-                            text: "English",
+                            text: peopleController.peopleDetialModel.peopledata.language,
                             fontSize: Reponsive_.px18,
                             fontWeight: FontWeight.w600,
                             height: 1.5,
@@ -1484,51 +1491,72 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                           ),
                         ],
                       ),
-                      ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: peopleController.switchValues.length,
-                          itemBuilder: (context, index) {
-                            return Obx(() => GestureDetector(
-                              onTap: () {
-                                peopleController.toggleSwitch(index, peopleController.switchValues[index].value);
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: Reponsive_.crosslength * 0.01),
+                        child: Row(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Send Email Notifications",
+                              fontSize: Reponsive_.px14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            FlutterSwitch(
+                              activeText: "",
+                              inactiveText: "",
+                              width: Reponsive_.crosslength * 0.05,
+                              height:
+                              Reponsive_.crosslength * 0.025,
+                              activeColor: AppColors.deepGreen,
+                              inactiveColor:
+                              Color.fromRGBO(217, 217, 217, 1),
+                              toggleSize: 20.0,
+                              value: peopleController.emailSwitchValue.value,
+                              borderRadius: 50.0,
+                              showOnOff: true,
+                              onToggle: (val) async {
+                                peopleController.emailSwitchValue.value=val;
                               },
-                              child: Padding(
-                                padding: EdgeInsets.only(
-                                    top: Reponsive_.crosslength * 0.01),
-                                child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    InterText(
-                                      text: peopleController
-                                          .switchName[index],
-                                      fontSize: Reponsive_.px14,
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.black,
-                                    ),
-                                      FlutterSwitch(
-                                        activeText: "",
-                                        inactiveText: "",
-                                        width: Reponsive_.crosslength * 0.05,
-                                        height:
-                                        Reponsive_.crosslength * 0.025,
-                                        activeColor: AppColors.deepGreen,
-                                        inactiveColor:
-                                        Color.fromRGBO(217, 217, 217, 1),
-                                        toggleSize: 20.0,
-                                        value: peopleController.switchValues[index].value,
-                                        borderRadius: 50.0,
-                                        showOnOff: true,
-                                        onToggle: (val) async {
-                                           peopleController.toggleSwitch(index, !val);
-                                        },
-                                      ),
-                                  ],
-                                ),
-                              ),
-                            ));
-                          })
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: Reponsive_.crosslength * 0.01),
+                        child: Row(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween,
+                          children: [
+                            InterText(
+                              text: "Send Text Message",
+                              fontSize: Reponsive_.px14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.black,
+                            ),
+                            FlutterSwitch(
+                              activeText: "",
+                              inactiveText: "",
+                              width: Reponsive_.crosslength * 0.05,
+                              height:
+                              Reponsive_.crosslength * 0.025,
+                              activeColor: AppColors.deepGreen,
+                              inactiveColor:
+                              Color.fromRGBO(217, 217, 217, 1),
+                              toggleSize: 20.0,
+                              value: peopleController.messageSwitchValue.value,
+                              borderRadius: 50.0,
+                              showOnOff: true,
+                              onToggle: (val) async {
+                                peopleController.messageSwitchValue.value=val;
+                              },
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -2781,6 +2809,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
             ),
           ),
         ],
+      )
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.yallow,
@@ -2791,7 +2820,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
   }
 
   Future<File?> getFromGallery() async {
-    PickedFile? pickedFile = await ImagePicker().getImage(
+    XFile? pickedFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       maxWidth: 1800,
       maxHeight: 1000,
@@ -2807,7 +2836,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
 
   /// Get from Camera
   Future<File?> getFromCamera() async {
-    PickedFile? pickedFile = await ImagePicker().getImage(
+    XFile? pickedFile = await ImagePicker().pickImage(
       source: ImageSource.camera,
       maxWidth: 1800,
       maxHeight: 1000,
@@ -3006,4 +3035,15 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
       ],
     );
   }
+  String? getStatus(){
+  String apiStatus=peopleController.peopleDetialModel.peopledata.status;
+  List status=["Available","Away","Busy","DND","offline"];
+  for(int i=0;i<5;i++){
+    if(apiStatus==(i+1).toString()){
+      return status[i];
+    }
+  }
+    return "";
+  }
+
 }

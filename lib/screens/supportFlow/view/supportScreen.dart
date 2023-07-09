@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
 import 'package:instacare/Utils/Responsive.dart';
@@ -11,7 +9,6 @@ import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/montserratText.dart';
-import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/supportFlow/controller/supportController.dart';
 class SupportScreen extends StatefulWidget {
   const SupportScreen({super.key});
@@ -22,6 +19,7 @@ class SupportScreen extends StatefulWidget {
 
 class _SupportScreenState extends State<SupportScreen> {
   final supportController=Get.put(SupportController());
+
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -42,7 +40,7 @@ class _SupportScreenState extends State<SupportScreen> {
           CommonDropDown(
               context: context,
               list: supportController.supportList,
-              mycontrollerValue: supportController.supportValue,
+              mycontrollerValue: supportController.selected_reason,
              color: AppColors.white
           ),
           SizedBox(
@@ -59,6 +57,7 @@ class _SupportScreenState extends State<SupportScreen> {
           ),
           AppWidget().getTextField(
             hintText: "",
+            textEditingController: supportController.msgController.value,
             filledColor: AppColors.white,
             maxLine: 10
           ),
@@ -106,7 +105,7 @@ class _SupportScreenState extends State<SupportScreen> {
                                   child: CommonButton(
                                     text: "Yes",
                                     onTap: (){
-                                      onBack(context);
+                                      supportController.submit_reason(context);
                                     },
                                   ),
                                 ),
@@ -114,7 +113,9 @@ class _SupportScreenState extends State<SupportScreen> {
                                 Expanded(
                                   child: CommonButton(
                                     text: "No",
-                                    onTap: (){},
+                                    onTap: (){
+                                      Navigator.of(context,rootNavigator: true).pop();
+                                    },
                                     color: AppColors.allGray,
                                   ),
                                 )

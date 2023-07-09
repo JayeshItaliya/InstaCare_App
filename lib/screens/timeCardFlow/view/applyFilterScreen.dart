@@ -4,6 +4,7 @@ import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appColor.dart';
 import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/commonButton.dart';
+import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class ApplyFilterTimeCardScreen extends StatefulWidget {
 
 class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
   final peopleController=Get.put(TimeCardApplyController());
+  final cx=Get.put(CommonController());
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -51,54 +53,110 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
             child: ListView(
               padding: padding,
               children: [
-                CommonDropDown(
-                    context: context,
-                    hint: 'Select Role',
-                    list: peopleController.role,
-                    mycontrollerValue: peopleController.roleValue,
-                    color: AppColors.white,
-                ),
-                SizedBox(
-                  height: Reponsive_.crosslength*0.01,
-                ),
-                CommonDropDown(
-                    context: context,
-                    hint: 'Select Status',
-                    list: peopleController.status,
-                    mycontrollerValue: peopleController.statusValue,
-                  color: AppColors.white,
-                ),
-                SizedBox(
-                  height: Reponsive_.crosslength*0.01,
-                ),
-                CommonDropDown(
-                    context: context,
-                    hint: 'Select Ratings',
-                    list: peopleController.rating,
-                    mycontrollerValue: peopleController.ratingValue,
-                  color: AppColors.white,
-                ),
-                SizedBox(
-                  height: Reponsive_.crosslength*0.01,
-                ),
-                CommonDropDown(
-                    context: context,
-                    hint: 'Select Points',
-                    list: peopleController.points,
-                    mycontrollerValue: peopleController.pointsValue,
-                  color: AppColors.white,
-                ),
-                SizedBox(
-                  height: Reponsive_.crosslength*0.01,
-                ),
-                CommonDropDown(
-                    context: context,
-                    hint: 'Select Last Active',
-                    list: peopleController.lastActive,
-                    mycontrollerValue: peopleController.activeValue,
-                  color: AppColors.white,
-                ),
-
+               cx.instacareLoginValue.toString().contains("instacare")?
+                   Column(
+                     children: [
+                       CommonDropDown(
+                         context: context,
+                         hint: 'Select Facility',
+                         list: peopleController.role,
+                         mycontrollerValue: peopleController.roleValue,
+                         color: AppColors.white,
+                       ),
+                       SizedBox(
+                         height: Reponsive_.crosslength*0.01,
+                       ),
+                       CommonDropDown(
+                         context: context,
+                         hint: 'Select Employee',
+                         list: peopleController.status,
+                         mycontrollerValue: peopleController.statusValue,
+                         color: AppColors.white,
+                       ),
+                       SizedBox(
+                         height: Reponsive_.crosslength*0.01,
+                       ),
+                       CommonDropDown(
+                         context: context,
+                         hint: 'Select Role',
+                         list: peopleController.rating,
+                         mycontrollerValue: peopleController.ratingValue,
+                         color: AppColors.white,
+                       ),
+                       SizedBox(
+                         height: Reponsive_.crosslength*0.01,
+                       ),
+                       CommonDropDown(
+                         context: context,
+                         hint: 'Select Status',
+                         list: peopleController.points,
+                         mycontrollerValue: peopleController.pointsValue,
+                         color: AppColors.white,
+                       ),
+                       SizedBox(
+                         height: Reponsive_.crosslength*0.01,
+                       ),
+                     ],
+                   ):cx.instacareLoginValue.toString().contains("faculty")?
+               Column(
+                 children: [
+                   CommonDropDown(
+                     context: context,
+                     hint: 'Select Employee',
+                     list: peopleController.status,
+                     mycontrollerValue: peopleController.statusValue,
+                     color: AppColors.white,
+                   ),
+                   SizedBox(
+                     height: Reponsive_.crosslength*0.01,
+                   ),
+                   CommonDropDown(
+                     context: context,
+                     hint: 'Select Role',
+                     list: peopleController.rating,
+                     mycontrollerValue: peopleController.ratingValue,
+                     color: AppColors.white,
+                   ),
+                   SizedBox(
+                     height: Reponsive_.crosslength*0.01,
+                   ),
+                   CommonDropDown(
+                     context: context,
+                     hint: 'Select Status',
+                     list: peopleController.points,
+                     mycontrollerValue: peopleController.pointsValue,
+                     color: AppColors.white,
+                   ),
+                   SizedBox(
+                     height: Reponsive_.crosslength*0.01,
+                   ),
+                 ],
+               ):cx.instacareLoginValue.toString().contains("employee")?
+                   Column(
+                     children: [
+                       Column(
+                         children: [
+                           CommonDropDown (
+                             context: context,
+                             hint: 'Select Facility',
+                             list: peopleController.role,
+                             mycontrollerValue: peopleController.roleValue,
+                             color: AppColors.white,
+                           ),
+                           SizedBox(
+                             height: Reponsive_.crosslength*0.01,
+                           ),
+                           CommonDropDown(
+                             context: context,
+                             hint: 'Select Date',
+                             list: peopleController.status,
+                             mycontrollerValue: peopleController.statusValue,
+                             color: AppColors.white,
+                           ),
+                         ],
+                       )
+                     ],
+                   ):Container()
               ],
             ),
           ),
@@ -126,6 +184,9 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
                 )
               ],
             ),
+          ),
+          SizedBox(
+            height: Reponsive_.crosslength*0.01,
           ),
         ],
       ),

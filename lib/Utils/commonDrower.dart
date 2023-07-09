@@ -11,10 +11,10 @@ import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/commonDrawerModel.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
-import 'package:instacare/screens/authFlow/view/loginScreen.dart';
-import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
+import 'package:instacare/Utils/storeToken.dart';
+import 'package:instacare/screens/authFlow/controller/chnageStatusController.dart';
+import 'package:instacare/screens/authFlow/controller/logoutController.dart';
 import 'package:instacare/screens/profileFlow/view/profileScreen.dart';
-import 'package:instacare/screens/scheduleFlow/view/scheduleScreen.dart';
 
 class CommonDrawer extends StatefulWidget {
   Function? onItemClick;
@@ -27,11 +27,14 @@ class CommonDrawer extends StatefulWidget {
 class _CommonDrawerState extends State<CommonDrawer> {
   @override
   void initState() {
-    status = statusValue[0].toString();
+    chnageStatusController.status.value = chnageStatusController.statusValue[0].toString();
     super.initState();
   }
   final globalKey = GlobalKey<PopupMenuButtonState>();
   final cx = Get.put(CommonController());
+  final logOutController = Get.put(LogOutController());
+  final chnageStatusController = Get.put(ChangeStatusController());
+
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -73,8 +76,8 @@ class _CommonDrawerState extends State<CommonDrawer> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          toPushNavigator(
-                              context: context, PageName: const ProfileScreen());
+                          onBack(context);
+                          toPushNavigator(context: context, PageName:   ProfileScreen());
                         },
                         child: Container(
                           alignment: Alignment.bottomRight,
@@ -82,10 +85,14 @@ class _CommonDrawerState extends State<CommonDrawer> {
                           height: 100.h,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              image: const DecorationImage(
-                                  image: NetworkImage(
-                                      "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
-                                  fit: BoxFit.fitHeight),
+                              image:   DecorationImage(
+                                  image: NetworkImage(cx.profileImage.toString()),
+                                  fit: BoxFit.fitHeight,
+                                 onError: (errDetails,hi){
+                                    AssetImage(AppAssets.doctorPhoto);
+                                 }
+                              ),
+
                               border: Border.all(width: 5, color: AppColors.yallow)),
                           child: Image.asset(
                             AppAssets.profileEdit,
@@ -96,20 +103,23 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       ),
                       Gap(25.w),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           InterText(
-                            text: 'Joel\nNewman',
+                            text:cx.fullName.toString(),
                             maxLines: 2,
                             color: AppColors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 24.sp,
+                            textAlign: TextAlign.start,
                           ),
                           Gap(5.w),
                           InterText(
-                            text: 'Instacare Staff',
+                            text: cx.role,
                             color: AppColors.buttonColor,
                             fontWeight: FontWeight.w600,
                             fontSize: Reponsive_.px16,
+                            textAlign: TextAlign.start,
                           )
                         ],
                       ),
@@ -130,15 +140,15 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         height: 15.h,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: status.toString().contains("Available")
+                          color: chnageStatusController.statusValue[int.parse(cx.status)-1].contains("Available")
                               ? Color.fromRGBO(126, 230, 155, 1)
-                              : status.toString().contains("Away")
+                              : chnageStatusController.statusValue[int.parse(cx.status)-1].contains("Away")
                                   ? AppColors.yallow
-                                  : status.toString().contains("Busy")
+                                  : chnageStatusController.statusValue[int.parse(cx.status)-1].contains("Busy")
                                       ? Color.fromRGBO(243, 48, 71, 1)
-                                      : status.toString().contains("DND")
+                                      : chnageStatusController.statusValue[int.parse(cx.status)-1].contains("DND")
                                           ? Color.fromRGBO(243, 48, 71, 1)
-                                          : status.toString().contains("Offline")
+                                          : chnageStatusController.statusValue[int.parse(cx.status)-1].contains("Offline")
                                               ? Color.fromRGBO(196, 196, 196, 1)
                                               : null,
                         ),
@@ -149,7 +159,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                           globalKey.currentState?.showButtonMenu();
                         },
                         child: InterText(
-                          text: status,
+                          text: chnageStatusController.statusValue[int.parse(cx.status)-1],
                           fontSize: Reponsive_.px16,
                           color: AppColors.white,
                           fontWeight: FontWeight.w400,
@@ -158,7 +168,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       PopupMenuButton<String>(
                         key: globalKey,
                         itemBuilder: (context) {
-                          return statusValue.map((str) {
+                          return chnageStatusController.statusValue.map((str) {
                             return PopupMenuItem(
                               value: str,
                               child: Row(
@@ -173,15 +183,13 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                           ? const Color.fromRGBO(126, 230, 155, 1)
                                           : str.toString().contains("Away")
                                               ? AppColors.yallow
-                                              : str.toString().contains("Busy")
+                                              : str.contains("Busy")
                                                   ? const Color.fromRGBO(
                                                       243, 48, 71, 1)
                                                   : str.toString().contains("DND")
                                                       ? const Color.fromRGBO(
                                                           243, 48, 71, 1)
-                                                      : str
-                                                              .toString()
-                                                              .contains("Offline")
+                                                      : str.toString().contains("Offline")
                                                           ? const Color.fromRGBO(
                                                               196, 196, 196, 1)
                                                           : null,
@@ -205,8 +213,62 @@ class _CommonDrawerState extends State<CommonDrawer> {
                         color: AppColors.blue,
                         onSelected: (v) {
                           setState(() {
-                            print('!!!===== $v');
-                            status = v;
+                            chnageStatusController.status.value = v;
+                            if(chnageStatusController.status.value=="Available"){
+                              chnageStatusController.changeStatusValue.value="1";
+                              cx.status=1.toString();
+                              print(chnageStatusController.changeStatusValue.value);
+                              chnageStatusController.changeStatus(context);
+                              StorageUtil.setData(StorageUtil.status,cx.status);
+                              StorageUtil.getData(StorageUtil.status).then((value)  {
+                                cx.status=value.toString();
+                                print(cx.status);
+                              });
+                            }
+                           else if(chnageStatusController.status.value=="Away"){
+                              chnageStatusController.changeStatusValue.value="2";
+                              cx.status=2.toString();
+                              print(chnageStatusController.changeStatusValue.value);
+                              chnageStatusController.changeStatus(context);
+                              StorageUtil.setData(StorageUtil.status,cx.status);
+                              StorageUtil.getData(StorageUtil.status).then((value)  {
+                                cx.status=value.toString();
+                                print(cx.status);
+                              });
+                            }
+                           else if(chnageStatusController.status.value=="Busy"){
+                              chnageStatusController.changeStatusValue.value="3";
+                              cx.status=3.toString();
+                              print(chnageStatusController.changeStatusValue.value);
+                              chnageStatusController.changeStatus(context);
+                              StorageUtil.setData(StorageUtil.status,cx.status);
+                              StorageUtil.getData(StorageUtil.status).then((value)  {
+                                cx.status=value.toString();
+                                print(cx.status);
+                              });
+                            }
+                           else if(chnageStatusController.status.value=="DND") {
+                              chnageStatusController.changeStatusValue.value="4";
+                              cx.status=4.toString();
+                              print(chnageStatusController.changeStatusValue.value);
+                              chnageStatusController.changeStatus(context);
+                              StorageUtil.setData(StorageUtil.status,cx.status);
+                              StorageUtil.getData(StorageUtil.status).then((value)  {
+                                cx.status=value.toString();
+                                print(cx.status);
+                              });
+                            }
+                           else if(chnageStatusController.status.value=="Offline"){
+                              chnageStatusController.changeStatusValue.value="5";
+                              cx.status=5.toString();
+                              print(chnageStatusController.changeStatusValue.value);
+                              chnageStatusController.changeStatus(context);
+                              StorageUtil.setData(StorageUtil.status,cx.status);
+                              StorageUtil.getData(StorageUtil.status).then((value)  {
+                                cx.status=value.toString();
+                                print(cx.status);
+                              });
+                            }
                           });
                         },
                       ),
@@ -285,7 +347,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                                   CupertinoDialogAction(
                                                     isDefaultAction: true,
                                                     onPressed: (){
-                                                      toPushNavigator(context: context,PageName: LoginScreen());
+                                                      logOutController.logOut(context);
                                                     },
                                                     child: Text("Yes"),
                                                   ),
@@ -315,6 +377,5 @@ class _CommonDrawerState extends State<CommonDrawer> {
         ));
   }
 
-  List<String> statusValue = ["Available", "Away", "Busy", "DND", "Offline"];
-  String status = "";
+
 }

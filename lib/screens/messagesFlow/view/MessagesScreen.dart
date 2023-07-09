@@ -154,6 +154,27 @@ class _MessagesScreenState extends State<MessagesScreen>{
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                height: Reponsive_.crosslength*0.03,
+                                width: Reponsive_.crosslength*0.07,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                        Reponsive_.crosslength * 0.02),
+                                    color: AppColors.light_gray),
+                                child: InterText(
+                                  text: 'Email',
+                                  color: AppColors.allGray,
+                                  fontSize: Reponsive_.crosslength * 0.013,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ],
                           ),
                           /*Row(

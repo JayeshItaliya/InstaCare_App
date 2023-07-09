@@ -9,6 +9,7 @@ import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/controller/bulkUplodeController.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/shiftDetials.dart';
 
 
@@ -22,6 +23,8 @@ class BulkUploadScreen extends StatefulWidget {
 
 class _BulkUploadScreenState extends State<BulkUploadScreen> {
   final cx=Get.put(CommonController());
+  final bulkUplodeController=Get.put(BulkUplodeController());
+  String uplodeExcleFile="";
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -47,7 +50,12 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
               InkWell(
                 child: Image.asset(AppAssets.uploadeExcel),
                 onTap: (){
-                  openFilePicker();
+                  openFilePicker().then((value) {
+                   setState(() {
+                     uplodeExcleFile=value.toString();
+                   });
+                    print(value);
+                  });
                 },
               ),
               SizedBox(height: 10,),
@@ -123,7 +131,8 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                                         ),
                                       ),
                                       onTap: (){
-                                        toPushNavigator(context: context,PageName: ShiftDeatils());
+                                        bulkUplodeController.uplodeExcle(uplodeExcleFile,context);
+                                        onBack(context);
                                       },
                                     )
                                 ),
@@ -161,7 +170,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       ],
     );
   }
-  void openFilePicker() async {
+  Future<String?> openFilePicker() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx', 'xls'],
@@ -178,8 +187,10 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       else{
         print("FormateExecpation");
       }
+      return path;
     } else {
       print("No Data");
     }
+    return "no data";
   }
 }

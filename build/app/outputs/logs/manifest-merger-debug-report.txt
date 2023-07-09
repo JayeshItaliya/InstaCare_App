@@ -33,10 +33,12 @@ INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/And
 INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:1:1-39:12
 INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:1:1-39:12
 MERGED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml:1:1-39:12
+MERGED from [:shared_preferences_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:fluttertoast] /Users/imac/Desktop/GitHub/Insta_care_app/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:flutter_svprogresshud] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:connectivity_plus] /Users/imac/Desktop/GitHub/Insta_care_app/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -115,14 +117,18 @@ uses-sdk
 INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/imac/Desktop/GitHub/Insta_care_app/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:file_picker] /Users/imac/Desktop/GitHub/Insta_care_app/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:image_picker_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:geolocator_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] /Users/imac/Desktop/GitHub/Insta_care_app/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] /Users/imac/Desktop/GitHub/Insta_care_app/build/fluttertoast/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/imac/Desktop/GitHub/Insta_care_app/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_svprogresshud] /Users/imac/Desktop/GitHub/Insta_care_app/build/flutter_svprogresshud/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41

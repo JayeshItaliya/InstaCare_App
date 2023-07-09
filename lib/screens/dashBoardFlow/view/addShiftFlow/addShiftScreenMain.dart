@@ -109,7 +109,7 @@ class _AddShiftScreenState extends State<AddShiftScreen> with TickerProviderStat
               flex: 20,
               child: TabBarView(
                 controller: controller,
-                children: const [
+                children:   [
                   SingleShiftScreen(),
                   RecurringShiftsScreen(),
                   BulkUploadScreen(),
