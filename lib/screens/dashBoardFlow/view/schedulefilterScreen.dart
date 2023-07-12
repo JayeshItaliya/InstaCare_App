@@ -26,6 +26,14 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
   bool selectedShiftAfternoon = false;
   bool selectedShiftNight = false;
   @override
+  void initState() {
+    scheduleFilterController.facilitiesValue.value="Facilities";
+    scheduleFilterController.employeeNameValue.value="Employee Name";
+    scheduleFilterController.roleValue.value="Role";
+    scheduleFilterController.statusValue.value="Available";
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
@@ -58,21 +66,24 @@ class _ScheduleFilterScreenState extends State<ScheduleFilterScreen> {
             context: context,
               list: scheduleFilterController.facilities,
               mycontrollerValue: scheduleFilterController.facilitiesValue,
-              color: AppColors.backGroundColor
+              color: AppColors.backGroundColor,
+            hint: "Facilities",
           ),
           Gap(15),
           CommonDropDown(
             context: context,
               list: scheduleFilterController.employeeName,
               mycontrollerValue: scheduleFilterController.employeeNameValue,
-              color: AppColors.backGroundColor
+              color: AppColors.backGroundColor,
+            hint: "Employee Name",
           ),
           Gap(15),
           CommonDropDown(
             context: context,
               list: scheduleFilterController.role,
               mycontrollerValue: scheduleFilterController.roleValue,
-              color: AppColors.backGroundColor
+              color: AppColors.backGroundColor,
+            hint: "Role",
           ),
           Gap(Reponsive_.crosslength*0.015),
           InterText(

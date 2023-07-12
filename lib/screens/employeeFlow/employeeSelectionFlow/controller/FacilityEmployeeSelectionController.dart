@@ -5,7 +5,7 @@ class FacilityEmployeeSelectionController extends GetxController{
 
   RxList facility_emp_arr=['Select All','Maureen Biologist','Jessica Atréides','Jasnah Kholin','Tattersail','Granny Weatherwax','Kimberley','Gemma'].obs;
   RxList emp_position_arr=['','Staff','Manager','Staff','Staff','Staff','Staff','Front Desk'].obs;
-  var facility_emp_selection_arr=[false,false,].obs;
+  var facility_emp_selection_arr=[false,false,false,false,false,false,false,false].obs;
 
   void select_instacate_staff(int index){
     if(index==0){

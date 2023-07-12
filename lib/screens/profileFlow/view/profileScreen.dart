@@ -13,7 +13,6 @@ import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonContainer.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
-import 'package:instacare/Utils/commonDrower.dart';
 import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/loader.dart';
@@ -138,8 +137,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 image: DecorationImage(
-                                                    image: NetworkImage(
-                                                        "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"),
+                                                    image: AssetImage(AppAssets.doctorPhoto),
                                                     fit: BoxFit.cover)),
                                           )
                                         : Container(
@@ -190,8 +188,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Column(
                               children: [
                                 InterText(
-                                  text: profileController
-                                      .firstNameController.value.text,
+                                  text: profileController.fullNameController.value.text,
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.white,
@@ -250,15 +247,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                           SizedBox(
                                             height: 15,
                                           ),
-                                          AppWidget().getTextField(
-                                              hintText: "Enter full name",
-                                              label: "",
-                                              filledColor:
-                                                  AppColors.backGroundColor,
-                                              textEditingController:
-                                                  profileController
-                                                      .fullNameController
-                                                      .value),
+                                          AbsorbPointer(
+                                            absorbing: true,
+                                            child: AppWidget().getTextField(
+                                                hintText: "Enter full name",
+                                                label: "",
+                                                filledColor:
+                                                    AppColors.backGroundColor,
+                                                textEditingController:
+                                                    profileController
+                                                        .fullNameController
+                                                        .value
+                                            ),
+                                          ),
                                           SizedBox(
                                             height: 10,
                                           ),
@@ -844,12 +845,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           childView: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 InterText(
-                                  text: "Reset Password",
+                                  text: "   Reset Password",
                                   fontSize: 30.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: AppColors.blue,
+                                  color: AppColors.black,
+                                  textAlign: TextAlign.start,
                                 ),
                                 SizedBox(
                                   height: 18.h,
@@ -983,7 +986,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             inactiveText: "",
                                             width: 50.0,
                                             height: 30.0,
-                                            activeColor: AppColors.buttonColor,
+                                            activeColor: AppColors.deepGreen,
                                             inactiveColor: Color.fromRGBO(
                                                 217, 217, 217, 1),
                                             toggleSize: 20.0,
@@ -1090,11 +1093,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: Reponsive_.crosslength * 0.015,
                         ),
                         MontserratText(
-                            text: 'Update Profile Photo',
+                            text: '  Update Profile Photo',
                             fontWeight: FontWeight.w700,
                             fontSize: Reponsive_.px30,
                             color: AppColors.black,
-                            textAlign: TextAlign.center),
+                            textAlign: TextAlign.start
+                        ),
                         SizedBox(
                           height: Reponsive_.crosslength * 0.015,
                         ),

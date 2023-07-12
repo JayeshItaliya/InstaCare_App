@@ -86,6 +86,7 @@ class AppWidget {
         enabled: isEnabled != null && !isEnabled ? false : true,
         textAlign: align,
         showCursor: !isReadOnly,
+        readOnly:isReadOnly ,
         onTap: () {
           if (onTapFunction != null) {
             onTapFunction();
@@ -128,7 +129,7 @@ class AppWidget {
         textInputAction: inputAction,
         style: inputTextStyle ??
             TextStyle(
-              fontSize: inputFontsize ?? 17,
+              fontSize: inputFontsize ?? Reponsive_.px16,
               fontWeight: inputFontWeight ?? FontWeight.w600,
               color: inputFontColor ?? AppColors.black,
             ),
@@ -168,7 +169,7 @@ class AppWidget {
           hintText: hintText ?? "",
           hintStyle: GoogleFonts.inter(
               fontSize: Reponsive_.px16,
-              color:Color.fromRGBO(2, 5, 10, 0.5),
+              color:hintTextColor??Color.fromRGBO(2, 5, 10, 0.5),
               fontWeight: FontWeight.w400
           ),
           prefixIcon: isMobileNumber

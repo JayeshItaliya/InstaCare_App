@@ -20,10 +20,16 @@ class InvoiceListFilterScreen extends StatefulWidget {
 
 class _InvoiceListFilterScreenState extends State<InvoiceListFilterScreen> {
   TextEditingController _date_controller = TextEditingController();
+  final InvoiceListFilterController c = Get.put(InvoiceListFilterController());
+  @override
+  void initState() {
+    // TODO: implement initState
+    c.selected_amount_range.value="Amount (Range)";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    final InvoiceListFilterController c =
-    Get.put(InvoiceListFilterController());
+
     Reponsive_.init(context);
     return Scaffold(
 
@@ -72,7 +78,9 @@ class _InvoiceListFilterScreenState extends State<InvoiceListFilterScreen> {
                     context: context,
                     list: c.amount_range_arr,
                     mycontrollerValue: c.selected_amount_range,
-                    color: AppColors.backGroundColor),
+                    color: AppColors.backGroundColor,
+                  hint: "Amount (Range)"
+                ),
                 height: Reponsive_.crosslength * 0.055),
             Expanded(child: SizedBox()),
             SizedBox(

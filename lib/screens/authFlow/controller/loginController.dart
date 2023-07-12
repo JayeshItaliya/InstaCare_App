@@ -26,6 +26,7 @@ class LoginController extends GetxController {
       errorData=response;
       print(response);
       if(errorData["status"]==1){
+
         LoginModel loginData=LoginModel.fromJson(response);
         StorageUtil.setData(StorageUtil.loginValue,true);
         StorageUtil.setData(StorageUtil.userLoginToken,loginData.token.toString());
@@ -35,8 +36,10 @@ class LoginController extends GetxController {
         StorageUtil.setData(StorageUtil.role,loginData.userdata.role.toString());
         StorageUtil.setData(StorageUtil.fullName,loginData.userdata.fullname.toString());
         StorageUtil.setData(StorageUtil.status,loginData.userdata.status.toString());
-        showSuccessDialog(loginData.message);
+        showSuccessDialog("Login Done Successfully");
         await offNavigator(context: context,PageName: DashBoardScreen());
+       emailController.value.clear();
+       passwordController.value.clear();
       }
       else if(response["status"]==0){
         showErrorDialog(response["message"]);

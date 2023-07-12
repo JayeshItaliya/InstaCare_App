@@ -638,19 +638,24 @@ class _AboutScreenState extends State<AboutScreen> {
               SizedBox(
                 height: Reponsive_.crosslength * 0.04,
               ),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(
-                    vertical: Reponsive_.crosslength * 0.015),
-                decoration: BoxDecoration(
-                    color: AppColors.buttonColor,
-                    borderRadius: BorderRadius.circular(50)),
-                child: InterText(
-                  text: "SAVE & CLOSE",
-                  color: Colors.white,
-                  fontSize: Reponsive_.crosslength * 0.02,
-                  fontWeight: FontWeight.w700,
+              GestureDetector(
+                onTap: (){
+                  onBack(context);
+                },
+                child: Container(
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(
+                      vertical: Reponsive_.crosslength * 0.015),
+                  decoration: BoxDecoration(
+                      color: AppColors.buttonColor,
+                      borderRadius: BorderRadius.circular(50)),
+                  child: InterText(
+                    text: "SAVE & CLOSE",
+                    color: Colors.white,
+                    fontSize: Reponsive_.crosslength * 0.02,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
               SizedBox(

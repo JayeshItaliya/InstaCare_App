@@ -59,7 +59,7 @@ class _FacilitiesScreenState extends State<FacilitiesScreen> {
                   height: 2,
                 ),
               ),
-              InterText(text: '56 FacilitiesScreen',color:AppColors.hintTextGrey,fontWeight: FontWeight.w600,fontSize: Reponsive_.px12 ),
+              InterText(text: '56 Facilities',color:AppColors.hintTextGrey,fontWeight: FontWeight.w600,fontSize: Reponsive_.px12 ),
               Expanded(
                 child: Container(
                   margin: EdgeInsets.only(right: Reponsive_.crosslength*0.015,left: Reponsive_.crosslength*0.02),

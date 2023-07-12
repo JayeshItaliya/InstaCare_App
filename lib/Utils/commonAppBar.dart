@@ -36,7 +36,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
       centerTitle: true,
       elevation: 0,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 5),
+        padding:  EdgeInsets.only(left: 10),
         child: widget.icon ??
             InkWell(
                 child: const Icon(
@@ -47,7 +47,7 @@ class _CommonAppBarState extends State<CommonAppBar> {
                   Navigator.of(context).pop();
                 }),
       ),
-      leadingWidth: Reponsive_.crosslength/30,
+      leadingWidth: Reponsive_.crosslength/23,
       title: widget.title,
       actions: [
         Padding(

@@ -14,7 +14,7 @@ class NetWorkApiServices extends BaseApiServices {
   Future getResponse(String url) async {
     dynamic userLoginToken;
     await StorageUtil.getData(StorageUtil.userLoginToken).then((value) {
-     userLoginToken = value;
+     userLoginToken = value==null?"98|LziprYLmWYjNX8iq8Nxpp6IT4rhB08yadD88UbVa":value;
     });
     var headers = {
       'Authorization': 'Bearer ${userLoginToken}'
@@ -40,7 +40,7 @@ class NetWorkApiServices extends BaseApiServices {
       toastMessageError("Connection Time OUt");
     }on Error catch(e) {
       print(e.stackTrace.toString());
-      toastMessageError("Something Waiting Worng");
+      toastMessageError("Something Went Wrong");
     }
     return responseJson;
   }
@@ -52,7 +52,7 @@ class NetWorkApiServices extends BaseApiServices {
     dynamic responseJson;
     dynamic userLoginToken;
     await StorageUtil.getData(StorageUtil.userLoginToken).then((value) {
-      userLoginToken = value;
+      userLoginToken = value==null?"98|LziprYLmWYjNX8iq8Nxpp6IT4rhB08yadD88UbVa":value;
     });
     print("apiUrl==>>${url}");
     print("postData==>>${data}");
@@ -72,7 +72,7 @@ class NetWorkApiServices extends BaseApiServices {
       toastMessageError("Connection Time OUt");
     }on Error catch(e) {
       print(e.stackTrace.toString());
-      toastMessageError("Something Waiting Ring");
+      toastMessageError("Something Went Wrong");
     }
     return responseJson;
   }

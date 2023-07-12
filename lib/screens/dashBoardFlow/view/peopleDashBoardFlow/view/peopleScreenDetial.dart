@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instacare/Utils/CommonDropDown.dart';
+import 'package:instacare/Utils/Commonwidgets.dart';
 import 'package:instacare/Utils/Responsive.dart';
 import 'package:instacare/Utils/appAssets.dart';
 import 'package:instacare/Utils/appColor.dart';
@@ -19,8 +20,11 @@ import 'package:instacare/Utils/documentsRow.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
+import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/model/peopleDetialModel.dart';
 import 'package:instacare/screens/dashBoardFlow/view/peopleDashBoardFlow/Controller/peopleController.dart';
+import 'package:instacare/screens/employeeFlow/employeeSelectionFlow/view/SendingScreen.dart';
+import 'package:instacare/screens/messagesFlow/view/ChatRoomScreen.dart';
 import 'package:instacare/screens/profileFlow/controller/profileController.dart';
 
 
@@ -36,12 +40,14 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
   final cx = Get.put(CommonController());
   final peopleController = Get.put(PeopleController());
   final profileController = Get.put(ProfileController());
+  final selectDate=TextEditingController();
   File? imageFile;
   File? setProfileImage;
+  
 @override
   void initState() {
   print(widget.id);
-   peopleController.getData(widget.id!);
+   peopleController.getData(widget.id??5);
     super.initState();
   }
   @override
@@ -427,96 +433,55 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                       SizedBox(
                                                         height: Reponsive_.crosslength*0.015,
                                                       ),
-                                                      Obx(() => Row(
+                                                     Row(
                                                         children: [
-                                                          Expanded(
-                                                            child: Row(
-                                                              children: [
-                                                                Transform.scale(
-                                                                  scale: 1.2,
-                                                                  child:
-                                                                  Checkbox(
-                                                                    shape:
-                                                                    CircleBorder(),
-                                                                    value: peopleController
-                                                                        .dateValue
-                                                                        .value,
-                                                                    activeColor:
-                                                                    AppColors
-                                                                        .buttonColor,
-                                                                    onChanged:
-                                                                        (bool?
-                                                                    newValue) {
-                                                                      peopleController
-                                                                          .dateValue
-                                                                          .value = newValue!;
-                                                                    },
-                                                                  ),
-                                                                ),
-                                                                InterText(
-                                                                  text: "Date",
-                                                                  fontSize: Reponsive_.px16,
-                                                                  fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                                  color:
-                                                                  AppColors
-                                                                      .black,
-                                                                )
-                                                              ],
-                                                            ),
+                                                          SizedBox(
+                                                            width: Reponsive_.crosslength*0.02,
                                                           ),
                                                           Expanded(
-                                                            child:
-                                                            Container(
-                                                              alignment: Alignment.centerLeft,
-                                                              child: Transform.scale(
-                                                                scale: 1.2,
-                                                                child: Row(
-                                                                  children: [
-                                                                    Checkbox(
-                                                                      shape:
-                                                                      CircleBorder(),
-                                                                      value: peopleController
-                                                                          .shiftValue
-                                                                          .value,
-                                                                      activeColor:
-                                                                      AppColors
-                                                                          .buttonColor,
-                                                                      onChanged:
-                                                                          (bool?
-                                                                      newValue) {
-                                                                        peopleController
-                                                                            .shiftValue
-                                                                            .value = newValue!;
-                                                                      },
-                                                                    ),
-                                                                    InterText(
-                                                                      text:
-                                                                      "Shift",
-                                                                      fontSize:
-                                                                      Reponsive_.px16,
-                                                                      fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                      color: AppColors
-                                                                          .black,
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
+                                                            child: Obx(() => Commonwidgets.radio_btn('Date', peopleController.index.value == 1, () {
+                                                              setState(() {
+                                                                peopleController.index.value = 1;
+                                                                print(peopleController.index.value);
+                                                              });
+                                                            })),
+                                                          ),
+                                                          SizedBox(
+                                                            height: Reponsive_.crosslength*0.015,
+                                                          ),
+                                                          Expanded(
+                                                            child: Obx(() => Commonwidgets.radio_btn('Shift', peopleController.index.value == 2, () {
+                                                              setState(() {
+                                                                peopleController.index.value = 2;
+                                                                print(peopleController.index.value);
+                                                              });
+                                                            })),
                                                           ),
                                                         ],
-                                                      )),
+                                                      ),
+                                                      SizedBox(
+                                                        height: Reponsive_.crosslength*0.01,
+                                                      ),
                                                       Row(
                                                         children: [
                                                           Expanded(
                                                             flex: 1,
-                                                            child: AppWidget()
-                                                                .getTextField(
-                                                              hintText:
-                                                              "Select Date",
+                                                            child: GestureDetector(
+                                                              child: AppWidget().getTextField(
+                                                                hintText:
+                                                                "Select Date",
+                                                                isReadOnly: true,
+                                                                textEditingController: selectDate,
+                                                                onTapFunction: (){
+                                                                  DateConverter.RangeDatePicker(
+                                                                    context: context,
+                                                                    monthType: true,
+                                                                    dateRang: false,
+                                                                  ).then((value) {
+                                                                    selectDate.text=value.toString();
+                                                                  });
+                                                                }
+                                                              ),
                                                             ),
                                                           ),
                                                           SizedBox(
@@ -525,13 +490,11 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                           Expanded(
                                                             flex: 1,
                                                             child: CommonDropDown(
-                                                                context: context,hint: 'Select Shift',
-                                                                list:
-                                                                peopleController
-                                                                    .shiftList,
-                                                                mycontrollerValue:
-                                                                peopleController
-                                                                    .shiftListValue),
+                                                                context: context,
+                                                                list: peopleController.shiftList,
+                                                                mycontrollerValue: peopleController.shiftListValue,
+                                                              hint: 'Select Shift',
+                                                            ),
                                                           ),
                                                         ],
                                                       ),
@@ -540,12 +503,10 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                       ),
                                                       CommonDropDown(
                                                           context: context,
-                                                          hint: 'Select Reason',
-                                                          list: peopleController
-                                                              .selectReasion,
-                                                          mycontrollerValue:
-                                                          peopleController
-                                                              .selectReasionValue),
+                                                          list: peopleController.selectReasion,
+                                                          mycontrollerValue: peopleController.selectReasionValue,
+                                                        hint: 'Select Reason',
+                                                      ),
                                                       SizedBox(
                                                         height: Reponsive_.crosslength*0.01,
                                                       ),
@@ -560,6 +521,9 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                                         onTap: () {
                                                           onBack(context);
                                                         },
+                                                      ),
+                                                      SizedBox(
+                                                        height: 10,
                                                       )
                                                     ],
                                                   ),
@@ -839,15 +803,19 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                             ),
                             onTap: () {
                               // peopleController.documentList.clear();
+                              peopleController.docValue.value="Document Name";
+                              final selectDate=TextEditingController(text: "Expiration Date");
+
                               CommonBottonSheet(
                                   context: context,
                                   childView: Padding(
                                     padding: const EdgeInsets.only(
                                         left: 10, right: 10),
                                     child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         InterText(
-                                          text: "Update Document",
+                                          text: "  Update Document",
                                           fontSize:
                                           Reponsive_.crosslength * 0.03,
                                           fontWeight: FontWeight.w700,
@@ -859,16 +827,30 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                                         CommonDropDown(
                                             context: context,
                                             list: peopleController.docTypeList,
-                                            mycontrollerValue:
-                                            peopleController.docValue,
-                                            color: AppColors.backGroundColor),
+                                            mycontrollerValue: peopleController.docValue,
+                                            color: AppColors.backGroundColor,
+                                          hint: "Document Name"
+                                        ),
                                         SizedBox(
                                           height: 15,
                                         ),
                                         AppWidget().getTextField(
                                           hintText: "Expiration Date",
-                                          filledColor:
-                                          AppColors.backGroundColor,
+                                          filledColor: AppColors.backGroundColor,
+                                          textEditingController: selectDate,
+                                          isReadOnly: true,
+                                          onTapFunction: (){
+                                            DateConverter.RangeDatePicker(
+                                                context: context,
+                                                monthType: false,
+                                                dateRang: false,
+                                              dateType: true,
+                                            ).then((value) {
+                                              setState(() {
+                                                selectDate.text=value!;
+                                              });
+                                            });
+                                          }
                                         ),
                                         SizedBox(
                                           height: 20,
@@ -2075,8 +2057,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          profileController.toggleSwitch(
-                              0, profileController.switchValues[0].value);
+                          profileController.toggleSwitch(0, profileController.switchValues[0].value);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2804,7 +2785,10 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
                       ),
                     ],
                   ),
-                ):Container()
+                ):Container(),
+                SizedBox(
+                  height: Reponsive_.crosslength*0.08,
+                )
               ],
             ),
           ),
@@ -2813,7 +2797,9 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.yallow,
-        onPressed: () {},
+        onPressed: () {
+          toPushNavigator(context: context,PageName: ChatRoomScreen());
+        },
         child: const Icon(Icons.mail_outline, color: AppColors.white),
       ),
     );
@@ -3031,7 +3017,7 @@ class _PeopleScreenDetilState extends State<PeopleScreenDetil> {
               fontSize: Reponsive_.px14,
             ),
           ),
-        )
+        ),
       ],
     );
   }

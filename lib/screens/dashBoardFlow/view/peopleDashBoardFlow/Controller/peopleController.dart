@@ -17,8 +17,9 @@ class PeopleController extends GetxController{
   var pointValue=0.obs;
   var dateValue=false.obs;
   var shiftValue=false.obs;
-  var shiftListValue="Select Shift".obs;
-  var selectReasionValue="Select Reason".obs;
+  var shiftListValue="".obs;
+  var selectReasionValue="".obs;
+  RxInt index=(-1).obs;
   RxList documentList=[].obs;
 
   List<RxBool> switchValues = List.generate(2, (_) => false.obs);
@@ -49,11 +50,8 @@ var messageSwitchValue=false.obs;
   ];
 
   List<String> selectReasion=[
-    "01:00",
-    "02:00",
-    "02:00",
-    "02:00",
-    "02:00",
+    "Test",
+    "Test1",
   ];
 
   PeopleGetData peopleGetData=PeopleGetData();

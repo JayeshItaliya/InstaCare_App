@@ -24,7 +24,7 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -32,10 +32,10 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
         leading: Padding(
           padding:   EdgeInsets.only(left:Reponsive_.crosslength*0.01,top:Reponsive_.crosslength*0.01),
           child: MontserratText(
-            text: "Apply Filter",
+            text: "  Apply Filter",
             fontWeight: FontWeight.w700,
             fontSize: Reponsive_.px30,
-            color: AppColors.blue,
+            color: AppColors.black,
           ),
         ),
         actions: [
@@ -58,40 +58,40 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
                      children: [
                        CommonDropDown(
                          context: context,
-                         hint: 'Select Facility',
+                         hint: 'Facility',
                          list: peopleController.role,
                          mycontrollerValue: peopleController.roleValue,
-                         color: AppColors.white,
+                         color: AppColors.backGroundColor,
                        ),
                        SizedBox(
                          height: Reponsive_.crosslength*0.01,
                        ),
                        CommonDropDown(
                          context: context,
-                         hint: 'Select Employee',
+                         hint: 'Employee',
                          list: peopleController.status,
                          mycontrollerValue: peopleController.statusValue,
-                         color: AppColors.white,
+                        color: AppColors.backGroundColor,
                        ),
                        SizedBox(
                          height: Reponsive_.crosslength*0.01,
                        ),
                        CommonDropDown(
                          context: context,
-                         hint: 'Select Role',
+                         hint: 'Role',
                          list: peopleController.rating,
                          mycontrollerValue: peopleController.ratingValue,
-                         color: AppColors.white,
+                        color: AppColors.backGroundColor,
                        ),
                        SizedBox(
                          height: Reponsive_.crosslength*0.01,
                        ),
                        CommonDropDown(
                          context: context,
-                         hint: 'Select Status',
+                         hint: 'Status',
                          list: peopleController.points,
                          mycontrollerValue: peopleController.pointsValue,
-                         color: AppColors.white,
+                        color: AppColors.backGroundColor,
                        ),
                        SizedBox(
                          height: Reponsive_.crosslength*0.01,
@@ -102,30 +102,30 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
                  children: [
                    CommonDropDown(
                      context: context,
-                     hint: 'Select Employee',
+                     hint: 'Employee',
                      list: peopleController.status,
                      mycontrollerValue: peopleController.statusValue,
-                     color: AppColors.white,
+                    color: AppColors.backGroundColor,
                    ),
                    SizedBox(
                      height: Reponsive_.crosslength*0.01,
                    ),
                    CommonDropDown(
                      context: context,
-                     hint: 'Select Role',
+                     hint: 'Role',
                      list: peopleController.rating,
                      mycontrollerValue: peopleController.ratingValue,
-                     color: AppColors.white,
+                    color: AppColors.backGroundColor,
                    ),
                    SizedBox(
                      height: Reponsive_.crosslength*0.01,
                    ),
                    CommonDropDown(
                      context: context,
-                     hint: 'Select Status',
+                     hint: 'Status',
                      list: peopleController.points,
                      mycontrollerValue: peopleController.pointsValue,
-                     color: AppColors.white,
+                    color: AppColors.backGroundColor,
                    ),
                    SizedBox(
                      height: Reponsive_.crosslength*0.01,
@@ -138,20 +138,20 @@ class _ApplyFilterTimeCardScreenState extends State<ApplyFilterTimeCardScreen> {
                          children: [
                            CommonDropDown (
                              context: context,
-                             hint: 'Select Facility',
+                             hint: 'Facility',
                              list: peopleController.role,
                              mycontrollerValue: peopleController.roleValue,
-                             color: AppColors.white,
+                            color: AppColors.backGroundColor,
                            ),
                            SizedBox(
                              height: Reponsive_.crosslength*0.01,
                            ),
                            CommonDropDown(
                              context: context,
-                             hint: 'Select Date',
+                             hint: 'Date',
                              list: peopleController.status,
                              mycontrollerValue: peopleController.statusValue,
-                             color: AppColors.white,
+                            color: AppColors.backGroundColor,
                            ),
                          ],
                        )

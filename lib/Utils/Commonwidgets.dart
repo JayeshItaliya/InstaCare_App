@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:instacare/Utils/Responsive.dart';
+import 'package:instacare/Utils/commonButton.dart';
+import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/montserratText.dart';
 import 'appColor.dart';
 
 class Commonwidgets {
@@ -113,4 +116,87 @@ class Commonwidgets {
       ),
     );
   }
+
+
+  static void confirmationDialog(BuildContext context,Function yesClick){
+    CommonBottonSheet(
+      context: context,
+      childView: ListView(
+        shrinkWrap: true,
+        children: [
+          SizedBox(
+            height: Reponsive_.crosslength * 0.02,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              MontserratText(
+                text: "Shift Detail".toUpperCase(),
+                fontWeight: FontWeight.w400,
+                color: AppColors.blue,
+                fontSize: Reponsive_.px12,
+              ),
+              SizedBox(
+                height: Reponsive_.crosslength * 0.025,
+              ),
+              MontserratText(
+                text: "Confirmation",
+                fontWeight: FontWeight.w700,
+                color: AppColors.deepGreen,
+                fontSize: Reponsive_.px30,
+              ),
+              SizedBox(
+                height: Reponsive_.crosslength * 0.015,
+              ),
+              InterText(
+                text:
+                "Great, would you like to post these shifts?",
+                fontSize: Reponsive_.px16,
+                fontWeight: FontWeight.normal,
+                color: AppColors.black,
+              ),
+              SizedBox(
+                height: Reponsive_.crosslength * 0.1,
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: Reponsive_.crosslength * 0.02,
+                  right: Reponsive_.crosslength * 0.02,
+                  bottom: Reponsive_.crosslength * 0.01,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: CommonButton(
+                        text: "YES",
+                        onTap: () {
+                          yesClick();
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: CommonButton(
+                        text: "NO",
+                        onTap: () {
+                          Navigator.of(context,
+                              rootNavigator: true)
+                              .pop();
+                        },
+                        color: AppColors.allGray,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
 }
+
+

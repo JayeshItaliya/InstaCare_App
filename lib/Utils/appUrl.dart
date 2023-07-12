@@ -12,4 +12,8 @@ class AppUrl {
   static const String submit_reason ="${baseUrl}support";
   static const String employeeList ="${baseUrl}employees-list";
   static const String uplodeExcle ="${baseUrl}sheet-shift";
+  static const String get_single_shift_data ="${baseUrl}facilities-list";
+  static const String store_single_shift ="${baseUrl}single-shift";
+  static const String store_recurring_shift ="${baseUrl}recurring-shift";
+  static const String newsList ="${baseUrl}news-list";
 }

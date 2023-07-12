@@ -25,8 +25,16 @@ class ScheduleFilterController extends GetxController{
     "Role 4",
     "Role 5",
   ];
+  List<String> status=[
+    "Available",
+    "Away",
+    "Busy",
+    "DND",
+    "Offline",
+  ];
 
   var facilitiesValue="Facilities".obs;
   var employeeNameValue="Employee Name".obs;
   var roleValue="Role".obs;
+  var statusValue="Available".obs;
 }

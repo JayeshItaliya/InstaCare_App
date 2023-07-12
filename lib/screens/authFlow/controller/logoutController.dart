@@ -14,7 +14,7 @@ class LogOutController extends GetxController{
     try{
       var response=await _apiServices.getResponse(AppUrl.logOut);
       if(response["status"]==1){
-        showSuccessDialog(response["message"]);
+        showSuccessDialog("User Logged Out Successfully");
         offNavigator(context: context,PageName: LoginScreen());
         StorageUtil.clearData();
       }

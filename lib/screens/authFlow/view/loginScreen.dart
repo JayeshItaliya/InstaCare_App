@@ -8,6 +8,7 @@ import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/authFlow/controller/loginController.dart';
 import 'package:instacare/screens/authFlow/view/forgotPasswordScreen.dart';
+import 'package:instacare/screens/dashBoardFlow/view/dashBoardMainScreen.dart';
 import '../../../Utils/appAssets.dart';
 import '../../../Utils/commonButton.dart';
 import '../../../Utils/commonController.dart';
@@ -89,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     validationFunction:(val){
                       if (val.isEmpty ||
                           !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(val)) {
-                        return 'Enter a valid email!';
+                        return 'Enter a valid email';
                       }
                       return null;
                     }
@@ -107,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       validationFunction:(val){
                         if (val.isEmpty) {
-                          return 'Enter a valid password!';
+                          return 'Enter a valid password';
                         }
                         return null;
                       }

@@ -162,7 +162,7 @@ class _FacilityEmployeeSelectionScreenState extends State<FacilityEmployeeSelect
                 ),
               ],
             ),
-            SizedBox(width: Reponsive_.crosslength*0.01,),
+            SizedBox(height: Reponsive_.crosslength*0.02,),
           ]),
       ),
       );

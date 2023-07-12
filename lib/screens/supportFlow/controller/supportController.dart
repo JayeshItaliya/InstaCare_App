@@ -35,25 +35,33 @@ class SupportController extends GetxController{
   }
 
 Future<void> submit_reason(BuildContext context) async {
-    try {
-      var res = await _apiService.postResponse(AppUrl.submit_reason,{
-        'reason':selected_reason.value,
-        'message':msgController.value.text.toString(),
-      });
-      loading(false);
+    loadingDialog();
+    if(selected_reason.value.isEmpty){
+      toastMessageError("Select reason");
+    }
+    else if(msgController.value.text.toString().isEmpty){
+      toastMessageError("Enter message");
+    }
+    else{
+      try {
+        var res = await _apiService.postResponse(AppUrl.submit_reason,{
+          'reason':selected_reason.value,
+          'message':msgController.value.text.toString(),
+        });
+        loading(false);
 
-      ReasonListModel reasonListModel = ReasonListModel.fromJson(res);
-      if (reasonListModel.status==1) {
-        onBack(context);
-        showSuccessDialog(reasonListModel.message!);
-      }else{
-        showErrorDialog(reasonListModel.message!);
+        ReasonListModel reasonListModel = ReasonListModel.fromJson(res);
+        if (reasonListModel.status==1) {
+          showSuccessDialog(reasonListModel.message!);
+        }else{
+          showErrorDialog(reasonListModel.message!);
+        }
+        print('reason_list ${reasonListModel.toString()}');
+
+
+      } catch (e) {
+        print(e);
       }
-      print('reason_list ${reasonListModel.toString()}');
-
-
-    } catch (e) {
-      print(e);
     }
   }
 

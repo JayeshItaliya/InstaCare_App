@@ -9,6 +9,7 @@ import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/montserratText.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/supportFlow/controller/supportController.dart';
 class SupportScreen extends StatefulWidget {
   const SupportScreen({super.key});
@@ -41,13 +42,14 @@ class _SupportScreenState extends State<SupportScreen> {
               context: context,
               list: supportController.supportList,
               mycontrollerValue: supportController.selected_reason,
-             color: AppColors.white
+             color: AppColors.white,
+            hint: "Select Reason"
           ),
           SizedBox(
             height: Reponsive_.crosslength*0.025,
           ),
           InterText(
-            text: "      Note",
+            text: "      Notes",
             fontSize: Reponsive_.px16,
             color: AppColors.black,
             fontWeight: FontWeight.bold,
@@ -106,6 +108,7 @@ class _SupportScreenState extends State<SupportScreen> {
                                     text: "Yes",
                                     onTap: (){
                                       supportController.submit_reason(context);
+                                      onBack(context);
                                     },
                                   ),
                                 ),

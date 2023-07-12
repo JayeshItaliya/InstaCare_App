@@ -86,7 +86,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image:   DecorationImage(
-                                  image: NetworkImage(cx.profileImage.toString()),
+                                  image: AssetImage(AppAssets.doctorPhoto),
                                   fit: BoxFit.fitHeight,
                                  onError: (errDetails,hi){
                                     AssetImage(AppAssets.doctorPhoto);
@@ -125,7 +125,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                       ),
                     ],
                   ),
-                  Gap(20.w),
+                  Gap(Reponsive_.crosslength*0.001),
                   Row(
                     children: [
                       InterText(
@@ -275,13 +275,14 @@ class _CommonDrawerState extends State<CommonDrawer> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width / 1.6,
+                        width: Reponsive_.crosslength*0.25,
                         height: 1.5,
                         color: AppColors.greenDark,
-                      )
+                      ),
+
                     ],
                   ),
                   ListView.builder(
@@ -329,6 +330,7 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                       Gap(10.h),
                                       ListTile(
                                         leading: SvgPicture.asset(AppAssets.logout),
+
                                         title: InterText(
                                           text: "Logout",
                                           fontWeight: FontWeight.w400,
@@ -342,8 +344,25 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                             builder: (BuildContext context) {
                                               return CupertinoAlertDialog(
                                                 title:  Image.asset(AppAssets.app),
-                                                content:   const Text("Do You Want Sure LogOut ?"),
+                                                content:Column(
+                                                  children: [
+                                                    Gap(5.h),
+                                                    InterText(
+                                                      text: 'Are you sure you want to logout?',
+                                                      maxLines: 2,
+                                                      fontWeight: FontWeight.w500,
+                                                      fontSize: Reponsive_.px18,
+                                                    ),
+                                                  ],
+                                                ),
                                                 actions: [
+
+                                                  CupertinoDialogAction(
+                                                    child: Text("No"),
+                                                    onPressed: (){
+                                                      onBack(context);
+                                                    },
+                                                  ),
                                                   CupertinoDialogAction(
                                                     isDefaultAction: true,
                                                     onPressed: (){
@@ -351,12 +370,6 @@ class _CommonDrawerState extends State<CommonDrawer> {
                                                     },
                                                     child: Text("Yes"),
                                                   ),
-                                                  CupertinoDialogAction(
-                                                    child: Text("No"),
-                                                    onPressed: (){
-                                                      onBack(context);
-                                                    },
-                                                  )
                                                 ],
                                               );
                                             },

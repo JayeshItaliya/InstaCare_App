@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:instacare/Utils/Responsive.dart';
-import 'package:instacare/Utils/commonAppBar.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
-import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/facilitiesFlow/view/SendMessageScreen.dart';
 import '../../../Utils/appAssets.dart';
@@ -48,6 +46,7 @@ class _MessagesScreenState extends State<MessagesScreen>{
       ),
       body: ListView.builder(
         itemCount: 5,
+        shrinkWrap: true,
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (){
@@ -157,7 +156,7 @@ class _MessagesScreenState extends State<MessagesScreen>{
 
                             ],
                           ),
-                          Row(
+                         index==2? Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Container(
@@ -176,7 +175,7 @@ class _MessagesScreenState extends State<MessagesScreen>{
                                 ),
                               ),
                             ],
-                          ),
+                          ):Container(),
                           /*Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

@@ -8,7 +8,7 @@ import 'package:instacare/Utils/loader.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/Utils/storeToken.dart';
 import 'package:http/http.dart' as http;
-import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/shiftDetials.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/view/shiftDetials.dart';
 
 
 class BulkUplodeController extends GetxController {
@@ -30,7 +30,7 @@ class BulkUplodeController extends GetxController {
       print(response.statusCode);
       print(response.body);
       if(response.statusCode==200){
-        toastMessageSuccess("Successfully Upload");
+        toastMessageSuccess("Upload done successfully");
         toPushNavigator(context: context,PageName: ShiftDeatils());
       }
     } on SocketException {
@@ -39,7 +39,7 @@ class BulkUplodeController extends GetxController {
       toastMessageError("Connection Time OUt");
     }on Error catch(e) {
       print(e.stackTrace.toString());
-      toastMessageError("Something Waiting Ring");
+      toastMessageError("Something Went Wrong");
     }
   }
 }

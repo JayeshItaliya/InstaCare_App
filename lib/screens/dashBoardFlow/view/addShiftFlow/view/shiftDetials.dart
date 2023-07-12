@@ -27,7 +27,10 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
           ),
           Column(
             children: [
-              Image.asset(AppAssets.calendarCheck,scale: 1.3),
+              SizedBox(
+                height: Reponsive_.crosslength*0.06,
+              ),
+              Image.asset(AppAssets.calendarCheck,scale: 1.7),
               InterText(
                 text: "Awesome!",
                 fontWeight: FontWeight.w300,
@@ -75,7 +78,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                 children: [
                   Image.asset(AppAssets.sun,color: AppColors.yallow),
                   InterText(
-                    text: "7:00 aM - 3:00 PM",
+                    text: "7:00 AM - 3:00 PM",
                     fontWeight: FontWeight.w700,
                     fontSize: Reponsive_.px16,
                     color: AppColors.black,
@@ -99,7 +102,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                 children: [
                   Image.asset(AppAssets.sun,color: AppColors.yallow),
                   InterText(
-                    text: "7:00 aM - 3:00 PM",
+                    text: "7:00 AM - 3:00 PM",
                     fontWeight: FontWeight.w700,
                     fontSize: Reponsive_.px16,
                     color: AppColors.black,
@@ -124,7 +127,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                 children: [
                   Image.asset(AppAssets.sun,color: AppColors.yallow),
                   InterText(
-                    text: "7:00 aM - 3:00 PM",
+                    text: "7:00 AM - 3:00 PM",
                     fontWeight: FontWeight.w700,
                     fontSize: Reponsive_.px16,
                     color: AppColors.black,
@@ -148,7 +151,7 @@ class _ShiftDeatilsState extends State<ShiftDeatils> {
                 children: [
                   Image.asset(AppAssets.sun,color: AppColors.yallow),
                   InterText(
-                    text: "7:00 aM - 3:00 PM",
+                    text: "7:00 AM - 3:00 PM",
                     fontWeight: FontWeight.w700,
                     fontSize: Reponsive_.px16,
                     color: AppColors.black,

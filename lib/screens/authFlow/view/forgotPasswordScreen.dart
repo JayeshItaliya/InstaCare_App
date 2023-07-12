@@ -93,6 +93,7 @@ class _LoginScreenState extends State<ForgotPasswordScreen> {
                   AppWidget().getTextField(
                       hintText: 'Email Address',
                       textEditingController: forgetPasswordController.emailController.value,
+                      keyboardType: TextInputType.emailAddress,
                       suffixIcon: Padding(
                         padding: EdgeInsets.only(right: 20.0),
                         child: Image.asset(
@@ -104,7 +105,7 @@ class _LoginScreenState extends State<ForgotPasswordScreen> {
                       validationFunction:(val){
                         if (val.isEmpty ||
                             !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(val)) {
-                          return 'Enter a valid email!';
+                          return 'Enter a valid email';
                         }
                         return null;
                       }

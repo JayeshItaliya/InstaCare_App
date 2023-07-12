@@ -9,6 +9,7 @@ import 'package:instacare/Utils/commonDropDown.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/controller/filterController.dart';
 
@@ -22,6 +23,13 @@ class ApplyFilterScreen extends StatefulWidget {
 class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
   final cx = Get.put(CommonController());
   final filterController = Get.put(FilterController());
+  @override
+  void initState() {
+    // TODO: implement initState
+    filterController.roleListValue.value = "Role";
+    filterController.rangeDateValue.value = "Date Range";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -58,7 +66,8 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
               context: context,
               list: filterController.roleList,
               mycontrollerValue: filterController.roleListValue,
-            color: AppColors.backGroundColor
+            color: AppColors.backGroundColor,
+            hint: "Role"
           ),
           const SizedBox(
             height: 15,
@@ -204,7 +213,9 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
             Expanded(
               child: CommonButton(
                 text: "APPLY",
-                onTap: () {},
+                onTap: () {
+                  onBack(context);
+                },
               ),
             ),
             SizedBox(
@@ -213,7 +224,15 @@ class _ApplyFilterScreenState extends State<ApplyFilterScreen> {
             Expanded(
               child: CommonButton(
                 text: "RESET",
-                onTap: () {},
+                onTap: () {
+                 setState(() {
+                   filterController.roleListValue.value="Role";
+                   filterController.rangeDateValue.value="Date Range";
+                   filterController.nightShift.value=false;
+                   filterController.morningShift.value=false;
+                   filterController.afterNoonShift.value=false;
+                 });
+                },
                 color: AppColors.allGray,
               ),
             ),

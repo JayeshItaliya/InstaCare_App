@@ -101,13 +101,13 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
                       color: AppColors.blue,
                       softWrap: true,
                       fontWeight: FontWeight.w400,
-                      fontSize: Reponsive_.px18,
+                      fontSize: Reponsive_.px16,
                     ),
                   ],
                 ),
               ),
               Expanded(
-                flex: 2,
+                flex:3,
                 child:  Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -295,6 +295,7 @@ class _OpenShiftsScreenState extends State<OpenShiftsScreen> {
               context: context,
                 childView:ListView(
                   shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   children: [
                     SizedBox(
                       height: 20,

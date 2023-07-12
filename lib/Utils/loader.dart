@@ -7,7 +7,7 @@ loadingDialog(){
 }
 
 showSuccessDialog(String message){
-  return SVProgressHUD.showSuccess(status:message);
+  return SVProgressHUD.showSuccess(status:message,);
 }
 
 showErrorDialog(String error){

@@ -14,7 +14,7 @@ class DateConverter {
   }
 
   static String dateMonthYear(DateTime dateTime) {
-    return DateFormat('dd/MM/yyyy').format(dateTime);
+    return DateFormat('yyyy-MM-dd').format(dateTime);
   }
   static String monthNameDay(DateTime dateTime) {
     return DateFormat('MMMM d, yyyy').format(dateTime);
@@ -24,6 +24,10 @@ class DateConverter {
   }
   static DateTime convertStringTimeToDate(String time) {
     return DateFormat('HH:mm').parse(time);
+  }
+
+  static String newsDateConvetr(DateTime dateTime) {
+    return DateFormat('MMMM d,yyyy h:mma').format(dateTime);
   }
 
   static Future<String?> displayTimeDialog(BuildContext context) async {

@@ -21,6 +21,12 @@ class MemberFilterScreen extends StatefulWidget {
 class _MemberFilterScreenState extends State<MemberFilterScreen> {
   final filterController = Get.put(MemberFilterController());
   @override
+  void initState() {
+    // TODO: implement initState
+    filterController.selectedRole.value="Role";
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return SafeArea(
@@ -54,6 +60,7 @@ class _MemberFilterScreenState extends State<MemberFilterScreen> {
                       context: context,
                       list: filterController.roleList,
                       mycontrollerValue: filterController.selectedRole,
+                      hint: "Role",
                       color: AppColors.backGroundColor)),
               const Expanded(child: SizedBox()),
               Row(
@@ -85,7 +92,8 @@ class _MemberFilterScreenState extends State<MemberFilterScreen> {
                   Expanded(
                     child: InkWell(
                       onTap: (){
-                        onBack(context);
+                        filterController.selectedRole.value="";
+                        setState(() {});
                       },
                       child: Container(
                         alignment: Alignment.center,

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:instacare/Utils/appUrl.dart';
 import 'package:instacare/Utils/commonController.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/Utils/storeToken.dart';
 import 'package:instacare/model/getProfileModel.dart';
 
@@ -178,7 +179,7 @@ class ProfileController extends GetxController {
         if(response.statusCode==200){
           toastMessageSuccess(responseJson["message"]);
           await get_profile_data();
-          Navigator.of(context,rootNavigator: true).pop();
+          onBack(context);
         }
 
   }on SocketException {
@@ -187,7 +188,7 @@ class ProfileController extends GetxController {
       toastMessageError("Connection Time OUt");
     }on Error catch(e) {
       print(e.stackTrace.toString());
-      toastMessageError("Something Waiting Ring");
+      toastMessageError("Something Waiting Wrong");
     }
 
 }}

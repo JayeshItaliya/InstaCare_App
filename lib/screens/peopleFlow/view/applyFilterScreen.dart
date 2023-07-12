@@ -18,10 +18,20 @@ class ApplyFilterPeopleScreen extends StatefulWidget {
 class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
   final peopleController=Get.put(PeopleControllerFilter());
   @override
+  void initState() {
+    // TODO: implement initState
+     peopleController.roleValue.value="Role";
+     peopleController.statusValue.value="Status";
+     peopleController.ratingValue.value="Rating";
+     peopleController.pointsValue.value="Points";
+     peopleController.activeValue.value="Latest Activity";
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.backGroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.white,
         elevation: 0,
@@ -51,8 +61,8 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               context: context,
               list: peopleController.role,
               mycontrollerValue: peopleController.roleValue,
-            color: AppColors.backGroundColor,
-            hint: "Select Role"
+            color: AppColors.white,
+            hint: "Role"
           ),
           SizedBox(
             height: 10,
@@ -61,8 +71,8 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               context: context,
               list: peopleController.status,
               mycontrollerValue: peopleController.statusValue,
-              color: AppColors.backGroundColor,
-              hint: "Select Status"
+              color: AppColors.white,
+              hint: "Status"
           ),
           SizedBox(
             height: 10,
@@ -71,8 +81,8 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               context: context,
               list: peopleController.rating,
               mycontrollerValue: peopleController.ratingValue,
-              color: AppColors.backGroundColor,
-              hint: "Select Rating"
+              color: AppColors.white,
+              hint: "Rating"
           ),
           SizedBox(
             height: 10,
@@ -81,8 +91,8 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               context: context,
               list: peopleController.points,
               mycontrollerValue: peopleController.pointsValue,
-              color: AppColors.backGroundColor,
-              hint: "Select Points"
+              color: AppColors.white,
+              hint: "Points"
           ),
           SizedBox(
             height: 10,
@@ -91,7 +101,7 @@ class _ApplyFilterPeopleScreenState extends State<ApplyFilterPeopleScreen> {
               context: context,
               list: peopleController.lastActive,
               mycontrollerValue: peopleController.activeValue,
-              color: AppColors.backGroundColor,
+              color: AppColors.white,
               hint: "Latest Activity"
           ),
         ],

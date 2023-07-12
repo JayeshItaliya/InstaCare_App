@@ -12,6 +12,7 @@ import 'package:instacare/Utils/commonTextFormField.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:get/get.dart';
+import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/helper/date_conveter.dart';
 import 'package:instacare/screens/dashBoardFlow/view/createReminderFlow/controller/createReminderController.dart';
 class CreateReminderScreen extends StatefulWidget {
@@ -25,7 +26,13 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
 
   final cx=Get.put(CommonController());
   final createReminderController=Get.put(CreateReminderController());
-
+@override
+  void initState() {
+    // TODO: implement initState
+  createReminderController.selectedValue.value="Select Staff type";
+  createReminderController.selectedValue1.value="Reminder for";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     Reponsive_.init(context);
@@ -65,9 +72,9 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
                       onPressed: (){
                         DateConverter.RangeDatePicker(
                           context: context,
-                          dateRang: false,
+                          dateRang: true,
                           monthType: false,
-                          dateType: true
+                          dateType: false,
                         ).then((value){
                             createReminderController.selectedDate.value=value.toString();
                             print(createReminderController.selectedDate.value);
@@ -134,6 +141,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               list: createReminderController.items,
               mycontrollerValue: createReminderController.selectedValue,
             color: AppColors.white,
+           hint: "Select Staff type"
           ),
           SizedBox(height: Reponsive_.crosslength*0.01,),
           CommonDropDown(
@@ -141,6 +149,7 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
             list: createReminderController.items1,
             mycontrollerValue: createReminderController.selectedValue1,
             color: AppColors.white,
+            hint: "Reminder for"
           ),
           SizedBox(height: Reponsive_.crosslength*0.01,),
           AppWidget().getTextField(
@@ -154,7 +163,9 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
             children: [
               Expanded(
                 child: CommonButton(
-                  onTap: (){},
+                  onTap: (){
+                    onBack(context);
+                  },
                   text: "CREATE",
                   color: AppColors.buttonColor,
                 ),
@@ -162,7 +173,9 @@ class _CreateReminderScreenState extends State<CreateReminderScreen> {
               SizedBox(width: 10,),
               Expanded(
                 child: CommonButton(
-                  onTap: (){},
+                  onTap: (){
+                    onBack(context);
+                  },
                   text: "CANCEL",
                   color: AppColors.allGray,
                 ),

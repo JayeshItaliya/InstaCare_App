@@ -1,19 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:instacare/Utils/Responsive.dart';
-import 'package:instacare/Utils/appStyle.dart';
 import 'package:instacare/Utils/interText.dart';
 import 'package:instacare/Utils/montserratText.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/Utils/storeToken.dart';
 import 'package:instacare/helper/date_conveter.dart';
-import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/addShiftScreenMain.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/view/addShiftScreenMain.dart';
 import 'package:instacare/screens/dashBoardFlow/view/availableEmployeesFlow/view/availableEmployeesScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/createReminderFlow/view/createReminderScreen.dart';
 import 'package:instacare/screens/dashBoardFlow/view/newsFlow/view/newsScreen.dart';
@@ -77,6 +72,7 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: AppColors.backGroundColor,
       body: ListView(
         shrinkWrap: true,
+         physics: BouncingScrollPhysics(),
          padding: EdgeInsets.symmetric(horizontal: Reponsive_.crosslength*0.02),
         children: [
           SizedBox(

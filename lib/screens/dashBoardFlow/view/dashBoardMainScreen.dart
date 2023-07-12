@@ -135,7 +135,7 @@ List<String> instaTitle=[
   "People",
   "Facilities",
   "Messaging",
-  "TimeCards",
+  "TimeCard",
   "Total Billing",
   "Support",
 ];
@@ -157,7 +157,7 @@ List<String> instaTitle=[
     "Who's ON",
     "People",
     "Messaging",
-    "TimeCards",
+    "TimeCard",
     "Total Billing",
     "Support",
   ];
@@ -223,7 +223,7 @@ List<String> instaTitle=[
     "People",
     "Facilities",
     "Messaging",
-    "TimeCards",
+    "TimeCard",
     "Total Billing",
     "Support",
   ];
@@ -233,7 +233,7 @@ List<String> instaTitle=[
     "Who's ON",
     "People",
     "Messaging",
-    "TimeCards",
+    "TimeCard",
     "Total Billing",
     "Support",
   ];

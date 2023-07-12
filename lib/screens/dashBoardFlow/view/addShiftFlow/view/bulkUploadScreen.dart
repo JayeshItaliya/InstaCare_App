@@ -8,9 +8,10 @@ import 'package:get/get.dart';
 import 'package:instacare/Utils/commonButtonSheet.dart';
 import 'package:instacare/Utils/commonController.dart';
 import 'package:instacare/Utils/interText.dart';
+import 'package:instacare/Utils/loader.dart';
 import 'package:instacare/Utils/pageNavigator.dart';
 import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/controller/bulkUplodeController.dart';
-import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/shiftDetials.dart';
+import 'package:instacare/screens/dashBoardFlow/view/addShiftFlow/view/shiftDetials.dart';
 
 
 
@@ -48,7 +49,24 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
               ),
               SizedBox(height: 10,),
               InkWell(
-                child: Image.asset(AppAssets.uploadeExcel),
+                child: Stack(
+                  alignment:AlignmentDirectional.center ,
+                  children: [
+                    Image.asset("assets/x/bulkUplode.png"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/x/file.png",scale: 2.5),
+                        InterText(
+                          text:fileName==null?"Upload Excel File":fileName,
+                          fontWeight: FontWeight.w400,
+                          fontSize: Reponsive_.px16,
+                          color: AppColors.black,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
                 onTap: (){
                   openFilePicker().then((value) {
                    setState(() {
@@ -118,7 +136,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                                     child: InkWell(
                                       child: Container(
                                         alignment: Alignment.center,
-                                        height: 60,
+                                        height: Reponsive_.crosslength*0.06,
                                         decoration: BoxDecoration(
                                             color: AppColors.buttonColor,
                                             borderRadius: BorderRadius.circular(30)
@@ -131,26 +149,36 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
                                         ),
                                       ),
                                       onTap: (){
-                                        bulkUplodeController.uplodeExcle(uplodeExcleFile,context);
-                                        onBack(context);
+                                        if(uplodeExcleFile.isNotEmpty){
+                                          bulkUplodeController.uplodeExcle(uplodeExcleFile,context);
+                                          onBack(context);
+                                        }
+                                        else{
+                                          toastMessageError("Exile File Not Empty");
+                                        }
                                       },
                                     )
                                 ),
                                 SizedBox(width: 10,),
                                 Expanded(
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      height: 60,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.hintTextGrey,
-                                          borderRadius: BorderRadius.circular(30)
+                                    child: GestureDetector(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        height: Reponsive_.crosslength*0.06,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.hintTextGrey,
+                                            borderRadius: BorderRadius.circular(30)
+                                        ),
+                                        child: InterText(
+                                          text: "No",
+                                          color: AppColors.white,
+                                          fontSize: Reponsive_.px18,
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                      child: InterText(
-                                        text: "No",
-                                        color: AppColors.white,
-                                        fontSize: Reponsive_.px18,
-                                        fontWeight: FontWeight.w700,
-                                      ),
+                                      onTap: (){
+                                        onBack(context);
+                                      },
                                     )
                                 ),
                               ],
@@ -170,6 +198,7 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       ],
     );
   }
+  String? fileName;
   Future<String?> openFilePicker() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -181,6 +210,10 @@ class _BulkUploadScreenState extends State<BulkUploadScreen> {
       PlatformFile file = result.files.first;
       String? path = file.path;
       print("filePath==>$path");
+      print("filePath==>$fileName");
+      setState(() {
+        fileName = file.name.toString().substring(0,10);
+      });
       if(path!.contains("xlsx")&&path.contains("xls")){
         print('Successful Add The File');
       }

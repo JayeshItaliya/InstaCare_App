@@ -20,8 +20,8 @@ Widget CommonDropDown({required BuildContext context, required List<String> list
                 child: InterText(
                     text: hint,
                   fontSize: Reponsive_.crosslength*0.018,
-                  color: AppColors.hintTextGrey,
-                  fontWeight: FontWeight.w400,
+                  color: AppColors.black,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],
